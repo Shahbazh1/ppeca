@@ -20,7 +20,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full flex justify-center shadow-md">
+    <header className="w-full flex justify-center">
       {/* Main Header Container */}
       <div
         className="
@@ -43,22 +43,23 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex  h-[48px] gap-[18px] items-center">
           {menuItems.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              onClick={() => setActive(item.name)}
-              className={`inline-flex items-center justify-center
-     h-[27px]
-    text-sm font-normal transition-colors
-    ${
-      active === item.name
-        ? "text-green-500"
-        : "text-gray-800 hover:text-green-500"
-    }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+  <Link
+    key={item.id}
+    href={item.href}
+    onClick={() => setActive(item.name)}
+    className={`inline-flex items-center justify-center
+      h-[27px]
+      text-[18px] leading-[150%] font-sans font-normal transition-colors
+      ${
+        active === item.name
+          ? "text-green-500"
+          : "text-[#0A2540] hover:text-green-500"
+      }`}
+  >
+    {item.name}
+  </Link>
+))}
+
         </nav>
 
         {/* Search (Desktop – Figma accurate) */}
