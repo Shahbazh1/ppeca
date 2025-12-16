@@ -8,7 +8,7 @@ import { IoGlobeOutline } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer >
       {/* Top Section */}
       <div
         className="mx-auto flex flex-col md:flex-row gap-30"
