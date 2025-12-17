@@ -1,8 +1,15 @@
-export default async function NewsPage() {
+import LatestNewsHero from '../../components/news/LatestNewsHero';
+import NewsLetters from '../../components/news/\NewsLetters';
+import InveryData from '../../components/news/InveryData';
+import DirectoryOfTrainingProviders from '../../components/news/DirectoryOfTrainingProviders'
+
+export default function Page() {
   return (
-    <main>
-      <h1>Latest News</h1>
-      {/* map news here */}
-    </main>
+    <>
+      <LatestNewsHero />
+      <NewsLetters />
+      <InveryData/>
+      <DirectoryOfTrainingProviders/>
+    </>
   );
 }

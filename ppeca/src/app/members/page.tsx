@@ -1,12 +1,14 @@
-export default function MembersPage() {
+import React from 'react'
+import MemberCompanies from '../../components/members/MemberCompanies'
+import MemberHero from '../../components/members/MemberHero'
+import LeadershipSection from '../../components/members/LeadershipSection'
+
+export default function page() {
   return (
-    <main>
-      <h1>Member Companies</h1>
-      <ul>
-        <li>OGDCL</li>
-        <li>PPL</li>
-        <li>MPCL</li>
-      </ul>
-    </main>
-  );
+    <>
+    <MemberHero/>
+    <LeadershipSection/>
+    <MemberCompanies/>
+    </>
+  )
 }

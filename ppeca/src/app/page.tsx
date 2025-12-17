@@ -1,10 +1,17 @@
+import Hero from '../components/home/Hero'
+import AboutSection from '../components/home/AboutSection'
+import MembersSection from '../components/home/MembrsSection'
+import LatestNews from '../components/home/LatestNews'
+import FAQs from '../components/home/FAQsSection'
+
 export default function HomePage() {
   return (
-    <main>
-      <section>Hero Section</section>
-      <section>About PPECA</section>
-      <section>Latest News</section>
-      <section>Members</section>
-    </main>
+    <>
+    <Hero/>
+    <AboutSection/>
+    <MembersSection/>
+    <LatestNews/>
+    <FAQs/>
+    </>
   );
 }
