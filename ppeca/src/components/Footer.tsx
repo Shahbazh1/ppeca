@@ -11,7 +11,7 @@ export default function Footer() {
     <footer >
       {/* Top Section */}
       <div
-        className="mx-auto flex flex-col md:flex-row gap-30"
+        className=" flex flex-col md:flex-row gap-30"
         style={{
           height: "256px",
           justifyContent: "space-between",
@@ -184,7 +184,7 @@ export default function Footer() {
                   textAlign: "center",
                 }}
               >
-                News & Events
+                News&nbsp;&&nbsp;Events
               </Link>
             </li>
             <li>
@@ -206,7 +206,7 @@ export default function Footer() {
                   textAlign: "center",
                 }}
               >
-                About us
+                About&nbsp;us
               </Link>
             </li>
             <li>
@@ -250,7 +250,7 @@ export default function Footer() {
                   textAlign: "center",
                 }}
               >
-                Privacy Policy
+                Privacy&nbsp;Policy
               </Link>
             </li>
             <li>

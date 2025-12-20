@@ -20,63 +20,52 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full flex justify-center">
+    <header className="w-full bg-white shadow-md">
       {/* Main Header Container */}
-      <div
-        className="
-          flex items-center justify-between
-          max-w-[1440px] w-full
-          h-[80px]
-          px-[80px] py-[10px]
-        "
-      >
-        {/* Logo (Figma accurate) */}
-        <Image
-          src={logo}
-          alt="PPEPCA"
-          width={77}
-          height={42}
-          className="rounded-[52px]"
-          priority
-        />
+      <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto h-[80px] px-6 lg:px-16">
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <Image src={logo} alt="PPEPCA" width={80} height={80} className="rounded-full" priority />
+        </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex  h-[48px] gap-[18px] items-center">
+        <nav className="hidden lg:flex gap-8 items-center h-full">
           {menuItems.map((item) => (
-  <Link
-    key={item.id}
-    href={item.href}
-    onClick={() => setActive(item.name)}
-    className={`inline-flex items-center justify-center
-      h-[27px]
-      text-[18px] leading-[150%] font-sans font-normal transition-colors
-      ${
-        active === item.name
-          ? "text-green-500"
-          : "text-[#0A2540] hover:text-green-500"
-      }`}
-  >
-    {item.name}
-  </Link>
-))}
-
+            <Link
+              key={item.id}
+              href={item.href}
+              onClick={() => setActive(item.name)}
+              className={`text-base lg:text-md px-auto font-sans font-normal leading-[150%] transition-colors ${
+                active === item.name
+                  ? "text-green-500"
+                  : "text-[#0A2540] hover:text-green-500"
+              }`}
+            >
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: item.name.includes(" ")
+                    ? item.name.replace(/ /g, "&nbsp;")
+                    : item.name,
+                }}
+              />
+            </Link>
+          ))}
         </nav>
 
-        {/* Search (Desktop – Figma accurate) */}
-        <div className="hidden lg:flex items-center justify-between w-[269px] h-[40px] border border-gray-900 rounded-[8px] p-[10px]">
+        {/* Search (Desktop) */}
+        <div className="hidden lg:flex items-center w-[280px] h-[40px] border border-gray-300 rounded-lg px-3">
           <input
             type="text"
             placeholder="Search Members"
             className="flex-1 text-sm outline-none bg-transparent placeholder:text-gray-400"
           />
-          <FiSearch className="w-5 h-5 text-gray-900" />
+          <FiSearch className="w-5 h-5 text-gray-600" />
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-2xl"
+          className="lg:hidden text-2xl text-gray-900"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle Menu"
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
@@ -87,32 +76,25 @@ const Navbar = () => {
         <>
           {/* Backdrop */}
           <div
-            className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
             onClick={() => setOpen(false)}
           />
 
           {/* Mobile Panel */}
-          <div className="lg:hidden fixed inset-0 bg-white z-40">
+          <div className="fixed inset-0 bg-white z-40 flex flex-col">
             {/* Mobile Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b">
-              <Image
-                src={logo}
-                alt="PPEPCA"
-                width={77}
-                height={42}
-                className="rounded-[52px]"
-              />
+              <Image src={logo} alt="PPEPCA" width={77} height={42} className="rounded-full" />
               <button
-                className="text-2xl"
+                className="text-2xl text-gray-900"
                 onClick={() => setOpen(false)}
-                aria-label="Close Menu"
               >
                 <FiX />
               </button>
             </div>
 
             {/* Mobile Menu Items */}
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-6 py-6 space-y-4">
               {menuItems.map((item) => (
                 <Link
                   key={item.id}
@@ -130,13 +112,13 @@ const Navbar = () => {
               ))}
 
               {/* Mobile Search */}
-              <div className="flex items-center justify-between w-full h-[40px] border border-gray-900 rounded-[8px] p-[10px]">
+              <div className="flex items-center w-full h-[40px] border border-gray-300 rounded-lg px-3">
                 <input
                   type="text"
                   placeholder="Search Members"
                   className="flex-1 text-sm outline-none bg-transparent placeholder:text-gray-400"
                 />
-                <FiSearch className="w-5 h-5 text-gray-900" />
+                <FiSearch className="w-5 h-5 text-gray-600" />
               </div>
             </div>
           </div>

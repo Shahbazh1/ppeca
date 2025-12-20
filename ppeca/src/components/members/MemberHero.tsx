@@ -1,7 +1,10 @@
+'use client'
 import Image from "next/image";
 import hero_BG from '../../../public/images/member_heroSec_BG.png'
+import { useRouter } from "next/navigation";
 
 export default function PPEPCAHero() {
+  const router = useRouter();
   return (
     <section className="relative  w-full overflow-hidden">
       {/* Background Image */}
@@ -26,13 +29,13 @@ export default function PPEPCAHero() {
           A united network driving Pakistan’s
         </p>
 
-        <a
-          href="#"
-          className="mt-8 inline-flex items-center mb-12 gap-2 rounded-md bg-green-600 px-6 py-3 text-white text-sm font-semibold transition hover:bg-green-700"
+        <button
+          onClick={() => router.push('/members/membershipform')}
+          className="cursor-pointer mt-8 inline-flex items-center mb-12 gap-2 rounded-md bg-green-600 px-6 py-3 text-white text-sm font-semibold transition hover:bg-green-700"
         >
           Become a member
           <span className="text-lg">→</span>
-        </a>
+        </button>
       </div>
     </section>
   );

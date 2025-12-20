@@ -1,6 +1,8 @@
+'use client'
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
+import { useRouter } from 'next/navigation';
 
 import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
@@ -138,6 +140,7 @@ interface Props {
 }
 
 function CompanyCard({ name, logo }: Props) {
+  const router = useRouter();
   return (
     <div className="w-[230px] h-[220px] bg-white rounded-xl shadow-md flex flex-col items-center justify-between px-4 py-6">
       <div className="relative h-[70px] w-full">
@@ -148,7 +151,7 @@ function CompanyCard({ name, logo }: Props) {
         {name}
       </p>
 
-      <button className="mt-4 bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition">
+      <button onClick={() => router.push('/members/membersPage')}className="cursor-pointer mt-4 bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition">
         View Profile
       </button>
     </div>

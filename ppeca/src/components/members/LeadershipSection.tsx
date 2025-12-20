@@ -14,7 +14,7 @@ import kpogc_ceo from '../../../public/images/kpogc_ceo.png'
 export default function LeadershipSection() {
   return (
     <section className="bg-white py-20 ">
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className=" mx-auto px-6">
         
         {/* Heading */}
         <div className="text-center mb-16">

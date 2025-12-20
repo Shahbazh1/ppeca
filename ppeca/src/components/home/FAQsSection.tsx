@@ -33,15 +33,15 @@ export default function FAQSection() {
   return (
     <section className="bg-[#041904] py-20 px-6 md:px-20 flex flex-col md:flex-row items-start gap-10">
       {/* Left Content */}
-      <div className="md:w-1/2 flex flex-col gap-6">
-        <p className="text-green-500 text-sm font-semibold">FAQs</p>
-        <h2 className="text-white text-4xl font-bold leading-tight">
+      <div className="md:w-1/2 flex flex-col lg:gap-4 xl:gap-4">
+        <p className="text-[#16a831] text-sm font-semibold">FAQs</p>
+        <h2 className="text-white lg:text-3xl xl:text-4xl font-bold leading-tight">
           Lorem Ipsum is not simply random text
         </h2>
-        <p className="text-gray-300 text-base">
+        <p className="text-[#94a3b8] text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         </p>
-        <button className="bg-green-500 text-white px-6 py-3 rounded-md w-max hover:bg-green-600 transition">
+        <button className="bg-[#16a831] text-white lg:px-4 lg:py-2 xl:px-6 xl:py-3 rounded-md w-max hover:bg-green-600 transition">
           Read More &rarr;
         </button>
       </div>
@@ -57,15 +57,15 @@ export default function FAQSection() {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className={`w-full text-left px-6 py-4 flex justify-between items-center font-semibold ${
-                activeIndex === index ? 'text-orange-400' : 'text-gray-700'
+              className={`w-full text-left px-6 py-4 flex lg:text-sm justify-between items-center font-semibold ${
+                activeIndex === index ? 'text-[#eba000]' : 'text-gray-700'
               }`}
             >
               <span>{index + 1}. {faq.question}</span>
               <span>{activeIndex === index ? '-' : '+'}</span>
             </button>
             {activeIndex === index && (
-              <p className="px-6 pb-4 text-gray-700">{faq.answer}</p>
+              <p className="px-6 pb-4 xl:text-md lg:text-sm text-gray-700">{faq.answer}</p>
             )}
           </div>
         ))}
