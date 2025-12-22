@@ -23,7 +23,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-start text-center h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px] pt-[50px] sm:pt-[60px] md:pt-[65px] lg:pt-[70px] xl:pt-[70px] 2xl:pt-[80px] px-4">
-        <div className="absolute inset-0 bg-black/5" /> Overlay
+        {/* <div className="absolute inset-0 bg-black/5" /> Overlay */}
         {/* Tagline */}
         <div className="inline-flex items-center justify-center mb-4 px-2 sm:px-3 md:px-4 py-1 h-[40px] border border-green-500 rounded-full bg-[#16A83112] text-green-500 text-sm font-medium">
           <p
@@ -52,10 +52,10 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full max-w-md sm:max-w-none">
           <button
             onClick={() => router.push("/contact")}
-            className="  w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
+            className=" cursor-pointer w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
           >
             <p
-              className=" cursor-pointer text-[16px] font-normal leading-[150%] tracking-normal flex items-center justify-center gap-2"
+              className=" text-[16px] font-normal leading-[150%] tracking-normal flex items-center justify-center gap-2"
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 color: "#F8FAFC",
@@ -65,7 +65,7 @@ export default function HeroSection() {
             </p>
           </button>
 
-          <button className="w-full sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
+          <button className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
             Learn More
           </button>
         </div>

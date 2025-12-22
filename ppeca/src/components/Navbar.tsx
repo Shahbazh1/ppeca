@@ -1,14 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import logo from "../../public/images/logo.svg";
 
-const Navbar = () => {
-  const menuItems = [
+// Define type for menu items
+interface MenuItem {
+  id: number;
+  name: string;
+  href: string;
+}
+
+const Navbar: React.FC = () => {
+  const menuItems: MenuItem[] = [
     { id: 1, name: "Home", href: "/" },
     { id: 2, name: "Members", href: "/members" },
     { id: 3, name: "News & Events", href: "/news" },
@@ -18,9 +25,9 @@ const Navbar = () => {
   ];
 
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [scrollOpen, setScrollOpen] = useState(false);
-  const [scrollOpenMenu, setScrollOpenMenu] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [scrollOpen, setScrollOpen] = useState<boolean>(false);
+  const [scrollOpenMenu, setScrollOpenMenu] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +46,7 @@ const Navbar = () => {
   }, []);
 
   // Helper function to check if menu item is active
-  const isActive = (href) => {
+  const isActive = (href: string): boolean => {
     if (href === "/") {
       return pathname === "/";
     }
@@ -59,7 +66,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="shrink-0">
             <Image
-              src={logo}
+              src={logo as StaticImageData}
               alt="PPEPCA"
               width={80}
               height={80}
@@ -86,16 +93,6 @@ const Navbar = () => {
               </Link>
             ))}
           </nav>
-
-          {/* Desktop Search */}
-          {/* <div className="hidden lg:flex items-center p-[0.625rem] border border-[#0A2540] rounded-[8px]">
-            <input
-              type="text"
-              placeholder="Search Members"
-              className="text-[1rem] outline-none bg-transparent placeholder:text-[#747474]"
-            />
-            <FiSearch className="w-[24px] h-[24px] text-[#0A2540]" />
-          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -151,7 +148,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="shrink-0">
             <Image
-              src={logo}
+              src={logo as StaticImageData}
               alt="PPEPCA"
               width={50}
               height={50}
