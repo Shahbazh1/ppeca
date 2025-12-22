@@ -1,21 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import pakistanPetroleumInformation from '../../../public/images/pakistanPetroleumInformation.jpg'
+import pakistanPetroleumInformation from '../../../public/images/pakistanPetroleumInformation.jpg';
 
 export default function PakistanPetroleumInformation() {
   return (
-    <section className="w-full border-1 border-[#94a3b8] rounded-lg px-5 pt-10 pb-2 bg-white ">
-      <h2 className="mb-4 xl:text-[38px] lg:text-[32px] font-semibold leading-tight text-[#0B2545]">
-            Pakistan Petroleum Information<br />
-            Service, Including:
-          </h2>
-      <div className="mx-auto flex max-w-7xl items-start justify-between gap-12">
+    <section className="w-full rounded-lg border border-[#94a3b8] bg-white px-5 pt-10 pb-6">
+      <h2 className="mb-6 text-[#0B2545] text-[18px] font-semibold lg:text-3xl xl:text-4xl leading-tight">
+        Pakistan Petroleum Information<br />
+        Service, Including:
+      </h2>
+
+      <div className="mx-auto flex flex-col lg:flex-row max-w-7xl items-start justify-between gap-10">
         {/* Left Content */}
         <div className="flex-1">
-          
-
-          <ol className="list-decimal pl-9 xl:text-[17px] lg:text-[15px] leading-6 text-[#2E3A59]">
+          <ol className="list-decimal pl-6 lg:pl-9 text-[#2E3A59] lg:text-[15px] xl:text-[17px] leading-6">
             <li>Upstream Activity Maps</li>
             <li>Prospectivity Zone Map</li>
             <li>Energy Infrastructure Map</li>
@@ -33,10 +32,8 @@ export default function PakistanPetroleumInformation() {
             <li>Pakistan Oil &amp; Gas Directory</li>
           </ol>
 
-          <div className="">
-            <p className="mb-1 text-[17px] font-semibold text-[#0B2545]">
-              Available at:
-            </p>
+          <div className="mt-6">
+            <p className="mb-1 text-[17px] font-semibold text-[#0B2545]">Available at:</p>
             <p className="text-[16px] text-[#14982c] underline cursor-pointer">
               http://www.ppisonline.com
             </p>
@@ -47,18 +44,17 @@ export default function PakistanPetroleumInformation() {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 xl:mt-14 lg:mt-35 h-50">
-  <div className="overflow-hidden rounded-sm border border-[#1FA44A]">
-    <Image
-      src={pakistanPetroleumInformation}
-      alt="Petroleum Information"
-      width={650}
-      className="h-full w-full object-cover"
-      priority
-    />
-  </div>
-</div>
-
+        <div className="flex-1 w-full lg:w-auto mt-8 lg:mt-0">
+          <div className="overflow-hidden rounded-lg border border-[#1FA44A] h-full min-h-[300px] lg:min-h-[400px] relative">
+            <Image
+              src={pakistanPetroleumInformation}
+              alt="Petroleum Information"
+              fill
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

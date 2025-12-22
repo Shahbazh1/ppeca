@@ -1,5 +1,6 @@
+"use client";
+
 import React from "react";
-import AEPL_LOGO from '../../../public/images/companies_logo/AEPL_LOGO.jpg'
 
 export type InventoryItem = {
   name: string;
@@ -7,46 +8,28 @@ export type InventoryItem = {
 };
 
 const inventoryData: InventoryItem[] = [
-  {
-    name: "Prime Global Energies Limited",
-    logo: "/inventory/pgel.png",
-  },
-  {
-    name: "Pakistan Petroleum Ltd",
-    logo: "/inventory/ppl.png",
-  },
-  {
-    name: "Orient Petroleum Inc.",
-    logo: "/inventory/orient.png",
-  },
-  {
-    name: "Kirthar Pakistan Holdings B.V",
-    logo: "/inventory/kirthar.png",
-  },
-  {
-    name: "Polish Oil and Gas Company",
-    logo: "/inventory/pgnig.png",
-  },
-  {
-    name: "Pakistan Oilfields Ltd",
-    logo: "/inventory/pol.png",
-  },
+  { name: "Prime Global Energies Limited", logo: "/images/POL_logo.png" },
+  { name: "Pakistan Petroleum Ltd", logo: "/images/PPL_logo.jpg" },
+  { name: "Orient Petroleum Inc.", logo: "/images/companies_logo/OP_LOGO.jpg" },
+  { name: "KUFPEC", logo: "/images/companies_logo/KUFPEC_LOGO.png" },
+  { name: "Polish Oil and Gas Company", logo: "/images/POLISH_OIL_logo.jpg" },
+  { name: "Pakistan Oilfields Ltd", logo: "/images/POL_logo.png" },
 ];
 
 export default function SurplusInventorySection() {
   return (
-    <section className="w-full bg-gray-200 px-8 py-12">
+    <section className="w-full bg-[#f8fafc]  py-12">
       {/* Title */}
-      <h2 className="text-[34px] font-semibold text-[#0b3a66] mb-10">
+      <h2 className="text-3xl lg:text-[34px] font-semibold text-[#0b3a66] mb-10">
         Surplus Inventory Data
       </h2>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
         {inventoryData.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-md px-6 py-8 flex flex-col items-center justify-between min-h-[220px]"
+            className="bg-white rounded-sm border-1 border-[#84929f] p-6 flex flex-col items-center justify-between min-h-[220px]"
           >
             {/* Logo */}
             <div className="h-[80px] flex items-center justify-center">
@@ -54,16 +37,17 @@ export default function SurplusInventorySection() {
                 src={item.logo}
                 alt={item.name}
                 className="max-h-[70px] object-contain"
+                loading="lazy"
               />
             </div>
 
             {/* Name */}
-            <p className="text-center text-[15px] font-medium text-[#334155] leading-snug px-2">
+            <p className="text-center text-[15px] font-medium text-[#334155] leading-snug px-2 mt-4">
               {item.name}
             </p>
 
             {/* Button */}
-            <button className="mt-4 bg-[#16a34a] text-white text-sm font-medium px-6 py-2 rounded-md">
+            <button className="mt-6 bg-[#16a831] hover:bg-green-700 text-white text-sm font-medium px-6 py-2 rounded-sm transition">
               Download
             </button>
           </div>

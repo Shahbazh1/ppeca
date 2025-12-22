@@ -11,7 +11,8 @@ const MembersPage: React.FC = () => {
       <Image 
         src={POL_logo} 
         alt="Company Logo" 
-        className="w-20 h-20 object-contain" // 5xl approx size
+        className="w-20 h-20 object-contain" 
+        loading='lazy'
       />
       <h1 className="text-2xl font-bold mt-4 text-gray-800">Al-Haj Enterprises (Private) Limited</h1>
     </div>

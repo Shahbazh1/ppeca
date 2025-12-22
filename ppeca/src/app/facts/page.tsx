@@ -5,7 +5,7 @@ import PakistanPetroleumCards from '../../components/facts/PakistanPetroleumCard
 
 export default function facts() {
   return (
-    <div className="py-10 px-10 bg-[#f8fafc] flex-col flex gap-16">
+    <div className="md:p-10 p-5 bg-[#f8fafc] flex-col flex gap-8 md:gap-16">
         <PolicyHeader/>
         <PoliciesAndRegulations/>
         <PakistanPetroleumInformation/>

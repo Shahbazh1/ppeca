@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
@@ -20,59 +20,56 @@ import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
 
 export default function MemberCompanies() {
+    const filters = ["All", "Local", "International", "Operator", "Associate", "Observer"];
+
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="bg-[#f8fafc] max-w-8xl px-4 sm:px-6 md:px-[2.49rem] xl:px-[3rem] pb-[3rem] sm:pb-[4rem] md:pb-[5rem]">
+      <div className="">
         {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-[40px] font-extrabold text-[#0b2b4c]">
+        <div className="text-center mb-[1.5rem] sm:mb-[2rem] md:mb-[2.025rem] lg:mb-[2.25rem] xl:mb-[2.5rem]">
+          <h1 className="text-[1.5rem] sm:text-[1.75rem] md:text-[1.8225rem] lg:text-[2.025rem] xl:text-[2.25rem] font-bold text-[#0A2540]">
             Our Member Companies
-          </h2>
-          <p className="mt-3 text-[18px] text-gray-500">
-            Representing member companies and guiding PPEPCA’s mission.
+          </h1>
+          <p className="text-[0.875rem] sm:text-[1rem] md:text-[0.91125rem] lg:text-[1.0125rem] xl:text-[1.125rem] font-normal text-[#334155]">
+            Representing member companies and guiding PPEPCA's mission.
           </p>
         </div>
 
         {/* Search + Filters */}
-        <div className="mb-12">
-          <div className="flex items-center h-[48px] w-full border border-gray-600 rounded-lg px-4 text-gray-400">
-            {/* Search icon */}
-            <FiSearch size={18} className="mr-3 shrink-0" />
-
-            {/* Search input */}
+         <div className="w-full  bg-gray-50">
+      <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-9 xl:mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 w-full border border-[#94A3B8] rounded-lg px-4 py-3 sm:py-0 sm:h-12 lg:pr-16 md:pr-2 bg-white">
+          {/* Search icon and input wrapper */}
+          <div className="flex items-center flex-1 w-full">
+            <FiSearch size={20} className="mr-3 shrink-0 text-[#334155]" />
             <input
               type="text"
               placeholder="Search"
-              className="bg-transparent outline-none flex-1 text-sm text-[#0b2b4c] placeholder-gray-400"
+              className="bg-transparent outline-none flex-1 w-full text-sm sm:text-[0.81125rem] md:text-[0.81125rem] lg:text-[1.0125rem] xl:text-[1.125rem] text-[#0b2b4c] placeholder-[#94A3B8]"
             />
-
-            {/* Filters */}
-            <div className="flex gap-2 ml-4">
-              {[
-                "All",
-                "Local",
-                "International",
-                "Operator",
-                "Associate",
-                "Observer",
-              ].map((item, index) => (
-                <button
-                  key={item}
-                  className={`h-[32px] px-4 text-sm rounded-md border whitespace-nowrap ${
-                    index === 0
-                      ? "bg-green-600 text-white border-green-600"
-                      : "text-[#0b2b4c] border-green-600 bg-transparent"
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
+          </div>
+          
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
+            {filters.map((item, index) => (
+              <button
+                key={item}
+                className={`h-8 px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
+                  index === 0
+                    ? "bg-green-600 text-white border-[#16A83180]"
+                    : "text-[#0b2b4c] border-[#16A83180] bg-transparent hover:bg-gray-50"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
           </div>
         </div>
+      </div>
+    </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-5 gap-x-8 gap-y-10 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
           <CompanyCard
             name="Al-Haj Enterprises (Private) Limited"
             logo={AEPL_LOGO}
@@ -89,10 +86,7 @@ export default function MemberCompanies() {
             name="Khyber Pakhtunkhwa Oil and Gas Company Limited"
             logo={KUFPEC_LOGO}
           />
-          <CompanyCard
-            name="Mari Energies Limited"
-            logo={MARI_LOGO}
-          />
+          <CompanyCard name="Mari Energies Limited" logo={MARI_LOGO} />
 
           <CompanyCard
             name="MOL Pakistan Oil and Gas Co. B.V."
@@ -102,32 +96,41 @@ export default function MemberCompanies() {
             name="Oil and Gas Development Company Limited"
             logo={OGX_LOGO}
           />
-          <CompanyCard
-            name="Orient Petroleum Inc"
-            logo={OP_LOGO}
-          />
-          <CompanyCard
-            name="Polish Oil and Gas Company"
-            logo={PGNIG_LOGO}
-          />
-          <CompanyCard
-            name="Pakistan Oilfields Ltd"
-            logo={POL_LOGO}
-          />
+          <CompanyCard name="Orient Petroleum Inc" logo={OP_LOGO} />
+          <CompanyCard name="Polish Oil and Gas Company" logo={PGNIG_LOGO} />
+          <CompanyCard name="Pakistan Oilfields Ltd" logo={POL_LOGO} />
 
-          <CompanyCard
-            name="Pakistan Petroleum Ltd"
-            logo={PPL_LOGO}
-          />
-          <CompanyCard
-            name="Prime Global Energies Limited"
-            logo={PRIME_LOGO}
-          />
+          <CompanyCard name="Pakistan Petroleum Ltd" logo={PPL_LOGO} />
+          <CompanyCard name="Prime Global Energies Limited" logo={PRIME_LOGO} />
           <CompanyCard name="Saif Energy Limited" logo={SAIF_LOGO} />
           <CompanyCard
             name="United Energy Pakistan Limited (UEPL)"
             logo={UEP_LOGO}
           />
+        </div>
+
+        <div className="font-medium py-6 w-fit">
+          <h2 className="text-[#0A2540] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
+            Our Member Companies
+          </h2>
+
+          <ul className="list-disc pl-5 space-y-[6px]">
+            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+              General Body
+            </li>
+            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+              Executive Committee
+            </li>
+            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+              Policy &amp; Rules Committee
+            </li>
+            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+              Fiscal Affairs Committee
+            </li>
+            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+              Corporate Affairs Committee
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -142,16 +145,25 @@ interface Props {
 function CompanyCard({ name, logo }: Props) {
   const router = useRouter();
   return (
-    <div className="w-[230px] h-[220px] bg-white rounded-xl shadow-md flex flex-col items-center justify-between px-4 py-6">
-      <div className="relative h-[70px] w-full">
-        <Image src={logo} alt={name} fill className="object-contain" />
+    <div className="py-[0.5rem] sm:py-[0.5625rem] md:py-[0.625rem] lg:py-[0.625rem] px-[0.75rem] sm:px-[0.825rem] md:px-[0.925rem] lg:px-[1.325rem] gap-[0.5rem] sm:gap-[0.5625rem] md:gap-[0.5625rem] lg:gap-[0.625rem] h-full w-full aspect-[4/4] bg-white rounded-sm border-[0.5px] border-[#84929f] flex items-center justify-between flex-col">
+      <div className="relative text-center h-[3rem] sm:h-[3.5rem] md:h-[3.6rem] lg:h-[4rem] w-[4.5rem] sm:w-[5rem] md:w-[5.0625rem] lg:w-[5.625rem] w-full">
+        <Image
+          src={logo}
+          alt={name}
+          fill
+          className="object-contain"
+          loading="lazy"
+        />
       </div>
 
-      <p className="text-center text-[15px] text-[#0b2b4c] leading-snug mt-4">
+      <p className="text-center text-[0.75rem] sm:text-[0.8rem] md:text-[0.825rem] lg:text-[1.025rem] xl:text-[1.125rem] text-[#334155]">
         {name}
       </p>
 
-      <button onClick={() => router.push('/members/membersPage')}className="cursor-pointer mt-4 bg-green-600 text-white text-sm px-4 py-2 rounded-md hover:bg-green-700 transition">
+      <button
+        onClick={() => router.push("/members/membersPage")}
+        className="cursor-pointer bg-green-600 text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
+      >
         View Profile
       </button>
     </div>

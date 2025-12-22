@@ -12,7 +12,7 @@ export default function page() {
   return (
     <>
     <AboutUsHero/>
-    <div className='pt-5 px-10 bg-[#f8fafc]'>
+    <div className='px-2 pt-12 md:px-10 bg-[#f8fafc]'>
       <HistorySection/>
       <ChairmanMessage/>
       <SecretariatSection/>
