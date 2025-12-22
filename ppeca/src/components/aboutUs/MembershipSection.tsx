@@ -7,12 +7,12 @@ const MembershipSection: React.FC = () => {
     <section className="px-4 sm:px-6 py-8 sm:py-10 md:py-12 text-[#0b3a63]">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
-        <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-[#0a2540]">
+        <h1 className="mb-4 sm:mb-6 font-['Montserrat'] text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-[#0a2540]">
           Membership
         </h1>
 
         {/* Paragraphs */}
-        <div className="space-y-4 sm:space-y-6 text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15px] leading-relaxed text-[#0a2540] max-w-5xl">
+        <div className="space-y-4 font-['Open_Sans'] sm:space-y-6 text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15px] leading-relaxed text-[#0a2540] max-w-5xl">
           <p>
             PPEPCA Membership shall be open to all the Petroleum Exploration and
             Production Companies operating in Pakistan.

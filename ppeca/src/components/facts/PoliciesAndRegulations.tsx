@@ -6,11 +6,11 @@ import policyAndRegulatio from '../../../public/images/policyAndRegulatio.jpg';
 export default function PoliciesAndRegulations() {
   return (
     <section className="w-full rounded-lg border border-[#94a3b8] bg-white px-5 pt-10">
-      <h2 className="mb-6 text-[#0a2540] text-[18px] font-semibold lg:text-3xl xl:text-4xl">
+      <h2 className="mb-6 font-['Montserrat'] text-[#0a2540] text-[18px] font-semibold lg:text-3xl xl:text-4xl">
         Policies &amp; Regulations, Including
       </h2>
 
-      <div className="mx-auto flex flex-col lg:flex-row max-w-7xl items-start lg:items-center justify-between gap-10">
+      <div className="mx-auto font-['Open_Sans'] flex flex-col lg:flex-row max-w-7xl items-start lg:items-center justify-between gap-10">
         {/* Left Content */}
         <div className="flex-1">
           <ul className="list-disc pl-4 text-[#0a2540] lg:text-[15px] xl:text-[17px] leading-6">

@@ -25,7 +25,7 @@ export default function AboutPPEPCAHero() {
             About PPEPCA
           </h1>
 
-          <p className="mt-1 md:mt-1 lg:mt-1 xl:mt-2 text-[0.8125rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[0.9375rem] xl:text-[1rem] max-w-prose lg:max-w-lg xl:max-w-xl leading-relaxed text-[#E5E5E5]">
+          <p className="mt-1 md:mt-1 font-['Open_Sans'] lg:mt-1 xl:mt-2 text-[0.8125rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[0.9375rem] xl:text-[1rem] max-w-prose lg:max-w-lg xl:max-w-xl leading-relaxed text-[#E5E5E5]">
             Serving Pakistan's upstream petroleum sector through collaboration,
             policy advocacy and community development.
           </p>
@@ -34,7 +34,7 @@ export default function AboutPPEPCAHero() {
             {/* Using Next.js Link for instant client-side navigation */}
             <Link
               href="/contact"
-              className="cursor-pointer font-inter w-[170px] sm:w-[180px] h-[46px] rounded-[4px] p-[10px] bg-[#16A831]/95 hover:bg-[#128a28] text-white font-medium transition flex items-center justify-center gap-2"
+              className="cursor-pointer font-['Open_Sans']  w-[170px] sm:w-[180px] h-[46px] rounded-[4px] p-[10px] bg-[#16A831]/95 hover:bg-[#128a28] text-white font-medium transition flex items-center justify-center gap-2"
             >
               Let's Connect <IoMdArrowForward />
             </Link>

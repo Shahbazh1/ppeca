@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Header */}
-      <header className="w-full bg-white border-b relative">
+      <header className="w-full bg-white relative">
         <div
           className="flex items-center justify-between w-full
           lg:py-[0.625rem] lg:px-[2rem] xl:px-[4rem]

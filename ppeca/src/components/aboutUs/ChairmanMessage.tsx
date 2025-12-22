@@ -13,7 +13,7 @@ const ChairmanMessage = () => {
           </h1>
 
           {/* Subheading */}
-          <h2 className="text-[16px] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[24px] font-normal text-[#0a2540] mt-2 sm:mt-3">
+          <h2 className="text-[16px] font-['Montserrat'] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[24px] font-normal text-[#0a2540] mt-2 sm:mt-3">
             Mr. Ali Taha Al-Temimi
           </h2>
 

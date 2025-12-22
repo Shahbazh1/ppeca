@@ -6,12 +6,12 @@ import pakistanPetroleumInformation from '../../../public/images/pakistanPetrole
 export default function PakistanPetroleumInformation() {
   return (
     <section className="w-full rounded-lg border border-[#94a3b8] bg-white px-5 pt-10 pb-6">
-      <h2 className="mb-6 text-[#0B2545] text-[18px] font-semibold lg:text-3xl xl:text-4xl leading-tight">
+      <h2 className="mb-6 font-['Montserrat'] text-[#0B2545] text-[18px] font-semibold lg:text-3xl xl:text-4xl leading-tight">
         Pakistan Petroleum Information<br />
         Service, Including:
       </h2>
 
-      <div className="mx-auto flex flex-col lg:flex-row max-w-7xl items-start justify-between gap-10">
+      <div className="mx-auto font-['Open_Sans'] flex flex-col lg:flex-row max-w-7xl items-start justify-between gap-10">
         {/* Left Content */}
         <div className="flex-1">
           <ol className="list-decimal pl-6 lg:pl-9 text-[#2E3A59] lg:text-[15px] xl:text-[17px] leading-6">

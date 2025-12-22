@@ -46,7 +46,7 @@ export default function LatestNews() {
   const router = useRouter();
   return (
     <section className="w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 bg-[#f8fafc] py-10">
-      <h2 className="text-[#16a831] text-base sm:text-lg md:text-lg lg:text-lg font-medium mb-4">
+      <h2 className="text-[#16a831] font-['Open_Sans'] text-base sm:text-lg md:text-lg lg:text-lg font-medium mb-4">
         Latest News & Event
       </h2>
       <div className="font-['Open_Sans'] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6">

@@ -79,8 +79,8 @@ const ObjectivesSection = () => {
     <section className="relative bg-[#f8fafc] px-4 sm:px-6 py-10 lg:py-14 text-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-wide text-[#0a2540]">OBJECTIVES</h2>
-        <p className="mt-3 max-w-4xl text-sm text-[#0a2540]">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-wide font-['Montserrat'] text-[#0a2540]">OBJECTIVES</h2>
+        <p className="mt-3 max-w-4xl text-sm text-[#0a2540] font-['Open_Sans']">
           The main objective of the Association is to coordinate efforts of those engaged in the upstream petroleum industry activities.
         </p>
 
@@ -108,8 +108,8 @@ const ObjectivesSection = () => {
                 className="flex-shrink-0 flex flex-col items-center w-[280px] sm:w-[260px] h-[280px] px-6 py-8 bg-white rounded-lg border border-[#94a3b8]/60 text-center shadow"
               >
                 <Image src={card.img} alt={card.title} width={48} height={48} loading="lazy" />
-                <h3 className="mt-6 text-base font-semibold text-[#0a2540]">{card.title}</h3>
-                <p className="mt-3 text-sm text-[#334155]">{card.desc}</p>
+                <h3 className="mt-6 text-base font-semibold text-[#0a2540] font-['Open_Sans']">{card.title}</h3>
+                <p className="mt-3 text-sm text-[#334155] font-['Open_Sans']">{card.desc}</p>
               </div>
             ))}
           </div>

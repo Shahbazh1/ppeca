@@ -27,7 +27,7 @@ export default function PakistanPetroleumCards() {
   return (
     <section className="w-full px-4 md:pb-12">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-10 text-[#0B2545] text-[18px] font-semibold leading-tight lg:text-2xl xl:text-3xl">
+        <h2 className="mb-10 text-[#0B2545] font-['Montserrat'] text-[18px] font-semibold leading-tight lg:text-2xl xl:text-3xl">
           Pakistan Petroleum Information<br />
           Service, Including:
         </h2>
@@ -36,7 +36,7 @@ export default function PakistanPetroleumCards() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center rounded-xl bg-[#e1f2e8] p-4 text-center transition hover:shadow-lg"
+              className="flex flex-col font-['Open_Sans'] items-center justify-center rounded-xl bg-[#e1f2e8] p-4 text-center transition hover:shadow-lg"
             >
               <Image
                 src={card.img}
