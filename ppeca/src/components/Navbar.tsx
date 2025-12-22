@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import logo from "../../public/images/logo.svg";
 
@@ -16,7 +17,7 @@ const Navbar = () => {
     { id: 6, name: "Contact Us", href: "/contact" },
   ];
 
-  const [active, setActive] = useState("Home");
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrollOpen, setScrollOpen] = useState(false);
   const [scrollOpenMenu, setScrollOpenMenu] = useState(false);
@@ -36,6 +37,14 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Helper function to check if menu item is active
+  const isActive = (href) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <>
@@ -65,9 +74,8 @@ const Navbar = () => {
               <Link
                 key={item.id}
                 href={item.href}
-                onClick={() => setActive(item.name)}
                 className={`text-[1.125rem] font-['Open_Sans'] font-normal ${
-                  active === item.name ? "text-[#16A831]" : "text-[#0A2540]"
+                  isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
                 }`}
               >
                 <span
@@ -80,14 +88,14 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop Search */}
-          <div className="hidden lg:flex items-center p-[0.625rem] border border-[#0A2540] rounded-[8px]">
+          {/* <div className="hidden lg:flex items-center p-[0.625rem] border border-[#0A2540] rounded-[8px]">
             <input
               type="text"
               placeholder="Search Members"
               className="text-[1rem] outline-none bg-transparent placeholder:text-[#747474]"
             />
             <FiSearch className="w-[24px] h-[24px] text-[#0A2540]" />
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -98,7 +106,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Now with absolute positioning */}
+        {/* Mobile Menu */}
         <div
           className={`absolute top-full left-0 w-full bg-white border-t z-50 transition-all duration-300 ease-in-out overflow-hidden ${
             open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -110,12 +118,9 @@ const Navbar = () => {
                 <Link
                   key={item.id}
                   href={item.href}
-                  onClick={() => {
-                    setActive(item.name);
-                    setOpen(false);
-                  }}
+                  onClick={() => setOpen(false)}
                   className={`text-[1rem] ${
-                    active === item.name ? "text-[#16A831]" : "text-[#0A2540]"
+                    isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
                   }`}
                 >
                   {item.name}
@@ -131,19 +136,19 @@ const Navbar = () => {
                 className="w-full text-[0.95rem] outline-none bg-transparent placeholder:text-[#747474]"
               />
               <FiSearch className="w-[22px] h-[22px] text-[#0A2540]" />
-            </div> 
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Scroll Navbar - Fixed to top when scrolling */}
+      {/* Scroll Navbar */}
       <header
         className={`fixed top-0 left-0 w-full bg-white border-b z-40 transition-all duration-300 ${
           scrollOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
         <div className="flex items-center justify-between w-full px-4 py-2 md:px-[2rem]">
-          {/* Logo - Smaller version */}
+          {/* Logo */}
           <div className="shrink-0">
             <Image
               src={logo}
@@ -155,15 +160,14 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Desktop Menu - Compact version */}
+          {/* Desktop Menu */}
           <nav className="hidden lg:flex gap-[0.875rem] items-center">
             {menuItems.map((item) => (
               <Link
                 key={item.id}
                 href={item.href}
-                onClick={() => setActive(item.name)}
                 className={`text-[0.95rem] font-normal ${
-                  active === item.name ? "text-[#16A831]" : "text-[#0A2540]"
+                  isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
                 }`}
               >
                 <span
@@ -175,7 +179,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Desktop Search - Compact version */}
+          {/* Desktop Search */}
           <div className="font-['Open_Sans'] hidden lg:flex items-center p-[0.425rem] border border-[#0A2540] rounded-[6px]">
             <input
               type="text"
@@ -206,12 +210,9 @@ const Navbar = () => {
                 <Link
                   key={item.id}
                   href={item.href}
-                  onClick={() => {
-                    setActive(item.name);
-                    setScrollOpenMenu(false);
-                  }}
+                  onClick={() => setScrollOpenMenu(false)}
                   className={`text-[0.95rem] ${
-                    active === item.name ? "text-[#16A831]" : "text-[#0A2540]"
+                    isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
                   }`}
                 >
                   {item.name}
@@ -227,7 +228,7 @@ const Navbar = () => {
                 className="w-full text-[0.875rem] outline-none bg-transparent placeholder:text-[#747474]"
               />
               <FiSearch className="w-[20px] h-[20px] text-[#0A2540]" />
-            </div> 
+            </div>
           </div>
         </div>
       </header>

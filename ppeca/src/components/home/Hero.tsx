@@ -52,10 +52,10 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full max-w-md sm:max-w-none">
           <button
             onClick={() => router.push("/contact")}
-            className="cursor-pointer w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
+            className="  w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
           >
             <p
-              className="text-[16px] font-normal leading-[150%] tracking-normal flex items-center justify-center gap-2"
+              className=" cursor-pointer text-[16px] font-normal leading-[150%] tracking-normal flex items-center justify-center gap-2"
               style={{
                 fontFamily: "'Open Sans', sans-serif",
                 color: "#F8FAFC",

@@ -4,12 +4,12 @@ import { useState } from "react";
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
 
 // Import logos
-import PPL from "../../../public/images/PPL_logo.jpg";
-import Prime from "../../../public/images/PRIME_logo.png";
-import PGNiG from "../../../public/images/POLISH_OIL_logo.jpg";
-import PAL from "../../../public/images/POL_logo.png";
-import Saif from "../../../public/images/SEL_logo.jpg";
-import UEP from "../../../public/images/UEP_logo.jpg";
+import PPL from "../../../public/images/companies_logo/PPL_LOGO.jpg";
+import Prime from "../../../public/images/companies_logo/PRIME_LOGO.png";
+import PGNiG from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
+import PAL from "../../../public/images/companies_logo/POL_LOGO.png";
+import Saif from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
+import UEP from "../../../public/images/companies_logo/UEP_LOGO.jpg"
 
 // Import testimonial avatar
 import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
@@ -104,7 +104,7 @@ export default function TestimonialSection() {
               index === current ? "scale-110" : "scale-100"
             }`}
           >
-            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden">
+            <div className="p-2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden">
               <Image
                 src={logo}
                 alt={`Logo ${index}`}
