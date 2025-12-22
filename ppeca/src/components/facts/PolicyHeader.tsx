@@ -16,13 +16,24 @@ const PolicyHeader: React.FC = () => {
 
         {/* Buttons */}
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
-          <button className="bg-[#16a831] px-6 sm:px-8 md:px-10 py-2 text-xs sm:text-sm font-medium text-white rounded-xs hover:opacity-90 transition">
+          <a
+            href="http://www.ppepca.com/documents/Petroleum%20Policy%202012%20(Gazzette).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#16a831] cursor-pointer px-6 sm:px-8 md:px-10 py-2 text-xs sm:text-sm font-medium text-white rounded-xs hover:opacity-90 transition"
+          >
+            {" "}
             Visit
-          </button>
+          </a>
 
-          <button className="border border-[#16A831]/50 px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0b2f4a] rounded-xs hover:bg-[#0b2f4a] hover:text-white transition">
+          <a
+            href="http://www.ppepca.com/documents/Petroleum%20Policy%202012%20(Gazzette).pdf"
+            download="Petroleum_Policy_2012_Gazzette.pdf"
+            target="_blank"
+            className="border cursor-pointer border-[#16A831]/50 px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0b2f4a] rounded-xs hover:bg-[#0b2f4a] hover:text-white transition inline-block"
+          >
             Download
-          </button>
+          </a>
         </div>
       </div>
     </section>

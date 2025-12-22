@@ -8,18 +8,19 @@ const ChairmanMessage = () => {
         {/* LEFT CONTENT */}
         <div className="flex-1 lg:w-[60%]">
           {/* Heading */}
-          <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540]">
-            CHAIRMAN&apos;S MESSAGE
-          </h1>
+          <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540] m-0 leading-[1]">
+  CHAIRMAN&apos;S MESSAGE
+</h1>
 
-          {/* Subheading */}
-          <h2 className="text-[16px] font-['Montserrat'] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[24px] font-normal text-[#0a2540] mt-2 sm:mt-3">
-            Mr. Ali Taha Al-Temimi
-          </h2>
+<h2 className="text-[16px] font-['Montserrat'] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[24px] font-normal text-[#0a2540] m-0 leading-[1.1]">
+  Mr. Ali Taha Al-Temimi
+</h2>
+
+
 
           {/* Message Text */}
           <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6 lg:max-w-lg xl:max-w-xl text-[13px] sm:text-[13.5px] md:text-[14px] lg:text-[14px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
-            <p className="font-bold">Dear Esteemed Members,</p>
+            <p className="font-bold mb-0">Dear Esteemed Members,</p>
 
             <p>
               I am deeply honoured to take on the role of Chairman of the
@@ -63,7 +64,7 @@ const ChairmanMessage = () => {
       </div>
 
       {/* Bottom Text */}
-      <div className="mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[13.5px] md:text-[14px] lg:text-[14px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
+      <div className="max-w-[1400px] mx-auto mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[13.5px] md:text-[14px] lg:text-[14px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
         <p>
           Looking ahead, my vision for our association is one of unity and
           proactive leadership. We must foster an environment where new ideas

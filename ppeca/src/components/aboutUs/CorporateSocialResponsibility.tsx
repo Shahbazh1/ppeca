@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function CorporateSocialResponsibility() {
   return (
@@ -21,9 +22,9 @@ export default function CorporateSocialResponsibility() {
 
           {/* Button */}
           <div className="mt-4 sm:mt-5 md:mt-6">
-            <button className="rounded-sm font-['Open_Sans'] bg-[#16a831] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#f8fafc] hover:bg-green-700 transition">
+            <Link  href="/members/membersPage" className="cursor-pointer rounded-sm font-['Open_Sans'] bg-[#16a831] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#f8fafc] hover:bg-green-700 transition">
               Newsletter
-            </button>
+            </Link>
           </div>
         </div>
       </div>

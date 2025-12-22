@@ -1,9 +1,13 @@
+'use client'
 import React from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import Img1 from "../../../public/images/about_sec_img1.jpg";
 import Img2 from "../../../public/images/about_sec_img2.jpg";
+import { useRouter } from "next/navigation";
 
 export default function AboutSection() {
+    const router = useRouter();
+
   return (
     <section className="w-full bg-gray-50 pb-12 pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-12 2xl:pt-32 relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-15 2xl:px-24">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-3 sm:gap-5 md:gap-6  p-0">
@@ -27,7 +31,7 @@ export default function AboutSection() {
             of subjects of common interest.
           </p>
 
-          <button className="mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-green-600 transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
+          <button onClick={() => router.push("/about")} className="cursor-pointer  mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-green-600 transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
             Read More <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>

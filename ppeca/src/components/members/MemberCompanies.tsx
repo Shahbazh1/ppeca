@@ -54,7 +54,7 @@ export default function MemberCompanies() {
             {filters.map((item, index) => (
               <button
                 key={item}
-                className={`h-8 px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
+                className={`h-8 cursor-pointer px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
                   index === 0
                     ? "bg-green-600 text-white border-[#16A83180]"
                     : "text-[#0b2b4c] border-[#16A83180] bg-transparent hover:bg-gray-50"

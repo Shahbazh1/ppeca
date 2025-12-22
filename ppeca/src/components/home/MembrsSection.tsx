@@ -13,11 +13,13 @@ import UEP from "../../../public/images/companies_logo/UEP_LOGO.jpg"
 
 // Import testimonial avatar
 import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
+import { useRouter } from "next/navigation";
 
 const logos = [PPL, Prime, PGNiG, PAL, Saif, UEP];
 
 export default function TestimonialSection() {
   const [current, setCurrent] = useState(0);
+  const router = useRouter();
 
   const testimonial = {
     text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that i purchase from oil-industry!",
@@ -119,7 +121,7 @@ export default function TestimonialSection() {
       </div>
 
       {/* Learn More Button */}
-      <button className="mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base">
+      <button onClick={() => router.push("/members")} className="cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base">
         Learn More &#8594;
       </button>
     </section>

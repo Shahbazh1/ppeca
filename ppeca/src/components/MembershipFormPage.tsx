@@ -12,13 +12,13 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Member Name</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-0 focus:ring-green-500 appearance-none"
           />
         </div>
 
         <div>
           <label className="block font-semibold mb-1">Name of Company</label>
-          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Select Company</option>
           </select>
         </div>
@@ -27,20 +27,20 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Head Office Address</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         <div>
           <label className="block font-semibold mb-1">State</label>
-          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Select State</option>
           </select>
         </div>
 
         <div>
           <label className="block font-semibold mb-1">Country</label>
-          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Select Country</option>
           </select>
         </div>
@@ -49,7 +49,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Fax</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -57,7 +57,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Website</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -65,7 +65,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Concession in Pakistan</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -73,7 +73,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Address in Pakistan</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -81,7 +81,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Postal Code</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -89,7 +89,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Fax</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -97,7 +97,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Confirm Email</label>
           <input
             type="email"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -105,7 +105,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Name & Designation of the CE in Pakistan</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -113,7 +113,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Joint Venture Partner</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
       </div>
@@ -125,7 +125,7 @@ const CompanyForm = () => {
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <button
               type="button"
@@ -141,13 +141,13 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Name of Chief Executive</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         <div>
           <label className="block font-semibold mb-1">City</label>
-          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Select City</option>
           </select>
         </div>
@@ -156,19 +156,19 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Postal Code</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
         <div>
           <label className="block font-semibold mb-1">Phone</label>
           <div className="flex gap-2">
-            <select className="border border-gray-400 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select className="border border-gray-400 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
               <option>+00</option>
             </select>
             <input
               type="text"
-              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
         </div>
@@ -177,7 +177,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">E-mail</label>
           <input
             type="email"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -185,7 +185,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Brief Profile of the Company</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -205,7 +205,7 @@ const CompanyForm = () => {
 
         <div>
           <label className="block font-semibold mb-1">City</label>
-          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
             <option>Select City</option>
           </select>
         </div>
@@ -213,12 +213,12 @@ const CompanyForm = () => {
         <div>
           <label className="block font-semibold mb-1">Phone</label>
           <div className="flex gap-2">
-            <select className="border border-gray-400 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select className="border border-gray-400 rounded px-2 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
               <option>+00</option>
             </select>
             <input
               type="text"
-              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
         </div>
@@ -227,7 +227,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">E-mail</label>
           <input
             type="email"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -235,7 +235,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Website</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
 
@@ -243,7 +243,7 @@ const CompanyForm = () => {
           <label className="block font-semibold mb-1">Other Key Contact</label>
           <input
             type="text"
-            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
         </div>
       </div>

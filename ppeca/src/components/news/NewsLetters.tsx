@@ -77,11 +77,11 @@ export default function NewsletterSection() {
 
               {/* Buttons */}
               <div className="flex flex-col gap-2 w-full max-w-[180px]">
-                <button className="w-full bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-green-700 transition-colors duration-200">
+                <button className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-green-700 transition-colors duration-200">
                   View
                 </button>
 
-                <button className="w-full border border-[#8bd398] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
+                <button className="w-full border cursor-pointer border-[#8bd398] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
                   Download
                 </button>
               </div>

@@ -14,7 +14,7 @@ export default function PoliciesAndRegulations() {
         {/* Left Content */}
         <div className="flex-1">
           <ul className="list-disc pl-4 text-[#0a2540] lg:text-[15px] xl:text-[17px] leading-6">
-            <li className="text-[#16a831] underline cursor-pointer">Petroleum Policies</li>
+            <li className="text-[#16a831] underline cursor-pointer"><a target="_blank" href="http://www.mpnr.gov.pk/">Petroleum Policies</a></li>
             <li>Environment Policy / Guide</li>
             <li>Mines Act 1948</li>
             <li>Petroleum Exploration &amp; Production Rules 2001</li>
@@ -27,10 +27,10 @@ export default function PoliciesAndRegulations() {
             <p className="mb-2 text-[17px] font-semibold text-[#0B2545]">Visit:</p>
             <ul className="list-disc pl-6 lg:pl-12 text-[16px]">
               <li className="text-[#16a831] underline cursor-pointer">
-                Ministry of Petroleum &amp; Natural Resources
+                <a target="_blank" href="http://www.mpnr.gov.pk/">Ministry of Petroleum &amp; Natural Resources</a>
               </li>
               <li className="text-[#16a831] underline cursor-pointer">
-                Directorate General of Petroleum Concessions
+                <a target="_blank" href="http://www.mpnr.gov.pk/">Directorate General of Petroleum Concessions</a>
               </li>
             </ul>
           </div>

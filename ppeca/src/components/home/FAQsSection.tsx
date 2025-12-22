@@ -41,7 +41,7 @@ export default function FAQSection() {
         <p className="text-[#94A3B8] font-['Plus_Jakarta_Sans'] text-[0.875rem] sm:text-[0.9rem] md:text-[1rem] max-w-full md:max-w-[75%] lg:p-[0.625rem] sm:p-[0.5625rem]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         </p>
-        <button className="font-['Plus_Jakarta_Sans'] bg-[#16a831] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
+        <button className="cursor-pointer font-['Plus_Jakarta_Sans'] bg-[#16a831] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
           Read More &rarr;
         </button>
       </div>
@@ -51,11 +51,11 @@ export default function FAQSection() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`border rounded-xs font-['Open_Sans'] overflow-hidden transition-all duration-300 bg-white`}
+            className={` border rounded-xs font-['Open_Sans'] overflow-hidden transition-all duration-300 bg-white`}
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className={`w-full text-left px-4 sm:px-6 md:px-6 py-3 sm:py-4 flex justify-between items-center font-semibold text-sm sm:text-[0.95rem] md:text-[1rem] ${
+              className={`cursor-pointer w-full text-left px-4 sm:px-6 md:px-6 py-3 sm:py-4 flex justify-between items-center font-semibold text-sm sm:text-[0.95rem] md:text-[1rem] ${
                 activeIndex === index ? 'text-[#eba000]' : 'text-gray-700'
               }`}
             >

@@ -47,7 +47,7 @@ export default function LatestNewsHero() {
             <p className="text-sm font-['Open_Sans'] sm:text-base text-[#C9C9C9] font-bold max-w-md mb-6 sm:mb-8">
               Get timely news, events, and important updates all in one place.
             </p>
-            <button className="bg-white text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300">
+            <button className="bg-white cursor-pointer text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300">
               View All
             </button>
           </div>
@@ -77,7 +77,7 @@ export default function LatestNewsHero() {
                   alt="arrow"
                   width={33}
                   height={33}
-                  className="self-center flex-shrink-0"
+                  className="self-center cursor-pointer flex-shrink-0"
                   loading="lazy"
                 />
               </div>

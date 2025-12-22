@@ -12,16 +12,53 @@ import export_promotion_bureau from '../../../public/images/svg_images/export_pr
 import pakistan_petroleum_information_service from '../../../public/images/svg_images/pakistan_petroleum_information_service.svg';
 
 const cards = [
-  { name: "Ministry of Petroleum & NR", img: ministry_of_petroleum },
-  { name: "Central Board of Revenue", img: central_board_of_revenue },
-  { name: "Board of Investment", img: board_of_investment },
-  { name: "Engineering Development Board", img: engineering_Development_board },
-  { name: "LMK Resources", img: lmk_resources },
-  { name: "Pakistan Ministry of Interior", img: pakistan_ministry_of_interior },
-  { name: "Environmental Protection Agency", img: environmental_protection_agency },
-  { name: "Export Promotion Bureau", img: export_promotion_bureau },
-  { name: "Pakistan Petroleum Information Service", img: pakistan_petroleum_information_service },
+  { 
+    name: "Ministry of Petroleum & NR", 
+    img: ministry_of_petroleum, 
+    url: "https://www.mpnr.gov.pk" 
+  },
+  { 
+    name: "Central Board of Revenue", 
+    img: central_board_of_revenue, 
+    url: "https://www.cbr.gov.pk" 
+  },
+  { 
+    name: "Board of Investment", 
+    img: board_of_investment, 
+    url: "https://www.pak.boi.gov.pk" 
+  },
+  { 
+    name: "Engineering Development Board", 
+    img: engineering_Development_board, 
+    url: "https://www.engineeringindustry.info" 
+  },
+  { 
+    name: "LMK Resources", 
+    img: lmk_resources, 
+    url: "https://www.lmkr.com" 
+  },
+  { 
+    name: "Pakistan Ministry of Interior", 
+    img: pakistan_ministry_of_interior, 
+    url: "https://www.interior.gov.pk" 
+  },
+  { 
+    name: "Environmental Protection Agency", 
+    img: environmental_protection_agency, 
+    url: "https://www.environment.gov.pk" 
+  },
+  { 
+    name: "Export Promotion Bureau", 
+    img: export_promotion_bureau, 
+    url: "https://www.epb.gov.pk" 
+  },
+  { 
+    name: "Pakistan Petroleum Information Service", 
+    img: pakistan_petroleum_information_service, 
+    url: "http://www.ppisonline.com" 
+  },
 ];
+
 
 export default function PakistanPetroleumCards() {
   return (
@@ -32,7 +69,7 @@ export default function PakistanPetroleumCards() {
           Service, Including:
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 xl:gap-x-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-x-12">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -41,19 +78,17 @@ export default function PakistanPetroleumCards() {
               <Image
                 src={card.img}
                 alt={card.name}
-                width={80}
-                height={80}
                 loading="lazy"
-                className="mb-4"
+                className="mb-4 w-[40px] :h-[40px] "
               />
 
-              <p className="mb-4 text-[#0B2545] font-normal lg:text-sm xl:text-base leading-6">
+              <p className="mb-4 cursor-pointer text-[#0B2545] font-normal lg:text-sm xl:text-base leading-6">
                 {card.name}
               </p>
 
-              <button className="rounded-md border border-[#16a831]/30 px-4 py-1 text-sm font-medium text-[#0B2545] hover:bg-[#16a831]/10 transition">
+              <a target="_blank" href={card.url} className="rounded-md cursor-pointer border border-[#16a831]/30 px-4 py-1 text-sm font-medium text-[#0B2545] hover:bg-[#16a831]/10 transition">
                 Visit
-              </button>
+              </a>
             </div>
           ))}
         </div>

@@ -35,10 +35,10 @@ export default function PakistanPetroleumInformation() {
           <div className="mt-6">
             <p className="mb-1 text-[17px] font-semibold text-[#0B2545]">Available at:</p>
             <p className="text-[16px] text-[#14982c] underline cursor-pointer">
-              http://www.ppisonline.com
+               <a target="_blank" href="http://www.ppisonline.com/">http://www.ppisonline.com</a>
             </p>
-            <p className="text-[16px] text-[#14982c] underline cursor-pointer">
-              Society of Petroleum Engineers
+            <p  className="text-[16px] text-[#14982c] underline cursor-pointer">
+              <a target="_blank" href="http://www.spe.org/">Society of Petroleum Engineers </a>
             </p>
           </div>
         </div>
