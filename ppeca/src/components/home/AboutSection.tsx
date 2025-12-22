@@ -10,7 +10,7 @@ export default function AboutSection() {
 
         {/* Left Content */}
         <div className="lg:flex-[0.6] w-full lg:w-1/2 flex flex-col gap-3 xl:gap-5 lg:pr-8 xl:pr-10 2xl:pr-12">
-          <span className=" text-[#16a831] font-semibold text-sm sm:text-base">About us</span>
+          <span className=" text-[#16a831] font-['Open_Sans'] font-semibold text-sm sm:text-base">About us</span>
 
           <h2 className="text-3xl sm:text-4xl md:text-[2.4rem] lg:text-[2.7rem] xl:text-[3rem] 2xl:text-[4rem] font-bold leading-[1.1] font-['Montserrat']">
             Leadership in Pakistan's <br />
@@ -55,10 +55,10 @@ export default function AboutSection() {
 
           {/* Year Badge */}
           <div className="absolute top-[25px] sm:top-[-10px] md:top-[22px] lg:top-35 lg:left-15 xl:top-28 xl:left-15 2xl:top-20 2xl:left-36 transform -translate-x-1/2 lg:transform-none">
-            <div className="text-[#16a831] text-xs sm:text-sm font-light lg:text-sm xl:text-base 2xl:text-lg">
+            <div className="text-[#16a831] font-['Open_Sans'] text-xs sm:text-sm font-light lg:text-sm xl:text-base 2xl:text-lg">
               Started in
             </div>
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 -mt-1">
+            <div className="text-4xl font-['Montserrat'] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 -mt-1">
               1988
             </div>
           </div>

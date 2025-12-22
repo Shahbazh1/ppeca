@@ -79,7 +79,7 @@ export default function LeadershipSection() {
           <h1 className="xl:text-[2.25rem] sm:text-[1.35rem] lg:text-[2.025rem] md:text-[1.8225rem] text-[1.35rem] font-bold text-[#0A2540]">
             Leadership & Executive Committee
           </h1>
-          <p className="mt-2 xl:text-[1.125rem] lg:text-[1.0125rem] sm:text-[0.7875rem] md:text-[0.91125rem] text-[0.675rem] text-[#475569]">
+          <p className="mt-2 xl:text-[1.125rem] font-['Open_Sans'] lg:text-[1.0125rem] sm:text-[0.7875rem] md:text-[0.91125rem] text-[0.675rem] text-[#475569]">
             Representing member companies and guiding PPEPCA’s mission.
           </p>
         </div>
@@ -133,7 +133,7 @@ function LeaderCard({ name, title, company, image }: Props) {
           className="object-cover rounded-md  "
           loading="lazy"
         />
-        <div className="absolute w-full px-[6%]  bg-white/70  bottom-0 text-center">
+        <div className="absolute w-full px-[6%] font-['Open_Sans']  bg-white/70  bottom-0 text-center">
           <p className="lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  font-semibold text-[#0A2540] leading-snug">
             {name}
           </p>

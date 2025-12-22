@@ -49,7 +49,7 @@ export default function TestimonialSection() {
       </div>
 
       {/* Members label */}
-      <div className="absolute top-5 left-5 sm:left-10 md:left-15 bg-[#ffffff] text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10">
+      <div className="absolute top-5 left-5 text-['Open_Sans'] sm:left-10 md:left-15 bg-[#ffffff] text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10">
         Members
       </div>
 

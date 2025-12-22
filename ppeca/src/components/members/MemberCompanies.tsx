@@ -27,10 +27,10 @@ export default function MemberCompanies() {
       <div className="">
         {/* Heading */}
         <div className="text-center mb-[1.5rem] sm:mb-[2rem] md:mb-[2.025rem] lg:mb-[2.25rem] xl:mb-[2.5rem]">
-          <h1 className="text-[1.5rem] sm:text-[1.75rem] md:text-[1.8225rem] lg:text-[2.025rem] xl:text-[2.25rem] font-bold text-[#0A2540]">
+          <h1 className="text-[1.5rem] font-['Open_Sans'] sm:text-[1.75rem] md:text-[1.8225rem] lg:text-[2.025rem] xl:text-[2.25rem] font-bold text-[#0A2540]">
             Our Member Companies
           </h1>
-          <p className="text-[0.875rem] sm:text-[1rem] md:text-[0.91125rem] lg:text-[1.0125rem] xl:text-[1.125rem] font-normal text-[#334155]">
+          <p className="text-[0.875rem] font-['Open_Sans'] sm:text-[1rem] md:text-[0.91125rem] lg:text-[1.0125rem] xl:text-[1.125rem] font-normal text-[#334155]">
             Representing member companies and guiding PPEPCA's mission.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function MemberCompanies() {
         </div>
 
         <div className="font-medium py-6 w-fit">
-          <h2 className="text-[#0A2540] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
+          <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
             Our Member Companies
           </h2>
 
@@ -156,13 +156,13 @@ function CompanyCard({ name, logo }: Props) {
         />
       </div>
 
-      <p className="text-center text-[0.75rem] sm:text-[0.8rem] md:text-[0.825rem] lg:text-[1.025rem] xl:text-[1.125rem] text-[#334155]">
+      <p className="text-center font-['Open_Sans'] text-[0.75rem] sm:text-[0.8rem] md:text-[0.825rem] lg:text-[1.025rem] xl:text-[1.125rem] text-[#334155]">
         {name}
       </p>
 
       <button
         onClick={() => router.push("/members/membersPage")}
-        className="cursor-pointer bg-green-600 text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
+        className="cursor-pointer bg-green-600 font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >
         View Profile
       </button>

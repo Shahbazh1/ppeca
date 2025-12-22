@@ -29,6 +29,8 @@ body {
     --font-kumbh: 'Kumbh_Sans', sans-serif;
  --font-jost: 'Jost', sans-serif;
 --font-plus-jakarta: 'Plus_Jakarta_Sans', sans-serif;
+--font-poppins: 'Poppins', sans-serif;
+
   }
 }
 
@@ -53,3 +55,7 @@ h1 {
  h5{
   font-family: var(--font-kumbh);
  }
+
+.kumbh-sans {
+  font-family: var(--font-kumbh), sans-serif;
+}

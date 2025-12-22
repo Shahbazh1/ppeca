@@ -66,7 +66,7 @@ const Navbar = () => {
                 key={item.id}
                 href={item.href}
                 onClick={() => setActive(item.name)}
-                className={`text-[1.125rem] font-normal ${
+                className={`text-[1.125rem] font-['Open_Sans'] font-normal ${
                   active === item.name ? "text-[#16A831]" : "text-[#0A2540]"
                 }`}
               >
@@ -176,7 +176,7 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop Search - Compact version */}
-          <div className="hidden lg:flex items-center p-[0.425rem] border border-[#0A2540] rounded-[6px]">
+          <div className="font-['Open_Sans'] hidden lg:flex items-center p-[0.425rem] border border-[#0A2540] rounded-[6px]">
             <input
               type="text"
               placeholder="Search"

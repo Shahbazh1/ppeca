@@ -20,7 +20,7 @@ export default function SurplusInventorySection() {
   return (
     <section className="w-full bg-[#f8fafc]  py-12">
       {/* Title */}
-      <h2 className="text-3xl lg:text-[34px] font-semibold text-[#0b3a66] mb-10">
+      <h2 className="text-3xl lg:text-[34px] font-['Montserrat'] font-semibold text-[#0b3a66] mb-10">
         Surplus Inventory Data
       </h2>
 
@@ -42,12 +42,12 @@ export default function SurplusInventorySection() {
             </div>
 
             {/* Name */}
-            <p className="text-center text-[15px] font-medium text-[#334155] leading-snug px-2 mt-4">
+            <p className="text-center font-['Open_Sans'] text-[15px] font-medium text-[#334155] leading-snug px-2 mt-4">
               {item.name}
             </p>
 
             {/* Button */}
-            <button className="mt-6 bg-[#16a831] hover:bg-green-700 text-white text-sm font-medium px-6 py-2 rounded-sm transition">
+            <button className="mt-6 font-['Open_Sans'] bg-[#16a831] hover:bg-green-700 text-white text-sm font-medium px-6 py-2 rounded-sm transition">
               Download
             </button>
           </div>

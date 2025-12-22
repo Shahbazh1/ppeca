@@ -12,7 +12,7 @@ export default function ContactUs() {
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800">Contact Us</h1>
-          <p className="text-sm sm:text-base text-slate-500 mt-3 max-w-md mx-auto">
+          <p className="text-sm sm:text-base font-['Open_Sans'] text-slate-500 mt-3 max-w-md mx-auto">
             Any question or remarks? Just write us a message!
           </p>
         </div>
@@ -20,7 +20,7 @@ export default function ContactUs() {
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
           {/* LEFT INFO PANEL */}
-          <div className="relative w-full lg:flex-[45%] bg-white border border-[#94a3b8]/70 rounded-xl m-3 p-6 sm:p-8 overflow-hidden flex flex-col">
+          <div className="relative w-full font-['Poppins'] lg:flex-[45%] bg-white border border-[#94a3b8]/70 rounded-xl m-3 p-6 sm:p-8 overflow-hidden flex flex-col">
             {/* Title & Description (TOP) */}
             <div>
               <h2 className="text-xl sm:text-2xl font-semibold text-[#0a2540]">
@@ -90,7 +90,7 @@ export default function ContactUs() {
           </div>
 
           {/* RIGHT FORM PANEL */}
-          <div className="w-full lg:flex-[55%] p-6 sm:p-8 lg:p-10 bg-white">
+          <div className="w-full lg:flex-[55%] font-['Open_Sans'] p-6 sm:p-8 lg:p-10 bg-white">
             <form className="space-y-6 sm:space-y-8">
               {/* Name */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">

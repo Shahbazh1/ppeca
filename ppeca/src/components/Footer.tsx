@@ -26,7 +26,7 @@ export default function Footer() {
             priority={false}
           />
 
-          <p className=" text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.6]">
+          <p className="font-['Kumbh_Sans'] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.6]">
             As the unified voice of Pakistan’s E&amp;P industry, PPEPCA promotes
             effective communication, industry alignment, and constructive
             engagement with regulatory bodies to support a secure and
@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Middle: Quick Links */}
         {/* Middle: Quick Links */}
         <div className="flex flex-col md:items-center md:self-center">
-          <h3 className="mb-3 mr-5 font-bold text-black text-[1rem] md:text-[0.9rem] lg:text-[1rem]">
+          <h3 className="mb-3 mr-5 font-inter font-bold text-black text-[1rem] md:text-[0.9rem] lg:text-[1rem]">
             Quick links
           </h3>
 
@@ -81,14 +81,14 @@ export default function Footer() {
 
         {/* Right: Contact Box */}
         <div className="flex flex-col md:max-w-[23rem]">
-          <h4 className="text-[#0A2540] font-jost font-semibold text-[1.25rem] md:text-[1.5rem] lg:text-[1.5rem] mb-5">
+<h4 className="text-[#0A2540] font-['Jost'] font-semibold text-[24px] leading-[28.8px] tracking-[-0.96px] align-middle mb-[9px]">
             Contact us
           </h4>
 
-          <div className="bg-[#16A831] text-[#F8FAFC] rounded-[5px] border p-6 space-y-4">
+          <div className="bg-[#16A831] kumbh-sans text-[#F8FAFC] rounded-[5px] border p-6 space-y-4">
             <div className="flex gap-3">
               <FaLocationDot size={18} className="mt-1" />
-              <span className="font-['kumbh'] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
+              <span className="  text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
                 LG04, Block 02, Savoy Residences, <br />
                 F-11/1, Islamabad
               </span>
@@ -96,7 +96,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               <FaPhoneAlt size={18} />
-              <span className="font-['kumbh'] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
+              <span className=" text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
                 92 51 2102135 &nbsp;/&nbsp; 92 51 2102136
               </span>
             </div>
@@ -105,7 +105,7 @@ export default function Footer() {
               <TbMailFilled size={20} />
               <a
                 href="mailto:mail@ppepca.com"
-                className="font-['kumbh'] underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
+                className=" underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
               >
                 mail@ppepca.com
               </a>
@@ -113,7 +113,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               <IoGlobeOutline size={20} />
-              <span className="font-['kumbh'] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
+              <span className=" text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
                 www.ppepca.com
               </span>
             </div>
@@ -123,14 +123,14 @@ export default function Footer() {
 
       {/* Company Line */}
       <div className="border-b border-green-500 py-1 px-6 md:px-10 xl:px-20">
-        <p className="max-w-7xl mx-auto text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-kumbh leading-[1.75]">
+        <p className="max-w-7xl mx-auto kumbh-sans text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-kumbh leading-[1.75]">
           <span className="font-bold">Company:</span> Pakistan Petroleum
           Exploration and Production Companies Association
         </p>
       </div>
 
       {/* Bottom Bar */}
-      <div className="py-8 px-6 md:px-10 xl:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto text-sm text-[#0A2540]">
+      <div className="kumbh-sans py-8 px-6 md:px-10 xl:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto text-sm text-[#0A2540]">
         <p>© PPEPCA 2025 | All Rights Reserved</p>
         <Link href="/membership" className="mt-2 md:mt-0">
           Join as a member

@@ -49,7 +49,7 @@ export default function LatestNews() {
       <h2 className="text-[#16a831] text-base sm:text-lg md:text-lg lg:text-lg font-medium mb-4">
         Latest News & Event
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6">
+      <div className="font-['Open_Sans'] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-6">
         {/* Left Large Card */}
         <div className="bg-[#ffffff] rounded-lg border-1 border-[#afafaf]/50 flex flex-col h-[400px] sm:h-[450px] md:h-[450px] lg:h-[500px] xl:h-[550px] 2xl:h-[600px]">
           {/* Image Section - 40% */}
@@ -65,7 +65,7 @@ export default function LatestNews() {
           </div>
 
           {/* Content Section - 60% */}
-          <div className="h-[55%] p-4 flex flex-col">
+          <div className="h-[55%] p-4  flex flex-col">
             <div>
               <p className="text-xs sm:text-sm md:text-sm lg:text-sm text-[#000000] mb-1">
                 <span className="text-[#16a831]">{newsData[0].date}</span> |{" "}

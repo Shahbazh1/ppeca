@@ -33,21 +33,21 @@ export default function FAQSection() {
   return (
     <section className="bg-[#001103] px-4 sm:px-6 md:px-8 xl:px-[3.75rem] pt-10 md:pt-[4.1rem] xl:pt-[5.125rem] pb-12 md:pb-[6rem] xl:pb-[7.5rem] flex flex-col md:flex-row items-start gap-8 md:gap-10">
       {/* Left Content */}
-      <div className="w-full md:w-1/2 flex flex-col gap-4">
-        <p className="text-[#16A831] text-sm sm:text-[0.95rem] md:text-[1rem] font-semibold">FAQs</p>
+      <div className="w-full  md:w-1/2 flex flex-col gap-4">
+        <p className="text-[#16A831] text-sm font-['Open_Sans'] sm:text-[0.95rem] md:text-[1rem] font-semibold">FAQs</p>
         <h2 className="text-[#F8FAFC] leading-tight sm:leading-snug md:leading-none font-['Plus_Jakarta_Sans'] text-[1.875rem] sm:text-[2.25rem] md:text-[2.4275rem] lg:text-[3rem] font-extrabold">
           Lorem Ipsum is not simply random text
         </h2>
-        <p className="text-[#94A3B8] text-[0.875rem] sm:text-[0.9rem] md:text-[1rem] max-w-full md:max-w-[75%] lg:p-[0.625rem] sm:p-[0.5625rem]">
+        <p className="text-[#94A3B8] font-['Plus_Jakarta_Sans'] text-[0.875rem] sm:text-[0.9rem] md:text-[1rem] max-w-full md:max-w-[75%] lg:p-[0.625rem] sm:p-[0.5625rem]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         </p>
-        <button className="font-['Open_Sans'] bg-[#16a831] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
+        <button className="font-['Plus_Jakarta_Sans'] bg-[#16a831] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
           Read More &rarr;
         </button>
       </div>
 
       {/* Right Content - FAQ Accordion */}
-      <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-4 mt-6 md:mt-0">
+      <div className="w-full font-['font-['Open_Sans']] md:w-1/2 flex flex-col gap-3 md:gap-4 mt-6 md:mt-0">
         {faqs.map((faq, index) => (
           <div
             key={index}

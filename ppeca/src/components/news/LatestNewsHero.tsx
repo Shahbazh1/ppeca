@@ -40,11 +40,11 @@ export default function LatestNewsHero() {
               <br />
               News
             </h1>
-            <p className="text-sm sm:text-base text-[#C9C9C9] max-w-sm mb-4 sm:mb-6">
+            <p className=" font-['Open_Sans'] text-sm sm:text-base text-[#C9C9C9] max-w-sm mb-4 sm:mb-6">
               Stay updated with the latest developments, announcements, and
               industry insights from PPEPCA and the petroleum sector.
             </p>
-            <p className="text-sm sm:text-base text-[#C9C9C9] font-bold max-w-md mb-6 sm:mb-8">
+            <p className="text-sm font-['Open_Sans'] sm:text-base text-[#C9C9C9] font-bold max-w-md mb-6 sm:mb-8">
               Get timely news, events, and important updates all in one place.
             </p>
             <button className="bg-white text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300">
@@ -61,13 +61,13 @@ export default function LatestNewsHero() {
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-center gap-3 text-xs mb-2">
-                    <span className="text-green-600 font-semibold uppercase">
+                    <span className="text-green-600 font-['Open_Sans'] font-semibold uppercase">
                       {item.category}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-gray-300" />
-                    <span className="text-gray-500">{item.date}</span>
+                    <span className="w-2 h-2  rounded-full bg-gray-300" />
+                    <span className="text-gray-500 font-['Open_Sans']">{item.date}</span>
                   </div>
-                  <p className="text-sm font-semibold text-gray-900 leading-snug">
+                  <p className="text-sm font-['Montserrat'] font-semibold text-gray-900 leading-snug">
                     {item.text}
                   </p>
                 </div>

@@ -26,7 +26,7 @@ export default function PPEPCAHero() {
           PPEPCA Members Directory
         </h1>
 
-        <h2 className="font-normal text-[#C5C5C5] text-[1.125rem] sm:text-[1.25rem] md:text-[1.4375rem] xl:text-[1.5rem] mt-4">
+        <h2 className="font-normal font-['Montserrat'] text-[#C5C5C5] text-[1.125rem] sm:text-[1.25rem] md:text-[1.4375rem] xl:text-[1.5rem] mt-4">
           A united network driving Pakistan's
         </h2>
 

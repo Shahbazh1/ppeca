@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-import { Inter, Montserrat, Open_Sans, Kumbh_Sans, Jost, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Montserrat, Open_Sans, Kumbh_Sans, Jost, Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -44,10 +44,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
+// Poppins
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-poppins",
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="m-0 p-0 w-full overflow-x-hidden">
-      <body className={`${plusJakartaSans.variable} ${jost.variable} ${kumbhSans.variable} ${inter.variable} ${montserrat.variable} ${openSans.variable} m-0 p-0 w-full overflow-x-hidden1`}>
+      <body className={`${plusJakartaSans.variable} ${jost.variable} ${kumbhSans.variable} ${inter.variable} ${montserrat.variable} ${openSans.variable} ${poppins.variable} m-0 p-0 w-full overflow-x-hidden1`}>
         <Navbar />
         {children}
         <Footer />
