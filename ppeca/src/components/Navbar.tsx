@@ -1,13 +1,12 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import logo from "../../public/images/logo.svg";
 
-// Define type for menu items
 interface MenuItem {
   id: number;
   name: string;
@@ -29,6 +28,19 @@ const Navbar: React.FC = () => {
   const [scrollOpen, setScrollOpen] = useState<boolean>(false);
   const [scrollOpenMenu, setScrollOpenMenu] = useState<boolean>(false);
 
+  // Refs for mobile menus
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const scrollMenuRef = useRef<HTMLDivElement>(null);
+
+  // Disable scroll when menu is open
+  useEffect(() => {
+    if (open || scrollOpenMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [open, scrollOpenMenu]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -40,16 +52,37 @@ const Navbar: React.FC = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Helper function to check if menu item is active
+  // Close mobile menu on clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // For main mobile menu
+      if (
+        open &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+
+      // For scroll mobile menu
+      if (
+        scrollOpenMenu &&
+        scrollMenuRef.current &&
+        !scrollMenuRef.current.contains(event.target as Node)
+      ) {
+        setScrollOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [open, scrollOpenMenu]);
+
   const isActive = (href: string): boolean => {
-    if (href === "/") {
-      return pathname === "/";
-    }
+    if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
@@ -57,12 +90,7 @@ const Navbar: React.FC = () => {
     <>
       {/* Main Header */}
       <header className="w-full bg-white relative">
-        <div
-          className="flex items-center justify-between w-full
-          lg:py-[0.625rem] lg:px-[2rem] xl:px-[4rem]
-          md:px-[2rem] md:py-[0.5rem]
-          px-4 py-3"
-        >
+        <div className="flex items-center justify-between w-full lg:py-[0.625rem] lg:px-[2rem] xl:px-[4rem] md:px-[2rem] md:py-[0.5rem] px-4 py-3">
           {/* Logo */}
           <div className="shrink-0">
             <Image
@@ -109,32 +137,40 @@ const Navbar: React.FC = () => {
             open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pb-4">
-            <nav className="flex flex-col gap-4 mt-4">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`text-[1rem] ${
-                    isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+          {open && (
+            <div
+              ref={mobileMenuRef}
+              className="relative"
+              onClick={(e) => e.stopPropagation()} // prevent closing on menu click
+            >
+              <div className="px-4 pb-4">
+                <nav className="flex flex-col gap-4 mt-4">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.id}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={`text-[1rem] ${
+                        isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
 
-            {/* Mobile Search */}
-            <div className="flex items-center mt-4 p-2 border border-[#0A2540] rounded-[8px]">
-              <input
-                type="text"
-                placeholder="Search Members"
-                className="w-full text-[0.95rem] outline-none bg-transparent placeholder:text-[#747474]"
-              />
-              <FiSearch className="w-[22px] h-[22px] text-[#0A2540]" />
+                {/* Mobile Search */}
+                <div className="flex items-center mt-4 p-2 border border-[#0A2540] rounded-[8px]">
+                  <input
+                    type="text"
+                    placeholder="Search Members"
+                    className="w-full text-[0.95rem] outline-none bg-transparent placeholder:text-[#747474]"
+                  />
+                  <FiSearch className="w-[22px] h-[22px] text-[#0A2540]" />
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </header>
 
@@ -145,7 +181,6 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="flex items-center justify-between w-full px-4 py-2 md:px-[2rem]">
-          {/* Logo */}
           <div className="shrink-0">
             <Image
               src={logo as StaticImageData}
@@ -157,7 +192,6 @@ const Navbar: React.FC = () => {
             />
           </div>
 
-          {/* Desktop Menu */}
           <nav className="hidden lg:flex gap-[0.875rem] items-center">
             {menuItems.map((item) => (
               <Link
@@ -176,7 +210,6 @@ const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Desktop Search */}
           <div className="font-['Open_Sans'] hidden lg:flex items-center p-[0.425rem] border border-[#0A2540] rounded-[6px]">
             <input
               type="text"
@@ -186,7 +219,6 @@ const Navbar: React.FC = () => {
             <FiSearch className="w-[20px] h-[20px] text-[#0A2540]" />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setScrollOpenMenu(!scrollOpenMenu)}
             className="lg:hidden text-[#0A2540] cursor-pointer"
@@ -201,32 +233,39 @@ const Navbar: React.FC = () => {
             scrollOpenMenu ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-4 pb-4">
-            <nav className="flex flex-col gap-3 mt-3">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  onClick={() => setScrollOpenMenu(false)}
-                  className={`text-[0.95rem] ${
-                    isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+          {scrollOpenMenu && (
+            <div
+              ref={scrollMenuRef}
+              className="relative"
+              onClick={(e) => e.stopPropagation()} // prevent closing on menu click
+            >
+              <div className="px-4 pb-4">
+                <nav className="flex flex-col gap-3 mt-3">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.id}
+                      href={item.href}
+                      onClick={() => setScrollOpenMenu(false)}
+                      className={`text-[0.95rem] ${
+                        isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
 
-            {/* Mobile Search */}
-            <div className="flex items-center mt-3 p-2 border border-[#0A2540] rounded-[6px]">
-              <input
-                type="text"
-                placeholder="Search Members"
-                className="w-full text-[0.875rem] outline-none bg-transparent placeholder:text-[#747474]"
-              />
-              <FiSearch className="w-[20px] h-[20px] text-[#0A2540]" />
+                <div className="flex items-center mt-3 p-2 border border-[#0A2540] rounded-[6px]">
+                  <input
+                    type="text"
+                    placeholder="Search Members"
+                    className="w-full text-[0.875rem] outline-none bg-transparent placeholder:text-[#747474]"
+                  />
+                  <FiSearch className="w-[20px] h-[20px] text-[#0A2540]" />
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </header>
     </>

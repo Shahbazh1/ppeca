@@ -3,43 +3,47 @@
 import React from "react";
 import news_hero_BG from "../../../public/images/news_hero_BG.png";
 import Image from "next/image";
-
+import Link from 'next/link';
 const newsItems = [
   {
     category: "Category",
     date: "October 01",
     text: "The Excom presently comprises of Nine members for the term October 01, 2024 upto September 30, 2026",
+    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1"
   },
   {
     category: "Category",
     date: "October 01",
     text: "The Office bearers elected are i) Mr. Ali Taha Al Temimi, C.M, Kufpec as Chairman ii) Mr. Kamran Ajmal Mian, CEO, Prime Pakistan as Sr. V- Chairman & iii) Mr. Andrzej Kaczorowski - MD - PGNiG as Vice – Chairman",
+    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1"
   },
   {
     category: "Category",
     date: "October 01",
     text: "The following have been nominated as Presidents of the four Expert Committees of PPEPCA: Mr. Zaheer Alam, President, United Energy Pakistan Ltd – (Policy & Rules Committee)...",
+    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1"
   },
 ];
+
 
 export default function LatestNewsHero() {
   return (
     <section
-      className="relative w-full min-h-[520px] overflow-hidden bg-cover bg-center"
+      className="relative w-full min-h-[520px] overflow-hidden bg-contain bg-center"
       style={{ backgroundImage: `url(${news_hero_BG.src})` }}
     >
       {/* Dark green overlay */}
-      <div className="absolute inset-0 bg-[#00330A]/80" />
+      <div className="absolute inset-0 bg-[#00330A]/96" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Content */}
           <div className="text-white flex flex-col justify-center lg:justify-start">
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
+            <div   className="text-4xl font-['Montserrat'] sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               Latest
               <br />
               News
-            </h1>
+            </div>
             <p className=" font-['Open_Sans'] text-sm sm:text-base text-[#C9C9C9] max-w-sm mb-4 sm:mb-6">
               Stay updated with the latest developments, announcements, and
               industry insights from PPEPCA and the petroleum sector.
@@ -47,9 +51,9 @@ export default function LatestNewsHero() {
             <p className="text-sm font-['Open_Sans'] sm:text-base text-[#C9C9C9] font-bold max-w-md mb-6 sm:mb-8">
               Get timely news, events, and important updates all in one place.
             </p>
-            <button className="bg-white cursor-pointer text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300">
+            <Link href='news/latestNews' className="bg-white cursor-pointer text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300">
               View All
-            </button>
+            </Link>
           </div>
 
           {/* Right Cards */}
@@ -72,7 +76,8 @@ export default function LatestNewsHero() {
                   </p>
                 </div>
 
-                <Image
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <Image
                   src="/images/svg_images/news_arrow.svg"
                   alt="arrow"
                   width={33}
@@ -80,6 +85,7 @@ export default function LatestNewsHero() {
                   className="self-center cursor-pointer flex-shrink-0"
                   loading="lazy"
                 />
+                </a>
               </div>
             ))}
           </div>

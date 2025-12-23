@@ -23,14 +23,13 @@ body {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-      --font-montserrat: 'Montserrat', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-    --font-open-sans: 'Open_Sans', sans-serif;
-    --font-kumbh: 'Kumbh_Sans', sans-serif;
- --font-jost: 'Jost', sans-serif;
---font-plus-jakarta: 'Plus_Jakarta_Sans', sans-serif;
---font-poppins: 'Poppins', sans-serif;
-
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    --font-open-sans: "Open_Sans", sans-serif;
+    --font-kumbh: "Kumbh_Sans", sans-serif;
+    --font-jost: "Jost", sans-serif;
+    --font-plus-jakarta: "Plus_Jakarta_Sans", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
   }
 }
 
@@ -44,17 +43,20 @@ h1 {
   font-family: var(--font-montserrat);
 }
 
- button, li, Link, input{
+button,
+li,
+Link,
+input {
   font-family: var(--font-open-sans);
 }
 
- h4{
+h4 {
   font-family: var(--font-jost);
- }
+}
 
- h5{
+h5 {
   font-family: var(--font-kumbh);
- }
+}
 
 .kumbh-sans {
   font-family: var(--font-kumbh), sans-serif;
