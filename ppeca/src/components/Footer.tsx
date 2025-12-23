@@ -58,7 +58,7 @@ export default function Footer() {
             {[
               { label: "Home", href: "/" },
               { label: "Members", href: "/members" },
-              { label: "News & Events", href: "/news-events" },
+              { label: "News & Events", href: "/news" },
               { label: "About us", href: "/about" },
               { label: "Policies", href: "/policies" },
               { label: "Privacy Policy", href: "/privacy-policy" },
@@ -67,7 +67,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="inline-block font-inter text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-normal"
+                  className="inline-block hover:underline font-inter text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-normal"
                 >
                   <span
                     className="font-['inter']"
@@ -101,22 +101,29 @@ export default function Footer() {
               </span>
             </div>
 
-            <div className="flex gap-3">
-              <TbMailFilled size={20} />
-              <a
-                href="mailto:mail@ppepca.com"
-                className=" underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
-              >
-                mail@ppepca.com
-              </a>
-            </div>
+           <a
+  href="mailto:mail@ppepca.com?subject=Hello&body=Type your message here"
+  className="flex items-center gap-3 underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
+>
+  <TbMailFilled size={20} />
+  mail@ppepca.com
+</a>
 
-            <div className="flex gap-3">
-              <IoGlobeOutline size={20} />
-              <span className=" text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
-                www.ppepca.com
-              </span>
-            </div>
+
+
+
+            <div className="flex gap-3 hover:underline">
+  <IoGlobeOutline size={20} />
+  <a
+    href="https://www.ppepca.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
+  >
+    www.ppepca.com
+  </a>
+</div>
+
           </div>
         </div>
       </div>
