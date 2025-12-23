@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center justify-start text-center h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px] pt-[50px] sm:pt-[60px] md:pt-[65px] lg:pt-[70px] xl:pt-[70px] 2xl:pt-[80px] px-4">
         {/* <div className="absolute inset-0 bg-black/5" /> Overlay */}
         {/* Tagline */}
-        <div className="inline-flex items-center justify-center mb-4 px-2 sm:px-3 md:px-4 py-1 h-[40px] border border-green-500 rounded-full bg-[#16A83112] text-green-500 text-sm font-medium">
+        <div className="inline-flex items-center justify-center mb-4 px-2 sm:px-3 md:px-4 py-1 h-[40px] border border-[#16A831] rounded-full bg-[#16A83112] text-[#16A831] text-sm font-medium">
           <p
             className="text-[12px] font-['Open_Sans'] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[1.5] text-[#16A831] font-normal"
           >
@@ -71,8 +71,8 @@ export default function HeroSection() {
         </div>
         {/* Bottom Indicator */}
         <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 lg:bottom-3 xl:bottom-3 2xl:bottom-5 left-1/2 z-10 -translate-x-1/2">
-          <div className="h-8 w-5 rounded-full border-2 border-[#1FB34A]">
-            <div className="mx-auto mt-1 h-2 w-1 rounded-full bg-[#1FB34A]" />
+          <div className="h-8 w-5 rounded-full border-2 border-[#16A831]">
+            <div className="mx-auto mt-1 h-2 w-1 rounded-full bg-[#16A831]" />
           </div>
         </div>{" "}
       </div>

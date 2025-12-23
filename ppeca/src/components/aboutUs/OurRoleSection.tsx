@@ -15,7 +15,7 @@ export default function OurRoleSection() {
           {/* LEFT CONTENT */}
           <div className="flex-[55%] flex flex-col justify-between text-[#0a2540] 
             text-sm sm:text-[14px] lg:text-[14px] xl:text-[15px] 
-            leading-6 lg:leading-5 xl:leading-6 font-['Open_Sans']">
+           leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-['Open_Sans']">
             
             <p>
               In the eighties, with the rising curve of activities and the unprecedented surge in petroleum exploration and production (E&P) activities, necessitated frequent coordination among those engaged in this sector and the need to exchange ideas on a variety of subjects of common interest. As a result of consultations between the concerned companies a need was felt to establish an organization which, while playing an advisory role, could safeguard the interest of its member companies. In 1988 the few companies engaged in exploration and production of petroleum formed an umbrella organization originally conceived under the name and style of Petroleum Exploration and Production Companies Advisory Committee (PEPCAC), as a representative body of local and foreign companies operating in Pakistan at that time. In May 1995, the organization was registered as a company, limited by guarantee, without any share capital, under the new title of ‘Pakistan Petroleum Exploration and Production Companies Association’ (PPEPCA).

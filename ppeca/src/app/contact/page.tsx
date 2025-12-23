@@ -98,7 +98,7 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">First Name</label>
                   <input
                     type="text"
-                    className="w-full border-b border-gray-300 focus:border-green-500 outline-none py-2"
+                    className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
 
@@ -107,7 +107,7 @@ export default function ContactUs() {
                   <input
                     type="text"
                     defaultValue="Doe"
-                    className="w-full border-b border-gray-300 focus:border-green-500 outline-none py-2"
+                    className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">Email</label>
                   <input
                     type="email"
-                    className="w-full border-b border-gray-300 focus:border-green-500 outline-none py-2"
+                    className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
 
@@ -126,7 +126,7 @@ export default function ContactUs() {
                   <input
                     type="tel"
                     defaultValue="+1 012 3456 789"
-                    className="w-full border-b border-gray-300 focus:border-green-500 outline-none py-2"
+                    className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
               </div>
@@ -158,14 +158,14 @@ export default function ContactUs() {
                 <textarea
                   rows={1}
                   placeholder="Write your message.."
-                  className="w-full border-b border-gray-300 focus:border-green-500 outline-none py-3 resize-none"
+                  className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
                 />
               </div>
               {/* Button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10"
+                  className="bg-[#16A831] hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10"
                 >
                   Send Message
                 </button>

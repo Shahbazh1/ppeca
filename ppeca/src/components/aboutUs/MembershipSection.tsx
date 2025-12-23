@@ -14,7 +14,7 @@ const MembershipSection: React.FC = () => {
         </h1>
 
         {/* Paragraphs */}
-        <div className="space-y-4 font-['Open_Sans'] sm:space-y-6 text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15px] leading-relaxed text-[#0a2540] max-w-5xl">
+        <div className="space-y-4 font-['Open_Sans'] sm:space-y-6 text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0a2540] max-w-5xl">
           <p>
             PPEPCA Membership shall be open to all the Petroleum Exploration and
             Production Companies operating in Pakistan.
@@ -53,7 +53,7 @@ const MembershipSection: React.FC = () => {
 
         {/* Button */}
         <div className="mt-8 sm:mt-10">
-          <button onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16a831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#17912f] transition-colors">
+          <button onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16A831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#17912f] transition-colors">
             Become a Member
           </button>
         </div>

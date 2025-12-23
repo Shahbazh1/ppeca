@@ -13,7 +13,7 @@ const SecretariatSection = () => {
           </h1>
 
           {/* Paragraphs */}
-          <div className="space-y-4 font-['Open_Sans'] sm:space-y-5 text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-5 text-[#0b3a63]">
+          <div className="space-y-4 font-['Open_Sans'] sm:space-y-5 text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px]  text-[#0b3a63]">
             <p>
               The Secretariat is located in Islamabad and has dedicated staff to
               look after the day-to-day running of the affairs of PPEPCA.
@@ -26,7 +26,7 @@ const SecretariatSection = () => {
             </p>
 
             {/* Bullet List */}
-            <ul className="list-disc pl-5 sm:pl-6 space-y-1 sm:space-y-2 text-[#0b3a63]">
+            <ul className="list-disc font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] pl-5 sm:pl-6 space-y-1 sm:space-y-2 text-[#0b3a63]">
               <li>
                 Defining, setting out, and meeting assigned yearly targets of PPEPCA.
               </li>

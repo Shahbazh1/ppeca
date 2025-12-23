@@ -56,7 +56,7 @@ export default function MemberCompanies() {
                 key={item}
                 className={`h-8 cursor-pointer px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
                   index === 0
-                    ? "bg-green-600 text-white border-[#16A83180]"
+                    ? "bg-[#16A831] text-white border-[#16A83180]"
                     : "text-[#0b2b4c] border-[#16A83180] bg-transparent hover:bg-gray-50"
                 }`}
               >
@@ -162,7 +162,7 @@ function CompanyCard({ name, logo }: Props) {
 
       <button
         onClick={() => router.push("/members/membersPage")}
-        className="cursor-pointer bg-green-600 font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
+        className="cursor-pointer bg-[#16A831] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >
         View Profile
       </button>

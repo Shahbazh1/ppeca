@@ -31,7 +31,7 @@ export default function AboutSection() {
             of subjects of common interest.
           </p>
 
-          <button onClick={() => router.push("/about")} className="cursor-pointer  mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-green-600 transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
+          <button onClick={() => router.push("/about")} className="cursor-pointer  mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-[#16A831] transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
             Read More <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>

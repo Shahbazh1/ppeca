@@ -81,7 +81,7 @@ export default function NewsletterSection() {
                   View
                 </button>
 
-                <button className="w-full border cursor-pointer border-[#8bd398] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
+                <button className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
                   Download
                 </button>
               </div>

@@ -8,7 +8,7 @@ const HistorySection: React.FC = () => {
 
       {/* Green Content Box */}
       <div className="rounded-[2px] bg-[#caead4] px-4 sm:px-5 md:px-6 lg:px-[22px] py-4 sm:py-5 md:py-6 lg:py-[20px]">
-        <p className="text-[14px] sm:text-[14.5px] md:text-[15px] leading-[1.5] sm:leading-[1.55] md:leading-[1.6] lg:leading-[1.65] text-[#334155] font-['Open_Sans']">
+        <p className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#334155] font-['Open_Sans']">
           In the eighties, with the rising curve of activities and the unprecedented surge in the
           petroleum exploration and production (E&amp;P) activities necessitated frequent
           coordination among those engaged in this sector and the need to exchange ideas on a
@@ -22,7 +22,7 @@ const HistorySection: React.FC = () => {
           company, limited by guarantee, without any share capital, under the new title of Pakistan
           Petroleum Exploration and Production Companies Association (PPEPCA).
         </p>
-        <p className="text-[14px] font-[Open_Sans] sm:text-[14.5px] md:text-[15px] leading-[1.5] sm:leading-[1.55] md:leading-[1.6] lg:leading-[1.65] text-[#334155] mt-3 sm:mt-4 md:mt-5 lg:mt-0">
+        <p className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-[Open_Sans]  leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#334155] mt-3 sm:mt-4 md:mt-5 lg:mt-0">
           PPEPCA has thus grown out of its member companies engaged in petroleum exploration and
           production activities. Its establishment was an important landmark in the history of
           petroleum industry of Pakistan. It was culmination of endeavors, spread over a long

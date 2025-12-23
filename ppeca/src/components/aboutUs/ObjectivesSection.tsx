@@ -91,7 +91,7 @@ const ObjectivesSection = () => {
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             className={`absolute left-0 sm:-left-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${
-              canScrollLeft ? "bg-green-600 hover:bg-green-700 cursor-pointer" : "bg-green-600 opacity-50 cursor-not-allowed"
+              canScrollLeft ? "bg-[#16A831] hover:bg-green-700 cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
             }`}
           >
             <HiChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
@@ -109,7 +109,7 @@ const ObjectivesSection = () => {
               >
                 <Image src={card.img} alt={card.title} width={48} height={48} loading="lazy" />
                 <h3 className="mt-6 text-base font-semibold text-[#0a2540] font-['Open_Sans']">{card.title}</h3>
-                <p className="mt-3 text-sm text-[#334155] font-['Open_Sans']">{card.desc}</p>
+                <p className="mt-3 text-sm text-[#334155] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-['Open_Sans']">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -119,7 +119,7 @@ const ObjectivesSection = () => {
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             className={`absolute right-0 sm:-right-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${
-              canScrollRight ? "bg-green-600 hover:bg-green-700 cursor-pointer" : "bg-green-600 opacity-50 cursor-not-allowed"
+              canScrollRight ? "bg-[#16A831] hover:bg-green-700 cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
             }`}
           >
             <HiChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-white" />

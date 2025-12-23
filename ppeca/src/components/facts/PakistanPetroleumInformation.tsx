@@ -34,10 +34,10 @@ export default function PakistanPetroleumInformation() {
 
           <div className="mt-6">
             <p className="mb-1 text-[17px] font-semibold text-[#0B2545]">Available at:</p>
-            <p className="text-[16px] text-[#14982c] underline cursor-pointer">
+            <p className="text-[16px] text-[#16A831] underline cursor-pointer">
                <a target="_blank" href="http://www.ppisonline.com/">http://www.ppisonline.com</a>
             </p>
-            <p  className="text-[16px] text-[#14982c] underline cursor-pointer">
+            <p  className="text-[16px] text-[#16A831] underline cursor-pointer">
               <a target="_blank" href="http://www.spe.org/">Society of Petroleum Engineers </a>
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function PakistanPetroleumInformation() {
 
         {/* Right Image */}
         <div className="flex-1 w-full lg:w-auto mt-8 lg:mt-0">
-          <div className="overflow-hidden rounded-lg border border-[#1FA44A] h-full min-h-[300px] lg:min-h-[400px] relative">
+          <div className="overflow-hidden rounded-lg border border-[#16A831] h-full min-h-[300px] lg:min-h-[400px] relative">
             <Image
               src={pakistanPetroleumInformation}
               alt="Petroleum Information"

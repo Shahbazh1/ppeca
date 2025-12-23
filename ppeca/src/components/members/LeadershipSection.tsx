@@ -142,7 +142,7 @@ function LeaderCard({ name, title, company, image }: Props) {
             {title}
           </p>
 
-          <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[o.43rem]  font-medium text-[#22c55e]">
+          <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[o.43rem]  font-medium text-[#16A831]">
             {company}
           </p>
         </div>

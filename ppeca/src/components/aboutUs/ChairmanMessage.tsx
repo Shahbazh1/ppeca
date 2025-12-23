@@ -12,14 +12,14 @@ const ChairmanMessage = () => {
   CHAIRMAN&apos;S MESSAGE
 </h1>
 
-<h2 className="text-[16px] font-['Montserrat'] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[24px] font-normal text-[#0a2540] m-0 leading-[1.1]">
+<h2 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
   Mr. Ali Taha Al-Temimi
 </h2>
 
 
 
           {/* Message Text */}
-          <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6 lg:max-w-lg xl:max-w-xl text-[13px] sm:text-[13.5px] md:text-[14px] lg:text-[14px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
+          <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6 lg:max-w-lg xl:max-w-xl text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
             <p className="font-bold mb-0">Dear Esteemed Members,</p>
 
             <p>
@@ -64,7 +64,7 @@ const ChairmanMessage = () => {
       </div>
 
       {/* Bottom Text */}
-      <div className="max-w-[1400px] mx-auto mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[13.5px] md:text-[14px] lg:text-[14px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
+      <div className="max-w-[1400px] mx-auto mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
         <p>
           Looking ahead, my vision for our association is one of unity and
           proactive leadership. We must foster an environment where new ideas

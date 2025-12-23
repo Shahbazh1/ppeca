@@ -34,7 +34,7 @@ export default function AboutPPEPCAHero() {
             {/* Using Next.js Link for instant client-side navigation */}
             <Link
               href="/contact"
-              className="cursor-pointer font-['Open_Sans']  w-[170px] sm:w-[180px] h-[46px] rounded-[4px] p-[10px] bg-[#16A831]/95 hover:bg-[#128a28] text-white font-medium transition flex items-center justify-center gap-2"
+              className="cursor-pointer font-['Open_Sans']  w-[170px] sm:w-[180px] h-[46px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition flex items-center justify-center gap-2"
             >
               Let's Connect <IoMdArrowForward />
             </Link>
@@ -44,8 +44,8 @@ export default function AboutPPEPCAHero() {
 
       {/* Bottom Indicator */}
       <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 xl:bottom-10 left-1/2 z-10 -translate-x-1/2">
-        <div className="h-7 w-5 rounded-full border-2 border-[#1FB34A]">
-          <div className="mx-auto mt-1 h-[6px] w-[2px] rounded-full bg-[#1FB34A]" />
+        <div className="h-7 w-5 rounded-full border-2 border-[#16A831]">
+          <div className="mx-auto mt-1 h-[6px] w-[2px] rounded-full bg-[#16A831]" />
         </div>
       </div>
     </section>

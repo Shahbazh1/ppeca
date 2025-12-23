@@ -61,7 +61,7 @@ export default function LatestNewsHero() {
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-center gap-3 text-xs mb-2">
-                    <span className="text-green-600 font-['Open_Sans'] font-semibold uppercase">
+                    <span className="text-[#16A831] font-['Open_Sans'] font-semibold uppercase">
                       {item.category}
                     </span>
                     <span className="w-2 h-2  rounded-full bg-gray-300" />
