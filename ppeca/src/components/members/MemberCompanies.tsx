@@ -19,8 +19,42 @@ import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
 
+interface Company {
+  id: number;
+  name: string;
+  logo: StaticImageData;
+}
+
+const companies: Company[] = [
+  { id: 1, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
+  { id: 2, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
+  { id: 3, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+  {
+    id: 4,
+    name: "Khyber Pakhtunkhwa Oil and Gas Company Limited",
+    logo: KPOGCL_LOGO,
+  },
+  { id: 5, name: "Mari Energies Limited", logo: MARI_LOGO },
+  { id: 6, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
+  { id: 7, name: "Oil and Gas Development Company Limited", logo: OGX_LOGO },
+  { id: 8, name: "Orient Petroleum Inc", logo: OP_LOGO },
+  { id: 9, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
+  { id: 10, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
+  { id: 11, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
+  { id: 12, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
+  { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
+  { id: 14, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_LOGO },
+];
+
 export default function MemberCompanies() {
-    const filters = ["All", "Local", "International", "Operator", "Associate", "Observer"];
+  const filters = [
+    "All",
+    "Local",
+    "International",
+    "Operator",
+    "Associate",
+    "Observer",
+  ];
 
   return (
     <section className="bg-[#f8fafc] max-w-8xl px-4 sm:px-6 md:px-[2.49rem] xl:px-[3rem] pb-[3rem] sm:pb-[4rem] md:pb-[5rem]">
@@ -36,77 +70,49 @@ export default function MemberCompanies() {
         </div>
 
         {/* Search + Filters */}
-         <div className="w-full  bg-gray-50">
-      <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-9 xl:mb-10">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 w-full border border-[#94A3B8] rounded-lg px-4 py-3 sm:py-0 sm:h-12 lg:pr-16 md:pr-2 bg-white">
-          {/* Search icon and input wrapper */}
-          <div className="flex items-center flex-1 w-full">
-            <FiSearch size={20} className="mr-3 shrink-0 text-[#334155]" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-transparent outline-none flex-1 w-full text-sm sm:text-[0.81125rem] md:text-[0.81125rem] lg:text-[1.0125rem] xl:text-[1.125rem] text-[#0b2b4c] placeholder-[#94A3B8]"
-            />
-          </div>
-          
-          {/* Filters */}
-          <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
-            {filters.map((item, index) => (
-              <button
-                key={item}
-                className={`h-8 cursor-pointer px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
-                  index === 0
-                    ? "bg-[#16A831] text-white border-[#16A83180]"
-                    : "text-[#0b2b4c] border-[#16A83180] bg-transparent hover:bg-gray-50"
-                }`}
-              >
-                {item}
-              </button>
-            ))}
+        <div className="w-full  bg-gray-50">
+          <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-9 xl:mb-10">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 w-full border border-[#94A3B8] rounded-lg px-4 py-3 sm:py-0 sm:h-12 lg:pr-16 md:pr-2 bg-white">
+              {/* Search icon and input wrapper */}
+              <div className="flex items-center flex-1 w-full">
+                <FiSearch size={20} className="mr-3 shrink-0 text-[#334155]" />
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="bg-transparent outline-none flex-1 w-full text-sm sm:text-[0.81125rem] md:text-[0.81125rem] lg:text-[1.0125rem] xl:text-[1.125rem] text-[#0b2b4c] placeholder-[#94A3B8]"
+                />
+              </div>
+
+              {/* Filters */}
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
+                {filters.map((item, index) => (
+                  <button
+                    key={item}
+                    className={`h-8 cursor-pointer px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${
+                      index === 0
+                        ? "bg-[#16A831] text-white border-[#16A83180]"
+                        : "text-[#0b2b4c] border-[#16A83180] bg-transparent hover:bg-gray-50"
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
-          <CompanyCard
-            name="Al-Haj Enterprises (Private) Limited"
-            logo={AEPL_LOGO}
-          />
-          <CompanyCard
-            name="Government Holdings (Private) Limited"
-            logo={GHPL_LOGO}
-          />
-          <CompanyCard
-            name="Kirthar Pakistan Holdings B.V"
-            logo={KPOGCL_LOGO}
-          />
-          <CompanyCard
-            name="Khyber Pakhtunkhwa Oil and Gas Company Limited"
-            logo={KUFPEC_LOGO}
-          />
-          <CompanyCard name="Mari Energies Limited" logo={MARI_LOGO} />
-
-          <CompanyCard
-            name="MOL Pakistan Oil and Gas Co. B.V."
-            logo={MOL_LOGO}
-          />
-          <CompanyCard
-            name="Oil and Gas Development Company Limited"
-            logo={OGX_LOGO}
-          />
-          <CompanyCard name="Orient Petroleum Inc" logo={OP_LOGO} />
-          <CompanyCard name="Polish Oil and Gas Company" logo={PGNIG_LOGO} />
-          <CompanyCard name="Pakistan Oilfields Ltd" logo={POL_LOGO} />
-
-          <CompanyCard name="Pakistan Petroleum Ltd" logo={PPL_LOGO} />
-          <CompanyCard name="Prime Global Energies Limited" logo={PRIME_LOGO} />
-          <CompanyCard name="Saif Energy Limited" logo={SAIF_LOGO} />
-          <CompanyCard
-            name="United Energy Pakistan Limited (UEPL)"
-            logo={UEP_LOGO}
-          />
+          {companies.map((company) => {
+            return (
+              <CompanyCard
+                logo={company.logo}
+                name={company.name}
+                id={company.id}
+              />
+            );
+          })}
         </div>
 
         <div className="font-medium py-6 w-fit">
@@ -140,9 +146,10 @@ export default function MemberCompanies() {
 interface Props {
   name: string;
   logo: StaticImageData;
+  id: number;
 }
 
-function CompanyCard({ name, logo }: Props) {
+function CompanyCard({ name, logo, id }: Props) {
   const router = useRouter();
   return (
     <div className="py-[0.5rem] sm:py-[0.5625rem] md:py-[0.625rem] lg:py-[0.625rem] px-[0.75rem] sm:px-[0.825rem] md:px-[0.925rem] lg:px-[1.325rem] gap-[0.5rem] sm:gap-[0.5625rem] md:gap-[0.5625rem] lg:gap-[0.625rem] h-full w-full aspect-[4/4] bg-white rounded-sm border-[0.5px] border-[#84929f] flex items-center justify-between flex-col">
@@ -161,7 +168,7 @@ function CompanyCard({ name, logo }: Props) {
       </p>
 
       <button
-        onClick={() => router.push("/members/membersPage")}
+        onClick={() => router.push(`/members/membersPage?id=${id}`)}
         className="cursor-pointer bg-[#16A831] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >
         View Profile
