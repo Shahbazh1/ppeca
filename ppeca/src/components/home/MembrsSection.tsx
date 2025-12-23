@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
+import { IoMdArrowForward } from "react-icons/io";
 
 // Import logos
 import PPL from "../../../public/images/companies_logo/PPL_LOGO.jpg";
@@ -121,8 +122,8 @@ export default function TestimonialSection() {
       </div>
 
       {/* Learn More Button */}
-      <button onClick={() => router.push("/members")} className="cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base">
-        Learn More &#8594;
+      <button onClick={() => router.push("/members")} className="flex items-center gap-2 cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base">
+        Learn More <IoMdArrowForward/>
       </button>
     </section>
   );

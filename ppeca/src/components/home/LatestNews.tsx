@@ -4,6 +4,7 @@ import third from "../../../public/images/news1.png";
 import second from "../../../public/images/news2.png";
 import first from "../../../public/images/news3.png";
 import { useRouter } from "next/navigation";
+import { IoMdArrowForward } from "react-icons/io";
 
 // Example data
 const newsData = [
@@ -83,9 +84,9 @@ export default function LatestNews() {
 
             <button
               onClick={() => router.push("/news")}
-              className="text-[#eba000] text-start cursor-pointer font-medium hover:underline"
+              className="flex items-center gap-2 text-[#eba000] text-start cursor-pointer font-medium hover:underline"
             >
-              Read More →
+              Read More <IoMdArrowForward/>
             </button>
           </div>
         </div>
@@ -117,9 +118,9 @@ export default function LatestNews() {
                 </p>
                 <button
                   onClick={() => router.push("/news")}
-                  className="text-[#eba000] cursor-pointer font-medium hover:underline"
+                  className="flex items-center gap-2 text-[#eba000] cursor-pointer font-medium hover:underline"
                 >
-                  Read More →
+                  Read More <IoMdArrowForward/>
                 </button>
               </div>
             </div>
