@@ -6,7 +6,11 @@ import Image from "next/image";
 import industry_views from "../../../public/images/svg_images/industry_views.svg";
 import petroleum_form from "../../../public/images/svg_images/petroleum_form.svg";
 import recommendations from "../../../public/images/svg_images/recommendations.svg";
-import represent_petroleum_industry from "../../../public/images/svg_images/represent_petroleum_industry.svg";
+import represent_petroleum_industry from "../../../public/images/svg_images/training.svg";
+import research_and_innovation from "../../../public/images/svg_images/research_and_innovation.svg";
+import training from "../../../public/images/svg_images/training.svg";
+import info_and_dataSharing from "../../../public/images/svg_images/info_and_dataSharing.svg";
+import tech_development from "../../../public/images/svg_images/tech_development.svg";
 
 const cardData = [
   {
@@ -28,6 +32,26 @@ const cardData = [
     img: recommendations,
     title: "Recommendations",
     desc: "To review upstream operations and propose measures that promote national self-sufficiency and optimal resource use.",
+  },
+  {
+    img: research_and_innovation,
+    title: "Research & Innovation",
+    desc: "To perform or sponsor research and development initiatives relevant to the petroleum exploration and production industry.",
+  },
+  {
+    img: training,
+    title: "Training",
+    desc: "To arrange training programs, courses, and seminars to enhance technical skills and professional expertise within the industry.",
+  },
+  {
+    img: info_and_dataSharing,
+    title: "Information & Data Sharing",
+    desc: "To compile, collect, and circulate accurate, reliable, and up-to-date information on petroleum exploration, development, and production in Pakistan.",
+  },
+  {
+    img: tech_development,
+    title: "Technology Development",
+    desc: "To develop plans for transferring and advancing suitable upstream technology in consultation with PPEPCA members.",
   },
 ];
 
@@ -105,7 +129,7 @@ const ObjectivesSection = () => {
             {cardData.map((card, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center w-[280px] sm:w-[260px] h-[280px] px-6 py-8 bg-white rounded-lg border border-[#94a3b8]/60 text-center shadow"
+                className="flex-shrink-0 flex flex-col items-center w-[300px] sm:w-[280px] h-[280px] px-6 py-8 bg-white rounded-lg border border-[#94a3b8]/60 text-center shadow"
               >
                 <Image src={card.img} alt={card.title} width={48} height={48} loading="lazy" />
                 <h3 className="mt-6 text-base font-semibold text-[#0a2540] font-['Open_Sans']">{card.title}</h3>

@@ -77,27 +77,14 @@ export default function NewsletterSection() {
 
               {/* Buttons */}
               <div className="flex flex-col gap-2 w-full max-w-[180px]">
-  <button 
-    onClick={() => window.open('https://www.ppepca.com/PPEPCA_Newsletters/PPEPCA_20th_issue.pdf', '_blank')}
-    className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-green-700 transition-colors duration-200"
-  >
-    View
-  </button>
+                <button className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-green-700 transition-colors duration-200">
+                  View
+                </button>
 
-  <button 
-    onClick={() => {
-      const link = document.createElement('a');
-      link.href = 'https://www.ppepca.com/PPEPCA_Newsletters/PPEPCA_20th_issue.pdf';
-      link.download = 'PPEPCA_20th_issue.pdf'; // suggested filename
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }}
-    className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
-  >
-    Download
-  </button>
-</div>
+                <button className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
+                  Download
+                </button>
+              </div>
             </div>
           </div>
         ))}
