@@ -65,7 +65,7 @@ const ChairmanMessage = () => {
 
       {/* Bottom Text */}
       <div className="max-w-[1400px] mx-auto mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
-        <p>
+        <p className="mb-0">
           Looking ahead, my vision for our association is one of unity and
           proactive leadership. We must foster an environment where new ideas
           flourish, and where we can advocate for policies that balance economic
@@ -80,7 +80,7 @@ const ChairmanMessage = () => {
 
         <p>Thank you for your trust and support.</p>
 
-        <p>Let&apos;s make this journey a big success together!</p>
+        <p className="mb-0">Let&apos;s make this journey a big success together!</p>
 
         <p className="font-bold">Best regards,</p>
 

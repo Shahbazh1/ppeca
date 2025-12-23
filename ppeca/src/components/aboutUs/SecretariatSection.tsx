@@ -8,12 +8,12 @@ const SecretariatSection = () => {
         {/* LEFT CONTENT */}
         <div className="flex-1 w-full">
           {/* Heading */}
-          <h1 className="mb-3 sm:mb-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0b3a63]">
+          <h1 className="mb-3 sm:mb-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0A2540]">
             SECRETARIAT
           </h1>
 
           {/* Paragraphs */}
-          <div className="space-y-4 font-['Open_Sans'] sm:space-y-5 text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px]  text-[#0b3a63]">
+          <div className="space-y-4 font-['Open_Sans'] sm:space-y-5 text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px]  text-[#0A2540]">
             <p>
               The Secretariat is located in Islamabad and has dedicated staff to
               look after the day-to-day running of the affairs of PPEPCA.
@@ -26,7 +26,7 @@ const SecretariatSection = () => {
             </p>
 
             {/* Bullet List */}
-            <ul className="list-disc font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] pl-5 sm:pl-6 space-y-1 sm:space-y-2 text-[#0b3a63]">
+            <ul className="list-disc font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] pl-5 sm:pl-6 space-y-1 sm:space-y-2 text-[#0A2540]">
               <li>
                 Defining, setting out, and meeting assigned yearly targets of PPEPCA.
               </li>

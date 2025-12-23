@@ -172,7 +172,7 @@ const companyData = [
   },
   {
     id: 9,
-    logo: POL_LOGO, // Replace PGNiG_logo with the actual imported logo variable if available
+    logo: PGNIG_LOGO, // Replace PGNiG_logo with the actual imported logo variable if available
     name: "Polish Oil and Gas Company - Pakistan Branch",
     address: "6th Floor, Ufone Tower, Jinnah Avenue, Blue Area, Islamabad",
     ceo: "Mr. Andrzej Kaczorowski",

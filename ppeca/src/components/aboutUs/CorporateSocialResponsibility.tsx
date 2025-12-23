@@ -14,7 +14,7 @@ export default function CorporateSocialResponsibility() {
           {/* Content */}
           <div className="mt-4 font-['Open_Sans'] sm:mt-5 md:mt-6 max-w-3xl text-[#0a2540]">
             <h3 className="text-sm sm:text-base font-semibold">Member Community Work</h3>
-            <p className="mt-1 sm:mt-2 text-xs sm:text-sm">
+            <p className="mt-1 text-sm sm:text-[14px] lg:text-[14px] xl:text-[15px] ">
               Whichever company works to add 2-3 paragraphs on the work done by
               each in their area.
             </p>
