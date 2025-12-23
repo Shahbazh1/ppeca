@@ -60,8 +60,8 @@ export default function Footer() {
               { label: "Members", href: "/members" },
               { label: "News & Events", href: "/news" },
               { label: "About us", href: "/about" },
-              { label: "Policies", href: "/policies" },
-              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Policies", href: "#" },
+              { label: "Privacy Policy", href: "#" },
               { label: "Contact us", href: "/contact" },
             ].map((item) => (
               <li key={item.href}>
