@@ -70,9 +70,9 @@ export default function MemberCompanies() {
         </div>
 
         {/* Search + Filters */}
-        <div className="w-full  bg-gray-50">
+        <div className="w-full  bg-[#f8fafc]">
           <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-9 xl:mb-10">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 w-full border border-[#94A3B8] rounded-lg px-4 py-3 sm:py-0 sm:h-12 lg:pr-16 md:pr-2 bg-white">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 w-full border border-[#94A3B8] rounded-lg px-4 py-3 sm:py-0 sm:h-12 lg:pr-16 md:pr-2 bg-[#f8fafc]">
               {/* Search icon and input wrapper */}
               <div className="flex items-center flex-1 w-full">
                 <FiSearch size={20} className="mr-3 shrink-0 text-[#334155]" />
@@ -84,7 +84,7 @@ export default function MemberCompanies() {
               </div>
 
               {/* Filters */}
-              <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
+              {/* <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
                 {filters.map((item, index) => (
                   <button
                     key={item}
@@ -97,16 +97,17 @@ export default function MemberCompanies() {
                     {item}
                   </button>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
-          {companies.map((company) => {
+          {companies.map((company,index) => {
             return (
               <CompanyCard
+              key={index}
                 logo={company.logo}
                 name={company.name}
                 id={company.id}

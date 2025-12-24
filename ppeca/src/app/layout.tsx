@@ -7,11 +7,11 @@ import Footer from "../components/Footer";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "PPECA",
+  title: "PPEPCA",
   description: "Pakistan Petroleum Exploration & Production Companies Association",
    icons: {
-    icon: "/favicon.svg",   // favicon for browser tab
-    apple: "/favicon.svg",  // Apple touch icon
+    icon: "/logo.png",   // favicon for browser tab
+    apple: "/logo.png",  // Apple touch icon
   },
 };
 

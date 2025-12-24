@@ -23,7 +23,7 @@ export default function AboutSection() {
             </span>
           </h2>
 
-          <p className="text-[#334155] pr-2 mt-3 sm:mt-4 md:mt-3 lg:mt-4 font-['Open_Sans'] text-sm sm:text-[0.938rem] md:text-[0.875rem] lg:text-[1rem] xl:text-[1.125rem] 2xl:text-[1.25rem] leading-relaxed">
+          <p className="text-[#334155]  pr-2 mt-3 sm:mt-4 md:mt-3 lg:mt-4 font-['Open_Sans'] text-sm sm:text-[0.938rem] md:text-[0.875rem] lg:text-[1rem] xl:text-[1.125rem] 2xl:text-[1.25rem] leading-relaxed">
             In the eighties, with the rising curve of activities and the
             unprecedented surge in the petroleum exploration and production
             (E&P) activities, necessitated frequent coordination among those
@@ -49,7 +49,7 @@ export default function AboutSection() {
           </div>
 
           {/* Foreground Image */}
-          <div className="relative w-[180px] h-[180px] sm:w-[210px] sm:h-[210px] md:w-[250px] md:h-[250px] lg:w-[230px] lg:h-[230px] xl:w-[300px] xl:h-[300px] 2xl:w-[420px] 2xl:h-[420px] bottom-[-30px] sm:bottom-[-35px] md:bottom-[-40px] lg:-bottom-27 xl:-bottom-24 2xl:-bottom-28 left-[-20px] sm:left-[-30px] md:left-[-40px] lg:left-[-120px] xl:left-[-150px] 2xl:left-[-60px] z-10 shadow-xl">
+          <div className="relative w-[180px] h-[180px] sm:w-[210px] sm:h-[210px] md:w-[250px] md:h-[250px] lg:w-[230px] lg:h-[230px] xl:w-[300px] xl:h-[300px] 2xl:w-[420px] 2xl:h-[420px] bottom-[-30px] sm:bottom-[-35px] md:bottom-[-40px] lg:-bottom-27 xl:-bottom-24 2xl:-bottom-28 left-[-20px] sm:left-[-30px] md:left-[-40px] lg:left-[-120px] xl:left-[-130px] 2xl:left-[-60px] z-10 shadow-xl">
             <img
               src={Img2.src}
               alt="Worker"

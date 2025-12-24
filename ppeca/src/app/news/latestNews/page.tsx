@@ -1,4 +1,5 @@
 // pages/index.tsx
+import Link from "next/link";
 import NewsCard from "../../../components/latestNews/NewsCard";
 
 export default function Home() {
@@ -103,7 +104,7 @@ export default function Home() {
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
       {/* Breadcrumb */}
       <p className="font-['Open_Sans'] font-light text-xs sm:text-sm md:text-base text-[#0A2540] pt-4 sm:pt-6 md:pt-8">
-        Members / Membership Form
+        <Link href='/news' className="inline-block"> News & Events </Link> / Lastest News
       </p>
 
       {/* Heading */}

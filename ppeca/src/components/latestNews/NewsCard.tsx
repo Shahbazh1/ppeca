@@ -16,11 +16,11 @@ const NewsCard: React.FC<NewsCardProps> = ({
   publishedTime,
 }) => {
   return (
-    <div className="w-full bg-[#f8fafc] px-4 py-5 border-[#818f9e] border-b-[0.35px] rounded-b-[5.53px]">
+    <div className="w-full  bg-[#f8fafc] px-4 py-5 border-[#818f9e] border-b-[0.35px] rounded-b-[5.53px]">
       
       {/* TITLE */}
-      <h1
-        className="mb-2 text-[#000000] leading-[1.3] font-['Montserrat'] font-bold underline
+      <a href="https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1"
+        className="mb-2 cursor-pointer text-[#000000] leading-[1.3] font-['Montserrat'] font-bold underline hover:no-underline
         xl:text-[26px]
         lg:text-[24px]
         md:text-[22px]
@@ -29,7 +29,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
         line-clamp-2"
       >
         {title}
-      </h1>
+      </a>
 
       {/* CONTENT */}
       <div className="flex gap-4 items-start sm:flex-row flex-col">

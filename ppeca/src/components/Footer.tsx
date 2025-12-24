@@ -63,8 +63,8 @@ export default function Footer() {
               { label: "Policies", href: "#" },
               { label: "Privacy Policy", href: "#" },
               { label: "Contact us", href: "/contact" },
-            ].map((item) => (
-              <li key={item.href}>
+            ].map((item,index) => (
+              <li key={index}>
                 <Link
                   href={item.href}
                   className="inline-block hover:underline font-inter text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-normal"

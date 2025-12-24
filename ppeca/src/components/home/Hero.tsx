@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import heroBg from "../../../public/images/heroBg.png";
 import { IoMdArrowForward } from "react-icons/io";
+import Link from "next/link";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -65,9 +66,9 @@ export default function HeroSection() {
             </p>
           </button>
 
-          <button className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
+          <Link href='/about' className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
             Learn More
-          </button>
+          </Link>
         </div>
         {/* Bottom Indicator */}
         <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 lg:bottom-3 xl:bottom-3 2xl:bottom-5 left-1/2 z-10 -translate-x-1/2">
