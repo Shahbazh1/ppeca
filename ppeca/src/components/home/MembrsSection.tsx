@@ -58,9 +58,16 @@ export default function TestimonialSection() {
 
       {/* Testimonial */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4">
-          <Image src={member} alt={testimonial.name} loading='lazy' width={96} height={96} />
-        </div>
+        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
+  <Image
+    src={member}
+    alt={testimonial.name}
+    fill
+    className="object-cover"
+    loading="lazy"
+  />
+</div>
+
         <p className="max-w-xl text-white font-['Open_Sans'] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[1.25rem] mb-4">
           {testimonial.text}
         </p>
