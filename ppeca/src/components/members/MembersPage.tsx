@@ -4,21 +4,23 @@ export const dynamic = "force-dynamic";
 
 import React from "react";
 import { useSearchParams } from "next/navigation";
-import AEPL_LOGO from "../../../../public/images/POL_logo.png";
-import POL_logo from "../../../../public/images/companies_logo/AEPL_LOGO.jpg";
-import GHPL_LOGO from "../../../../public/images/companies_logo/GHPL_LOGO.png";
-import KPOGCL_LOGO from "../../../../public/images/companies_logo/KPOGCL_LOGO.png";
-import KUFPEC_LOGO from "../../../../public/images/companies_logo/KUFPEC_LOGO.png";
-import MARI_LOGO from "../../../../public/images/companies_logo/MARI_LOGO.png";
-import MOL_LOGO from "../../../../public/images/companies_logo/MOL_LOGO.jpg";
-import OGX_LOGO from "../../../../public/images/companies_logo/OGX_LOGO.png";
-import UEP_LOGO from "../../../../public/images/companies_logo/UEP_LOGO.jpg";
-import OP_LOGO from "../../../../public/images/companies_logo/OP_LOGO.jpg";
-import PGNIG_LOGO from "../../../../public/images/companies_logo/PGNIG_LOGO.jpg";
-import POL_LOGO from "../../../../public/images/companies_logo/POL_LOGO.png";
-import PPL_LOGO from "../../../../public/images/companies_logo/PPL_LOGO.jpg";
-import PRIME_LOGO from "../../../../public/images/companies_logo/PRIME_LOGO.png";
-import SAIF_LOGO from "../../../../public/images/companies_logo/SAIF_LOGO.jpg";
+import AEPL_LOGO from "../../../public/images/POL_logo.png";
+import POL_logo from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
+import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
+import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
+import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
+import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
+import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
+import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
+import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
+import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
+import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
+import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
+import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
+import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
+import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
+
+
 
 import Image from "next/image";
 import { Suspense } from "react";
