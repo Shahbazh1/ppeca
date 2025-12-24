@@ -77,7 +77,7 @@ export default function LatestNews() {
                 {newsData[0].title}
               </h3>
 
-              <p className="text-gray-600 mb-3 line-clamp-3 sm:line-clamp-4 md:line-clamp-4 lg:line-clamp-5 xl:line-clamp-6 2xl:line-clamp-6">
+              <p className="text-gray-600 md:mb-3 line-clamp-3 sm:line-clamp-4 md:line-clamp-4 lg:line-clamp-5 xl:line-clamp-6 2xl:line-clamp-6">
                 {newsData[0].description}
               </p>
             </div>
