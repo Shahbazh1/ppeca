@@ -5,17 +5,52 @@ import React, { useState } from "react";
 export type NewsletterItem = {
   title: string;
   image: string;
+  pdfUrl: string;
 };
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
 
 const newsletters: NewsletterItem[] = [
-  { title: "PPEPCA 20th issue", image: "/images/ppepca_20_issue.png" },
-  { title: "PPEPCA 19th issue", image: "/images/ppepca_19_issue.png" },
-  { title: "PPEPCA 18th issue", image: "/images/ppepca_18_issue.png" },
-  { title: "PPEPCA 17th issue", image: "/images/ppepca_17_issue.png" },
-  { title: "PPEPCA 16th issue", image: "/images/ppepca_16_issue.png" },
+  {
+    title: "PPEPCA 20th issue",
+    image: "/images/ppepca_20_issue.png",
+    pdfUrl: `${BASE_URL}/uploads/PPEPCA_20th_issue_408313cdd9.pdf`,
+  },
+  {
+    title: "PPEPCA 19th issue",
+    image: "/images/ppepca_19_issue.png",
+    pdfUrl: `${BASE_URL}/uploads/PPEPCA_19th_issue_83189bf9f4.pdf`,
+  },
+  {
+    title: "PPEPCA 18th issue",
+    image: "/images/ppepca_18_issue.png",
+    pdfUrl: `${BASE_URL}/uploads/PPEPCA_18th_issue_8b26cb146e.pdf`,
+  },
+  {
+    title: "PPEPCA 17th issue",
+    image: "/images/ppepca_17_issue.png",
+    pdfUrl: `${BASE_URL}/uploads/PPEPCA_17th_issue_60cbe4fc88.pdf`,
+  },
+  {
+    title: "PPEPCA 16th issue",
+    image: "/images/ppepca_16_issue.png",
+    pdfUrl: `${BASE_URL}/uploads/PPEPCA_16th_issue_875397de63.pdf`,
+  },
 ];
 
+
 export default function NewsletterSection() {
+  const downloadPdf = (url: string, filename: string) => {
+  fetch(url)
+    .then((res) => res.blob())
+    .then((blob) => {
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename; // specify filename
+      link.click();
+    })
+    .catch((err) => console.error("Download failed:", err));
+};
+
   const [searchTerm, setSearchTerm] = useState("");
 
   // Filter newsletters based on search term
@@ -85,14 +120,24 @@ export default function NewsletterSection() {
                 </p>
 
                 {/* Buttons */}
-                <div className="flex flex-col gap-2 w-full max-w-[180px]">
-                  <button className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200">
+                <div className="flex flex-col text-center gap-2 w-full max-w-[180px]">
+                  <a
+                    href={item.pdfUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200"
+                  >
                     View
-                  </button>
+                  </a>
 
-                  <button className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200">
-                    Download
-                  </button>
+                  <button
+  onClick={() => downloadPdf(item.pdfUrl, `${item.title}.pdf`)}
+  className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
+>
+  Download
+</button>
+
                 </div>
               </div>
             </div>

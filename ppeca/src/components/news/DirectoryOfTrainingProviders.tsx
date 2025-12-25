@@ -2,19 +2,46 @@
 
 import React from "react";
 
+
 export type TrainingItem = {
   title: string;
+  fileUrl: string;
 };
 
+// Set base URL dynamically
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+
 const trainingData: TrainingItem[] = [
-  { title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group" },
-  { title: "EOR related R&D – by MOL Group" },
-  { title: "Fast Track EOR: Re-designing through Integration" },
-  { title: "EOR Techniques Smart Screening for Candidate Reservoir" },
-  { title: "IOR/EOR Monitoring & Control System – by Weatherford" },
-  { title: "EOR Alliance – by Black Gold" },
-  { title: "IOR/EOR Applications in MOL’s Perspective" },
+  {
+    title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "EOR related R&D – by MOL Group",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "Fast Track EOR: Re-designing through Integration",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "EOR Techniques Smart Screening for Candidate Reservoir",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "IOR/EOR Monitoring & Control System – by Weatherford",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "EOR Alliance – by Black Gold",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
+  {
+    title: "IOR/EOR Applications in MOL’s Perspective",
+    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+  },
 ];
+
 
 export default function DirectoryOfTrainingProviders() {
   return (
@@ -37,9 +64,13 @@ export default function DirectoryOfTrainingProviders() {
             </p>
 
             {/* Button */}
-            <button className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16A831] hover:bg-[#128a28] text-[#ffffff] text-sm font-medium px-6 py-2 rounded-sm transition">
+            <a
+            href={item.fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16A831] hover:bg-[#128a28] text-[#ffffff] text-sm font-medium px-6 py-2 rounded-sm transition">
               Download
-            </button>
+            </a>
           </div>
         ))}
       </div>

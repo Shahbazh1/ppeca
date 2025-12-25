@@ -36,9 +36,9 @@ export default function LatestNewsHero() {
       <div className="absolute inset-0 bg-[#00330A]/96" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-8 lg:gap-12">
           {/* Left Content */}
-          <div className="text-white flex flex-col justify-center lg:justify-start">
+          <div className="text-white flex flex-col justify-center pr-16 lg:justify-start">
             <div   className="text-4xl font-['Montserrat'] sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               Latest
               <br />

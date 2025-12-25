@@ -1,3 +1,7 @@
+"use client";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 import ic_sharp from "../../../public/images/svg_images/ic_sharp.svg";
 import carbon_location from "../../../public/images/svg_images/carbon_location.svg";
 import bxs_phone from "../../../public/images/svg_images/bxs_phone.svg";
@@ -6,12 +10,65 @@ import vactor2 from "../../../public/images/svg_images/Group 1000001750.svg";
 import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    First_Name: "",
+    Last_Name: "",
+    Email: "",
+    Phone_No: "",
+    Subject: "general",
+    Msg: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact-forms`,
+        {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",     
+        },
+        body: JSON.stringify({
+          data: formData,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      toast.success("Form submitted successfully!");
+
+      setFormData({
+        First_Name: "",
+        Last_Name: "",
+        Email: "",
+        Phone_No: "",
+        Subject: "general",
+        Msg: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <section className="min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800">Contact Us</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800">
+            Contact Us
+          </h1>
           <p className="text-sm sm:text-base font-['Open_Sans'] text-slate-500 mt-3 max-w-md mx-auto">
             Any question or remarks? Just write us a message!
           </p>
@@ -40,7 +97,9 @@ export default function ContactUs() {
                     alt="phone"
                     className="w-5 h-5 flex-shrink-0"
                   />
-                  <span className="text-sm sm:text-base">92 51 2102135 / 92 51 2102136</span>
+                  <span className="text-sm sm:text-base">
+                    92 51 2102135 / 92 51 2102136
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -91,13 +150,16 @@ export default function ContactUs() {
 
           {/* RIGHT FORM PANEL */}
           <div className="w-full lg:flex-[55%] font-['Open_Sans'] p-6 sm:p-8 lg:p-10 bg-white">
-            <form className="space-y-6 sm:space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
               {/* Name */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 <div className="flex-1">
                   <label className="text-sm text-slate-600">First Name</label>
                   <input
                     type="text"
+                    name="First_Name"
+                    value={formData.First_Name}
+                    onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
@@ -106,7 +168,9 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">Last Name</label>
                   <input
                     type="text"
-                    defaultValue="Doe"
+                    name="Last_Name"
+                    value={formData.Last_Name}
+                    onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
@@ -116,6 +180,9 @@ export default function ContactUs() {
                 <div className="flex-1">
                   <label className="text-sm text-slate-600">Email</label>
                   <input
+                    name="Email"
+                    value={formData.Email}
+                    onChange={handleChange}
                     type="email"
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
@@ -125,7 +192,9 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">Phone Number</label>
                   <input
                     type="tel"
-                    defaultValue="+1 012 3456 789"
+                    name="Phone_No"
+                    value={formData.Phone_No}
+                    onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
@@ -135,15 +204,22 @@ export default function ContactUs() {
                   Select Subject?
                 </p>
                 <div className="grid grid-cols-2 sm:flex sm:justify-between text-sm text-slate-600 w-full gap-2 sm:gap-0">
-                  {["General Inquiry", "General Inquiry", "General Inquiry", "General Inquiry"].map((item, index) => (
+                  {[
+                    "General Inquiry",
+                    "General Inquiry",
+                    "General Inquiry",
+                    "General Inquiry",
+                  ].map((item, index) => (
                     <label
                       key={index}
                       className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
                     >
                       <input
                         type="radio"
-                        name="subject"
-                        defaultChecked={index === 0}
+                        name="Subject"
+                        value="general"
+                        checked={formData.Subject === "general"}
+                        onChange={handleChange}
                         className="w-4 h-4 accent-slate-800 cursor-pointer"
                       />
                       <span>{item}</span>
@@ -156,6 +232,9 @@ export default function ContactUs() {
               <div>
                 <label className="text-sm text-slate-600">Message</label>
                 <textarea
+                  name="Msg"
+                  value={formData.Msg}
+                  onChange={handleChange}
                   rows={1}
                   placeholder="Write your message.."
                   className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
