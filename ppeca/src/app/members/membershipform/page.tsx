@@ -546,7 +546,7 @@ const CompanyForm = () => {
           </div>
         </div>
         {/* buttons */}
-        <div className="col-span-2 space-y-4">
+        <div className="col-span-1 md:col-span-2 space-y-4">
           <button
             type="submit"
             className="w-full h-10 cursor-pointer sm:h-12 rounded bg-[#16a831] text-white font-semibold flex items-center justify-center hover:bg-[#128a28]"
