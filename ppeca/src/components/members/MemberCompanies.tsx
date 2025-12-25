@@ -3,6 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
@@ -47,6 +48,8 @@ const companies: Company[] = [
 ];
 
 export default function MemberCompanies() {
+  const [search, setSearch] = useState("");
+
   const filters = [
     "All",
     "Local",
@@ -55,6 +58,10 @@ export default function MemberCompanies() {
     "Associate",
     "Observer",
   ];
+
+  const filteredCompanies = companies.filter((company) =>
+    company.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <section className="bg-[#f8fafc] max-w-8xl px-4 sm:px-6 md:px-[2.49rem] xl:px-[3rem] pb-[3rem] sm:pb-[4rem] md:pb-[5rem]">
@@ -79,6 +86,8 @@ export default function MemberCompanies() {
                 <input
                   type="text"
                   placeholder="Search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                   className="bg-transparent outline-none flex-1 w-full text-sm sm:text-[0.81125rem] md:text-[0.81125rem] lg:text-[1.0125rem] xl:text-[1.125rem] text-[#0b2b4c] placeholder-[#94A3B8]"
                 />
               </div>
@@ -104,10 +113,10 @@ export default function MemberCompanies() {
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
-          {companies.map((company,index) => {
+          {filteredCompanies.map((company) => {
             return (
               <CompanyCard
-              key={index}
+                key={company.id}
                 logo={company.logo}
                 name={company.name}
                 id={company.id}
@@ -170,7 +179,7 @@ function CompanyCard({ name, logo, id }: Props) {
 
       <button
         onClick={() => router.push(`/members/membersPage?id=${id}`)}
-        className="cursor-pointer bg-[#16A831] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
+        className="cursor-pointer bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >
         View Profile
       </button>

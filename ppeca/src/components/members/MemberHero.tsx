@@ -32,7 +32,7 @@ export default function PPEPCAHero() {
 
         <button
           onClick={() => router.push('/members/membershipform')}
-          className="cursor-pointer mt-[1rem] sm:mt-[1.5rem] md:mt-[1.62rem] lg:mt-[2.16rem] xl:mt-[2.5rem] mb-[2rem] sm:mb-[3rem] md:mb-[3.6rem] lg:mb-[4.0rem] xl:mb-[4.50rem] inline-flex items-center gap-2 rounded-sm bg-[#16A831] px-3 sm:px-4 py-2.5 sm:py-3 text-[#F8FAFC] text-xs sm:text-sm font-semibold transition"
+          className="cursor-pointer mt-[1rem] sm:mt-[1.5rem] md:mt-[1.62rem] lg:mt-[2.16rem] xl:mt-[2.5rem] mb-[2rem] sm:mb-[3rem] md:mb-[3.6rem] lg:mb-[4.0rem] xl:mb-[4.50rem] inline-flex items-center gap-2 rounded-sm bg-[#16A831] hover:bg-[#128a28] px-3 sm:px-4 py-2.5 sm:py-3 text-[#F8FAFC] text-xs sm:text-sm font-semibold transition"
         >
           Become a member
           <Image

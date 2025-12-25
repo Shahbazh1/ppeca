@@ -2,14 +2,14 @@
 import { useState } from "react";
 import { FiEye, FiEyeOff,  } from "react-icons/fi";
 import { IoMdArrowDropdown } from "react-icons/io";
-
+import Link from "next/link";
 const CompanyForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="bg-[#f8fafc] pb-4 md:pb-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
       <p className="font-['Open_Sans'] font-light text-xs sm:text-sm md:text-base text-[#0A2540] pt-4 sm:pt-6 md:pt-8">
-        Members / Membership Form
+        <Link href='/members' className="inline-block"> Members  </Link> / Membership Form
       </p>
       <h1 className="text-[#0A2540] pt-4 sm:pt-6 md:pt-8 text-center font-['Montserrat'] text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold">
         PPEPCA Membership Form
@@ -369,7 +369,7 @@ const CompanyForm = () => {
       <div className="space-y-4">
         <button
           type="submit"
-          className="w-full h-10 cursor-pointer sm:h-12 rounded bg-[#16a831] text-white font-semibold flex items-center justify-center hover:bg-green-700"
+          className="w-full h-10 cursor-pointer sm:h-12 rounded bg-[#16a831] text-white font-semibold flex items-center justify-center hover:bg-[#128a28]"
         >
           Submit
         </button>

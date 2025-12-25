@@ -165,7 +165,7 @@ export default function ContactUs() {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-[#16A831] hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10"
+                  className="bg-[#16A831] hover:bg-[#128a28] cursor-pointer text-white px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10"
                 >
                   Send Message
                 </button>

@@ -1,104 +1,73 @@
 // pages/index.tsx
+'use client'
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import NewsCard from "../../../components/latestNews/NewsCard";
 
 export default function Home() {
-  const news = [
-    {
-      image: "/images/news1.png",
-      title:
-        "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
-      description:
-        "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "OPEC Announces Temporary Pause in Oil Production to Stabilize Global Markets",
-      description:
-        "The Organization of the Petroleum Exporting Countries (OPEC) has announced a temporary pause in oil production following a high-level meeting held on Sunday. According to an official statement, the decision aims to balance global oil demand, stabilize prices, and address growing economic uncertainties affecting energy markets worldwide.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "Pakistan’s Energy Sector Sees Growth with New Hydrocarbon Discoveries",
-      description:
-        "Pakistan’s oil and gas sector continues to show positive momentum as new hydrocarbon discoveries contribute to increased local production. Industry experts believe these developments will help reduce reliance on imports and strengthen the country’s long-term energy security.",
-      publishedTime: "Published about 6 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
-      description:
-        "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "OPEC Announces Temporary Pause in Oil Production to Stabilize Global Markets",
-      description:
-        "The Organization of the Petroleum Exporting Countries (OPEC) has announced a temporary pause in oil production following a high-level meeting held on Sunday. According to an official statement, the decision aims to balance global oil demand, stabilize prices, and address growing economic uncertainties affecting energy markets worldwide.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "Pakistan’s Energy Sector Sees Growth with New Hydrocarbon Discoveries",
-      description:
-        "Pakistan’s oil and gas sector continues to show positive momentum as new hydrocarbon discoveries contribute to increased local production. Industry experts believe these developments will help reduce reliance on imports and strengthen the country’s long-term energy security.",
-      publishedTime: "Published about 6 hours ago",
-    },{
-      image: "/images/news1.png",
-      title:
-        "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
-      description:
-        "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "OPEC Announces Temporary Pause in Oil Production to Stabilize Global Markets",
-      description:
-        "The Organization of the Petroleum Exporting Countries (OPEC) has announced a temporary pause in oil production following a high-level meeting held on Sunday. According to an official statement, the decision aims to balance global oil demand, stabilize prices, and address growing economic uncertainties affecting energy markets worldwide.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "Pakistan’s Energy Sector Sees Growth with New Hydrocarbon Discoveries",
-      description:
-        "Pakistan’s oil and gas sector continues to show positive momentum as new hydrocarbon discoveries contribute to increased local production. Industry experts believe these developments will help reduce reliance on imports and strengthen the country’s long-term energy security.",
-      publishedTime: "Published about 6 hours ago",
-    },{
-      image: "/images/news1.png",
-      title:
-        "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
-      description:
-        "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "OPEC Announces Temporary Pause in Oil Production to Stabilize Global Markets",
-      description:
-        "The Organization of the Petroleum Exporting Countries (OPEC) has announced a temporary pause in oil production following a high-level meeting held on Sunday. According to an official statement, the decision aims to balance global oil demand, stabilize prices, and address growing economic uncertainties affecting energy markets worldwide.",
-      publishedTime: "Published about 4 hours ago",
-    },
-    {
-      image: "/images/news1.png",
-      title:
-        "Pakistan’s Energy Sector Sees Growth with New Hydrocarbon Discoveries",
-      description:
-        "Pakistan’s oil and gas sector continues to show positive momentum as new hydrocarbon discoveries contribute to increased local production. Industry experts believe these developments will help reduce reliance on imports and strengthen the country’s long-term energy security.",
-      publishedTime: "Published about 6 hours ago",
-    },
-  ];
+  interface NewsItem {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    publishedAt: string;
+    image?: { data: { attributes: { url: string } } };
+  };
+}
+    const [news, setNews] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  
+
+  useEffect(() => {
+    fetch("http://localhost:1337/api/newses?populate=*")
+      .then((res) => res.json())
+      .then((data) => {
+        setNews(data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+   if (loading) return <p>Loading...</p>;
+
+  // const news = [
+  //   {
+  //     image: "/images/news1.png",
+  //     title:
+  //       "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
+  //     description:
+  //       "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
+  //     publishedTime: "Published about 4 hours ago",
+  //   },
+  //   {
+  //     image: "/images/news1.png",
+  //     title:
+  //       "OPEC Announces Temporary Pause in Oil Production to Stabilize Global Markets",
+  //     description:
+  //       "The Organization of the Petroleum Exporting Countries (OPEC) has announced a temporary pause in oil production following a high-level meeting held on Sunday. According to an official statement, the decision aims to balance global oil demand, stabilize prices, and address growing economic uncertainties affecting energy markets worldwide.",
+  //     publishedTime: "Published about 4 hours ago",
+  //   },
+  //   {
+  //     image: "/images/news1.png",
+  //     title:
+  //       "Pakistan’s Energy Sector Sees Growth with New Hydrocarbon Discoveries",
+  //     description:
+  //       "Pakistan’s oil and gas sector continues to show positive momentum as new hydrocarbon discoveries contribute to increased local production. Industry experts believe these developments will help reduce reliance on imports and strengthen the country’s long-term energy security.",
+  //     publishedTime: "Published about 6 hours ago",
+  //   },
+  //   {
+  //     image: "/images/news1.png",
+  //     title:
+  //       "OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well OGDC Reports Significant Oil and Gas Production from Baragzai X-01 Well",
+  //     description:
+  //       "Oil and Gas Development Company Limited (OGDC) has successfully brought the Baragzai X-01 exploratory well into production. The well is currently producing approximately 2,280 barrels of oil per day along with 5.6 million standard cubic feet of gas per day through a 32/64-inch choke, marking a major boost to Pakistan’s domestic energy supply.",
+  //     publishedTime: "Published about 4 hours ago",
+  //   }
+  // ];
 
   return (
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -125,10 +94,11 @@ export default function Home() {
         {news.map((item, index) => (
           <NewsCard
             key={index}
-            image={item.image}
-            title={item.title}
-            description={item.description}
-            publishedTime={item.publishedTime}
+            image={item.NewsImage}
+            title={item.NewsTitle}
+            description={item.NewsDescription}
+            publishedTime={item.publishedAt}
+            url={item.NewsUrl}
           />
         ))}
       </div>

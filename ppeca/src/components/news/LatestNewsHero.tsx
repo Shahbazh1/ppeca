@@ -36,7 +36,7 @@ export default function LatestNewsHero() {
       <div className="absolute inset-0 bg-[#00330A]/96" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-12">
           {/* Left Content */}
           <div className="text-white flex flex-col justify-center lg:justify-start">
             <div   className="text-4xl font-['Montserrat'] sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
@@ -61,7 +61,7 @@ export default function LatestNewsHero() {
             {newsItems.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row justify-between h-full hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between h-full hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-center gap-3 text-xs mb-2">
@@ -71,7 +71,7 @@ export default function LatestNewsHero() {
                     <span className="w-2 h-2  rounded-full bg-gray-300" />
                     <span className="text-gray-500 font-['Open_Sans']">{item.date}</span>
                   </div>
-                  <p className="text-sm font-['Montserrat'] font-semibold text-gray-900 leading-snug">
+                  <p className="text-sm font-['Montserrat'] font-bold text-gray-900 leading-snug">
                     {item.text}
                   </p>
                 </div>

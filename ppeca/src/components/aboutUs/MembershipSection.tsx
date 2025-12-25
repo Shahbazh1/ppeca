@@ -53,7 +53,7 @@ const MembershipSection: React.FC = () => {
 
         {/* Button */}
         <div className="mt-8 sm:mt-10">
-          <button onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16A831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#17912f] transition-colors">
+          <button onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16A831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#128a28] transition-colors">
             Become a Member
           </button>
         </div>

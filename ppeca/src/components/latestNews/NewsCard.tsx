@@ -7,6 +7,7 @@ interface NewsCardProps {
   title: string;
   description: string;
   publishedTime: string;
+  url: string;
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({
@@ -14,12 +15,13 @@ const NewsCard: React.FC<NewsCardProps> = ({
   title,
   description,
   publishedTime,
+  url
 }) => {
   return (
     <div className="w-full  bg-[#f8fafc] px-4 py-5 border-[#818f9e] border-b-[0.35px] rounded-b-[5.53px]">
       
       {/* TITLE */}
-      <a href="https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1"
+      <a target="_blank" href={url}
         className="mb-2 cursor-pointer text-[#000000] leading-[1.3] font-['Montserrat'] font-bold underline hover:no-underline
         xl:text-[26px]
         lg:text-[24px]

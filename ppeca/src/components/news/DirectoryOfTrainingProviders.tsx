@@ -37,7 +37,7 @@ export default function DirectoryOfTrainingProviders() {
             </p>
 
             {/* Button */}
-            <button className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16A831] hover:bg-[#16a831] text-[#ffffff] text-sm font-medium px-6 py-2 rounded-sm transition">
+            <button className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16A831] hover:bg-[#128a28] text-[#ffffff] text-sm font-medium px-6 py-2 rounded-sm transition">
               Download
             </button>
           </div>

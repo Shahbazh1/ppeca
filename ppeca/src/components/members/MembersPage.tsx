@@ -361,7 +361,7 @@ if (!company) return <div>Company not found!</div>;
             <a
               target="_blank"
               href={company.website}
-              className="inline-block bg-[#16A831] text-[#F8FAFC] font-semibold px-6 py-2 rounded hover:bg-green-700 transition"
+              className="inline-block bg-[#16A831] hover:bg-[#128a28] text-[#F8FAFC] font-semibold px-6 py-2 rounded  transition"
             >
               Visit Website
             </a>

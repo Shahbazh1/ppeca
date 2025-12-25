@@ -115,7 +115,7 @@ const ObjectivesSection = () => {
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             className={`absolute left-0 sm:-left-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${
-              canScrollLeft ? "bg-[#16A831] hover:bg-green-700 cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
+              canScrollLeft ? "bg-[#16A831] hover:bg-[#128a28] cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
             }`}
           >
             <HiChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
@@ -143,7 +143,7 @@ const ObjectivesSection = () => {
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             className={`absolute right-0 sm:-right-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${
-              canScrollRight ? "bg-[#16A831] hover:bg-green-700 cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
+              canScrollRight ? "bg-[#16A831] hover:bg-[#128a28] cursor-pointer" : "bg-[#16A831] opacity-50 cursor-not-allowed"
             }`}
           >
             <HiChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
