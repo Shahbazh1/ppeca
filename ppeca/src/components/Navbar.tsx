@@ -123,8 +123,8 @@ const Navbar: React.FC = () => {
           </nav>
 
           <Link
-          href='/news'
-            className="border rounded-sm flex items-center justify-center gap-2 cursor-pointer border-[#16A831] border-[0.5px] px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0a2540] hover:bg-[#16A831] hover:text-white transition"
+          href='/news/latestNews'
+            className="hidden lg:flex border rounded-sm  items-center justify-center gap-2 cursor-pointer border-[#16A831] border-[0.5px] px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0a2540] hover:bg-[#16A831] hover:text-white transition"
           >
             Latest News <IoMdArrowForward />
           </Link>
@@ -166,15 +166,7 @@ const Navbar: React.FC = () => {
                   ))}
                 </nav>
 
-                {/* Mobile Search */}
-                <div className="flex items-center mt-4 p-2 border border-[#0A2540] rounded-[8px]">
-                  <input
-                    type="text"
-                    placeholder="Search Members"
-                    className="w-full text-[0.95rem] outline-none bg-transparent placeholder:text-[#747474]"
-                  />
-                  <FiSearch className="w-[22px] h-[22px] text-[#0A2540]" />
-                </div>
+                
               </div>
             </div>
           )}
