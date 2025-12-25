@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import logo from "../../public/images/logo.svg";
+import { IoMdArrowForward } from "react-icons/io";
 
 interface MenuItem {
   id: number;
@@ -27,7 +28,6 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [scrollOpen, setScrollOpen] = useState<boolean>(false);
   const [scrollOpenMenu, setScrollOpenMenu] = useState<boolean>(false);
-
   // Refs for mobile menus
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const scrollMenuRef = useRef<HTMLDivElement>(null);
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
     <>
       {/* Main Header */}
       <header className="w-full bg-white relative">
-        <div className="flex items-center justify-between w-full lg:py-[0.625rem] lg:px-[2rem] xl:px-[4rem] md:px-[2rem] md:py-[0.5rem] px-4 py-3">
+        <div className="flex items-center justify-between w-full lg:py-[0.625rem] lg:px-[2.2rem] xl:px-[4rem] md:px-[2rem] md:py-[0.5rem] px-4 py-3">
           {/* Logo */}
           <div className="shrink-0">
             <Image
@@ -121,6 +121,13 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
           </nav>
+
+          <Link
+          href='/news'
+            className="border rounded-sm flex items-center justify-center gap-2 cursor-pointer border-[#16A831] border-[0.5px] px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0a2540] hover:bg-[#16A831] hover:text-white transition"
+          >
+            Latest News <IoMdArrowForward />
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
