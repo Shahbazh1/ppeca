@@ -52,9 +52,9 @@ export default function TestimonialSection() {
       </div>
 
       {/* Members label */}
-      <div className="absolute top-5 left-5 font-['Open_Sans'] sm:left-10 md:left-15 bg-[#ffffff] text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10">
+      <h3 className="absolute top-5 left-5 font-['Open_Sans'] sm:left-10 md:left-15 bg-[#ffffff] text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10">
         Members
-      </div>
+      </h3>
 
       {/* Testimonial */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
@@ -71,9 +71,9 @@ export default function TestimonialSection() {
         <p className="max-w-xl text-white font-['Open_Sans'] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[1.25rem] mb-4">
           {testimonial.text}
         </p>
-        <h3 className="text-yellow-500 font-extrabold text-sm sm:text-base md:text-base lg:text-lg xl:text-[1rem] font-['Plus_Jakarta_Sans']">
+        <h4 className="text-yellow-500 font-extrabold text-sm sm:text-base md:text-base lg:text-lg xl:text-[1rem] font-['Plus_Jakarta_Sans']">
           {testimonial.name}
-        </h3>
+        </h4>
         <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">{testimonial.role}</span>
 
         {/* Navigation arrows - hidden on small screens, positioned absolutely on larger screens */}

@@ -65,6 +65,7 @@ export default function DirectoryOfTrainingProviders() {
 
             {/* Button */}
             <a
+            aria-label={`Download ${item.title} file`}
             href={item.fileUrl}
               target="_blank"
               rel="noopener noreferrer"

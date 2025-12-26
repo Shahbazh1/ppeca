@@ -4,6 +4,8 @@ import React from "react";
 import news_hero_BG from "../../../public/images/news_hero_BG.png";
 import Image from "next/image";
 import Link from 'next/link';
+import NewsArrow from '../../../public/images/svg_images/news_arrow.svg';
+
 const newsItems = [
   {
     category: "Category",
@@ -78,8 +80,7 @@ export default function LatestNewsHero() {
 
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                   <Image
-                  src="/images/svg_images/news_arrow.svg"
-                  alt="arrow"
+                  src={NewsArrow} alt="arrow"
                   width={33}
                   height={33}
                   className="self-center cursor-pointer flex-shrink-0"

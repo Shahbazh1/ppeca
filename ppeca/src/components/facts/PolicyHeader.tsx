@@ -17,6 +17,7 @@ const PolicyHeader: React.FC = () => {
         {/* Buttons */}
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
           <a
+          aria-label="Visit Petroleum Policy 2012 document"
             href="http://www.ppepca.com/documents/Petroleum%20Policy%202012%20(Gazzette).pdf"
             target="_blank"
             rel="noopener noreferrer"

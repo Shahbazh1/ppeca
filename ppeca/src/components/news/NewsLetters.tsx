@@ -37,19 +37,18 @@ const newsletters: NewsletterItem[] = [
   },
 ];
 
-
 export default function NewsletterSection() {
   const downloadPdf = (url: string, filename: string) => {
-  fetch(url)
-    .then((res) => res.blob())
-    .then((blob) => {
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = filename; // specify filename
-      link.click();
-    })
-    .catch((err) => console.error("Download failed:", err));
-};
+    fetch(url)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename; // specify filename
+        link.click();
+      })
+      .catch((err) => console.error("Download failed:", err));
+  };
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -123,6 +122,7 @@ export default function NewsletterSection() {
                 <div className="flex flex-col text-center gap-2 w-full max-w-[180px]">
                   <a
                     href={item.pdfUrl}
+                    aria-label={`View ${item.title} PDF`}
                     download
                     target="_blank"
                     rel="noopener noreferrer"
@@ -132,12 +132,14 @@ export default function NewsletterSection() {
                   </a>
 
                   <button
-  onClick={() => downloadPdf(item.pdfUrl, `${item.title}.pdf`)}
-  className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
->
-  Download
-</button>
-
+                  aria-label={`Download ${item.title} PDF`}
+                    onClick={() =>
+                      downloadPdf(item.pdfUrl, `${item.title}.pdf`)
+                    }
+                    className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
+                  >
+                    Download
+                  </button>
                 </div>
               </div>
             </div>

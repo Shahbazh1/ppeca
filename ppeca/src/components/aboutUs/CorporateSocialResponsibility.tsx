@@ -22,7 +22,7 @@ export default function CorporateSocialResponsibility() {
 
           {/* Button */}
           <div className="mt-4 sm:mt-5 md:mt-6">
-            <Link  href="/news" className="cursor-pointer rounded-sm font-['Open_Sans'] bg-[#16a831] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#f8fafc] hover:bg-[#128a28] transition">
+            <Link  aria-label="Read Corporate Social Responsibility Newsletter" href="/news" className="cursor-pointer rounded-sm font-['Open_Sans'] bg-[#16a831] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#f8fafc] hover:bg-[#128a28] transition">
               Newsletter
             </Link>
           </div>

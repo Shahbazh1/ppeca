@@ -112,6 +112,7 @@ const ObjectivesSection = () => {
         <div className="relative mt-8 sm:mt-10 lg:mt-14 flex items-center justify-center">
           {/* Left Arrow */}
           <button
+          aria-label="Scroll objectives left"
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             className={`absolute left-0 sm:-left-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${
@@ -127,19 +128,20 @@ const ObjectivesSection = () => {
             className="flex gap-4 sm:gap-5 overflow-x-auto scroll-smooth scrollbar-hide py-2 px-2 sm:px-0"
           >
             {cardData.map((card, index) => (
-              <div
+              <article
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center w-[300px] sm:w-[280px] h-[280px] px-6 py-8 bg-white rounded-lg border border-[#94a3b8]/60 text-center shadow"
               >
                 <Image src={card.img} alt={card.title} width={48} height={48} loading="lazy" />
                 <h3 className="mt-6 text-base font-semibold text-[#0a2540] font-['Open_Sans']">{card.title}</h3>
                 <p className="mt-3 text-sm text-[#334155] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-['Open_Sans']">{card.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
 
           {/* Right Arrow */}
           <button
+          aria-label="Scroll objectives right"
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             className={`absolute right-0 sm:-right-6 z-10 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full transition-all ${

@@ -3,13 +3,13 @@ import PoliciesAndRegulations from '../../components/facts/PoliciesAndRegulation
 import PakistanPetroleumInformation from '../../components/facts/PakistanPetroleumInformation'
 import PakistanPetroleumCards from '../../components/facts/PakistanPetroleumCards'
 
-export default function facts() {
+export default function Facts() {
   return (
-    <div className="md:p-10 p-5 bg-[#f8fafc] flex-col flex gap-8 md:gap-16">
+    <main className="md:p-10 p-5 bg-[#f8fafc] flex-col flex gap-8 md:gap-16">
         <PolicyHeader/>
         <PoliciesAndRegulations/>
         <PakistanPetroleumInformation/>
         <PakistanPetroleumCards/>
-    </div>
+    </main>
   );
 }

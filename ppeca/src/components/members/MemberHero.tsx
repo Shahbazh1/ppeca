@@ -14,7 +14,7 @@ export default function PPEPCAHero() {
         alt="PPEPCA Members Directory"
         fill
         className="object-cover"
-        loading="lazy"
+        priority
       />
 
       {/* Dark Overlay */}

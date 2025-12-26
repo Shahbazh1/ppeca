@@ -110,9 +110,9 @@ export default function LatestNews() {
                   <span className="text-[#16a831]">{news.date}</span> |{" "}
                   {news.category}
                 </p>
-                <h3 className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-md 2xl:text-lg font-semibold mb-2 xl:mb-3">
+                <h4 className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-md 2xl:text-lg font-semibold mb-2 xl:mb-3">
                   {news.title}
-                </h3>
+                </h4>
                 <p className="text-gray-600 text-xs sm:text-sm md:text-sm lg:text-sm xl:mb-3 lg:mb-2 line-clamp-3 sm:line-clamp-4 md:line-clamp-4 lg:line-clamp-4">
                   {news.description}
                 </p>

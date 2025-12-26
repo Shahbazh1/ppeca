@@ -9,9 +9,9 @@ const MembershipSection: React.FC = () => {
     <section className="px-4 sm:px-6 py-8 sm:py-10 md:py-12 text-[#0b3a63]">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
-        <h1 className="mb-4 sm:mb-6 font-['Montserrat'] text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-[#0a2540]">
+        <h2 className="mb-4 sm:mb-6 font-['Montserrat'] text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-[#0a2540]">
           Membership
-        </h1>
+        </h2>
 
         {/* Paragraphs */}
         <div className="space-y-4 font-['Open_Sans'] sm:space-y-6 text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0a2540] max-w-5xl">
@@ -53,7 +53,7 @@ const MembershipSection: React.FC = () => {
 
         {/* Button */}
         <div className="mt-8 sm:mt-10">
-          <button onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16A831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#128a28] transition-colors">
+          <button aria-label="Navigate to membership form" onClick={() => router.push("/members/membershipform")} className="rounded cursor-pointer bg-[#16A831] px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-normal text-[#f8fafc] hover:bg-[#128a28] transition-colors">
             Become a Member
           </button>
         </div>

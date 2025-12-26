@@ -243,6 +243,7 @@ export default function ContactUs() {
               {/* Button */}
               <div className="flex justify-end">
                 <button
+                aria-label="Send your message"
                   type="submit"
                   className="bg-[#16A831] hover:bg-[#128a28] cursor-pointer text-white px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10"
                 >

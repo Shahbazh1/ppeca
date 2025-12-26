@@ -14,7 +14,7 @@ export default function AboutSection() {
 
         {/* Left Content */}
         <div className="lg:flex-[0.6] w-full lg:w-1/2 flex flex-col gap-3 xl:gap-5 lg:pr-8 xl:pr-10 2xl:pr-12">
-          <span className=" text-[#16a831] font-['Open_Sans'] font-semibold text-sm sm:text-base">About us</span>
+          <h3 className=" text-[#16a831] font-['Open_Sans'] font-semibold text-sm sm:text-base">About us</h3>
 
           <h2 className="text-3xl sm:text-4xl md:text-[2.4rem] lg:text-[2.7rem] xl:text-[3rem] 2xl:text-[4rem] font-bold leading-[1.1] font-['Montserrat']">
             Leadership in Pakistan's <br />

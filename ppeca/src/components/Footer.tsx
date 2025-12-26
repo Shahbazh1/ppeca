@@ -35,13 +35,13 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex gap-3 mt-6 text-black text-[18px] md:text-[20px]">
-            <Link href="#">
+            <Link aria-label="Follow us on Facebook" href="#">
               <FaFacebookF />
             </Link>
-            <Link href="#">
+            <Link aria-label="Follow us on Twitter" href="#">
               <FaXTwitter />
             </Link>
-            <Link href="#">
+            <Link aria-label="Follow us on Linkedin" href="#">
               <FaLinkedinIn />
             </Link>
           </div>
@@ -63,7 +63,7 @@ export default function Footer() {
               { label: "Policies", href: "#" },
               { label: "Privacy Policy", href: "#" },
               { label: "Contact us", href: "/contact" },
-            ].map((item,index) => (
+            ].map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.href}
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Right: Contact Box */}
         <div className="flex flex-col md:max-w-[23rem]">
-<h4 className="text-[#0A2540] font-['Jost'] font-semibold text-[24px] leading-[28.8px] tracking-[-0.96px] align-middle mb-[9px]">
+          <h4 className="text-[#0A2540] font-['Jost'] font-semibold text-[24px] leading-[28.8px] tracking-[-0.96px] align-middle mb-[9px]">
             Contact us
           </h4>
 
@@ -101,36 +101,33 @@ export default function Footer() {
               </span>
             </div>
 
-           <a
-  href="mailto:mail@ppepca.com?subject=Hello&body=Type your message here"
-  className="flex items-center gap-3 underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
->
-  <TbMailFilled size={20} />
-  mail@ppepca.com
-</a>
-
-
-
+            <a
+              href="mailto:mail@ppepca.com?subject=Hello&body=Type your message here"
+              className="flex items-center gap-3 underline text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
+            >
+              <TbMailFilled size={20} />
+              mail@ppepca.com
+            </a>
 
             <div className="flex gap-3 hover:underline">
-  <IoGlobeOutline size={20} />
-  <a
-    href="https://www.ppepca.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
-  >
-    www.ppepca.com
-  </a>
-</div>
-
+              <IoGlobeOutline size={20} />
+              <a
+              aria-label="Visit PPEPCA website"
+                href="https://www.ppepca.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
+              >
+                www.ppepca.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Company Line */}
       <div className="border-b border-green-500 py-1 px-6 md:px-10 xl:px-20">
-        <p className="max-w-7xl mx-auto kumbh-sans text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-kumbh leading-[1.75]">
+        <p className="max-w-7xl mx-auto font-['Kumbh_Sans'] text-[#0A2540] text-[0.875rem] md:text-[0.95rem] lg:text-[1rem] font-kumbh leading-[1.75]">
           <span className="font-bold">Company:</span> Pakistan Petroleum
           Exploration and Production Companies Association
         </p>

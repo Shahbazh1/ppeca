@@ -8,13 +8,13 @@ const ChairmanMessage = () => {
         {/* LEFT CONTENT */}
         <div className="flex-1 lg:w-[60%]">
           {/* Heading */}
-          <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540] m-0 leading-[1]">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540] m-0 leading-[1]">
   CHAIRMAN&apos;S MESSAGE
-</h1>
-
-<h2 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
-  Mr. Ali Taha Al-Temimi
 </h2>
+
+<h3 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
+  Mr. Ali Taha Al-Temimi
+</h3>
 
 
 

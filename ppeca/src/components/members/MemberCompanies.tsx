@@ -177,7 +177,7 @@ function CompanyCard({ name, logo, id }: Props) {
         {name}
       </p>
 
-      <button
+      <button aria-label={`View profile of ${name}`}
         onClick={() => router.push(`/members/membersPage?id=${id}`)}
         className="cursor-pointer bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >

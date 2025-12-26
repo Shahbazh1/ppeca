@@ -8,9 +8,9 @@ const SecretariatSection = () => {
         {/* LEFT CONTENT */}
         <div className="flex-1 w-full">
           {/* Heading */}
-          <h1 className="mb-3 sm:mb-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0A2540]">
+          <h2 className="mb-3 sm:mb-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0A2540]">
             SECRETARIAT
-          </h1>
+          </h2>
 
           {/* Paragraphs */}
           <div className="space-y-4 font-['Open_Sans'] sm:space-y-5 text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px]  text-[#0A2540]">
@@ -47,7 +47,7 @@ const SecretariatSection = () => {
         <div className="flex-1 w-full h-[250px] sm:h-[280px] md:h-[300px] lg:h-[330px] shrink-0 flex items-end overflow-hidden rounded-lg border-2 border-[#14a637]">
           <Image
             src={Secretariat_img}
-            alt="PPEPCA Secretariat Meeting"
+             alt="Secretariat staff meeting at PPEPCA office in Islamabad"
             className="object-cover w-full h-full"
             loading="lazy"
           />

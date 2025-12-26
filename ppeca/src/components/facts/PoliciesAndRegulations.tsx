@@ -14,7 +14,7 @@ export default function PoliciesAndRegulations() {
         {/* Left Content */}
         <div className="flex-[0.55] mb-3">
           <ul className="list-disc pl-4 text-[#0a2540] lg:text-[15px] xl:text-[17px] leading-6">
-            <li className="text-[#16A831] underline cursor-pointer hover:no-underline"><a target="_blank" href="http://www.mpnr.gov.pk/">Petroleum Policies</a></li>
+            <li className="text-[#16A831] underline cursor-pointer hover:no-underline" aria-label="Visit Petroleum Policies page"><a target="_blank" href="http://www.mpnr.gov.pk/">Petroleum Policies</a></li>
             <li>Environment Policy / Guide</li>
             <li>Mines Act 1948</li>
             <li>Petroleum Exploration &amp; Production Rules 2001</li>

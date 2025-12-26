@@ -71,7 +71,7 @@ export default function PakistanPetroleumCards() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-x-12">
           {cards.map((card, index) => (
-            <div
+            <article
               key={index}
               className="flex flex-col font-['Open_Sans'] items-center justify-center rounded-xl bg-[#e1f2e8] p-4 text-center transition hover:shadow-lg"
             >
@@ -86,10 +86,10 @@ export default function PakistanPetroleumCards() {
                 {card.name}
               </p>
 
-              <a target="_blank" href={card.url} className="rounded-md cursor-pointer border border-[#16a831]/30 px-4 py-1 text-sm font-medium text-[#0B2545] hover:bg-[#16a831]/10 transition">
+              <a target="_blank" href={card.url} aria-label={`Visit ${card.name}`} className="rounded-md cursor-pointer border border-[#16a831]/30 px-4 py-1 text-sm font-medium text-[#0B2545] hover:bg-[#16a831]/10 transition">
                 Visit
               </a>
-            </div>
+            </article>
           ))}
         </div>
       </div>

@@ -6,14 +6,64 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 
+
 export const metadata: Metadata = {
-  title: "PPEPCA",
-  description: "Pakistan Petroleum Exploration & Production Companies Association",
-   icons: {
-    icon: "/logo.png",   // favicon for browser tab
-    apple: "/logo.png",  // Apple touch icon
+  title: "PPEPCA – Pakistan Petroleum Exploration & Production Companies Association",
+  description:
+    "PPEPCA represents Pakistan’s oil and gas exploration and production companies, promoting sustainable and responsible energy development in Pakistan.",
+  
+  keywords: [
+    "PPEPCA",
+    "Pakistan Petroleum",
+    "Oil & Gas Pakistan",
+    "Energy Exploration Pakistan",
+    "Oil Companies Pakistan",
+    "Gas Production Pakistan",
+    "Sustainable Energy Pakistan",
+    "Petroleum Industry Pakistan",
+    "Pakistan Energy Sector",
+  ],
+
+  authors: [{ name: "PPEPCA", url: "https://www.ppepca.com/" }],
+  creator: "Devbay",
+  publisher: "Devbay",
+
+  manifest: "/site.webmanifest",
+
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+
+  openGraph: {
+    title: "PPEPCA – Pakistan Petroleum Exploration & Production Companies Association",
+    description:
+      "Promoting sustainable and responsible energy development in Pakistan's oil and gas sector.",
+    url: "https://www.ppepca.com/",
+    siteName: "PPEPCA",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "PPEPCA Logo",
+      },
+    ],
+    locale: "en_PK",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@PPEPCA",
+    title: "PPEPCA – Pakistan Petroleum Exploration & Production Companies Association",
+    description:
+      "Promoting sustainable and responsible energy development in Pakistan's oil and gas sector.",
+    images: ["/logo.png"],
   },
 };
+
 
 const kumbhSans = Kumbh_Sans({
   subsets: ["latin"],

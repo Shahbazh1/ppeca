@@ -48,11 +48,11 @@ export default function FAQSection() {
       </div>
 
       {/* Right Content - FAQ Accordion */}
-      <div className="w-full font-['font-['Open_Sans']] md:w-1/2 flex flex-col gap-3 md:gap-4 mt-6 md:mt-0">
+      <div className="w-full font-['Open_Sans'] md:w-1/2 flex flex-col gap-3 md:gap-4 mt-6 md:mt-0">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={` border rounded-xs font-['Open_Sans'] overflow-hidden transition-all duration-300 bg-white`}
+            className={` border rounded-sm font-['Open_Sans'] overflow-hidden transition-all duration-300 bg-white`}
           >
             <button
               onClick={() => toggleFAQ(index)}

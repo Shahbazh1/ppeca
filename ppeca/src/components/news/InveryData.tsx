@@ -87,7 +87,7 @@ export default function SurplusInventorySection() {
             </p>
 
             {/* Button */}
-            <button onClick={() => downloadPdf(item.fileUrl, `${item.name}.pdf`)} className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16a831] hover:bg-[#128a28] text-white text-sm font-medium px-6 py-2 rounded-sm transition">
+            <button aria-label={`Download ${item.name} inventory`} onClick={() => downloadPdf(item.fileUrl, `${item.name}.pdf`)} className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16a831] hover:bg-[#128a28] text-white text-sm font-medium px-6 py-2 rounded-sm transition">
               Download
             </button>
           </div>
