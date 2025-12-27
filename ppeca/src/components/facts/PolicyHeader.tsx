@@ -1,50 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const PolicyHeader: React.FC = () => {
-  const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
 
-  const [pdfUrl, setPdfUrl] = useState("");
-
-  useEffect(() => {
-    const fetchPolicy = async () => {
-    try {
-      const res = await fetch(`${BASE_URL}/api/policy-2012s?populate=*`);
-      const data = await res.json();
-
-      if (data?.data?.[0]?.Pdf?.[0]?.url) {
-        setPdfUrl(`${BASE_URL}${data.data[0].Pdf[0].url}`);
-      } else {
-        console.error("No PDF found in the API response");
-      }
-    } catch (err) {
-      console.error("Failed to fetch policy:", err);
-    }
-  };
-
-  fetchPolicy();
-  }, []);
+  let pdfUrl='https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf'
 
   const downloadPdf = async () => {
-    if (!pdfUrl) return;
+  if (!pdfUrl) return;
 
-    try {
-      const res = await fetch(pdfUrl);
-      const blob = await res.blob();
-
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "Petroleum_Policy_2012_Gazzette.pdf";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      // Optional: revoke object URL after download
-      window.URL.revokeObjectURL(link.href);
-    } catch (err) {
-      console.error("Download failed:", err);
-    }
-  };
+  try {
+    const res = await fetch(pdfUrl);
+    const blob = await res.blob();
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "Petroleum_Policy_2012_Gazzette.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(link.href);
+  } catch (err) {
+    console.error("Download failed:", err);
+  }
+};
 
   return (
     <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 pb-6 sm:pb-8">
@@ -60,8 +38,8 @@ const PolicyHeader: React.FC = () => {
         {/* Buttons */}
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
           <a
-            aria-label="Visit Petroleum Policy 2012 document"
-            href={pdfUrl}
+          aria-label="Visit Petroleum Policy 2012 document"
+            href="https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] cursor-pointer px-6 sm:px-8 md:px-10 py-2 text-xs sm:text-sm font-medium text-white rounded-xs hover:opacity-90 transition"
