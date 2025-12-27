@@ -31,7 +31,7 @@ export default function ContactUs() {
     console.log("Submitting form data:", JSON.stringify(formData,null,2)); // Debug log
 
     try {
-      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms",
+      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/contact-forms",
         {
         method: "POST",
         headers: {
