@@ -270,7 +270,7 @@ export default function ContactUs() {
                     className={`cursor-pointer px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10 flex items-center justify-center
     ${
       loading
-        ? "bg-gray-400 cursor-not-allowed"
+        ? "bg-gray-400 cursor-not-allowed "
         : "bg-[#16A831] hover:bg-[#128a28] text-white"
     }`}
                   >

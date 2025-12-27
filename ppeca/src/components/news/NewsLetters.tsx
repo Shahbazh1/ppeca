@@ -7,7 +7,7 @@ export type NewsletterItem = {
   image: string;
   pdfUrl: string;
 };
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
 
 const newsletters: NewsletterItem[] = [
   {
