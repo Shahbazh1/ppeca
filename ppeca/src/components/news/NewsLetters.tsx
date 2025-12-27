@@ -11,45 +11,62 @@ const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
 
 const newsletters: NewsletterItem[] = [
   {
-    title: "PPEPCA 20th issue",
-    image: "/images/ppepca_20_issue.png",
-    pdfUrl: `${BASE_URL}/api/news-letters`,
-  },
-  {
-    title: "PPEPCA 19th issue",
-    image: "/images/ppepca_19_issue.png",
-    pdfUrl: `${BASE_URL}/api/news-letters`,
-  },
-  {
-    title: "PPEPCA 18th issue",
-    image: "/images/ppepca_18_issue.png",
-    pdfUrl: `${BASE_URL}/api/news-letters`,
+    title: "PPEPCA 16th issue",
+    image: "/images/ppepca_16_issue.png",
+    pdfUrl:
+      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_16th_issue_b44487b587.pdf",
   },
   {
     title: "PPEPCA 17th issue",
     image: "/images/ppepca_17_issue.png",
-    pdfUrl: `${BASE_URL}/api/news-letters`,
+    pdfUrl:
+      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_17th_issue_e78157161a.pdf",
   },
   {
-    title: "PPEPCA 16th issue",
-    image: "/images/ppepca_16_issue.png",
-    pdfUrl: `${BASE_URL}/api/news-letters`,
+    title: "PPEPCA 18th issue",
+    image: "/images/ppepca_18_issue.png",
+    pdfUrl:
+      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_18th_issue_b372a4c203.pdf",
+  },
+  {
+    title: "PPEPCA 19th issue",
+    image: "/images/ppepca_19_issue.png",
+    pdfUrl:
+      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_19th_issue_116ebcd35e.pdf",
+  },
+  {
+    title: "PPEPCA 20th issue",
+    image: "/images/ppepca_20_issue.png",
+    pdfUrl:
+      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_20th_issue_92100775e4.pdf",
   },
 ];
 
+
 export default function NewsletterSection() {
-  const downloadPdf = (url: string, filename: string) => {
-    alert(url)
-    fetch(url)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const link = document.createElement("a");
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename; // specify filename
-        link.click();
-      })
-      .catch((err) => console.error("Download failed:", err));
-  };
+  const downloadPdf = async (url: string, filename: string) => {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+    
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Clean up the blob URL
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (error) {
+    console.error("Download failed:", error);
+    // Fallback: open in new tab
+    window.open(url, "_blank");
+  }
+};
+
+
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -133,10 +150,8 @@ export default function NewsletterSection() {
                   </a>
 
                   <button
-                  aria-label={`Download ${item.title} PDF`}
-                    onClick={() =>
-                      downloadPdf(item.pdfUrl, `${item.title}.pdf`)
-                    }
+                    aria-label={`Download ${item.title} PDF`}
+                   onClick={() => downloadPdf(item.pdfUrl, `${item.title}.pdf`)}
                     className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
                   >
                     Download
