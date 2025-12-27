@@ -11,12 +11,12 @@ import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    First_Name: "",
-    Last_Name: "",
-    Email: "",
-    Phone_No: "",
-    Subject: "general",
-    Msg: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNo: "",
+    subject: "general",
+    msg: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -50,12 +50,12 @@ export default function ContactUs() {
       toast.success("Form submitted successfully!");
 
       setFormData({
-        First_Name: "",
-        Last_Name: "",
-        Email: "",
-        Phone_No: "",
-        Subject: "general",
-        Msg: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNo: "",
+        subject: "general",
+        msg: "",
       });
     } catch (error) {
       console.error(error);
@@ -161,8 +161,8 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">First Name</label>
                   <input
                     type="text"
-                    name="First_Name"
-                    value={formData.First_Name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
@@ -172,21 +172,21 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">Last Name</label>
                   <input
                     type="text"
-                    name="Last_Name"
-                    value={formData.Last_Name}
+                    name="lastName"
+                    value={formData.lastName}
                     onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
                 </div>
               </div>
-              {/* Email & Phone */}
+              {/* email & Phone */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 <div className="flex-1">
                   <label  className="text-sm text-slate-600">Email *</label>
                   <input
                   required
-                    name="Email"
-                    value={formData.Email}
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     type="email"
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
@@ -197,8 +197,8 @@ export default function ContactUs() {
                   <label className="text-sm text-slate-600">Phone Number</label>
                   <input
                     type="tel"
-                    name="Phone_No"
-                    value={formData.Phone_No}
+                    name="phoneNo"
+                    value={formData.phoneNo}
                     onChange={handleChange}
                     className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-2"
                   />
@@ -221,9 +221,9 @@ export default function ContactUs() {
                     >
                       <input
                         type="radio"
-                        name="Subject"
+                        name="subject"
                         value="general"
-                        checked={formData.Subject === "general"}
+                        checked={formData.subject === "general"}
                         onChange={handleChange}
                         className="w-4 h-4 accent-slate-800 cursor-pointer"
                       />
@@ -237,8 +237,8 @@ export default function ContactUs() {
               <div>
                 <label className="text-sm text-slate-600">Message</label>
                 <textarea
-                  name="Msg"
-                  value={formData.Msg}
+                  name="msg"
+                  value={formData.msg}
                   onChange={handleChange}
                   rows={1}
                   placeholder="Write your message.."
