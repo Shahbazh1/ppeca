@@ -1,23 +1,20 @@
-"use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import heroBg from "../../../public/images/heroBg.png";
 import { IoMdArrowForward } from "react-icons/io";
 import Link from "next/link";
 
 export default function HeroSection() {
-  const router = useRouter();
   return (
-    <section className="relative w-full h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px]">
+    <section aria-labelledby="hero-heading" className="relative w-full h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src={heroBg}
           alt="Petroleum Industry"
-          layout="fill"
+          fill
           objectFit="cover"
           objectPosition="center"
-          loading='lazy'
+          priority
         />
         <div className="absolute inset-0 bg-[#000000CC]" /> Overlay
       </div>
@@ -51,8 +48,8 @@ export default function HeroSection() {
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full max-w-md sm:max-w-none">
-          <button
-            onClick={() => router.push("/contact")}
+          <Link
+            href='/contact'
             className=" cursor-pointer w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
           >
             <p
@@ -64,7 +61,7 @@ export default function HeroSection() {
             >
               Let's Connect <IoMdArrowForward />
             </p>
-          </button>
+          </Link>
 
           <Link href='/about' className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
             Learn More

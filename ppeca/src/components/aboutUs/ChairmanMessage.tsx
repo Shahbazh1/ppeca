@@ -9,14 +9,12 @@ const ChairmanMessage = () => {
         <div className="flex-1 lg:w-[60%]">
           {/* Heading */}
           <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540] m-0 leading-[1]">
-  CHAIRMAN&apos;S MESSAGE
-</h2>
+            CHAIRMAN&apos;S MESSAGE
+          </h2>
 
-<h3 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
-  Mr. Ali Taha Al-Temimi
-</h3>
-
-
+          <h3 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
+            Mr. Ali Taha Al-Temimi
+          </h3>
 
           {/* Message Text */}
           <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6 lg:max-w-lg xl:max-w-xl text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
@@ -27,14 +25,13 @@ const ChairmanMessage = () => {
               Pakistan Petroleum Exploration and Production Companies
               Association (PPEPCA). I would like to express my sincere gratitude
               to the Executive Committee members for putting their trust and
-              confidence in me.
-              Indeed, PPEPCA draws its strength from the expertise and
-              experience available from its member companies. Since its
-              inception in May 1995, it has matured into a highly professional
-              and effective advisory and representative body of the E&amp;P
-              industry. At this pivotal moment, we are faced with significant
-              challenges and opportunities that will shape the future of our
-              industry and nation.
+              confidence in me. Indeed, PPEPCA draws its strength from the
+              expertise and experience available from its member companies.
+              Since its inception in May 1995, it has matured into a highly
+              professional and effective advisory and representative body of the
+              E&amp;P industry. At this pivotal moment, we are faced with
+              significant challenges and opportunities that will shape the
+              future of our industry and nation.
             </p>
 
             <p>
@@ -80,7 +77,9 @@ const ChairmanMessage = () => {
 
         <p>Thank you for your trust and support.</p>
 
-        <p className="mb-0">Let&apos;s make this journey a big success together!</p>
+        <p className="mb-0">
+          Let&apos;s make this journey a big success together!
+        </p>
 
         <p className="font-bold">Best regards,</p>
 

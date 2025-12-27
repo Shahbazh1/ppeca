@@ -1,15 +1,14 @@
-'use client'
 import React from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import Img1 from "../../../public/images/about_sec_img1.jpg";
 import Img2 from "../../../public/images/about_sec_img2.jpg";
-import { useRouter } from "next/navigation";
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutSection() {
-    const router = useRouter();
 
   return (
-    <section className="w-full bg-gray-50 pb-12 pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-12 2xl:pt-32 relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-15 2xl:px-24">
+    <section aria-labelledby="about-heading" className="w-full bg-gray-50 pb-12 pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-12 2xl:pt-32 relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-15 2xl:px-24">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-3 sm:gap-5 md:gap-6  p-0">
 
         {/* Left Content */}
@@ -31,9 +30,9 @@ export default function AboutSection() {
             of subjects of common interest.
           </p>
 
-          <button onClick={() => router.push("/about")} className="cursor-pointer  mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-[#128a28] transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
+          <Link href="/about" className="cursor-pointer  mt-4 sm:mt-5 md:mt-6 w-fit flex items-center gap-2 bg-[#16a831] text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 2xl:px-7 2xl:py-3.5 rounded-md hover:bg-[#128a28] transition text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg">
             Read More <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
+          </Link>
         </div>
 
         {/* Right Content */}
@@ -41,7 +40,7 @@ export default function AboutSection() {
 
           {/* Background Image */}
           <div className="absolute top-0 right-4 sm:right-8 md:right-12 lg:top-30 lg:right-0 xl:top-10 xl:right-[-5px] 2xl:-top-10 2xl:right-10 w-[180px] h-[220px] sm:w-[220px] sm:h-[270px] md:w-[260px] md:h-[320px] lg:w-[250px] lg:h-[300px] xl:w-[330px] xl:h-[430px] 2xl:w-[450px] 2xl:h-[570px]">
-            <img
+            <Image
               src={Img1.src}
               alt="Petroleum Industry"
               className="object-cover w-full h-full rounded-sm shadow-lg"
@@ -50,7 +49,7 @@ export default function AboutSection() {
 
           {/* Foreground Image */}
           <div className="relative w-[180px] h-[180px] sm:w-[210px] sm:h-[210px] md:w-[250px] md:h-[250px] lg:w-[230px] lg:h-[230px] xl:w-[300px] xl:h-[300px] 2xl:w-[420px] 2xl:h-[420px] bottom-[-30px] sm:bottom-[-35px] md:bottom-[-40px] lg:-bottom-27 xl:-bottom-24 2xl:-bottom-28 left-[-20px] sm:left-[-30px] md:left-[-40px] lg:left-[-120px] xl:left-[-130px] 2xl:left-[-60px] z-10 shadow-xl">
-            <img
+            <Image
               src={Img2.src}
               alt="Worker"
               className="object-cover w-full h-full rounded-sm"
