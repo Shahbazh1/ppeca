@@ -48,7 +48,7 @@ const CompanyForm = () => {
     try {
       setLoading(true);
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/memership-forms`,
+        "https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

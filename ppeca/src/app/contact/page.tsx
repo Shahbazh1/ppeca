@@ -30,7 +30,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact-forms`,
+      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms",
         {
         method: "POST",
         headers: {
