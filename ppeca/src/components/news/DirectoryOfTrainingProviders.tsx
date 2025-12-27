@@ -9,36 +9,36 @@ export type TrainingItem = {
 };
 
 // Set base URL dynamically
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+const BASE_URL = "https://automatic-happiness-5c495f4f8d.media.strapiapp.com";
 
 const trainingData: TrainingItem[] = [
   {
     title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR related R&D – by MOL Group",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "Fast Track EOR: Re-designing through Integration",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR Techniques Smart Screening for Candidate Reservoir",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "IOR/EOR Monitoring & Control System – by Weatherford",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR Alliance – by Black Gold",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "IOR/EOR Applications in MOL’s Perspective",
-    fileUrl: `${BASE_URL}/uploads/List_of_Training_Providers_0dcbbca1a0.xls`,
+    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
   },
 ];
 
