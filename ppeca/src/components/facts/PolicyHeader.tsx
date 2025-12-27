@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 const PolicyHeader: React.FC = () => {
-  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+  const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
 
   const [pdfUrl, setPdfUrl] = useState("");
 
