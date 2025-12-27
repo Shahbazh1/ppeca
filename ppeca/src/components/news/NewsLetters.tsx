@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
 
 export type NewsletterItem = {
   title: string;
@@ -60,10 +59,8 @@ export default function NewsletterSection() {
       // Clean up the blob URL
       window.URL.revokeObjectURL(blobUrl);
 
-toast.success(`File is downloading...`);
     } catch (error) {
       console.error("Download failed:", error);
-      toast.error(`Download failed `);
 
       // Fallback: open in new tab
       window.open(url, "_blank");
@@ -78,7 +75,6 @@ toast.success(`File is downloading...`);
   );
   return (
     <section className="w-full bg-[#f8fafc] py-10  ">
-      <Toaster position="top-center" reverseOrder={false} />
 
       {/* Heading */}
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">

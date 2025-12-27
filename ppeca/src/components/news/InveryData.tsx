@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
 
 type InventoryItem = {
   name: string;
@@ -53,17 +52,14 @@ export default function SurplusInventorySection() {
         link.href = window.URL.createObjectURL(blob);
         link.download = filename; // specify filename
         link.click();
-        toast.success(`File is downloading...`);
       })
       .catch((err) => {
         console.error("Download failed:", err);
-        toast.error(`Download failed `);
       });
   };
 
   return (
     <section className="w-full bg-[#f8fafc]  py-12">
-      <Toaster position="top-center" reverseOrder={false} />
 
       {/* Title */}
       <h2 className="text-3xl lg:text-[34px] font-['Montserrat'] font-semibold text-[#0b3a66] mb-10">
