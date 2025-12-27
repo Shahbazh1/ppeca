@@ -8,7 +8,7 @@ import bxs_phone from "../../../public/images/svg_images/bxs_phone.svg";
 import vactor1 from "../../../public/images/svg_images/Group 1000001749.svg";
 import vactor2 from "../../../public/images/svg_images/Group 1000001750.svg";
 import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
-
+import Head from "next/head";
 export default function ContactUs() {
   const [loading, setLoading] = useState(false);
 
@@ -77,6 +77,46 @@ export default function ContactUs() {
 
   return (
     <>
+      <Head>
+        <title>Contact PPEPCA</title>
+        <meta
+          name="description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact PPEPCA" />
+        <meta
+          property="og:description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://ppeca-xm2j.vercel.app/contact"
+        />
+        <meta
+          property="og:image"
+          content="https://ppeca-xm2j.vercel.app/images/contact-og-image.jpg"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact PPEPCA" />
+        <meta
+          name="twitter:description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ppeca-xm2j.vercel.app/images/contact-og-image.jpg"
+        />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://ppeca-xm2j.vercel.app/contact" />
+      </Head>
+
       <Toaster position="top-center" reverseOrder={false} />
       <section className="min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="w-full max-w-6xl">
