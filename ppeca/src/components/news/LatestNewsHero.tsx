@@ -31,7 +31,7 @@ export default function LatestNewsHero() {
   
   const [newsItems, setNewsItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/newses`;
+  const API_URL = `https://automatic-happiness-5c495f4f8d.strapiapp.com/api/newses`;
   useEffect(() => {
     let fallbackTimer: NodeJS.Timeout;
 
@@ -44,7 +44,7 @@ export default function LatestNewsHero() {
     }, 5000);
 
     // 🔵 API call
-    fetch(`https://automatic-happiness-5c495f4f8d.strapiapp.com?pagination[limit]=3&sort=publishedAt:desc`)
+    fetch(`${API_URL}?pagination[limit]=3&sort=publishedAt:desc`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
