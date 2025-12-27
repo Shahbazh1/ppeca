@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export type NewsletterItem = {
   title: string;
@@ -42,31 +43,32 @@ const newsletters: NewsletterItem[] = [
   },
 ];
 
-
 export default function NewsletterSection() {
   const downloadPdf = async (url: string, filename: string) => {
-  try {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const blobUrl = window.URL.createObjectURL(blob);
-    
-    const link = document.createElement("a");
-    link.href = blobUrl;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // Clean up the blob URL
-    window.URL.revokeObjectURL(blobUrl);
-  } catch (error) {
-    console.error("Download failed:", error);
-    // Fallback: open in new tab
-    window.open(url, "_blank");
-  }
-};
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
 
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
+      // Clean up the blob URL
+      window.URL.revokeObjectURL(blobUrl);
+
+      toast.success(`file downloaded successfully!`);
+    } catch (error) {
+      console.error("Download failed:", error);
+      toast.error(`Download failed `);
+
+      // Fallback: open in new tab
+      window.open(url, "_blank");
+    }
+  };
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -76,6 +78,8 @@ export default function NewsletterSection() {
   );
   return (
     <section className="w-full bg-[#f8fafc] py-10  ">
+      <Toaster position="top-center" reverseOrder={false} />
+
       {/* Heading */}
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">
         Newsletter
@@ -151,7 +155,9 @@ export default function NewsletterSection() {
 
                   <button
                     aria-label={`Download ${item.title} PDF`}
-                   onClick={() => downloadPdf(item.pdfUrl, `${item.title}.pdf`)}
+                    onClick={() =>
+                      downloadPdf(item.pdfUrl, `${item.title}.pdf`)
+                    }
                     className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
                   >
                     Download
