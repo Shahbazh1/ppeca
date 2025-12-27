@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   creator: "Devbay",
   publisher: "Devbay",
 
-  manifest: "/site.webmanifest",
-
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -109,11 +107,6 @@ const poppins = Poppins({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="m-0 p-0 w-full overflow-x-hidden">
-      <head>
-  <title>PPEPCA</title>
-  <link rel="icon" href="/logo.svg" />
-  <link rel="apple-touch-icon" href="/logo.svg" />
-</head>
 
       <body className={`${plusJakartaSans.variable} ${jost.variable} ${kumbhSans.variable} ${inter.variable} ${montserrat.variable} ${openSans.variable} ${poppins.variable} m-0 p-0 w-full overflow-x-hidden1`}>
         <Navbar />
