@@ -73,8 +73,15 @@ export default function Home() {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-
+if (loading) {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse"></div>
+      </div>
+    </div>
+  );
+}
   return (
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
       {/* Breadcrumb */}
