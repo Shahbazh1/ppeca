@@ -30,7 +30,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms",
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact-forms`,
         {
         method: "POST",
         headers: {
@@ -42,9 +42,10 @@ export default function ContactUs() {
       });
 
       if (!res.ok) {
-        throw new Error("Failed to submit form");
+      const errorData = await res.json(); // <-- Get the actual error
+      console.error("Strapi error:", errorData);
+      throw new Error("Failed to submit form");
       }
-
       toast.success("Form submitted successfully!");
 
       setFormData({
