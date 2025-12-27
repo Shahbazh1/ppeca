@@ -60,7 +60,7 @@ export default function NewsletterSection() {
       // Clean up the blob URL
       window.URL.revokeObjectURL(blobUrl);
 
-      toast.success(`file downloaded successfully!`);
+toast.success(`File is downloading...`);
     } catch (error) {
       console.error("Download failed:", error);
       toast.error(`Download failed `);

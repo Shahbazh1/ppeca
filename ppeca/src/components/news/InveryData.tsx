@@ -53,7 +53,7 @@ export default function SurplusInventorySection() {
         link.href = window.URL.createObjectURL(blob);
         link.download = filename; // specify filename
         link.click();
-        toast.success(`file downloaded successfully!`);
+        toast.success(`File is downloading...`);
       })
       .catch((err) => {
         console.error("Download failed:", err);
