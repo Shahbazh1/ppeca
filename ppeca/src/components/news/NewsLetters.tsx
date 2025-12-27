@@ -7,38 +7,39 @@ export type NewsletterItem = {
   image: string;
   pdfUrl: string;
 };
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const newsletters: NewsletterItem[] = [
   {
     title: "PPEPCA 20th issue",
     image: "/images/ppepca_20_issue.png",
-    pdfUrl: `${BASE_URL}/uploads/PPEPCA_20th_issue_408313cdd9.pdf`,
+    pdfUrl: `${BASE_URL}/api/news-letters`,
   },
   {
     title: "PPEPCA 19th issue",
     image: "/images/ppepca_19_issue.png",
-    pdfUrl: `${BASE_URL}/uploads/PPEPCA_19th_issue_83189bf9f4.pdf`,
+    pdfUrl: `${BASE_URL}/api/news-letters`,
   },
   {
     title: "PPEPCA 18th issue",
     image: "/images/ppepca_18_issue.png",
-    pdfUrl: `${BASE_URL}/uploads/PPEPCA_18th_issue_8b26cb146e.pdf`,
+    pdfUrl: `${BASE_URL}/api/news-letters`,
   },
   {
     title: "PPEPCA 17th issue",
     image: "/images/ppepca_17_issue.png",
-    pdfUrl: `${BASE_URL}/uploads/PPEPCA_17th_issue_60cbe4fc88.pdf`,
+    pdfUrl: `${BASE_URL}/api/news-letters`,
   },
   {
     title: "PPEPCA 16th issue",
     image: "/images/ppepca_16_issue.png",
-    pdfUrl: `${BASE_URL}/uploads/PPEPCA_16th_issue_875397de63.pdf`,
+    pdfUrl: `${BASE_URL}/api/news-letters`,
   },
 ];
 
 export default function NewsletterSection() {
   const downloadPdf = (url: string, filename: string) => {
+    alert(url)
     fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
