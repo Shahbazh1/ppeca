@@ -44,7 +44,7 @@ export default function LatestNewsHero() {
     }, 5000);
 
     // 🔵 API call
-    fetch(`${API_URL}?pagination[limit]=3&sort=publishedAt:desc`)
+    fetch(`https://automatic-happiness-5c495f4f8d.strapiapp.com?pagination[limit]=3&sort=publishedAt:desc`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
