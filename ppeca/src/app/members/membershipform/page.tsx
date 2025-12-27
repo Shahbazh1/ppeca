@@ -45,19 +45,21 @@ const CompanyForm = () => {
       toast.error("Emails do not match");
       return;
     }
-    try {
+    try { 
+      console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
       setLoading(true);
-      const res = await fetch(
-        "https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ data: formData }),
-        }
-      );
+      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: formData }),
+      });
       setLoading(false);
 
-      if (!res.ok) throw new Error("Failed to submit");
+      if (!res.ok) {
+        const errorData = await res.json(); // <-- Get the actual error
+        console.error("Strapi error:", errorData);
+        throw new Error("Failed to submit");
+      }
 
       toast.success("Form submitted successfully!");
       // reset the form
@@ -309,24 +311,23 @@ const CompanyForm = () => {
             </div>
 
             <div>
-  <label
-    htmlFor="phone"
-    className="block font-semibold mb-1 md:mt-11 text-sm sm:text-base"
-  >
-    Phone *
-  </label>
+              <label
+                htmlFor="phone"
+                className="block font-semibold mb-1 md:mt-11 text-sm sm:text-base"
+              >
+                Phone *
+              </label>
 
-  <input
-    required
-    type="tel"
-    name="phone"
-    value={formData.phone}
-    onChange={handleChange}
-    placeholder="+92 300 1234567"
-    className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-  />
-</div>
-
+              <input
+                required
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+92 300 1234567"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
 
             <div>
               <label
