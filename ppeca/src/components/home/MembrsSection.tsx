@@ -5,18 +5,39 @@ import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
 import { IoMdArrowForward } from "react-icons/io";
 
 // Import logos
-import PPL from "../../../public/images/companies_logo/PPL_LOGO.jpg";
-import Prime from "../../../public/images/companies_logo/PRIME_LOGO.png";
-import PGNiG from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
-import PAL from "../../../public/images/companies_logo/POL_LOGO.png";
-import Saif from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
-import UEP from "../../../public/images/companies_logo/UEP_LOGO.jpg"
+import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
+import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
+import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
+import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
+import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
+import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
+import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
+import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
+import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
+import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
+import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
+import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
+import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
 
 // Import testimonial avatar
 import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
 import { useRouter } from "next/navigation";
 
-const logos = [PPL, Prime, PGNiG, PAL, Saif, UEP];
+const logos = [
+  PPL_LOGO,
+  PRIME_LOGO,
+  PGNIG_LOGO,
+  POL_LOGO,
+  SAIF_LOGO,
+  UEP_LOGO,
+  AEPL_LOGO,
+  GHPL_LOGO,
+  KPOGCL_LOGO,
+  MARI_LOGO,
+  MOL_LOGO,
+  OGX_LOGO,
+  OP_LOGO,
+];
 
 export default function TestimonialSection() {
   const [current, setCurrent] = useState(0);
@@ -36,6 +57,14 @@ export default function TestimonialSection() {
     setCurrent((prev) => (prev === logos.length - 1 ? 0 : prev + 1));
   };
 
+  // For mobile screens, show only 3 logos at a time
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const logosToShow = isMobile ? 3 : 6;
+  const logoIndices = Array.from(
+    { length: logosToShow },
+    (_, i) => (current + i) % logos.length
+  );
+
   return (
     <section className="relative w-full pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 flex flex-col items-center text-white bg-[#121C22]">
       {/* Background */}
@@ -47,7 +76,7 @@ export default function TestimonialSection() {
           objectFit="cover"
           quality={100}
           className="opacity-50"
-          loading='lazy'
+          loading="lazy"
         />
       </div>
 
@@ -59,22 +88,24 @@ export default function TestimonialSection() {
       {/* Testimonial */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
-  <Image
-    src={member}
-    alt={testimonial.name}
-    fill
-    className="object-cover"
-    loading="lazy"
-  />
-</div>
+          <Image
+            src={member}
+            alt={testimonial.name}
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+        </div>
 
-        <p className="max-w-xl text-white font-['Open_Sans'] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[1.25rem] mb-4">
+        <p className="max-w-md text-white font-['Open_Sans'] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[1.25rem] mb-4">
           {testimonial.text}
         </p>
         <h4 className="text-yellow-500 font-extrabold text-sm sm:text-base md:text-base lg:text-lg xl:text-[1rem] font-['Plus_Jakarta_Sans']">
           {testimonial.name}
         </h4>
-        <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">{testimonial.role}</span>
+        <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">
+          {testimonial.role}
+        </span>
 
         {/* Navigation arrows - hidden on small screens, positioned absolutely on larger screens */}
         <button
@@ -93,33 +124,19 @@ export default function TestimonialSection() {
         </button>
       </div>
 
-      {/* Mobile navigation dots */}
-      <div className="flex space-x-2 mt-6 sm:hidden z-10">
-        {logos.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full ${index === current ? 'bg-white' : 'bg-white/50'}`}
-            onClick={() => setCurrent(index)}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Logos - adjusted for smaller screens */}
-      <div className="relative z-10 flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-20 mt-8 sm:mt-12 md:mt-16 px-4">
-        {logos.map((logo, index) => (
+      {/* Current Logos Display - Responsive based on screen size */}
+      <div className="relative z-10 flex flex-wrap justify-center items-center gap-10 sm:gap-12  lg:gap-16 mt-8 sm:mt-12 md:mt-16 px-4 max-w-4xl">
+        {logoIndices.map((logoIndex, index) => (
           <div
             key={index}
-            className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 ${
-              index === current ? "scale-110" : "scale-100"
-            }`}
+            className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110"
           >
-            <div className="p-2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden">
+            <div className="p-1 sm:p-2 w-full h-full rounded-full overflow-hidden">
               <Image
-                src={logo}
-                alt={`Logo ${index}`}
+                src={logos[logoIndex]}
+                alt={`Logo ${logoIndex}`}
                 className="w-full h-full object-contain"
-                loading='lazy'
+                loading="lazy"
                 width={96}
                 height={96}
               />
@@ -128,9 +145,30 @@ export default function TestimonialSection() {
         ))}
       </div>
 
+      {/* Mobile slider controls */}
+      <div className="flex items-center gap-4 mt-6 md:hidden z-10">
+        <button
+          onClick={handlePrev}
+          className="border border-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-white hover:text-black transition"
+          aria-label="Previous logo"
+        >
+          &#8592;
+        </button>
+        <button
+          onClick={handleNext}
+          className="border border-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-white hover:text-black transition"
+          aria-label="Next logo"
+        >
+          &#8594;
+        </button>
+      </div>
+
       {/* Learn More Button */}
-      <button onClick={() => router.push("/members")} className="flex items-center gap-2 cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base">
-        Learn More <IoMdArrowForward/>
+      <button
+        onClick={() => router.push("/members")}
+        className="flex items-center gap-2 cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base"
+      >
+        Learn More <IoMdArrowForward />
       </button>
     </section>
   );

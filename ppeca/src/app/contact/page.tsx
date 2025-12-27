@@ -57,11 +57,13 @@ export default function ContactUs() {
       });
     } catch (error) {
       console.error(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 
   return (
+    <>
+    <Toaster position="top-center" reverseOrder={false} />
     <section className="min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
       <div className="w-full max-w-6xl">
         {/* Header */}
@@ -178,8 +180,9 @@ export default function ContactUs() {
               {/* Email & Phone */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 <div className="flex-1">
-                  <label className="text-sm text-slate-600">Email</label>
+                  <label  className="text-sm text-slate-600">Email *</label>
                   <input
+                  required
                     name="Email"
                     value={formData.Email}
                     onChange={handleChange}
@@ -255,5 +258,6 @@ export default function ContactUs() {
         </div>
       </div>
     </section>
+    </>
   );
 }
