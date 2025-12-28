@@ -10,6 +10,7 @@ import vactor2 from "../../../public/images/svg_images/Group 1000001750.svg";
 import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
 import Head from "next/head";
 export default function ContactUs() {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ export default function ContactUs() {
 
     try {
       const res = await fetch(
-        "https://automatic-happiness-5c495f4f8d.strapiapp.com/api/contact-forms",
+        `${API_BASE_URL}/api/contact-forms`,
         {
           method: "POST",
           headers: {

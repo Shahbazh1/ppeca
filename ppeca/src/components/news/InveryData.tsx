@@ -8,42 +8,43 @@ type InventoryItem = {
   fileUrl: string;
 };
 
-const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const inventoryData: InventoryItem[] = [
   {
     name: "KUFPEC",
     logo: "/images/companies_logo/KUFPEC_LOGO.png",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Surplus_Branch_Inventory_KUFPEC_19db8ed312.pdf`,
+    fileUrl: `${API_BASE_URL}/List_of_Surplus_Branch_Inventory_KUFPEC_19db8ed312.pdf`,
   },
   {
     name: "Orient Petroleum Inc.",
     logo: "/images/companies_logo/OP_LOGO.jpg",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Orient_Petroleum_Surplus_Inventory_OPI_a010a86dc8.pdf`,
+    fileUrl: `${API_BASE_URL}/Orient_Petroleum_Surplus_Inventory_OPI_a010a86dc8.pdf`,
   },
   {
     name: "Polish Oil and Gas Company",
     logo: "/images/POLISH_OIL_logo.jpg",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Surplus_Items_Propane_Condenser_POGC_bf15e4747f.xlsx`,
+    fileUrl: `${API_BASE_URL}/Surplus_Items_Propane_Condenser_POGC_bf15e4747f.xlsx`,
   },
   {
     name: "Pakistan Petroleum Ltd",
     logo: "/images/PPL_logo.jpg",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Drilling_and_Completion_materials_PPL_599f3696bc.xlsx`,
+    fileUrl: `${API_BASE_URL}/Drilling_and_Completion_materials_PPL_599f3696bc.xlsx`,
   },
   {
     name: "Eni Pakistan",
     logo: "/images/POL_logo.png",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/POL_SCR_RIG_1_Wells_drilled_xlsx_POL_04c5c64cc6.xlsx`,
+    fileUrl: `${API_BASE_URL}/POL_SCR_RIG_1_Wells_drilled_xlsx_POL_04c5c64cc6.xlsx`,
   },
   {
     name: "Propane Condenser POGC",
     logo: "/images/companies_logo/PRIME_LOGO.png",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Eni_Pakistan_Surplus_Inventory_List_PIOGCL_43562acb80.xlsx`,
+    fileUrl: `${API_BASE_URL}/Eni_Pakistan_Surplus_Inventory_List_PIOGCL_43562acb80.xlsx`,
   },
 ];
 
 export default function SurplusInventorySection() {
+
   const downloadPdf = (url: string, filename: string) => {
     fetch(url)
       .then((res) => res.blob())

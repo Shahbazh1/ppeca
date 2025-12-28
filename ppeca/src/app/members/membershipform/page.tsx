@@ -6,6 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 import Link from "next/link";
 const CompanyForm = () => {
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -48,7 +50,7 @@ const CompanyForm = () => {
     try { 
       console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
       setLoading(true);
-      const res = await fetch("https://automatic-happiness-5c495f4f8d.strapiapp.com/api/memership-forms", {
+      const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: formData }),

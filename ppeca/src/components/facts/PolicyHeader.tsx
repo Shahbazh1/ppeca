@@ -4,7 +4,10 @@ import React from "react";
 
 const PolicyHeader: React.FC = () => {
 
-  let pdfUrl='https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf'
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+
+  let pdfUrl=`${API_BASE_URL}/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf`
 
   const downloadPdf = async () => {
   if (!pdfUrl) return;
@@ -39,7 +42,7 @@ const PolicyHeader: React.FC = () => {
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
           <a
           aria-label="Visit Petroleum Policy 2012 document"
-            href="https://automatic-happiness-5c495f4f8d.media.strapiapp.com/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf"
+            href={`${API_BASE_URL}/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] cursor-pointer px-6 sm:px-8 md:px-10 py-2 text-xs sm:text-sm font-medium text-white rounded-xs hover:opacity-90 transition"

@@ -7,42 +7,43 @@ export type NewsletterItem = {
   image: string;
   pdfUrl: string;
 };
-const BASE_URL = "https://automatic-happiness-5c495f4f8d.strapiapp.com";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const newsletters: NewsletterItem[] = [
   {
     title: "PPEPCA 16th issue",
     image: "/images/ppepca_16_issue.png",
     pdfUrl:
-      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_16th_issue_b44487b587.pdf",
+      `${API_BASE_URL}/PPEPCA_16th_issue_b44487b587.pdf`,
   },
   {
     title: "PPEPCA 17th issue",
     image: "/images/ppepca_17_issue.png",
     pdfUrl:
-      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_17th_issue_e78157161a.pdf",
+      `${API_BASE_URL}/PPEPCA_17th_issue_e78157161a.pdf`,
   },
   {
     title: "PPEPCA 18th issue",
     image: "/images/ppepca_18_issue.png",
     pdfUrl:
-      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_18th_issue_b372a4c203.pdf",
+      `${API_BASE_URL}/PPEPCA_18th_issue_b372a4c203.pdf`,
   },
   {
     title: "PPEPCA 19th issue",
     image: "/images/ppepca_19_issue.png",
     pdfUrl:
-      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_19th_issue_116ebcd35e.pdf",
+      `${API_BASE_URL}/PPEPCA_19th_issue_116ebcd35e.pdf`,
   },
   {
     title: "PPEPCA 20th issue",
     image: "/images/ppepca_20_issue.png",
     pdfUrl:
-      "https://automatic-happiness-5c495f4f8d.media.strapiapp.com/PPEPCA_20th_issue_92100775e4.pdf",
+      `${API_BASE_URL}/PPEPCA_20th_issue_92100775e4.pdf`,
   },
 ];
 
 export default function NewsletterSection() {
+
   const downloadPdf = async (url: string, filename: string) => {
     try {
       const response = await fetch(url);

@@ -9,36 +9,36 @@ export type TrainingItem = {
 };
 
 // Set base URL dynamically
-const BASE_URL = "https://automatic-happiness-5c495f4f8d.media.strapiapp.com";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const trainingData: TrainingItem[] = [
   {
     title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR related R&D – by MOL Group",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "Fast Track EOR: Re-designing through Integration",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR Techniques Smart Screening for Candidate Reservoir",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "IOR/EOR Monitoring & Control System – by Weatherford",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "EOR Alliance – by Black Gold",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
   {
     title: "IOR/EOR Applications in MOL’s Perspective",
-    fileUrl: `https://automatic-happiness-5c495f4f8d.media.strapiapp.com/List_of_Training_Providers_ae37096436.xls`,
+    fileUrl: `${API_BASE_URL}/List_of_Training_Providers_ae37096436.xls`,
   },
 ];
 

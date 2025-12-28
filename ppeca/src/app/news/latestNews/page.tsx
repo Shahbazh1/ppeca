@@ -5,7 +5,7 @@ import Link from "next/link";
 import NewsCard from "../../../components/latestNews/NewsCard";
 
 export default function Home() {
-  const API_URL = `https://automatic-happiness-5c495f4f8d.strapiapp.com/api/newses`;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   interface NewsItem {
     id: number;
@@ -55,15 +55,26 @@ export default function Home() {
     },
   ];
 
+  
+
   useEffect(() => {
-    fetch(`${API_URL}?populate=*`)
+    let fallbackTimer: NodeJS.Timeout;
+
+    // ⏳ 5-second fallback
+    fallbackTimer = setTimeout(() => {
+      if (news.length === 0) {
+        setNews(fallbackNews);
+        setLoading(false);
+      }
+    }, 5000);
+    
+    fetch(`${API_BASE_URL}?populate=*`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
           setNews(data.data); // API returned valid data
-        } else {
-          setNews(fallbackNews); // Use fallback if API returns empty
         }
+        clearTimeout(fallbackTimer);
         setLoading(false);
       })
       .catch((err) => {

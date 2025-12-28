@@ -28,10 +28,11 @@ const fallbackNews = [
 ];
 
 export default function LatestNewsHero() {
-  
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
   const [newsItems, setNewsItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = `https://automatic-happiness-5c495f4f8d.strapiapp.com/api/newses`;
+  const API_URL = `${API_BASE_URL}/api/newses`;
   useEffect(() => {
     let fallbackTimer: NodeJS.Timeout;
 
