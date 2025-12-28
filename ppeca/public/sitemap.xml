@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://ppeca-xm2j.vercel.app/</loc>
+      <loc>https://www.ppepca.com/</loc>
       <priority>1.0</priority>
    </url>
 
    <url>
-      <loc>https://ppeca-xm2j.vercel.app/members</loc>
+      <loc>https://www.ppepca.com/members</loc>
       <priority>0.8</priority>
    </url>
 
@@ -17,17 +17,17 @@
    </url>
 
    <url>
-      <loc>https://ppeca-xm2j.vercel.app/about</loc>
+      <loc>https://www.ppepca.com/about</loc>
       <priority>0.7</priority>
    </url>
 
    <url>
-      <loc>https://ppeca-xm2j.vercel.app/facts</loc>
+      <loc>https://www.ppepca.com/facts</loc>
       <priority>0.7</priority>
    </url>
 
    <url>
-      <loc>https://ppeca-xm2j.vercel.app/contact</loc>
+      <loc>https://www.ppepca.com/contact</loc>
       <priority>0.6</priority>
    </url>
 

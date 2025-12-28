@@ -9,47 +9,50 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>PPEPCA - Petroleum Exploration in Pakistan</title>
-        <meta
-          name="description"
-          content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
-        />
-        <meta name="robots" content="index, follow" />
+  <title>PPEPCA – Pakistan Petroleum Exploration Companies Association</title>
 
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="PPEPCA - Petroleum Exploration in Pakistan"
-        />
-        <meta
-          property="og:description"
-          content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ppeca-xm2j.vercel.app/" />
-        <meta
-          property="og:image"
-          content="https://ppeca-xm2j.vercel.app/images/home-og-image.jpg"
-        />
+  <meta
+    name="description"
+    content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
+  />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="PPEPCA - Petroleum Exploration in Pakistan"
-        />
-        <meta
-          name="twitter:description"
-          content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
-        />
-        <meta
-          name="twitter:image"
-          content="https://ppeca-xm2j.vercel.app/images/home-og-image.jpg"
-        />
+  <meta name="robots" content="index, follow" />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://ppeca-xm2j.vercel.app/" />
-      </Head>
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="PPEPCA – Pakistan Petroleum Exploration Companies Association"
+  />
+  <meta
+    property="og:description"
+    content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ppepca.com/" />
+  <meta
+    property="og:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="PPEPCA – Pakistan Petroleum Exploration Companies Association"
+  />
+  <meta
+    name="twitter:description"
+    content="Explore PPEPCA's initiatives, projects, and contributions to petroleum exploration in Pakistan."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://www.ppepca.com/" />
+</Head>
+
 
       <Hero />
       <AboutSection />

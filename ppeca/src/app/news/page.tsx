@@ -7,41 +7,50 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>PPEPCA News & Events</title>
-        <meta
-          name="description"
-          content="Stay updated with the latest news, events, and press releases from PPEPCA."
-        />
-        <meta name="robots" content="index, follow" />
+  <title>PPEPCA News & Events – Petroleum Exploration Updates Pakistan</title>
 
-        {/* Open Graph */}
-        <meta property="og:title" content="PPEPCA News & Events" />
-        <meta
-          property="og:description"
-          content="Stay updated with the latest news, events, and press releases from PPEPCA."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ppeca-xm2j.vercel.app/news" />
-        <meta
-          property="og:image"
-          content="https://ppeca-xm2j.vercel.app/images/news-og-image.jpg"
-        />
+  <meta
+    name="description"
+    content="Stay updated with the latest news, events, and press releases from PPEPCA."
+  />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PPEPCA News & Events" />
-        <meta
-          name="twitter:description"
-          content="Stay updated with the latest news, events, and press releases from PPEPCA."
-        />
-        <meta
-          name="twitter:image"
-          content="https://ppeca-xm2j.vercel.app/images/news-og-image.jpg"
-        />
+  <meta name="robots" content="index, follow" />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://ppeca-xm2j.vercel.app/news" />
-      </Head>
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="PPEPCA News & Events – Petroleum Exploration Updates Pakistan"
+  />
+  <meta
+    property="og:description"
+    content="Stay updated with the latest news, events, and press releases from PPEPCA."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ppepca.com/news" />
+  <meta
+    property="og:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="PPEPCA News & Events – Petroleum Exploration Updates Pakistan"
+  />
+  <meta
+    name="twitter:description"
+    content="Stay updated with the latest news, events, and press releases from PPEPCA."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://www.ppepca.com/news" />
+</Head>
+
 
       <LatestNewsHero />
       <div className="xl:px-[4.875rem] lg:px-[4.3875rem] md:px-[3.9rem] sm:px-[3.4125rem] px-[2.925rem] bg-[#f8fafc]">

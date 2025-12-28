@@ -16,7 +16,7 @@ export default function HeroSection() {
           objectPosition="center"
           priority
         />
-        <div className="absolute inset-0 bg-[#000000CC]" /> Overlay
+        <div className="absolute inset-0 bg-[#000000CC]" /> 
       </div>
 
       {/* Content */}

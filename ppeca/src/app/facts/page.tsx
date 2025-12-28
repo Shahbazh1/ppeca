@@ -7,41 +7,50 @@ export default function Facts() {
   return (
     <main className="md:p-10 p-5 bg-[#f8fafc] flex-col flex gap-8 md:gap-16">
       <Head>
-        <title>PPEPCA Facts & Links</title>
-        <meta
-          name="description"
-          content="Discover important facts, useful links, and resources related to petroleum exploration in Pakistan through PPEPCA."
-        />
-        <meta name="robots" content="index, follow" />
+  <title>Contact PPEPCA – Pakistan Petroleum Exploration Companies</title>
 
-        {/* Open Graph */}
-        <meta property="og:title" content="PPEPCA Facts & Links" />
-        <meta
-          property="og:description"
-          content="Discover important facts, useful links, and resources related to petroleum exploration in Pakistan through PPEPCA."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ppeca-xm2j.vercel.app/facts" />
-        <meta
-          property="og:image"
-          content="https://ppeca-xm2j.vercel.app/images/facts-og-image.jpg"
-        />
+  <meta
+    name="description"
+    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+  />
 
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PPEPCA Facts & Links" />
-        <meta
-          name="twitter:description"
-          content="Discover important facts, useful links, and resources related to petroleum exploration in Pakistan through PPEPCA."
-        />
-        <meta
-          name="twitter:image"
-          content="https://ppeca-xm2j.vercel.app/images/facts-og-image.jpg"
-        />
+  <meta name="robots" content="index, follow" />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://ppeca-xm2j.vercel.app/facts" />
-      </Head>
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
+  />
+  <meta
+    property="og:description"
+    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ppepca.com/contact" />
+  <meta
+    property="og:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
+  />
+  <meta
+    name="twitter:description"
+    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.ppepca.com/logo.png"
+  />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://www.ppepca.com/contact" />
+</Head>
+
 
       <PolicyHeader />
       <PoliciesAndRegulations />

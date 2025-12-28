@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://ppeca-xm2j.vercel.app/sitemap.xml
+Sitemap: https://www.ppepca.com/sitemap.xml
