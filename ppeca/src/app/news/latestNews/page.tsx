@@ -55,33 +55,38 @@ export default function Home() {
     },
   ];
 
-  
-
   useEffect(() => {
-    let fallbackTimer: NodeJS.Timeout;
+    let didTimeout = false;
 
-    // ⏳ 5-second fallback
-    fallbackTimer = setTimeout(() => {
-      if (news.length === 0) {
-        setNews(fallbackNews);
-        setLoading(false);
-      }
+    // 1️⃣ 5-second fallback timer
+    const timeoutId = setTimeout(() => {
+      didTimeout = true;
+      setNews(fallbackNews);
+      setLoading(false);
     }, 5000);
-    
-    fetch(`${API_BASE_URL}?populate=*`)
+
+    // 2️⃣ Fetch API
+    fetch(`${API_BASE_URL}/api/newses?populate=*`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
-          setNews(data.data); // API returned valid data
+          // 3️⃣ If API responds AFTER fallback, still update UI
+          setNews(data.data);
         }
-        clearTimeout(fallbackTimer);
-        setLoading(false);
       })
       .catch((err) => {
         console.error("API fetch error:", err);
-        setNews(fallbackNews); // Use fallback on error
+        if (!didTimeout) {
+          setNews(fallbackNews);
+        }
+      })
+      .finally(() => {
+        clearTimeout(timeoutId);
         setLoading(false);
       });
+
+    // Cleanup
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (loading) {

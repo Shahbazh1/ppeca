@@ -9,7 +9,7 @@ export type TrainingItem = {
 };
 
 // Set base URL dynamically
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL;
 
 const trainingData: TrainingItem[] = [
   {

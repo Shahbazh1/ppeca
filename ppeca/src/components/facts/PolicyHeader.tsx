@@ -4,7 +4,7 @@ import React from "react";
 
 const PolicyHeader: React.FC = () => {
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const API_BASE_URL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL;
 
 
   let pdfUrl=`${API_BASE_URL}/Petroleum_Policy_2012_Gazzette_24ad22ef78.pdf`
