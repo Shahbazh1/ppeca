@@ -112,7 +112,7 @@ export default function MemberCompanies() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-[0.875rem] xl:gap-x-[16px] gap-y-4 sm:gap-y-5 md:gap-y-[1.35rem] lg:gap-y-[1.5rem] justify-items-center">
           {filteredCompanies.map((company) => {
             return (
               <CompanyCard
@@ -162,8 +162,8 @@ interface Props {
 function CompanyCard({ name, logo, id }: Props) {
   const router = useRouter();
   return (
-    <div className="py-[0.5rem] sm:py-[0.5625rem] md:py-[0.625rem] lg:py-[0.625rem] px-[0.75rem] sm:px-[0.825rem] md:px-[0.925rem] lg:px-[1.325rem] gap-[0.5rem] sm:gap-[0.5625rem] md:gap-[0.5625rem] lg:gap-[0.625rem] h-full w-full aspect-[4/4] bg-white rounded-sm border-[0.5px] border-[#84929f] flex items-center justify-between flex-col">
-      <div className="relative text-center h-[3rem] sm:h-[3.5rem] md:h-[3.6rem] lg:h-[4rem] w-[4.5rem] sm:w-[5rem] md:w-[5.0625rem] lg:w-[5.625rem] w-full">
+    <div className="py-[0.5rem] sm:py-[0.5625rem] md:py-[0.625rem] lg:py-[0.625rem] px-[0.75rem] sm:px-[0.825rem] md:px-[0.925rem] lg:px-[1.325rem] gap-[0.5rem] sm:gap-[0.5625rem] md:gap-[0.5625rem] lg:gap-[0.625rem] h-full w-full bg-white rounded-sm border-[0.5px] border-[#84929f] flex items-center justify-between flex-col">
+      <div className="relative text-center h-[3rem] sm:h-[3.5rem] md:h-[3.6rem] lg:h-[4rem] w-[4.5rem] sm:w-[5rem] md:w-[5.0625rem] lg:w-[5.625rem] xl:w-[6.1875rem] 2xl:w-[6.8075rem] xl:h-[4.4rem] 2xl:h-[4.8475rem] w-full">
         <Image
           src={logo}
           alt={name}
