@@ -40,7 +40,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
         <div className="flex justify-center items-center relative w-full sm:w-[130px] h-[180px] sm:h-[110px] flex-shrink-0">
           <Image
             src={image}
-            alt={title}
+            alt={title ? title : "News image"}
             fill
             className="object-cover object-center"
           />

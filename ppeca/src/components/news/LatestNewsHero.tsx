@@ -97,12 +97,25 @@ export default function LatestNewsHero() {
           {/* Right Cards */}
           <div className="flex flex-col gap-4 sm:gap-6">
 {loading && (
-  <div className="flex justify-center items-center h-40 space-x-2">
-    <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-    <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-    <div className="w-3 h-3 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+  <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl">
+    <div className="mb-6">
+      <div className="flex items-center justify-center space-x-2">
+        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"></div>
+        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+      </div>
+    </div>
+    
+    <div className="text-center">
+      <h3 className="text-xl font-semibold text-white mb-2">Fetching Latest News</h3>
+      <p className="text-[#C9C9C9] text-sm">Gathering the most recent updates for you...</p>
+    </div>
+    
+    <div className="mt-6 w-full bg-white/10 rounded-full h-2 overflow-hidden">
+      <div className="bg-gradient-to-r from-[#16A831] to-[#0d7a25] h-full rounded-full animate-pulse" style={{ width: '70%' }}></div>
+    </div>
   </div>
-)}            {!loading && newsItems.map((item, index) => (
+)}          {!loading && newsItems.map((item, index) => (
               <div
                 key={index}
                 className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between h-full hover:shadow-lg transition-shadow duration-300"

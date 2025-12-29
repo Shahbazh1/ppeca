@@ -23,6 +23,11 @@ export default function Home() {
 
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [isPageLoading, setIsPageLoading] = useState(false);
+
+  const newsPerPage = 10;
 
   const fallbackNews: NewsItem[] = [
     {
@@ -42,7 +47,7 @@ export default function Home() {
     {
       id: 2,
       documentId: "fallback-2",
-      NewsTitle: "Pakistan’s Energy Sector Sees Growth",
+      NewsTitle: "Pakistan's Energy Sector Sees Growth",
       NewsDescription:
         "New hydrocarbon discoveries contribute to increased local production and strengthen energy security.",
       NewsUrl: "#",
@@ -65,13 +70,19 @@ export default function Home() {
       setLoading(false);
     }, 5000);
 
-    // 2️⃣ Fetch API
-    fetch(`${API_BASE_URL}/api/newses?populate=*`)
+    setIsPageLoading(true);
+
+    // 2️⃣ Fetch API with pagination
+    fetch(`${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
           // 3️⃣ If API responds AFTER fallback, still update UI
           setNews(data.data);
+          // Set total pages from meta information
+          if (data.meta?.pagination?.pageCount) {
+            setTotalPages(data.meta.pagination.pageCount);
+          }
         }
       })
       .catch((err) => {
@@ -81,19 +92,46 @@ export default function Home() {
         }
       })
       .finally(() => {
+        setIsPageLoading(false);
         clearTimeout(timeoutId);
         setLoading(false);
       });
 
     // Cleanup
     return () => clearTimeout(timeoutId);
-  }, []);
+  }, [currentPage]); // Add currentPage as dependency to refetch when page changes
+
+  // Handle page navigation
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full animate-pulse"></div>
+      <div className="flex flex-col justify-center items-center h-screen bg-[#f8fafc]">
+        <div className="mb-8">
+          <div className="flex items-center justify-center space-x-2">
+            <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"></div>
+            <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+          </div>
+        </div>
+        
+        <div className="text-center mb-6">
+          <h3 className="text-xl font-semibold text-[#0A2540] mb-2 font-['Montserrat']">Fetching Latest News</h3>
+          <p className="text-[#64748b] text-sm font-['Open_Sans']">Gathering the most recent updates for you...</p>
+        </div>
+        
+        <div className="w-64 bg-gray-200 rounded-full h-2 overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-[#16A831] to-[#0d7a25] rounded-full animate-pulse" style={{ width: '70%' }}></div>
         </div>
       </div>
     );
@@ -125,7 +163,12 @@ export default function Home() {
 
       {/* News List */}
       <div className="bg-[#f8fafc] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6">
-        {news.map((item, index) => (
+        {isPageLoading ? (
+  <div className="text-center text-sm text-[#717171] py-8 font-['Open_Sans']">
+    Loading news...
+  </div>
+) : (
+        news.map((item, index) => (
           <NewsCard
             key={index}
             image={item.NewsImage?.url || "/images/news1.png"}
@@ -134,7 +177,38 @@ export default function Home() {
             publishedTime={item.publishedAt}
             url={item.NewsUrl}
           />
-        ))}
+        )))}
+        
+        {/* Pagination */}
+        <div className="flex justify-center items-center mt-8 space-x-4">
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 cursor-pointer rounded-md font-['Open_Sans'] text-sm ${
+              currentPage === 1
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
+            }`}
+          >
+            Previous
+          </button>
+          
+          <span className="font-['Open_Sans'] text-sm text-[#0A2540]">
+            Page {currentPage} of {totalPages}
+          </span>
+          
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 rounded-md cursor-pointer font-['Open_Sans'] text-sm ${
+              currentPage === totalPages
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
