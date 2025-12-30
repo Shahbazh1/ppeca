@@ -39,42 +39,30 @@ export default function ContactUs() {
 
     if (loading) return; // prevent double submit
     setLoading(true);
+    const controller = new AbortController();
 
-    // Create a timeout promise that rejects after 5 seconds
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error("Request timeout. Please try again."));
-      }, 5000);
-    });
+    const timeoutId = setTimeout(() => {
+      controller.abort(); // actually cancel the fetch
+      // optional: reject promise, but fetch will throw AbortError
+    }, 5000);
 
     try {
-      // Race between the fetch request and the timeout
-      const response = await Promise.race([
-        fetch(`${API_BASE_URL}/api/contact-forms`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            data: formData,
-          }),
-        }),
-        timeoutPromise,
-      ]);
+      const response = await fetch(`${API_BASE_URL}/api/contact-forms`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: formData }),
+        signal: controller.signal, // attach the signal
+      });
 
-      // If we get here, the fetch completed before timeout
-      if (!(response instanceof Response)) {
-        throw response; // This is the timeout error
-      }
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
-        const errorData = await response.json(); // <-- Get the actual error
+        const errorData = await response.json();
         console.error("Strapi error:", errorData);
         throw new Error("Failed to submit form");
       }
 
       toast.success("Form submitted successfully!");
-
       setFormData({
         firstName: "",
         lastName: "",
@@ -84,15 +72,15 @@ export default function ContactUs() {
         msg: "",
       });
     } catch (error: any) {
-      console.error(error);
-      // Show specific error message for timeout
-      if (error.message.includes("timeout")) {
-        toast.error("Request timed out. Please check your connection and try again.");
+      if (error.name === "AbortError") {
+        toast.error(
+          "Request timed out. Please check your connection and try again."
+        );
       } else {
         toast.error("Something went wrong. Please try again.");
       }
     } finally {
-      setLoading(false); // 🔑 always stop loading
+      setLoading(false);
     }
   };
 
@@ -119,10 +107,7 @@ export default function ContactUs() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.ppepca.com/contact" />
-        <meta
-          property="og:image"
-          content="https://www.ppepca.com/logo.png"
-        />
+        <meta property="og:image" content="https://www.ppepca.com/logo.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -134,10 +119,7 @@ export default function ContactUs() {
           name="twitter:description"
           content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
         />
-        <meta
-          name="twitter:image"
-          content="https://www.ppepca.com/logo.png"
-        />
+        <meta name="twitter:image" content="https://www.ppepca.com/logo.png" />
 
         {/* Canonical */}
         <link rel="canonical" href="https://www.ppepca.com/contact" />
