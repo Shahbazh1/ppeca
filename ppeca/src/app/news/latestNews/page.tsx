@@ -25,7 +25,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [isPageLoading, setIsPageLoading] = useState(false);
 
   const newsPerPage = 10;
 
@@ -70,7 +69,6 @@ export default function Home() {
       setLoading(false);
     }, 5000);
 
-    setIsPageLoading(true);
 
     // 2️⃣ Fetch API with pagination
     fetch(`${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`)
@@ -92,7 +90,6 @@ export default function Home() {
         }
       })
       .finally(() => {
-        setIsPageLoading(false);
         clearTimeout(timeoutId);
         setLoading(false);
       });
@@ -163,11 +160,7 @@ export default function Home() {
 
       {/* News List */}
       <div className="bg-[#f8fafc] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6">
-        {isPageLoading ? (
-  <div className="text-center text-sm text-[#717171] py-8 font-['Open_Sans']">
-    Loading news...
-  </div>
-) : (
+        { 
         news.map((item, index) => (
           <NewsCard
             key={index}
@@ -177,7 +170,7 @@ export default function Home() {
             publishedTime={item.publishedAt}
             url={item.NewsUrl}
           />
-        )))}
+        ))}
         
         {/* Pagination */}
         <div className="flex justify-center items-center mt-8 space-x-4">

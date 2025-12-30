@@ -60,6 +60,7 @@ const CompanyForm = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: formData }),
+        signal: controller.signal, // attach the abort controller signal
       });
 
       if (!res.ok) {
@@ -97,6 +98,7 @@ const CompanyForm = () => {
       console.error(err);
     }
     } finally {
+      clearTimeout(timeoutId);
     setLoading(false); 
   }
   };
