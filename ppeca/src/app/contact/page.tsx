@@ -9,6 +9,7 @@ import vactor1 from "../../../public/images/svg_images/Group 1000001749.svg";
 import vactor2 from "../../../public/images/svg_images/Group 1000001750.svg";
 import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
 import Head from "next/head";
+
 export default function ContactUs() {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [loading, setLoading] = useState(false);
@@ -39,10 +40,17 @@ export default function ContactUs() {
     if (loading) return; // prevent double submit
     setLoading(true);
 
+    // Create a timeout promise that rejects after 5 seconds
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => {
+        reject(new Error("Request timeout. Please try again."));
+      }, 5000);
+    });
+
     try {
-      const res = await fetch(
-        `${API_BASE_URL}/api/contact-forms`,
-        {
+      // Race between the fetch request and the timeout
+      const response = await Promise.race([
+        fetch(`${API_BASE_URL}/api/contact-forms`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -50,14 +58,21 @@ export default function ContactUs() {
           body: JSON.stringify({
             data: formData,
           }),
-        }
-      );
+        }),
+        timeoutPromise,
+      ]);
 
-      if (!res.ok) {
-        const errorData = await res.json(); // <-- Get the actual error
+      // If we get here, the fetch completed before timeout
+      if (!(response instanceof Response)) {
+        throw response; // This is the timeout error
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json(); // <-- Get the actual error
         console.error("Strapi error:", errorData);
         throw new Error("Failed to submit form");
       }
+
       toast.success("Form submitted successfully!");
 
       setFormData({
@@ -68,9 +83,14 @@ export default function ContactUs() {
         subject: "general",
         msg: "",
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      toast.error("Something went wrong. Please try again.");
+      // Show specific error message for timeout
+      if (error.message.includes("timeout")) {
+        toast.error("Request timed out. Please check your connection and try again.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     } finally {
       setLoading(false); // 🔑 always stop loading
     }
@@ -79,50 +99,49 @@ export default function ContactUs() {
   return (
     <>
       <Head>
-  <title>Contact PPEPCA – Pakistan Petroleum Exploration Companies</title>
+        <title>Contact PPEPCA – Pakistan Petroleum Exploration Companies</title>
 
-  <meta
-    name="description"
-    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
-  />
+        <meta
+          name="description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
 
-  <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow" />
 
-  {/* Open Graph */}
-  <meta
-    property="og:title"
-    content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
-  />
-  <meta
-    property="og:description"
-    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.ppepca.com/contact" />
-  <meta
-    property="og:image"
-    content="https://www.ppepca.com/logo.png"
-  />
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ppepca.com/contact" />
+        <meta
+          property="og:image"
+          content="https://www.ppepca.com/logo.png"
+        />
 
-  {/* Twitter Card */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
-  />
-  <meta
-    name="twitter:description"
-    content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
-  />
-  <meta
-    name="twitter:image"
-    content="https://www.ppepca.com/logo.png"
-  />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact PPEPCA – Pakistan Petroleum Exploration Companies"
+        />
+        <meta
+          name="twitter:description"
+          content="Get in touch with PPEPCA for inquiries, support, or collaboration regarding petroleum exploration in Pakistan."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.ppepca.com/logo.png"
+        />
 
-  {/* Canonical */}
-  <link rel="canonical" href="https://www.ppepca.com/contact" />
-</Head>
-
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.ppepca.com/contact" />
+      </Head>
 
       <Toaster position="top-center" reverseOrder={false} />
       <section className="min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">

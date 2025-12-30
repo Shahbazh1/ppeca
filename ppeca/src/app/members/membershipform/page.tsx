@@ -47,15 +47,20 @@ const CompanyForm = () => {
       toast.error("Emails do not match");
       return;
     }
+    setLoading(true)
+
+    const controller = new AbortController();
+  const timeoutId = setTimeout(() => {
+    controller.abort(); // cancel the request after 5 seconds
+  }, 5000);
+  
     try { 
       console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
-      setLoading(true);
       const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: formData }),
       });
-      setLoading(false);
 
       if (!res.ok) {
         const errorData = await res.json(); // <-- Get the actual error
@@ -84,10 +89,16 @@ const CompanyForm = () => {
         other_key_contack: "",
         joint_venture_partner: "",
       });
-    } catch (err) {
+    } catch (err:any) {
+      if (err.name === "AbortError") {
+      toast.error("Request timed out. Please try again.");
+    } else {
       toast.error("Something went wrong. Please try again.");
       console.error(err);
     }
+    } finally {
+    setLoading(false); 
+  }
   };
 
   return (
