@@ -46,8 +46,9 @@ export default function page() {
       </Head>
 
       <MemberHero />
-      <LeadershipSection />
       <MemberCompanies />
+      <LeadershipSection />
+      
     </>
   );
 }

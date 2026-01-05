@@ -64,11 +64,11 @@ export default function MemberCompanies() {
   );
 
   return (
-    <section className="bg-[#f8fafc] max-w-8xl px-4 sm:px-6 md:px-[2.49rem] xl:px-[3rem] pb-[3rem] sm:pb-[4rem] md:pb-[5rem]">
+    <section className="bg-[#f8fafc] max-w-8xl pt-8 sm:pt-12  px-4 sm:px-6 md:px-[2.49rem] xl:px-[3rem] ">
       <div className="">
         {/* Heading */}
         <div className="text-center mb-[1.5rem] sm:mb-[2rem] md:mb-[2.025rem] lg:mb-[2.25rem] xl:mb-[2.5rem]">
-          <h1 className="text-[1.5rem] font-['Open_Sans'] sm:text-[1.75rem] md:text-[1.8225rem] lg:text-[2.025rem] xl:text-[2.25rem] font-bold text-[#0A2540]">
+          <h1 className="xl:text-[2.25rem] sm:text-[1.35rem] lg:text-[2.025rem] md:text-[1.8225rem] text-[1.35rem] font-bold text-[#0A2540]">
             Our Member Companies
           </h1>
           <p className="text-[0.875rem] font-['Open_Sans'] sm:text-[1rem] md:text-[0.91125rem] lg:text-[1.0125rem] xl:text-[1.125rem] font-normal text-[#334155]">
@@ -127,7 +127,7 @@ export default function MemberCompanies() {
 
         <div className="font-medium py-6 w-fit">
           <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
-            Our Member Companies
+            Executive Committees
           </h2>
 
           <ul className="list-disc pl-5 space-y-[6px]">

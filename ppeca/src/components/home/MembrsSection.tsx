@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { IoMdArrowForward } from "react-icons/io";
 
-// Import logos
+import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
+import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
+
+// Logos
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
@@ -18,10 +21,6 @@ import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
-
-// Import testimonial avatar
-import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
-import { useRouter } from "next/navigation";
 
 const logos = [
   PPL_LOGO,
@@ -41,29 +40,28 @@ const logos = [
 
 export default function TestimonialSection() {
   const [current, setCurrent] = useState(0);
+  const [logosToShow, setLogosToShow] = useState(5);
   const router = useRouter();
 
+  useEffect(() => {
+    const updateLogosToShow = () => {
+      setLogosToShow(window.innerWidth < 1024 ? 3 : 5);
+    };
+    updateLogosToShow();
+    window.addEventListener("resize", updateLogosToShow);
+    return () => window.removeEventListener("resize", updateLogosToShow);
+  }, []);
+
   const testimonial = {
-    text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that i purchase from oil-industry!",
+    text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that I purchase from oil-industry!",
     name: "KAMRAN KHAN",
     role: "MANAGER",
   };
 
-  const handlePrev = () => {
-    setCurrent((prev) => (prev === 0 ? logos.length - 1 : prev - 1));
-  };
+  const handlePrev = () => setCurrent((prev) => (prev === 0 ? logos.length - 1 : prev - 1));
+  const handleNext = () => setCurrent((prev) => (prev === logos.length - 1 ? 0 : prev + 1));
 
-  const handleNext = () => {
-    setCurrent((prev) => (prev === logos.length - 1 ? 0 : prev + 1));
-  };
-
-  // For mobile screens, show only 3 logos at a time
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const logosToShow = isMobile ? 3 : 6;
-  const logoIndices = Array.from(
-    { length: logosToShow },
-    (_, i) => (current + i) % logos.length
-  );
+  const logoIndices = Array.from({ length: logosToShow }, (_, i) => (current + i) % logos.length);
 
   return (
     <section className="relative w-full pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 flex flex-col items-center text-white bg-[#121C22]">
@@ -71,17 +69,17 @@ export default function TestimonialSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src={members_sec_BG}
-          alt="Oil Industry"
+          alt="Oil Industry Background"
           layout="fill"
           objectFit="cover"
-          quality={100}
           className="opacity-50"
+          quality={100}
           loading="lazy"
         />
       </div>
 
       {/* Members label */}
-      <h3 className="absolute top-5 left-5 font-['Open_Sans'] sm:left-10 md:left-15 bg-[#ffffff] text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10">
+      <h3 className="absolute top-5 left-5 sm:left-10 md:left-15 bg-white text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10 font-['Open_Sans']">
         Members
       </h3>
 
@@ -106,57 +104,44 @@ export default function TestimonialSection() {
         <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">
           {testimonial.role}
         </span>
-
-        {/* Navigation arrows - hidden on small screens, positioned absolutely on larger screens */}
-        <button
-          className="hidden sm:block absolute -left-8 sm:-left-10 md:-left-12 lg:-left-16 top-1/2 transform -translate-y-1/2 border border-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center hover:bg-white hover:text-black transition z-20"
-          onClick={handlePrev}
-          aria-label="Previous testimonial"
-        >
-          &#8592;
-        </button>
-        <button
-          className="hidden sm:block absolute -right-8 sm:-right-10 md:-right-12 lg:-right-16 top-1/2 transform -translate-y-1/2 border border-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center hover:bg-white hover:text-black transition z-20"
-          onClick={handleNext}
-          aria-label="Next testimonial"
-        >
-          &#8594;
-        </button>
       </div>
 
-      {/* Current Logos Display - Responsive based on screen size */}
-      <div className="relative z-10 flex flex-wrap justify-center items-center gap-10 sm:gap-12  lg:gap-16 mt-8 sm:mt-12 md:mt-16 px-4 max-w-4xl">
-        {logoIndices.map((logoIndex, index) => (
-          <div
-            key={index}
-            className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110"
-          >
-            <div className="p-1 sm:p-2 w-full h-full rounded-full overflow-hidden">
-              <Image
-                src={logos[logoIndex]}
-                alt={`Logo ${logoIndex}`}
-                className="w-full h-full object-contain"
-                loading="lazy"
-                width={96}
-                height={96}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile slider controls */}
-      <div className="flex items-center gap-4 mt-6 md:hidden z-10">
+      {/* Logos Container with Navigation */}
+      <div className="relative z-10 flex items-center justify-center mt-8 sm:mt-12 md:mt-16 px-4 max-w-4xl">
+        {/* Left Button */}
         <button
           onClick={handlePrev}
-          className="border border-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-white hover:text-black transition"
+          className="absolute -left-8 sm:-left-16 lg:-left-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-black transition z-20"
           aria-label="Previous logo"
         >
           &#8592;
         </button>
+
+        {/* Logos */}
+        <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-12 lg:gap-16">
+          {logoIndices.map((logoIndex, index) => (
+            <div
+              key={index}
+              className="w-14 h-14 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110"
+            >
+              <div className="p-1 sm:p-2 w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src={logos[logoIndex]}
+                  alt={`Logo ${logoIndex + 1}`}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                  width={96}
+                  height={96}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Button */}
         <button
           onClick={handleNext}
-          className="border border-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-white hover:text-black transition"
+          className="absolute -right-8 sm:-right-16 lg:-right-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-black transition z-20"
           aria-label="Next logo"
         >
           &#8594;
@@ -166,7 +151,7 @@ export default function TestimonialSection() {
       {/* Learn More Button */}
       <button
         onClick={() => router.push("/members")}
-        className="flex items-center gap-2 cursor-pointer mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base"
+        className="flex cursor-pointer items-center gap-2 mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base"
       >
         Learn More <IoMdArrowForward />
       </button>

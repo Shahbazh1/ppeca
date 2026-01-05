@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section aria-labelledby="hero-heading" className="relative w-full h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px]">
+    <section
+      aria-labelledby="hero-heading"
+      className="relative w-full h-[500px] sm:h-[450px] md:h-[480px] lg:h-[500px] xl:h-[500px] 2xl:h-[600px]"
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -16,7 +19,7 @@ export default function HeroSection() {
           objectPosition="center"
           priority
         />
-        <div className="absolute inset-0 bg-[#000000CC]" /> 
+        <div className="absolute inset-0 bg-[#000000CC]" />
       </div>
 
       {/* Content */}
@@ -24,10 +27,11 @@ export default function HeroSection() {
         {/* <div className="absolute inset-0 bg-black/5" /> Overlay */}
         {/* Tagline */}
         <div className="inline-flex items-center justify-center mb-4 px-2 sm:px-3 md:px-4 py-1 h-[40px] border border-[#16A831] rounded-full bg-[#16A83112] text-[#16A831] text-sm font-medium">
-          <p
-            className="text-[12px] font-['Open_Sans'] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[1.5] text-[#16A831] font-normal"
-          >
-            <span className="hidden sm:inline">PPEPCA — Pakistan Petroleum Exploration and Production Companies</span>
+          <p className="text-[12px] font-['Open_Sans'] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[1.5] text-[#16A831] font-normal">
+            <span className="hidden sm:inline">
+              PPEPCA — Pakistan Petroleum Exploration and Production Companies
+              Association
+            </span>
             <span className="sm:hidden">PPEPCA — Pakistan Petroleum</span>
           </p>
         </div>
@@ -44,12 +48,13 @@ export default function HeroSection() {
           style={{ fontFamily: "'Open Sans', sans-serif", color: "#F8FAFC" }}
         >
           Uniting industry leaders to drive collaboration, innovation, and
-          sustainable growth across Pakistan's upstream petroleum sector.
+          sustainable growth across Pakistan’s upstream oil, gas & minerals
+          future.
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full max-w-md sm:max-w-none">
           <Link
-            href='/contact'
+            href="/contact"
             className=" cursor-pointer w-full sm:w-[196px] h-[50px] rounded-[4px] p-[10px] bg-[#16A831] hover:bg-[#128a28] text-white font-medium transition"
           >
             <p
@@ -63,7 +68,10 @@ export default function HeroSection() {
             </p>
           </Link>
 
-          <Link href='/about' className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition">
+          <Link
+            href="/about"
+            className="w-full cursor-pointer sm:w-auto border border-white text-white hover:bg-white hover:text-black font-medium py-3 px-6 rounded transition"
+          >
             Learn More
           </Link>
         </div>
