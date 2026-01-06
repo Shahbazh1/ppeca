@@ -1,5 +1,5 @@
 import Image from "next/image";
-import chairman_img from "../../../public/images/chairman_img.png";
+import kufpec_manager from "../../../public/images/kufpec_manager.png";
 
 const ChairmanMessage = () => {
   return (
@@ -50,7 +50,7 @@ const ChairmanMessage = () => {
         {/* RIGHT IMAGE */}
         <div className="lg:w-[40%] flex justify-center items-end lg:justify-center mt-6 sm:mt-8 lg:mt-0">
           <Image
-            src={chairman_img}
+            src={kufpec_manager}
             alt="Chairman PPEPCA"
             width={350}
             height={450}

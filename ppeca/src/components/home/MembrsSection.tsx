@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { IoMdArrowForward } from "react-icons/io";
 
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
-import member from "../../../public/images/font_view_smiley_bussinessman_img.jpg";
+import kufpec_manager from "../../../public/images/kufpec_manager.png";
 
 // Logos
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
@@ -54,8 +54,8 @@ export default function TestimonialSection() {
 
   const testimonial = {
     text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that I purchase from oil-industry!",
-    name: "KAMRAN KHAN",
-    role: "MANAGER",
+    name: "Mr. Ali Taha Al Temimi",
+    role: "Chairman, PPEPCA",
   };
 
   const handlePrev = () => setCurrent((prev) => (prev === 0 ? logos.length - 1 : prev - 1));
@@ -87,10 +87,10 @@ export default function TestimonialSection() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
           <Image
-            src={member}
+            src={kufpec_manager}
             alt={testimonial.name}
             fill
-            className="object-cover"
+            className="object-cover bg-white/100"
             loading="lazy"
           />
         </div>

@@ -125,29 +125,7 @@ export default function MemberCompanies() {
           })}
         </div>
 
-        <div className="font-medium py-6 w-fit">
-          <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
-            Executive Committees
-          </h2>
-
-          <ul className="list-disc pl-5 space-y-[6px]">
-            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
-              General Body
-            </li>
-            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
-              Executive Committee
-            </li>
-            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
-              Policy &amp; Rules Committee
-            </li>
-            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
-              Fiscal Affairs Committee
-            </li>
-            <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
-              Corporate Affairs Committee
-            </li>
-          </ul>
-        </div>
+        
       </div>
     </section>
   );

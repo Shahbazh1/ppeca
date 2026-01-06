@@ -72,10 +72,10 @@ const leaders = [
 
 export default function LeadershipSection() {
   return (
-    <section className="bg-[#f8fafc] max-w-8xl xl:px-[3rem]  md:px-[2.49rem] sm:p-[2.1rem] p-[1.8rem]  xl:py-[3rem] md:py-[2.49rem]">
+    <section className="bg-[#f8fafc] max-w-8xl xl:px-[3rem]  md:px-[2.49rem] sm:p-[2.1rem] p-[1.8rem]  md:py-[3.2rem]">
       <div className=" mx-auto">
         {/* Heading */}
-        <div className="text-center md:mb-16 mb-8">
+        <div className="text-center md:mb-12 mb-8">
           <h1 className="xl:text-[2.25rem] sm:text-[1.35rem] lg:text-[2.025rem] md:text-[1.8225rem] text-[1.35rem] font-bold text-[#0A2540]">
             Leadership & Executive Committee
           </h1>
@@ -99,6 +99,30 @@ export default function LeadershipSection() {
             <LeaderCard key={index} {...leader} />
           ))}
         </div>
+
+        <div className="font-medium py-6 w-fit">
+                  <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
+                    Executive Committees
+                  </h2>
+        
+                  <ul className="list-disc pl-5 space-y-[6px]">
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      General Body
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Executive Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Policy &amp; Rules Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Fiscal Affairs Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Corporate Affairs Committee
+                    </li>
+                  </ul>
+                </div>
       </div>
     </section>
   );

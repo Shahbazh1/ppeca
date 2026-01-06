@@ -272,12 +272,10 @@ export default function ContactUs() {
                   <p className="text-sm font-medium text-slate-700 mb-3">
                     Select Subject?
                   </p>
-                  <div className="grid grid-cols-2 sm:flex sm:justify-between text-sm text-slate-600 w-full gap-2 sm:gap-0">
+                  <div className="grid grid-cols-2 sm:flex sm:justify-start sm:gap-4 xl:gap-8 text-sm text-slate-600 w-full gap-2 sm:gap-0">
                     {[
                       "General Inquiry",
-                      "General Inquiry",
-                      "General Inquiry",
-                      "General Inquiry",
+                      "Membership Information",
                     ].map((item, index) => (
                       <label
                         key={index}

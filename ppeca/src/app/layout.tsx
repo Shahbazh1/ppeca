@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 
 export const metadata: Metadata = {
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${plusJakartaSans.variable} ${jost.variable} ${kumbhSans.variable} ${inter.variable} ${montserrat.variable} ${openSans.variable} ${poppins.variable} m-0 p-0 w-full overflow-x-hidden1`}>
         <Navbar />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>
