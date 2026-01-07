@@ -272,26 +272,25 @@ export default function ContactUs() {
                   <p className="text-sm font-medium text-slate-700 mb-3">
                     Select Subject?
                   </p>
-                  <div className="grid grid-cols-2 sm:flex sm:justify-start sm:gap-4 xl:gap-8 text-sm text-slate-600 w-full gap-2 sm:gap-0">
-                    {[
-                      "General Inquiry",
-                      "Membership Information",
-                    ].map((item, index) => (
-                      <label
-                        key={index}
-                        className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
-                      >
-                        <input
-                          type="radio"
-                          name="subject"
-                          value="general"
-                          checked={formData.subject === "general"}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-slate-800 cursor-pointer"
-                        />
-                        <span>{item}</span>
-                      </label>
-                    ))}
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 text-sm text-slate-600 w-full">
+                    {["General Inquiry", "Membership Information"].map(
+                      (item, index) => (
+                        <label
+                          key={index}
+                          className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                        >
+                          <input
+                            type="radio"
+                            name="subject"
+                            value="general"
+                            checked={formData.subject === "general"}
+                            onChange={handleChange}
+                            className="w-4 h-4 accent-slate-800 cursor-pointer"
+                          />
+                          <span>{item}</span>
+                        </label>
+                      )
+                    )}
                   </div>
                 </div>
 
