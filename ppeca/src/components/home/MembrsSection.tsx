@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { IoMdArrowForward } from "react-icons/io";
 
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
-import kufpec_manager from "../../../public/images/kufpec_manager.png";
+import IMG_0100 from "../../../public/images/IMG_0100.jpg";
 
 // Logos
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
@@ -21,21 +21,23 @@ import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
+import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
 
 const logos = [
-  PPL_LOGO,
-  PRIME_LOGO,
-  PGNIG_LOGO,
-  POL_LOGO,
-  SAIF_LOGO,
-  UEP_LOGO,
-  AEPL_LOGO,
-  GHPL_LOGO,
-  KPOGCL_LOGO,
-  MARI_LOGO,
-  MOL_LOGO,
   OGX_LOGO,
+  PPL_LOGO,
+  MARI_LOGO,
+  GHPL_LOGO,
+  UEP_LOGO,
+  POL_LOGO,
+  PGNIG_LOGO,
+  PRIME_LOGO,
+  MOL_LOGO,
   OP_LOGO,
+  AEPL_LOGO,
+  KUFPEC_LOGO,
+  SAIF_LOGO,
+  KPOGCL_LOGO,
 ];
 
 export default function TestimonialSection() {
@@ -87,10 +89,10 @@ export default function TestimonialSection() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
           <Image
-            src={kufpec_manager}
+            src={IMG_0100}
             alt={testimonial.name}
             fill
-            className="object-cover bg-white/100"
+            className="object-cover "
             loading="lazy"
           />
         </div>

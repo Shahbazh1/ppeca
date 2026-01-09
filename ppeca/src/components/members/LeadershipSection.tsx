@@ -9,66 +9,81 @@ import mol_ceo from "../../../public/images/mol_ceo.png";
 import mari_ceo from "../../../public/images/mari_ceo.png";
 import kufpec_manager from "../../../public/images/kufpec_manager.png";
 import kpogc_ceo from "../../../public/images/kpogc_ceo.png";
-
+import  Secretary_General_PPEPCA  from "../../../public/images/Secretary_General_PPEPCA.png";
 /* =======================
    DATA (single source)
 ======================= */
 const leaders = [
   {
+    role: "Chairman PPEPCA",
     name: "Mr. Ali Taha Al Temimi",
     title: "Country Manager",
-    company: "KUFPEC",
+    company: "Kufpec Pakistan B.V",
     image: kufpec_manager,
   },
   {
+    role: "Senior Vice Chairman PPEPCA",
     name: "Mr. Kamran Ajmal Mian",
     title: "Chief Executive Officer",
-    company: "PPL",
+    company: "Prime Global Energies Ltd.",
     image: ppl_ceo,
   },
   {
+    role: "Vice Chairman PPEPCA",
     name: "Mr. Andrzej Kaczorowski",
     title: "Managing Director",
-    company: "POGC",
+    company: "Polish Oil & Gas Company",
     image: pogc_md,
   },
   {
+    role: "Member Executive Committee",
     name: "Mr. Nasir Khan",
     title: "Chief Executive Officer",
-    company: "KPOGCL",
+    company: "Khyber Pakhtunkhwa Oil & Gas Company Ltd.",
     image: kpogc_ceo,
   },
   {
+    role: "Member Executive Committee",
     name: "Mr. Faheem Haider",
     title: "Managing Director / CEO",
-    company: "MARI",
+    company: "Mari Energies Ltd.",
     image: mari_ceo,
   },
   {
-    name: "Laszlo Zsolt Adam",
+    role: "Member Executive Committee",
+    name: "Mr. Laszlo Zsolt Adam",
     title: "Managing Director / CEO",
-    company: "MOL",
+    company: "MOL Pakistan Oil & Gas Company B.V.",
     image: mol_ceo,
   },
   {
-    name: "Kamran Ahmed",
+    role: "Member Executive Committee",
+    name: "Mr. Kamran Ahmed",
     title: "Chief Executive Officer",
-    company: "Orient Petroleum",
+    company: "Orient Petroleum Inc.",
     image: orient_petroleum_ceo,
   },
   {
-    name: "Jehangir Saifullah Khan",
+    role: "Member Executive Committee",
+    name: "Mr. Jehangir Saifullah Khan",
     title: "Chief Executive Officer",
-    company: "SEL",
+    company: "Saif Energy Limited",
     image: sel_ceo,
   },
   {
-    name: "Zaheer Alam",
+    role: "Member Executive Committee",
+    name: "Mr. Muhammad Zaheer Alam",
     title: "President",
-    company: "UEP",
+    company: "United Energy Pakistan",
     image: uep_president,
   },
+  {
+    role: " Secretary General PPEPCA",
+    name: "Mr. Ibrar Khan",
+    image: Secretary_General_PPEPCA,
+  },
 ];
+
 
 export default function LeadershipSection() {
   return (
@@ -100,7 +115,7 @@ export default function LeadershipSection() {
           ))}
         </div>
 
-        <div className="font-medium py-6 w-fit">
+        {/* <div className="font-medium py-6 w-fit">
                   <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
                     Executive Committees
                   </h2>
@@ -122,6 +137,27 @@ export default function LeadershipSection() {
                       Corporate Affairs Committee
                     </li>
                   </ul>
+                </div> */}
+
+                <div className="font-medium py-6 w-fit">
+                  <h2 className="text-[#0A2540] font-['Open_Sans'] text-[1.25rem] sm:text-[1.375rem] md:text-[1.4275rem] lg:text-[1.75rem] mb-3">
+                    Expert Committees
+                  </h2>
+        
+                  <ul className="list-disc pl-5 space-y-[6px]">
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Policy & Rules Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Fiscal Affairs Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      Corporate Affairs Committee
+                    </li>
+                    <li className="text-[#0A2540] text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem] font-normal leading-[1.4]">
+                      HSE & Security Affairs
+                    </li>
+                  </ul>
                 </div>
       </div>
     </section>
@@ -130,12 +166,13 @@ export default function LeadershipSection() {
 
 interface Props {
   name: string;
-  title: string;
-  company: string;
+  title ?: string;
+  company ?: string;
   image: StaticImageData;
+  role?: string;
 }
 
-function LeaderCard({ name, title, company, image }: Props) {
+function LeaderCard({ name, title, company, image, role }: Props) {
   return (
     <div
       className="
@@ -163,8 +200,12 @@ function LeaderCard({ name, title, company, image }: Props) {
           </p>
 
           <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
-            {title}
+            {role}
           </p>
+
+          {/* <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
+            {title}
+          </p> */}
 
           <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[o.43rem]  font-medium text-[#16A831]">
             {company}

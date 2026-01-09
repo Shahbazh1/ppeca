@@ -27,24 +27,24 @@ interface Company {
 }
 
 const companies: Company[] = [
-  { id: 1, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
-  { id: 2, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
-  { id: 3, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+  { id: 1, name: "Oil and Gas Development Company Limited", logo: OGX_LOGO },
+  { id: 2, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
+  { id: 3, name: "Mari Energies Limited", logo: MARI_LOGO },
+  { id: 4, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
+  { id: 5, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_LOGO },
+  { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
+  { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
+  { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
+  { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
+  { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
+  { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
+  { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+  { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
   {
-    id: 4,
+    id: 14,
     name: "Khyber Pakhtunkhwa Oil and Gas Company Limited",
     logo: KPOGCL_LOGO,
   },
-  { id: 5, name: "Mari Energies Limited", logo: MARI_LOGO },
-  { id: 6, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
-  { id: 7, name: "Oil and Gas Development Company Limited", logo: OGX_LOGO },
-  { id: 8, name: "Orient Petroleum Inc", logo: OP_LOGO },
-  { id: 9, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
-  { id: 10, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
-  { id: 11, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
-  { id: 12, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
-  { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
-  { id: 14, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_LOGO },
 ];
 
 export default function MemberCompanies() {
@@ -124,8 +124,6 @@ export default function MemberCompanies() {
             );
           })}
         </div>
-
-        
       </div>
     </section>
   );
@@ -155,7 +153,8 @@ function CompanyCard({ name, logo, id }: Props) {
         {name}
       </p>
 
-      <button aria-label={`View profile of ${name}`}
+      <button
+        aria-label={`View profile of ${name}`}
         onClick={() => router.push(`/members/membersPage?id=${id}`)}
         className="cursor-pointer bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] text-[#FFFFFF] text-[0.75rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] px-2 sm:px-3 md:px-2 lg:px-4 py-1 sm:py-1.5 md:py-1 lg:py-2 rounded-sm hover:bg-[#16A831] transition"
       >
