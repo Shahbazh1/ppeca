@@ -28,7 +28,7 @@ import { Suspense } from "react";
 // Array of company details
 const companyData = [
   {
-    id: 1,
+    id: 11,
     logo: POL_logo,
     name: "Al-Haj Enterprises (Private) Limited",
     address:
@@ -46,7 +46,7 @@ const companyData = [
     website: "#",
   },
   {
-    id: 2,
+    id: 4,
     logo: GHPL_LOGO, // Replace GHPL_logo with the actual imported logo variable if available
     name: "Government Holdings (Private) Limited",
     address: "Petroleum House, 5th & 7th Floor, Sector G-5/2, Islamabad",
@@ -65,7 +65,7 @@ const companyData = [
     website: "https://www.ghpl.com.pk",
   },
   {
-    id: 3,
+    id: 12,
     logo: KUFPEC_LOGO, // Replace KUFPEC_logo with the actual imported logo variable if available
     name: "Kirthar Pakistan Holdings B.V. (Formerly known as Premier – KUFPEC Pakistan B.V)",
     address:
@@ -86,7 +86,7 @@ const companyData = [
     email: "mail@kufpec.com.pk",
   },
   {
-    id: 4,
+    id: 14,
     logo: KPOGCL_LOGO, // Replace KPOGCL_logo with the actual imported logo variable if available
     name: "Khyber Pakhtunkhwa Oil and Gas Company Limited (KPOGCL)",
     address:
@@ -105,7 +105,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 5,
+    id: 3,
     logo: MARI_LOGO, // Replace MARI_logo with the actual imported logo variable if available
     name: "Mari Energies Limited",
     address:
@@ -120,7 +120,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 6,
+    id:9,
     logo: MOL_LOGO, // Replace MOL_logo with the actual imported logo variable if available
     name: "MOL Pakistan Oil and Gas Co. B.V.",
     address:
@@ -136,7 +136,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 7,
+    id: 1,
     logo: OGX_LOGO, // Replace OGDCL_logo with the actual imported logo variable if available
     name: "Oil and Gas Development Company Limited (OGDCL)",
     address: "OGDCL House, F-6/1, Jinnah Avenue, Islamabad",
@@ -157,7 +157,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 8,
+    id: 10,
     logo: OP_LOGO, // Replace ORIENT_logo with the actual imported logo variable if available
     name: "Orient Petroleum Inc.",
     address:
@@ -176,7 +176,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 9,
+    id: 7,
     logo: PGNIG_LOGO, // Replace PGNiG_logo with the actual imported logo variable if available
     name: "Polish Oil and Gas Company - Pakistan Branch",
     address: "6th Floor, Ufone Tower, Jinnah Avenue, Blue Area, Islamabad",
@@ -195,7 +195,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 10,
+    id: 6,
     logo: POL_LOGO, // Replace POL_logo with the actual imported logo variable if available
     name: "Pakistan Oilfields Ltd",
     address: "POL House, Morgah, Rawalpindi",
@@ -209,7 +209,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 11,
+    id: 2,
     logo: PPL_LOGO, // Replace PPL_logo with the actual imported logo variable if available
     name: "Pakistan Petroleum Ltd",
     address: "P.I.D.C, Dr. Ziauddin Ahmed Road, P.O. Box No. 3942, Karachi",
@@ -228,7 +228,7 @@ const companyData = [
     website: "#", // Add actual website if available
   },
   {
-    id: 12,
+    id: 8,
     logo: PRIME_LOGO, // Replace PGEL_logo with the actual imported logo variable if available
     name: "Prime Global Energies Limited",
     address:
@@ -265,7 +265,7 @@ const companyData = [
     website: "www.saifenergy.com",
   },
   {
-    id: 14,
+    id: 5,
     logo: UEP_LOGO, // Replace UEPL_logo with the actual imported logo variable if available
     name: "United Energy Pakistan Limited (UEPL)",
     address:
