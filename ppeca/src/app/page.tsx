@@ -57,7 +57,7 @@ export default function HomePage() {
       <Hero />
       <AboutSection />
       <MembersSection />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <FAQs />
     </>
   );

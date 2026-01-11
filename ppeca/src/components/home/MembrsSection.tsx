@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { IoMdArrowForward } from "react-icons/io";
 
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
-import IMG_0100 from "../../../public/images/IMG_0100.jpg";
+import chairman1 from "../../../public/images/chairman1.png";
 
 // Logos
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
@@ -89,10 +89,10 @@ export default function TestimonialSection() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
           <Image
-            src={IMG_0100}
+            src={chairman1}
             alt={testimonial.name}
             fill
-            className="object-cover "
+            className="object-cover bg-white"
             loading="lazy"
           />
         </div>

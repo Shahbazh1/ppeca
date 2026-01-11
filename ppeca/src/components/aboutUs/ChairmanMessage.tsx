@@ -1,10 +1,10 @@
 import Image from "next/image";
-import kufpec_manager from "../../../public/images/kufpec_manager.png";
+import kufpec_manager from "../../../public/images/chairman2.png";
 
 const ChairmanMessage = () => {
   return (
     <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-[22px] py-12 sm:py-14 md:py-16 lg:py-20">
-      <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-stretch justify-between gap-8 sm:gap-10 lg:gap-12">
+      <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-stretch justify-between gap-2 sm:gap-4 lg:gap-12">
         {/* LEFT CONTENT */}
         <div className="flex-1 lg:w-[60%]">
           {/* Heading */}
@@ -17,7 +17,7 @@ const ChairmanMessage = () => {
           </h3>
 
           {/* Message Text */}
-          <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6 lg:max-w-lg xl:max-w-xl text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
+          <div className="font-['Open_Sans'] mt-4 sm:mt-5 md:mt-6  text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
             <p className="font-bold mb-0">Dear Esteemed Members,</p>
 
             <p>
@@ -61,7 +61,7 @@ const ChairmanMessage = () => {
       </div>
 
       {/* Bottom Text */}
-      <div className="max-w-[1400px] mx-auto mt-6 sm:mt-8 lg:mt-6 font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
+      <div className="max-w-[1400px] mx-auto mt-5 sm:mt-7 lg:mt-3 font-['Open_Sans'] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-[#0A2540] space-y-3 sm:space-y-4">
         <p className="mb-0">
           Looking ahead, my vision for our association is one of unity and
           proactive leadership. We must foster an environment where new ideas

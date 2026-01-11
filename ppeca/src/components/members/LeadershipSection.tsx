@@ -7,7 +7,7 @@ import pogc_md from "../../../public/images/pogc_md.png";
 import orient_petroleum_ceo from "../../../public/images/orient_petroleum_ceo.png";
 import mol_ceo from "../../../public/images/mol_ceo.png";
 import mari_ceo from "../../../public/images/mari_ceo.png";
-import kufpec_manager from "../../../public/images/kufpec_manager.png";
+import kufpec_manager from "../../../public/images/chairman1.png";
 import kpogc_ceo from "../../../public/images/kpogc_ceo.png";
 import  Secretary_General_PPEPCA  from "../../../public/images/Secretary_General_PPEPCA.png";
 /* =======================
@@ -172,48 +172,101 @@ interface Props {
   role?: string;
 }
 
+// function LeaderCard({ name, title, company, image, role }: Props) {
+//   return (
+//     <div
+//       className="
+//         w-full
+//         h-full
+//         rounded-[10px]
+//         bg-[#f8f8f8]
+//         border border-[#d1d5db]
+//         overflow-hidden
+//         shadow-sm
+//       "
+//     >
+//       {/* Image */}
+//       <div className="relative w-full rounded-md aspect-[4/4] bg-[#f3f1f2]">
+//         <Image
+//           src={image}
+//           alt={name}
+//           fill
+//           className="object-cover rounded-md  "
+//           loading="lazy"
+//         />
+//         <div className="absolute w-full px-[6%] font-['Open_Sans']  bg-white/70  bottom-0 text-center">
+//           <p className="lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  font-semibold text-[#0A2540] leading-snug">
+//             {name}
+//           </p>
+
+//           <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
+//             {role}
+//           </p>
+
+//           {/* <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
+//             {title}
+//           </p> */}
+
+//           <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[o.43rem]  font-medium text-[#16A831]">
+//             {company}
+//           </p>
+//         </div>
+//       </div>
+
+//       {/* Content */}
+//     </div>
+//   );
+// }
+
 function LeaderCard({ name, title, company, image, role }: Props) {
   return (
-    <div
-      className="
-        w-full
-        h-full
-        rounded-[10px]
-        bg-[#f8f8f8]
-        border border-[#d1d5db]
-        overflow-hidden
-        shadow-sm
-      "
-    >
+    <div className="w-full rounded-xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+      
       {/* Image */}
-      <div className="relative w-full rounded-md aspect-[4/4] bg-[#f3f1f2]">
+      <div className="relative w-full aspect-square bg-[#f8f8f8]">
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover rounded-md  "
+          className="object-cover"
           loading="lazy"
         />
-        <div className="absolute w-full px-[6%] font-['Open_Sans']  bg-white/70  bottom-0 text-center">
-          <p className="lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  font-semibold text-[#0A2540] leading-snug">
-            {name}
-          </p>
-
-          <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
-            {role}
-          </p>
-
-          {/* <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[0.63rem]  text-[#0A2540]">
-            {title}
-          </p> */}
-
-          <p className="mt-[2%] lg:text-[0.9rem] md:text-[0.7rem] text-[o.43rem]  font-medium text-[#16A831]">
-            {company}
-          </p>
-        </div>
       </div>
 
       {/* Content */}
+      <div className="px-3 py-3 text-center font-['Open_Sans']">
+
+        {/* Name */}
+        <p className="text-[0.75rem] sm:text-[0.85rem] lg:text-[0.95rem] font-semibold text-[#0A2540] leading-snug">
+          {name}
+        </p>
+
+        {/* Role */}
+        {role && (
+          <p className="mt-1 text-[0.65rem] sm:text-[0.7rem] lg:text-[0.75rem] font-medium text-[#0A2540]">
+            {role}
+          </p>
+        )}
+
+        {/* Title */}
+        {title && (
+          <p className="mt-[2px] text-[0.6rem] sm:text-[0.65rem] lg:text-[0.7rem] text-slate-600">
+            {title}
+          </p>
+        )}
+
+        {/* Divider */}
+        {company && (
+          <div className="my-2 mx-auto h-[1px] w-8 bg-slate-200" />
+        )}
+
+        {/* Company */}
+        {company && (
+          <p className="text-[0.6rem] sm:text-[0.65rem] lg:text-[0.75rem] font-medium text-[#16A831]">
+            {company}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
