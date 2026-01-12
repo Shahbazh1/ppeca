@@ -10,19 +10,23 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: 'Where i can find instructions to technology process?',
+    question: "What is PPEPCA and what does it do?",
     answer:
-      'We are committed to providing our customers with exceptional service while offering our employees the best training. There are many variations of passages of lorem ipsum is simply free text.',
+      "PPEPCA (Pakistan Petroleum Exploration Companies Association) is an industry body representing petroleum exploration companies in Pakistan. It works to promote responsible exploration, development, and best practices in the petroleum sector.",
   },
   {
-    question: 'How to work with industrum?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.',
+    question: "How can I become a member of PPEPCA?",
+    answer:
+      "Membership is open to companies involved in petroleum exploration in Pakistan. Interested companies can apply through our official website or contact our membership team for guidance on requirements and procedures.",
   },
   {
-    question: 'inim veniam, quis nostrud exercitation ?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.',
+    question: "Where can I find PPEPCA's policies and reports?",
+    answer:
+      "All our policies, annual reports, and publications are available on the 'Facts & Links' section of our website. These documents provide insight into our initiatives, compliance guidelines, and industry data.",
   },
+
 ];
+
 
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -37,10 +41,10 @@ export default function FAQSection() {
       <div className="w-full  md:w-1/2 flex flex-col gap-4">
         <p className="text-[#16A831] text-sm font-['Open_Sans'] sm:text-[0.95rem] md:text-[1rem] font-semibold">FAQs</p>
         <h2 className="text-[#F8FAFC] leading-tight sm:leading-snug md:leading-none font-['Plus_Jakarta_Sans'] text-[1.875rem] sm:text-[2.25rem] md:text-[2.4275rem] lg:text-[3rem] font-extrabold">
-          Lorem Ipsum is not simply random text
+          Find Answers to Your Common Queries
         </h2>
         <p className="text-[#94A3B8] font-['Plus_Jakarta_Sans'] text-[0.875rem] sm:text-[0.9rem] md:text-[1rem] max-w-full md:max-w-[75%] lg:p-[0.625rem] sm:p-[0.5625rem]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    We’ve gathered the questions our users ask the most to help you quickly find the answers you need. If you don’t see your question here, feel free to contact us directly.
         </p>
         <button className="flex items-center gap-2 cursor-pointer font-['Plus_Jakarta_Sans'] bg-[#16a831] hover:bg-[#128a28] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
           Read More <IoMdArrowForward/>
