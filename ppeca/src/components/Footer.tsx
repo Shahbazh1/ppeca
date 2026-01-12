@@ -36,13 +36,13 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-3 mt-6 text-black text-[18px] md:text-[20px]">
             <Link aria-label="Follow us on Facebook" href="#">
-              <FaFacebookF />
+              {/* <FaFacebookF /> */}
             </Link>
             <Link aria-label="Follow us on Twitter" href="#">
-              <FaXTwitter />
+              {/* <FaXTwitter /> */}
             </Link>
             <Link aria-label="Follow us on Linkedin" href="#">
-              <FaLinkedinIn />
+              {/* <FaLinkedinIn /> */}
             </Link>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function Facts() {
 
       <PolicyHeader />
       <PoliciesAndRegulations />
-      <PakistanPetroleumInformation />
+      {/* <PakistanPetroleumInformation /> */}
       <PakistanPetroleumCards />
     </main>
   );

@@ -195,15 +195,15 @@ export default function ContactUs() {
               {/* Social Icons (BOTTOM) */}
               <div className="flex gap-4 relative z-10">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  <img src={vactor1.src} alt="social" className="w-10 h-10" />
+                  {/* <img src={vactor1.src} alt="social" className="w-10 h-10" /> */}
                 </div>
 
                 <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  <img src={vactor2.src} alt="social" className="w-10 h-10" />
+                  {/* <img src={vactor2.src} alt="social" className="w-10 h-10" /> */}
                 </div>
 
                 <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  <img src={vactor3.src} alt="social" className="w-10 h-10" />
+                  {/* <img src={vactor3.src} alt="social" className="w-10 h-10" /> */}
                 </div>
               </div>
 

@@ -93,14 +93,16 @@ const Navbar: React.FC = () => {
         <div className="flex items-center shadow-ds justify-between w-full lg:py-[0.625rem] lg:px-[2.2rem] xl:px-[4rem] md:px-[2rem] md:py-[0.5rem] px-4 py-3">
           {/* Logo */}
           <div className="shrink-0">
-            <Image
-              src={logo as StaticImageData}
-              alt="PPEPCA"
-              width={80}
-              height={80}
-              className="rounded-[52px]"
-              loading="lazy"
-            />
+            <Link href="/">
+              <Image
+                src={logo as StaticImageData}
+                alt="PPEPCA"
+                width={80}
+                height={80}
+                className="rounded-[52px] cursor-pointer"
+                loading="lazy"
+              />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -123,7 +125,7 @@ const Navbar: React.FC = () => {
           </nav>
 
           <Link
-          href='/news/latestNews'
+            href="/news/latestNews"
             className="hidden lg:flex border rounded-sm  items-center justify-center gap-2 cursor-pointer border-[#16A831] border-[0.5px] px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium text-[#0a2540] hover:bg-[#16A831] hover:text-white transition"
           >
             Latest News <IoMdArrowForward />
@@ -158,15 +160,15 @@ const Navbar: React.FC = () => {
                       href={item.href}
                       onClick={() => setOpen(false)}
                       className={`text-[1rem] ${
-                        isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
+                        isActive(item.href)
+                          ? "text-[#16A831]"
+                          : "text-[#0A2540]"
                       }`}
                     >
                       {item.name}
                     </Link>
                   ))}
                 </nav>
-
-                
               </div>
             </div>
           )}
@@ -176,7 +178,9 @@ const Navbar: React.FC = () => {
       {/* Scroll Navbar */}
       <header
         className={`fixed top-0 left-0 w-full bg-white border-b z-40 transition-all duration-300 ${
-          scrollOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          scrollOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
         }`}
       >
         <div className="flex items-center justify-between w-full px-4 py-2 md:px-[2rem]">
@@ -246,7 +250,9 @@ const Navbar: React.FC = () => {
                       href={item.href}
                       onClick={() => setScrollOpenMenu(false)}
                       className={`text-[0.95rem] ${
-                        isActive(item.href) ? "text-[#16A831]" : "text-[#0A2540]"
+                        isActive(item.href)
+                          ? "text-[#16A831]"
+                          : "text-[#0A2540]"
                       }`}
                     >
                       {item.name}
