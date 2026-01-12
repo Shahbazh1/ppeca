@@ -65,14 +65,14 @@ const leaders = [
   },
   {
     role: "Member Executive Committee",
-    name: "Mr. Jehangir Saifullah Khan",
+    name: "Mr. Jehangir Saifullah",
     title: "Chief Executive Officer",
     company: "Saif Energy Limited",
     image: sel_ceo,
   },
   {
     role: "Member Executive Committee",
-    name: "Mr. Muhammad Zaheer Alam",
+    name: "Mr. Muhammad Zaheer",
     title: "President",
     company: "United Energy Pakistan",
     image: uep_president,
