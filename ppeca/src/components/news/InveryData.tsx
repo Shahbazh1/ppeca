@@ -45,19 +45,21 @@ const inventoryData: InventoryItem[] = [
 
 export default function SurplusInventorySection() {
 
-  const downloadPdf = (url: string, filename: string) => {
-    fetch(url)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const link = document.createElement("a");
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename; // specify filename
-        link.click();
-      })
-      .catch((err) => {
-        console.error("Download failed:", err);
-      });
-  };
+  const downloadFile = (url: string) => {
+  fetch(url)
+    .then((res) => res.blob())
+    .then((blob) => {
+      const filename = url.split("/").pop() || "file";
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+    })
+    .catch((err) => {
+      console.error("Download failed:", err);
+    });
+};
+
 
   return (
     <section className="w-full bg-[#f8fafc]  py-12">
@@ -92,7 +94,7 @@ export default function SurplusInventorySection() {
             {/* Button */}
             <button
               aria-label={`Download ${item.name} inventory`}
-              onClick={() => downloadPdf(item.fileUrl, `${item.name}.pdf`)}
+              onClick={() => downloadFile(item.fileUrl)}
               className="mt-6 cursor-pointer font-['Open_Sans'] bg-[#16a831] hover:bg-[#128a28] text-white text-sm font-medium px-6 py-2 rounded-sm transition"
             >
               Download
