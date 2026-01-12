@@ -80,6 +80,8 @@ const leaders = [
   {
     role: " Secretary General PPEPCA",
     name: "Mr. Ibrar Khan",
+    title: "Vice President",
+    company: "Jazz",
     image: Secretary_General_PPEPCA,
   },
 ];
@@ -248,12 +250,6 @@ function LeaderCard({ name, title, company, image, role }: Props) {
           </p>
         )}
 
-        {/* Title */}
-        {title && (
-          <p className="mt-[2px] text-[0.6rem] sm:text-[0.65rem] lg:text-[0.7rem] text-slate-600">
-            {title}
-          </p>
-        )}
 
         {/* Divider */}
         {company && (
@@ -264,6 +260,14 @@ function LeaderCard({ name, title, company, image, role }: Props) {
         {company && (
           <p className="text-[0.6rem] sm:text-[0.65rem] lg:text-[0.75rem] font-medium text-[#16A831]">
             {company}
+          </p>
+        )}
+
+        
+        {/* Title */}
+        {title && (
+          <p className="mt-[2px] text-[0.6rem] sm:text-[0.65rem] lg:text-[0.7rem] text-slate-600">
+            {title}
           </p>
         )}
       </div>
