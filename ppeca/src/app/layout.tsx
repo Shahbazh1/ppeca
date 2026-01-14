@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "PPEPCA", url: "https://www.ppepca.com/" }],
-  creator: "Devbay",
-  publisher: "Devbay",
+  creator: "Devbay Technologies",
+  publisher: "Devbay Technologies",
 
   icons: {
     icon: "/logo.png",

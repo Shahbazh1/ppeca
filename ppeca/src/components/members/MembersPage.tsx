@@ -36,11 +36,13 @@ const companyData = [
     ceo: "Mr. Taj Mohammad Afridi",
     designation: "Chief Executive Officer",
     description: [
-      "Al-Haj Enterprises (Private) Limited (AEPL) is a recently incorporated Pakistani Exploration and Production Company. AEPL is a part of the AL-Haj Group of Companies involved in Logistics, Oil and Goods Transportation, Textiles, Metals and manufactures of light and heavy vehicles.",
-      "Al-Haj Group through its subsidy, AL-Haj FAW Motors has a Joint Venture with China for manufacturing of light and heavy transport vehicles.",
-      "Al-Haj Enterprises (Private) Limited (AEPL) was awarded two (2) Blocks i.e. Block No. 3271-6 Potwar South and Block No. 3169-4 Baska North, during the bid round held in 2013. To-date AEPL has completed acquisition of 135kms of new2-D Seismic in Potwar South Block.",
-      "AEPL’s major shareholder is Senator Taj Muhammad Afridi. AEPL has a strong Technical and Management team comprising of senior personnel from the industry.",
-    ],
+  "Al-Haj Enterprises (Private) Limited (AEPL) is a recently incorporated Pakistani Exploration and Production Company. AEPL is a part of the AL-Haj Group of Companies involved in Logistics, Oil and Goods Transportation, Textiles, Metals, and manufactures of light and heavy vehicles.",
+  "Al-Haj Group, through its subsidiary AL-Haj FAW Motors, has a Joint Venture with China for manufacturing of light and heavy transport vehicles.",
+  "Al-Haj Enterprises (Private) Limited (AEPL) was awarded two Blocks: Block No. 3271-6 Potwar South and Block No. 3169-4 Baska North, during the bid round held in 2013.",
+  "To-date, AEPL has completed acquisition of 135 kms of new 2-D Seismic in Potwar South Block. The data is now being processed with the acquisition contractors, M/s Geofizyka Krakow of Poland. Preparations are in hand to start 2-D Seismic Acquisition in Block No. 3169-4 Baska North shortly.",
+  "AEPL’s major shareholder is Senator Taj Muhammad Afridi. AEPL has a strong Technical and Management team comprising senior personnel from the industry.",
+  "AEPL’s vision and mission is to become a leading Exploration and Production Company, expanding its operations both locally and abroad."
+],
     telephone: "92 (51) 2264460-63",
     fax: "92 (51) 2264465",
     website: "#",
@@ -53,13 +55,15 @@ const companyData = [
     ceo: "Mr. Masood Nabi",
     designation: "CEO/Managing Director",
     description: [
-      "Government Holdings (Private) Limited (GHPL) was established in the year 2000 as a private limited company, 100% owned by the Government of Pakistan and registered under the Companies Ordinance, 1984. Paid up Capital of the company is Rs. 250 Million.",
-      "The company was created to separate the commercial and regulatory functions as these were being jointly handled by the Ministry of Petroleum & Natural Resources. Government of Pakistan’s shares in upstream petroleum joint ventures acquired under the petroleum policies prior to the introduction of Petroleum Policy 2001 were transferred to it and GHPL became the vehicle to manage those interests. The provision regarding Government of Pakistan’s 5% carried interest in all concessions at the exploration stage and shareholding of 15% to 25% in case of commercial discovery depending upon the zone was withdrawn in the Petroleum Policy 2001; GHPL was however given right to make investment on full participation basis like any other local company in on-shore petroleum E&P joint ventures.",
-      "GHPL participates in all Joint Ventures as non-operator. There are currently 56 upstream petroleum joint ventures on-shore with GHPL working interest; 21 Onshore Exploration Licenses with 5% carried interest and 35 Development & Production Leases with 12.5% to 25% working interest. GHPL average production share was 43,742 BOE/Day in 2009.",
-      "GHPL acts as a Licensee in the off-shore joint ventures. It has an interest in 17 offshore exploration licenses under Production Sharing Agreements (PSAs). It ensures implementation of agreed work programmes and approval/recording of budgets/expenditures by these joint ventures.",
-      "GHPL is non-operating partner with local and foreign oil and gas exploration and production companies functioning as operator. Major operating companies in partnership with GHPL are BP, BHP Billiton, Eni, OMV, Petronas Carigali, Paige, Nikoresources, Hycarbex, MOL, OPII, OGDCL, PPL, POL and PEL.",
-      "Secretary MP&NR is the Chairman of the company’s Board of Directors.",
-    ],
+  "Government Holdings (Private) Limited (GHPL) was established in 2000 as a private limited company, 100% owned by the Government of Pakistan and registered under the Companies Ordinance, 1984. Paid-up Capital of the company is Rs. 250 Million.",
+  "The company was created to separate the commercial and regulatory functions previously handled jointly by the Ministry of Petroleum & Natural Resources. Government of Pakistan’s shares in upstream petroleum joint ventures acquired under petroleum policies prior to Petroleum Policy 2001 were transferred to GHPL, making it the vehicle to manage those interests. The 5% carried interest in all concessions at the exploration stage and 15%-25% shareholding in case of commercial discovery was withdrawn in Petroleum Policy 2001. GHPL was, however, given the right to make investments on a full participation basis like any other local company in on-shore petroleum E&P joint ventures.",
+  "GHPL participates in all Joint Ventures as a non-operator. Currently, there are 56 upstream petroleum joint ventures on-shore with GHPL working interest: 21 Onshore Exploration Licenses with 5% carried interest and 35 Development & Production Leases with 12.5% to 25% working interest. GHPL’s average production share was 43,742 BOE/Day in 2009.",
+  "GHPL acts as a Licensee in off-shore joint ventures, holding interests in 17 offshore exploration licenses under Production Sharing Agreements (PSAs). It ensures implementation of agreed work programmes and approval/recording of budgets/expenditures by these joint ventures.",
+  "GHPL is a non-operating partner with local and foreign oil and gas exploration and production companies functioning as operators. Major operating companies in partnership with GHPL include BP, BHP Billiton, Eni, OMV, Petronas Carigali, Paige, Nikoresources, Hycarbex, MOL, OPII, OGDCL, PPL, POL, and PEL.",
+  "Secretary MP&NR is the Chairman of the company’s Board of Directors.",
+  "For more detailed information, please visit GHPL’s website: www.ghpl.com.pk."
+]
+,
     telephone: "92 (51) 9211247, 92 (51) 9213972",
     fax: "92 (51) 051-9211236-37, 051-9211239-40",
     website: "https://www.ghpl.com.pk",
@@ -79,6 +83,7 @@ const companyData = [
       "KUFPEC’s first and oldest producing investment in Pakistan is the Kadanwari Gas Field, located in Sindh Province, where it holds 15.789% working interest. Other producing fields include Qadirpur (13.25%), Zamzama (9.375%) and Bhit (6%), all located in Sindh. All these are gas producing fields and cater for domestic, commercial and industrial sector needs.",
       "Two exploration interests that KUFPEC has in Pakistan include: a) onshore Dadhar (22.81%) in Baluchistan and b) Indus Offshore (12.50%), Block E 2365-1. Two assets in development stage include Badhra (6%) in Sindh adjoining Bhit field and Zarghun South (3.75%) in Baluchistan. Both will be brought on-stream in 2008. Further exploitation is being carried out in Kadanwari, Qadirpur, and Zamzama assets.",
       "KUFPEC remains committed to this vital area and is actively seeking further suitable opportunities.",
+      "For more detail information please visit KUFPEC web-site - www.KUFPEC.com."
     ],
     telephone: "92 (51) 8494400",
     fax: "92 (51) 8484400",
@@ -128,9 +133,11 @@ const companyData = [
     ceo: "Mr. Laszlo Zsolt Adam",
     designation: "Managing Director/Chief Executive Officer",
     description: [
-      "MOL strives to promote the welfare of the community. It is actively engaged in community development in TAL concession area. The company has provided basic health unit facilities at Gurguri and surrounding areas, constructed an eight-bed hospital, and upgraded various schools and boys' colleges in Kohat and Hangu.",
-      "In 2002, MOL built an examination hall for 100 students near the Boys School at Gurguri. The company is also planning to drill two water wells in the villages of Gurguri and Urbashi, and repair the road from Terri to Gurguri.",
-    ],
+  "MOL strives to promote the welfare of the community and is actively engaged in community development in the TAL concession area. The company has provided basic health unit facilities at Gurguri and surrounding areas, constructed an eight-bed hospital, and upgraded various schools and boys' colleges in Kohat and Hangu.",
+  "In 2002, MOL built an examination hall for 100 students near the Boys School at Gurguri.",
+  "The company is planning to drill two water wells in the villages of Gurguri and Urbashi, and repair the road from Terri to Gurguri."
+]
+,
     telephone: "92 (51) 111-665-725, 92 (51) 2655801-10",
     fax: "92 (51) 2655828",
     website: "#", // Add actual website if available
@@ -143,15 +150,15 @@ const companyData = [
     ceo: "Mr. Ahmed Hayat Lak",
     designation: "Managing Director/CEO",
     description: [
-      "OGDCL, the local market leader in terms of reserves, production and acreage, and the first Pakistani Company to list its shares on the London Stock Exchange, is poised to expand E&P activity.",
-      "Equipped with its first professionally developed Business and Strategic Plan, a debt-free balance sheet, and healthy cash reserves, OGDCL is ready to take on the challenges of an internationally listed company.",
-      "Created under an ordinance in 1961, OGDCL undertakes exploration, development & promotion of oil & gas prospects in Pakistan. The company has grown into a fully integrated E&P business with a highly qualified professional human resource base capable of supervising all phases of E&P business.",
-      "OGDCL has a robust operational base including drilling rigs, workover rigs, geological field parties, seismic crews, engineering field crews, gas gathering & pipeline construction units, seismic data processing centre, geological analysis laboratory, wireline logging unit, cementing units, and data logging units. It operates nine oil & gas processing plants, a mini refinery, and LPG & sulphur recovery units.",
-      "The company holds 32% of Pakistan’s total exploration acreage and has interests in 46 concessions, with 27 fully owned and 19 jointly owned. OGDCL holds the largest oil (31%) & gas (31%) reserves in the country, with a total production share of 44,000 BBL oil & over 1 BCF gas per day, including non-operated JV shares.",
-      "OGDCL’s financial performance has steadily improved, with sales revenue of Rs. 96.8 billion in 2005-06, Profit After Tax of Rs. 46 billion, and Earnings per Share of Rs. 10.69. Balance sheet total reached Rs. 121.3 billion.",
-      "The company follows an aggressive growth strategy to expand indigenous production, enabling foreign participation and fast-track development of projects without compromising quality and transparency.",
-      "OGDCL is also a responsible corporate citizen, providing medical, social and welfare facilities to local communities, employment opportunities, infrastructure, schools, scholarships, clean drinking water, charitable donations, and financial assistance to improve quality of life.",
-    ],
+  "OGDCL, the local market leader in terms of reserves, production, and acreage, and the first Pakistani company to list its shares on the London Stock Exchange, is poised to expand E&P activity.",
+  "Equipped with its first professionally developed Business and Strategic Plan, a debt-free balance sheet, and healthy cash reserves, OGDCL is ready to take on the challenges of an internationally listed company.",
+  "Created under an ordinance in 1961, OGDCL undertakes exploration, development, and promotion of oil & gas prospects in Pakistan. The company has grown into a fully integrated E&P business with a highly qualified professional human resource base capable of supervising all phases of E&P operations.",
+  "OGDCL has a robust operational base including drilling rigs, workover rigs, geological field parties, seismic crews, engineering field crews, gas gathering & pipeline construction units, seismic data processing centre, geological analysis laboratory, wireline logging unit, cementing units, and data logging units. It also operates nine oil & gas processing plants, a mini refinery, and LPG & sulphur recovery units.",
+  "The company holds 32% of Pakistan’s total exploration acreage and has interests in 46 concessions, with 27 fully owned and 19 jointly owned. OGDCL holds the largest oil (31%) & gas (31%) reserves in the country, with a total production share of 44,000 BBL oil & over 1 BCF gas per day, including non-operated JV shares.",
+  "OGDCL’s financial performance has steadily improved, with sales revenue of Rs. 96.8 billion in 2005-06, Profit After Tax of Rs. 46 billion, and Earnings per Share of Rs. 10.69. Balance sheet total reached Rs. 121.3 billion.",
+  "The company follows an aggressive growth strategy to expand indigenous production, enable foreign participation, and fast-track development of current and future projects without compromising quality and transparency.",
+  "OGDCL is a responsible corporate citizen, providing medical, social, and welfare facilities to local communities. This includes employment opportunities, construction of roads, schools, scholarships, clean drinking water, charitable donations, and financial assistance to improve the quality of life of local communities."
+],
     telephone: "92 (51) 2623111",
     fax: "92 (51) 2623113-4",
     website: "#", // Add actual website if available
@@ -165,12 +172,14 @@ const companyData = [
     ceo: "Mr. Kamran Ahmed",
     designation: "Chief Executive Officer",
     description: [
-      "Orient Petroleum Inc. (“ORIENT PETROLEUM”) is an Oil and Gas Exploration and Production Company registered under the laws of the Cayman Islands with limited liability. Prior to March 31, 1995, Orient Petroleum Inc. was a wholly owned subsidiary of Occidental International Exploration and Production Company (OIEPC). Effective that date, OIEPC sold its entire capital stock holding in Orient Petroleum Inc (OPI).",
-      "Orient Petroleum is the operator of three leases: Dhurnal Mining Lease, Bhangali and Ratana D&P Leases. It is a non-operating Joint Venture Partner in Mehar, Sofiya & Sinjhoro Block D&P Leases and Kohlu, Mehar & Sinjhoro Exploration Licences. Additionally, Orient Petroleum operates three Exploration Licences: Sakhi Sarwar, Harnai South, and Marwat Blocks.",
-      "Orient Petroleum has entered into successful joint ventures with prominent local and foreign E&P companies in Pakistan including Oil & Gas Development Company Limited, Attock Oil Company Limited, Pakistan Oilfields Limited, United Energy Pakistan, Government Holdings (Private) Limited, and Zaver Petroleum Corporation (Pvt.) Limited.",
-      "OPI has carried out numerous community welfare projects including free eye camps, supply of medicines, construction of classrooms and community roads, provision of IT equipment in schools, solar tube wells for drinking water, and agro/forest-based entrepreneurial programs for farmers.",
-      "Orient Petroleum leverages the expertise of professional Pakistani nationals with over 150 years of combined experience and employs over 400 well-trained and dedicated staff. The company takes pride in its team's capabilities to engineer technically and economically viable projects, introducing financial and technical innovations that enhance its reputation and drive growth.",
-    ],
+  "Orient Petroleum Inc. (“ORIENT PETROLEUM”) is an Oil and Gas Exploration and Production Company registered under the laws of the Cayman Islands with limited liability. Prior to March 31, 1995, Orient Petroleum Inc. was a wholly owned subsidiary of Occidental International Exploration and Production Company (OIEPC). Effective that date, OIEPC sold its entire capital stock holding in Orient Petroleum Inc (OPI).",
+  "As of today, Orient Petroleum is Operator of three Leases namely Dhurnal Mining Lease, Bhangali and Ratana D&P Leases. Orient Petroleum is non-operating Joint Venture Partner in Mehar, Sofiya & Sinjhoro Block D&P Leases and Kohlu, Mehar & Sinjhoro Exploration Licences. In addition, Orient Petroleum is also operating three Exploration Licences Sakhi Sarwar, Harnai South and Marwat Blocks.",
+  "Orient Petroleum has entered into successful joint ventures with prominent local and foreign companies involved in E&P business in Pakistan including Oil & Gas Development Company Limited, Attock Oil Company Limited, Pakistan Oilfields Limited, United Energy Pakistan, Government Holdings (Private) Limited and Zaver Petroleum Corporation (Pvt.) Limited.",
+  "OPI has carried out several obligated and non-obligated community welfare projects for the local community which include but are not limited to free eye camps, supply of free medicines, construction of classrooms for schools, construction of community roads, supply of IT equipment in schools, solar tube wells for supply of drinking water to locals, and agro/forest-based entrepreneur programs for poor farmers and landowners.",
+  "ORIENT PETROLEUM is proud of the fact that it is harnessing and utilizing the vast experience, expertise, and technical know-how of professional Pakistani nationals having over 150 years of related experience. It also provides employment to over 400 well-trained and dedicated employees working to meet the company’s common goals and vision.",
+  "The company takes pride in its team's capabilities to engineer and embark upon technically and economically viable projects. ORIENT PETROLEUM is home to many financial and technical innovations in its field of business that have enhanced the company’s existing reputation and provided major impetus to its overall growth of the company."
+]
+,
     telephone: "92 (51) 2351000-7",
     fax: "92 (51) 2351044",
     website: "#", // Add actual website if available
@@ -183,13 +192,16 @@ const companyData = [
     ceo: "Mr. Andrzej Kaczorowski",
     designation: "Managing Director",
     description: [
-      "PGNiG, also known as Polish Oil and Gas Company (POGC), operates in Pakistan as a branch office of PGNiG Group Poland, majority-owned by the Polish Government.",
-      "PGNiG began operations in Pakistan in May 1997 and has been conducting petroleum exploration and production activities as an Operator. Before acquiring the Kirthar Concession (Block No. 2667-7), PGNiG operated four other concessions: Khanpur West, Sabzal, Mekhtar, and Sabzal South. It also held a 40% working interest in an exploration block in Nawabshah, Sindh as a Non-Operating Partner.",
-      "PGNiG acquired the Kirthar Block in District Dadu, Sindh, as Operator in 2005. Pakistan Petroleum Limited (PPL) farmed-in as a Joint Venture Partner in 2006. The Rehman-1 well was discovered in 2009, with extended well test production starting in 2013, making it the first 'Tight Gas' producer in Pakistan. The Rehman field was granted a Development and Production Lease in 2017 for 25 years.",
-      "In 2015, PGNiG discovered the Rizq-1 well in Kirthar Block and commissioned the Rehman Production Facility (RPF) to process gas from Rehman and Rizq fields. Gas from Rizq field was added to the national grid in November 2016. RPF capacity was increased from 15 to 40 MMScfd in 2017, and the Rizq field appraisal program was completed in 2018, granting a 25-year D&PL.",
-      "PGNiG has drilled 11 wells in Kirthar Block: 3 exploratory, 3 appraisal, and 5 development wells. Total investment in Pakistan exploration and production activities is approximately US$233 million, with ~US$216 million invested in Kirthar Block, including well drilling, Rehman Production Facility construction and augmentation, and ~50 km of sales gas transport pipeline.",
-      "Current production from Kirthar Block wells is ~35 MMScfd, planned to increase to ~80 MMScfd with continued development. PGNiG actively pursues development of Rehman & Rizq fields and aims to expand its footprint in Pakistan’s upstream sector, contributing to the country’s energy security.",
-    ],
+  "PGNiG began its operations in Pakistan in May 1997 and has been conducting petroleum exploration and production activities as an Operator since then. Before acquiring the current Kirthar Concession (Block No. 2667-7), PGNiG operated and carried out exploration activities in four other concessions namely Khanpur West, Sabzal, Mekhtar and Sabzal South. PGNiG also held a 40% working interest in an exploration block in Nawabshah, Sindh as a Non-Operating Partner.",
+  "PGNiG acquired the Kirthar Block, located in District Dadu (Sindh), as Operator in 2005 and Pakistan Petroleum Limited (PPL) farmed-in the Block as a Joint Venture Partner in 2006.",
+  "PGNiG made discovery of Rehman-1 well in 2009 and started extended well test production from it in 2013, becoming the first 'Tight Gas' producer in Pakistan. The appraisal phase for Rehman gas field was successfully concluded in August 2015 whereby commerciality of the field was declared. Government of Pakistan awarded a Development and Production Lease over Rehman field in 2017 for a period of 25 years.",
+  "In 2015, PGNiG made a second discovery by drilling Rizq-1 well in the Kirthar Block. This year also marked the commissioning of the Rehman Production Facility (RPF), constructed to process gas from Rehman and Rizq fields, which was inaugurated on November 17, 2015 by the then Honourable Minister for Petroleum & Natural Resources.",
+  "PGNiG more than doubled its production from the Kirthar Block when gas from Rizq field was added to the national grid in November 2016. In 2017, processing capacity of RPF was enhanced from 15 to 40 MMScfd to incorporate anticipated production from Rizq field. The appraisal program of Rizq field was completed in 2018 followed by declaration of commerciality and grant of Development and Production Lease for a period of 25 years.",
+  "PGNiG has drilled 11 wells in Kirthar Block comprising 3 exploratory, 3 appraisal and 5 development wells. PGNiG has invested approximately US$233 million in Pakistan in exploration and production activities, out of which approximately US$216 million were invested in Kirthar Block mainly on exploration, drilling, construction and augmentation of Rehman Production Facility, and around 50 km of sales gas transport pipeline.",
+  "Current production from the producing wells in the Kirthar Block stands at approximately 35 MMScfd and is planned to be increased to approximately 80 MMScfd with continued development of existing fields and other exploratory prospects. The Rehman Production Facility was augmented in September 2019 to cater for increased processing and dehydration requirements.",
+  "PGNiG is actively pursuing the development plan of Rehman and Rizq fields in the Kirthar Block and aims to increase its footprint in the Pakistani upstream sector. PGNiG trusts the investment climate in Pakistan and remains committed to contributing to the country’s energy security."
+]
+,
     telephone: "92 (51) 111 756 474",
     fax: "92 (21) 2310497",
     website: "#", // Add actual website if available
@@ -216,13 +228,16 @@ const companyData = [
     ceo: "Mr. Imran Abbasy",
     designation: "Managing Director & CEO",
     description: [
-      "Pakistan Petroleum Limited (PPL) is a pioneer of the natural gas industry in Pakistan, contributing over 20% of the country’s total natural gas supplies alongside production of crude oil, Natural Gas Liquid, and Liquefied Petroleum Gas.",
-      "Founded in June 1950 with major shareholding by Burmah Oil Company (BOC), PPL became fully Pakistani-owned after BOC sold its equity in 1997. The government later reduced its holding through public offerings and employee stock schemes.",
-      "PPL has two subsidiaries, PPL Europe E&P Limited and PPL Asia E&P B.V., and operates 13 producing fields across Pakistan, including Sui, Adhi, Kandhkot, Chachar, Mazarani, Adam, Shadadpur, Shahdadpur, Zafir, Fazal, and Dhok Sultan. It also holds working interest in 23 partner-operated fields, including Qadirpur.",
-      "PPL has a portfolio of 48 exploration assets, operating 28 itself and 20 through joint venture partners, including one contract in Iraq and three offshore leases in Pakistan and one onshore concession in Yemen.",
-      "The company maintains high standards of health, safety, and environmental responsibility. 16 fields and facilities are ISO 9001 certified, and 13 are OHSAS 18001 certified.",
-      "PPL actively engages in CSR initiatives through the PPL Welfare Trust, focusing on education, health, infrastructure, and socio-economic upliftment of communities. It has been recognized as the largest corporate giver for 15 consecutive years (2004–2018) by the Pakistan Centre for Philanthropy.",
-    ],
+  "Pakistan Petroleum Limited (PPL), the pioneer of the natural gas industry in Pakistan, has been a frontline player in the energy sector since the mid-1950s. As a major supplier of natural gas, PPL contributes over 20 percent of the country’s total natural gas supplies and also produces crude oil, Natural Gas Liquid and Liquefied Petroleum Gas.",
+  "The company’s history dates back to June 1950 with the establishment of a public limited company, with major shareholding by Burmah Oil Company (BOC) of the United Kingdom for exploration, prospecting, development and production of oil and natural gas resources. In September 1997, BOC sold its equity in PPL to the Government of Pakistan. Subsequently, the government reduced its holding through an initial public offer in June 2004, Benazir Employees Stock Option Scheme in August 2009, and a Secondary Public Offering in 2014.",
+  "PPL has established two subsidiaries, PPL Europe E&P Limited and PPL Asia E&P B.V. The company has assigned its interest in Block 8 Iraq, under the Exploration, Development and Production Service Contract with Midland Oil Company, Iraq, to PPL Asia E&P B.V.",
+  "PPL operates 13 producing fields across the country including Sui (Pakistan’s largest gas field), Adhi, Kandhkot, Chachar, Mazarani, Adam, Adam West, Shadadpur, Shahdadpur West, Shahdadpur East, Zafir, Fazal and Dhok Sultan. The company also holds working interest in 23 partner-operated producing fields, including Qadirpur, the country’s second largest gas field.",
+  "As a major stakeholder in securing a safe energy future for Pakistan, PPL pursues an aggressive exploration agenda aimed at enhancing hydrocarbon recovery and replenishing reserves. Together with its subsidiaries, PPL has a portfolio of 48 exploration assets, of which it operates 28 including one contract in Iraq, while 20 blocks, including three offshore leases in Pakistan and one onshore concession in Yemen, are operated by joint venture partners.",
+  "Over the years, PPL has developed reliable infrastructure for providing clean and safe energy through sustainable exploitation of indigenous natural resources while adhering to the highest standards of health and safety and minimizing the ecological footprint of its operations. As a result, 16 of the company’s fields and facilities are certified for ISO 9001 QMS, while 13 fields and facilities are certified for OHSAS 18001.",
+  "PPL has played a significant role as a responsible corporate citizen since the inception of its commercial activities in Sui. In 2001, the PPL Welfare Trust was established to bring geographical and thematic diversity to the company’s CSR programme, focusing on education, health, infrastructure development and socio-economic uplift of disadvantaged communities in and around its operating areas as well as in urban centers.",
+  "In recognition of its CSR initiatives, PPL has been adjudged the largest corporate giver for 15 consecutive years from 2004 to 2018 by the Pakistan Centre for Philanthropy."
+]
+,
     telephone: "92-21-111-568-568",
     fax: "92-21-35651480-89, 92-21-35680005",
     website: "#", // Add actual website if available
@@ -236,11 +251,13 @@ const companyData = [
     ceo: "Mr. Kamran Ajmal Mian",
     designation: "Chief Executive Officer",
     description: [
-      "With an average production of 1.7 Mboed and revenue totaling Euro 74 billion in 2005, PGEL is one of the most important integrated energy companies in the world, operating in oil and gas, power generation, petrochemicals, oilfield services, construction, and engineering.",
-      "PGEL is listed on the Italian and New York Stock Exchange and has been operating in Pakistan since 2000. PGEL Pakistan operates the Bhit and Kadanwari gas producing fields and is a partner in third-party operated fields: Zamzama, Sawan, Miano, and Rehmat.",
-      "PGEL Pakistan has a yearly average net equity production of over 50,875 boepd, ranking it as the largest foreign producer in the Pakistan E&P sector.",
-      "PGEL Pakistan also operates Gorakh, Mithi, Rajar, Umarkot, and Thar onshore exploration blocks and holds two offshore exploration licences 'M' & 'N' in the Indus Delta. It is additionally a partner in Middle Indus onshore exploration blocks: Mubarak, South West Miano, Gambat, and Latif.",
-    ],
+  "With an average production of 1.7 Mboed and revenue totalling Euro 74 billion in 2005, PGEL is one of the most important integrated energy companies in the world, operating in oil and gas, power generation, petrochemicals, oilfield services, construction and engineering. In these businesses, the company has a strong competitive edge and leading international market positions.",
+  "PGEL is listed on the Italian and New York Stock Exchange.",
+  "PGEL has been operating in Pakistan since 2000. PGEL Pakistan is the operator of the Bhit and Kadanwari gas producing fields and is a partner in third-party operated fields including Zamzama, Sawan, Miano and Rehmat.",
+  "With a yearly average net equity production of over 50,875 boepd, PGEL Pakistan ranks as the largest foreign producer in the Pakistan E&P sector.",
+  "PGEL Pakistan is the operator of Gorakh, Mithi, Rajar, Umarkot and Thar onshore exploration blocks and holds two offshore exploration licences 'M' and 'N' in the Indus Delta. PGEL Pakistan is also a partner in the Middle Indus onshore exploration blocks of Mubarak, South West Miano, Gambat and Latif."
+]
+,
     telephone: "92 (21) 35879951-80",
     fax: "92 (21) 35838394-5",
     website: "#", // Add actual website if available
@@ -254,12 +271,16 @@ const companyData = [
     ceo: "Mr. Jehangir Saifullah Khan",
     designation: "Chief Executive Officer",
     description: [
-      "Saif Energy Ltd (SEL) is part of the Saif Group, which was founded over eighty years ago by Khan Faizullah Khan. The Group operates in Power Generation, Oil and Gas Exploration, Textiles, Real Estate Development, IT, and Telecommunications.",
-      "SEL has formed successful alliances with world-renowned companies such as Etisalat, Falag Telecom, Fusion Telecom Inc., Iridium Satellite LLC, Itochu Corporation, Motorola, Tyco Electronics, Nichimen Corporation, Olivetti, OMV, Tullow Oil plc, Orascom Telecom, and Siemens, enhancing its technical and managerial expertise.",
-      "SEL is Pakistan’s first local private sector company to receive ISO 9001:2000 certification for Quality Management in Oil and Gas exploration and production. It was also the first company to acquire 3D seismic surveys at the exploration stage, a strategy now adopted by other companies.",
-      "SEL has successfully executed several oil and gas exploration initiatives with multiple discoveries and continues to evaluate new onshore blocks to expand its exploration portfolio.",
-      "The company focuses on minimizing foreign exchange outlay while developing a strong indigenous base in Pakistan’s E&P sector.",
-    ],
+  "Saif Energy Ltd (SEL) is a Saif Group company. The Saif Group was founded over eighty years ago by Khan Faizullah Khan, beginning with a diesel-fired power plant supplying electricity to Bannu City in Khyber Pakhtunkhwa (then NWFP), Pakistan.",
+  "Over the years, the Saif Group has expanded its operations across multiple sectors including Power Generation, Oil and Gas Exploration, Textiles, Real Estate Development, IT, and Telecommunications.",
+  "The Group has a strong history of forming successful alliances with world-renowned companies such as Etisalat, Falag Telecom, Fusion Telecom Inc., Iridium Satellite LLC, Itochu Corporation, Motorola, Tyco Electronics, Nichimen Corporation, Olivetti, OMV, Tullow Oil plc, Orascom Telecom, and Siemens, which has strengthened its technical and managerial expertise.",
+  "SEL is Pakistan’s first local private sector company to receive ISO 9001:2000 certification for Quality Management in Oil and Gas exploration and production activities.",
+  "Established under the Government of Pakistan’s policies, SEL aims to develop a strong indigenous exploration and production base to minimize foreign exchange outlay.",
+  "SEL is also Pakistan’s first oil and gas exploration company to acquire 3D seismic surveys at the exploration stage, a strategy later adopted by other companies.",
+  "The company has successfully executed several oil and gas exploration initiatives, resulting in multiple discoveries.",
+  "SEL continues to evaluate new onshore blocks to further expand its oil and gas exploration portfolio."
+]
+,
     telephone: "92 (51) 5913012-13",
     fax: "92 (51) 5912852",
     website: "www.saifenergy.com",
@@ -273,13 +294,25 @@ const companyData = [
     ceo: "Mr. Zaheer Alam",
     designation: "President",
     description: [
-      "United Energy Pakistan Limited (UEPL) assumed control of oil and gas exploration and production assets managed by BP Pakistan in September 2011, focusing on the entire process from site assessment to first production.",
-      "UEPL operates across eight districts in Sindh province (Badin, Tando Mohammad Khan, Tando Allahyar, Thatta, Hyderabad (rural), Matiari, Sanghar, and Mirpurkhas) with 9 onshore producing and exploration blocks and 4 offshore exploration blocks in the Arabian Sea. It recently won two new exploration blocks, Digri and Sanghar South.",
-      "The company is a subsidiary of United Energy Group (UEG), a Hong Kong-listed company engaged in upstream oil and gas operations, including exploration, development, and production, with projects in China, North America, South America, and Central Asia.",
-      "UEPL has a 100% Pakistani workforce, including all senior leadership positions, and runs an Operator Training Programme that has trained nearly 300 operators from local communities.",
-      "Partners in Pakistan include Government Holdings Private Limited, OGDCL, Pakistan Petroleum Limited, Zaver Petroleum Corporation Limited, and Bow Energy Resources.",
-      "UEPL actively invests in community development, supporting health, education, and infrastructure projects, including schools, colleges, health centers, and initiatives with UNDP. The company also provides humanitarian aid during natural disasters such as floods and earthquakes.",
-    ],
+  "United Energy Pakistan Limited (UEPL) assumed control of oil and gas exploration and production assets previously managed by BP Pakistan in September 2011 and focuses on the complete E&P process from initial site assessment to first oil and gas production.",
+  "All UEPL operations are based in Sindh province, with concession areas beginning approximately 100 km east of Karachi and spanning eight districts: Badin, Tando Mohammad Khan, Tando Allahyar, Thatta, Hyderabad (rural), Matiari, Sanghar, and Mirpurkhas.",
+  "The company’s asset portfolio includes nine onshore producing and exploration blocks in Sindh and four offshore exploration blocks in the Arabian Sea. UEPL has also recently secured two additional exploration blocks, Digri and Sanghar South, adjacent to its Mirpur Khas–Khipro concession areas.",
+  "UEPL’s onshore operational footprint exceeds 10,000 square kilometres, along with the largest offshore acreage awarded to a single E&P company in Pakistan to date, located approximately 250 km south of Karachi in ultra-deep waters.",
+  "UEPL maintains offices in Karachi and Islamabad, with an additional field office located in the Badin district.",
+  "United Energy Pakistan Limited is a subsidiary of United Energy Group (UEG), a Hong Kong–listed company primarily engaged in upstream oil and gas exploration, development, and production, as well as the provision of patented oilfield support technologies.",
+  "UEG has active operations and joint ventures in China and Indonesia, including a partnership with China National Petroleum Company (CNPC), and is evaluating energy projects in North America, South America, and Central Asia.",
+  "The acquisition of assets in Pakistan represents UEG’s first venture in the country, with plans to further expand its Pakistan business, supported by strong Pak–China diplomatic relations.",
+  "UEPL employs a 100% Pakistani workforce, including all senior leadership roles, with team members collectively bringing over 30 years of experience in oil and gas exploration and production.",
+  "The company prioritizes local hiring and operates an Operator Training Programme, through which nearly 300 individuals from concession districts have been trained, many of whom have progressed to senior field positions or roles in reputed national and international companies.",
+  "UEPL’s exploration and production partners in Pakistan include Government Holdings Private Limited, Oil and Gas Development Company Limited (OGDCL), Pakistan Petroleum Limited (PPL), Zaver Petroleum Corporation Limited, and Bow Energy Resources (Pakistan).",
+  "As a responsible corporate citizen, UEPL invests in community development initiatives focused on health, education, and infrastructure within its operational areas.",
+  "Health-related initiatives include funding medical equipment for hospitals, constructing basic health centres, providing anti-snake venom, and training Traditional Birth Attendants within local communities.",
+  "UEPL has made significant investments in education, particularly promoting female literacy, including the construction of the Degree College for Women in Matli, from which over 4,000 girls have graduated.",
+  "The company has also built the only two higher secondary girls’ schools in Badin district, constructed primary schools in remote villages, and is developing additional primary schools in partnership with The Citizens’ Foundation.",
+  "UEPL collaborates with the United Nations Development Programme (UNDP) and local NGOs on sustainable community development projects, including energy-efficient technologies, livestock farming, and income-generating agriculture on saline land.",
+  "In times of emergency, including floods in Badin and the 2005 earthquake in northern Pakistan, UEPL has provided humanitarian assistance to support affected communities."
+]
+,
     telephone: "021-35610205-8, 021-35611194-6, 021-35610638-46",
     fax: "021-35610634, 021-35610966",
     website: "#", // Add actual website if available

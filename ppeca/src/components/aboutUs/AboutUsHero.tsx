@@ -24,7 +24,7 @@ export default function AboutPPEPCAHero() {
           <h1 className="text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.625rem] xl:text-[3rem] font-bold tracking-tight text-white/95">
             About PPEPCA
           </h1>
-
+ 
           <p className="mt-1 md:mt-1 font-['Open_Sans'] lg:mt-1 xl:mt-2 text-[0.8125rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[0.9375rem] xl:text-[1rem] max-w-prose lg:max-w-lg xl:max-w-xl leading-relaxed text-[#E5E5E5]">
             Serving Pakistan's upstream petroleum sector through collaboration,
             policy advocacy and community development.
