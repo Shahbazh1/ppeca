@@ -118,7 +118,7 @@ export default function LatestNewsHero() {
 )}          {!loading && newsItems.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between h-full hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between  hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-center gap-3 text-xs mb-2">
