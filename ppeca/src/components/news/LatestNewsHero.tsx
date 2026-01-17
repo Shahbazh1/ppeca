@@ -11,55 +11,46 @@ const fallbackNews = [
     category: "Category",
     date: "October 01",
     text: "The Excom presently comprises of Nine members for the term October 01, 2024 upto September 30, 2026",
-    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1",
+    link: "#",
   },
   {
     category: "Category",
     date: "October 01",
     text: "The Office bearers elected are i) Mr. Ali Taha Al Temimi, C.M, Kufpec as Chairman ii) Mr. Kamran Ajmal Mian, CEO, Prime Pakistan as Sr. V- Chairman & iii) Mr. Andrzej Kaczorowski - MD - PGNiG as Vice – Chairman",
-    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1",
-  },
-  {
-    category: "Category",
-    date: "October 01",
-    text: "The following have been nominated as Presidents of the four Expert Committees of PPEPCA: Mr. Zaheer Alam, President, United Energy Pakistan Ltd – (Policy & Rules Committee)...",
-    link: "https://www.rigzone.com/news/opec_reaffirms_decision_to_pause_production_hikes-1-dec-2025-182420-article/?utm_campaign=WEEKLY_2025_12_05&utm_source=GLOBAL_ENG&utm_medium=EM_NW_F1",
+    link: "#",
   },
 ];
 
 export default function LatestNewsHero() {
-      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
 
   const [newsItems, setNewsItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = `${API_BASE_URL}/api/newses`;
-  useEffect(() => {
-    let fallbackTimer: NodeJS.Timeout;
 
-    // ⏳ 5-second fallback
-    fallbackTimer = setTimeout(() => {
-      if (newsItems.length === 0) {
-        setNewsItems(fallbackNews);
-        setLoading(false);
+  const fetchNews = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(API_URL, { next: { revalidate: 60 } }); // ISR: revalidate every 60s
+      const data = await res.json();
+
+      if (data?.data?.length > 0) {
+        setNewsItems(data.data);
+      } else {
+        setNewsItems([]); // empty case
       }
-    }, 5000);
+    } catch (err) {
+      console.error("News fetch error:", err);
+      setNewsItems(fallbackNews);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    // 🔵 API call
-    fetch(`${API_URL}?pagination[limit]=3&sort=publishedAt:desc`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.data?.length) {
-          setNewsItems(data.data);
-        }
-        setLoading(false);
-        clearTimeout(fallbackTimer); // ✅ stop fallback
-      })
-      .catch((err) => {
-        console.error("News fetch error:", err);
-        setLoading(false);
-      });
-
-    return () => clearTimeout(fallbackTimer);
+  useEffect(() => {
+    fetchNews();
+    const interval = setInterval(fetchNews, 60000); // fetch every 1 min
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -96,65 +87,98 @@ export default function LatestNewsHero() {
 
           {/* Right Cards */}
           <div className="flex flex-col gap-4 sm:gap-6">
-{loading && (
-  <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl">
-    <div className="mb-6">
-      <div className="flex items-center justify-center space-x-2">
-        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"></div>
-        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-        <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-      </div>
-    </div>
-    
-    <div className="text-center">
-      <h3 className="text-xl font-semibold text-white mb-2">Fetching Latest News</h3>
-      <p className="text-[#C9C9C9] text-sm">Gathering the most recent updates for you...</p>
-    </div>
-    
-    <div className="mt-6 w-full bg-white/10 rounded-full h-2 overflow-hidden">
-      <div className="bg-gradient-to-r from-[#16A831] to-[#0d7a25] h-full rounded-full animate-pulse" style={{ width: '70%' }}></div>
-    </div>
-  </div>
-)}          {!loading && newsItems.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between  hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex-1 pr-4">
-                  <div className="flex items-center gap-3 text-xs mb-2">
-                    <span className="text-[#16A831] font-['Open_Sans'] font-semibold uppercase">
-                      {item.Category || item.category}
-                    </span>
-                    <span className="w-2 h-2  rounded-full bg-gray-300" />
-                    <span className="text-gray-500 font-['Open_Sans']">
-                      {item.publishedAt
-                        ? new Date(item.publishedAt).toLocaleDateString(
-                            "en-US",
-                            {
-                              month: "long",
-                              day: "2-digit",
-                            }
-                          )
-                        : item.date}
-                    </span>
+            {loading && (
+              <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl">
+                <div className="mb-6">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"></div>
+                    <div
+                      className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"
+                      style={{ animationDelay: "0.1s" }}
+                    ></div>
+                    <div
+                      className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce"
+                      style={{ animationDelay: "0.2s" }}
+                    ></div>
                   </div>
-                  <p className="text-sm line-clamp-3 font-['Montserrat'] font-bold text-gray-900 leading-snug">
-                    {item.NewsDescription || item.text}
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    Fetching Latest News
+                  </h3>
+                  <p className="text-[#C9C9C9] text-sm">
+                    Gathering the most recent updates for you...
                   </p>
                 </div>
 
-                <a href={item.NewsUrl || item.link} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={NewsArrow}
-                    alt="arrow"
-                    width={33}
-                    height={33}
-                    className="self-center cursor-pointer flex-shrink-0"
-                    loading="lazy"
-                  />
-                </a>
+                <div className="mt-6 w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-[#16A831] to-[#0d7a25] h-full rounded-full animate-pulse"
+                    style={{ width: "70%" }}
+                  ></div>
+                </div>
               </div>
-            ))}
+            )}
+
+            {!loading && newsItems.length === 0 && (
+              <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl text-center">
+                <h3 className="text-xl font-bold text-white mb-2">
+                  No News Available
+                </h3>
+                <p className="text-[#C9C9C9] text-sm max-w-xs">
+                  Currently there are no news updates. Please check back later
+                  for the latest announcements.
+                </p>
+              </div>
+            )}
+
+            {!loading &&
+              newsItems.length > 0 &&
+              newsItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between  hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex-1 pr-4">
+                    <div className="flex items-center gap-3 text-xs mb-2">
+                      <span className="text-[#16A831] font-['Open_Sans'] font-semibold uppercase">
+                        {item.Category || item.category}
+                      </span>
+                      <span className="w-2 h-2  rounded-full bg-gray-300" />
+                      <span className="text-gray-500 font-['Open_Sans']">
+                        {item.publishedAt
+                          ? new Date(item.publishedAt).toLocaleDateString(
+                              "en-US",
+                              {
+                                month: "long",
+                                day: "2-digit",
+                              }
+                            )
+                          : item.date}
+                      </span>
+                    </div>
+                    <p className="text-sm line-clamp-3 font-['Montserrat'] font-bold text-gray-900 leading-snug">
+                      {item.NewsDescription || item.text}
+                    </p>
+                  </div>
+
+                  <a
+                    href={item.NewsUrl || item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={NewsArrow}
+                      alt="arrow"
+                      width={33}
+                      height={33}
+                      className="self-center cursor-pointer flex-shrink-0"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              ))}
           </div>
         </div>
       </div>
