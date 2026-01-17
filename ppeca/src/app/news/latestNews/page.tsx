@@ -69,14 +69,23 @@ export default function Home() {
       setLoading(false);
     }, 5000);
 
-
     // 2️⃣ Fetch API with pagination
     fetch(`${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.data?.length) {
-          // 3️⃣ If API responds AFTER fallback, still update UI
-          setNews(data.data);
+          // ✅ Fix image URLs
+          const newsWithFullImages = data.data.map((item: any) => {
+            const imageUrl = item.NewsImage?.url
+              ? item.NewsImage.url.startsWith("http")
+                ? item.NewsImage.url
+                : `https://api.ppepca.com${item.NewsImage.url}`
+              : "/images/news1.png"; // fallback
+            return { ...item, NewsImage: { url: imageUrl } };
+          });
+
+          setNews(newsWithFullImages);
+
           // Set total pages from meta information
           if (data.meta?.pagination?.pageCount) {
             setTotalPages(data.meta.pagination.pageCount);
@@ -94,21 +103,16 @@ export default function Home() {
         setLoading(false);
       });
 
-    // Cleanup
     return () => clearTimeout(timeoutId);
-  }, [currentPage]); // Add currentPage as dependency to refetch when page changes
+  }, [currentPage]);
 
   // Handle page navigation
   const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   if (loading) {
@@ -121,27 +125,22 @@ export default function Home() {
             <div className="w-4 h-4 bg-[#16A831] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           </div>
         </div>
-        
         <div className="text-center mb-6">
           <h3 className="text-xl font-semibold text-[#0A2540] mb-2 font-['Montserrat']">Fetching Latest News</h3>
           <p className="text-[#64748b] text-sm font-['Open_Sans']">Gathering the most recent updates for you...</p>
         </div>
-        
         <div className="w-64 bg-gray-200 rounded-full h-2 overflow-hidden">
           <div className="h-full bg-gradient-to-r from-[#16A831] to-[#0d7a25] rounded-full animate-pulse" style={{ width: '70%' }}></div>
         </div>
       </div>
     );
   }
+
   return (
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
       {/* Breadcrumb */}
       <p className="font-['Open_Sans'] font-light text-xs sm:text-sm md:text-base text-[#0A2540] pt-4 sm:pt-6 md:pt-8">
-        <Link href="/news" className="inline-block">
-          {" "}
-          News & Events{" "}
-        </Link>{" "}
-        / Lastest News
+        <Link href="/news" className="inline-block"> News & Events </Link> / Lastest News
       </p>
 
       {/* Heading */}
@@ -160,44 +159,35 @@ export default function Home() {
 
       {/* News List */}
       <div className="bg-[#f8fafc] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6">
-        { 
-        news.map((item, index) => (
+        {news.map((item, index) => (
           <NewsCard
             key={index}
             image={item.NewsImage?.url || "/images/news1.png"}
-            title={item.NewsTitle || item.NewsTitle}
-            description={item.NewsDescription || item.NewsDescription}
+            title={item.NewsTitle}
+            description={item.NewsDescription}
             publishedTime={item.publishedAt}
             url={item.NewsUrl}
           />
         ))}
-        
+
         {/* Pagination */}
         <div className="flex justify-center items-center mt-8 space-x-4">
           <button
             onClick={handlePrevPage}
             disabled={currentPage === 1}
-            className={`px-4 py-2 cursor-pointer rounded-md font-['Open_Sans'] text-sm ${
-              currentPage === 1
-                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
-            }`}
+            className={`px-4 py-2 cursor-pointer rounded-md font-['Open_Sans'] text-sm ${currentPage === 1 ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"}`}
           >
             Previous
           </button>
-          
+
           <span className="font-['Open_Sans'] text-sm text-[#0A2540]">
             Page {currentPage} of {totalPages}
           </span>
-          
+
           <button
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-md cursor-pointer font-['Open_Sans'] text-sm ${
-              currentPage === totalPages
-                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
-            }`}
+            className={`px-4 py-2 rounded-md cursor-pointer font-['Open_Sans'] text-sm ${currentPage === totalPages ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"}`}
           >
             Next
           </button>
