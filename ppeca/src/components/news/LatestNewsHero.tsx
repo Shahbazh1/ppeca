@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import news_hero_BG from "../../../public/images/news_hero_BG.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,37 +19,36 @@ const fallbackNews = [
   },
 ];
 
-export default function LatestNewsHero() {
+export default async function LatestNewsHero() {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
 
-  const [newsItems, setNewsItems] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  let newsItems = [];
+  let loading = true;
+  let error = null;
 
-  const fetchNews = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch(API_URL, { next: { revalidate: 60 } }); // ISR: revalidate every 60s
-      const data = await res.json();
-
-      if (data?.data?.length > 0) {
-        setNewsItems(data.data);
-      } else {
-        setNewsItems([]); // empty case
-      }
-    } catch (err) {
-      console.error("News fetch error:", err);
-      setNewsItems(fallbackNews);
-    } finally {
-      setLoading(false);
+  try {
+    // This fetch call will be cached and revalidated every 60 seconds (ISR)
+    const res = await fetch(API_URL, { next: { revalidate: 60 } });
+    
+    if (!res.ok) {
+      throw new Error('Failed to fetch news');
     }
-  };
-
-  useEffect(() => {
-    fetchNews();
-    const interval = setInterval(fetchNews, 60000); // fetch every 1 min
-    return () => clearInterval(interval);
-  }, []);
+    
+    const data = await res.json();
+    
+    if (data?.data?.length > 0) {
+      newsItems = data.data;
+    } else {
+      newsItems = [];
+    }
+    loading = false;
+  } catch (err) {
+    console.error("News fetch error:", err);
+    error = err;
+    newsItems = fallbackNews;
+    loading = false;
+  }
 
   return (
     <section
@@ -135,7 +132,7 @@ export default function LatestNewsHero() {
 
             {!loading &&
               newsItems.length > 0 &&
-              newsItems.map((item, index) => (
+              newsItems.map((item:any, index:any) => (
                 <div
                   key={index}
                   className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between  hover:shadow-lg transition-shadow duration-300"
