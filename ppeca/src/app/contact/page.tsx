@@ -303,7 +303,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                     rows={1}
                     placeholder="Write your message.."
-                    className="w-full border-b border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
+                    className="w-full border-b text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
                   />
                 </div>
                 {/* Button */}
@@ -312,7 +312,7 @@ export default function ContactUs() {
                     type="submit"
                     disabled={loading}
                     aria-label="Send your message"
-                    className={`cursor-pointer px-8 py-3 rounded-lg shadow-md transition text-sm sm:text-base sm:px-10 flex items-center justify-center
+                    className={`cursor-pointer px-8 py-3  rounded-lg shadow-md transition text-sm sm:text-base sm:px-10 flex items-center justify-center
     ${
       loading
         ? "bg-gray-400 cursor-not-allowed "
