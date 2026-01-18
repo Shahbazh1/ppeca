@@ -1,14 +1,3 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-// images: {
-//     domains: [
-//       "api.ppepca.com"
-//     ],
-//   },};
-
-// export default nextConfig;
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -18,16 +7,30 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/aboutppepca.html', // old URL
-        destination: '/about',       // new route
-        permanent: true,             // 301 redirect
+        source: '/aboutppepca.html',
+        destination: '/about',
+        permanent: true,
       },
-      // You can add more redirects here
-      // {
-      //   source: '/contactppepca.html',
-      //   destination: '/contact',
-      //   permanent: true,
-      // },
+      {
+        source: '/members.html',
+        destination: '/members',
+        permanent: true,
+      },
+      {
+        source: '/chairman_message.html',
+        destination: '/about', // same page, optional redirect
+        permanent: true,
+      },
+      {
+        source: '/communitydevelopment/communitydevelopment.html',
+        destination: '/', // redirect to homepage
+        permanent: true,
+      },
+      {
+        source: '/contactus.html',
+        destination: '/contact',
+        permanent: true,
+      },
     ];
   },
 };
