@@ -18,7 +18,7 @@ export default function AboutSection() {
             About us
           </h3>
 
-          <h2 className="text-3xl sm:text-4xl md:text-[2.4rem] lg:text-[2.7rem] xl:text-[3rem] 2xl:text-[4rem] font-bold leading-[1.1] font-['Montserrat']">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.4rem] lg:text-[2.7rem] xl:text-[3rem] 2xl:text-[4rem] font-bold leading-[1.1] font-['Montserrat'] text-[#171717]">
             Leadership in Pakistan's <br />
             <span className="border-b-4 sm:border-b-6 md:border-b-8 lg:border-b-8 xl:border-b-10 2xl:border-b-12 border-[#16a831] font-['Plus_Jakarta_Sans'] font-normal">
               Petroleum Industry

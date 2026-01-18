@@ -12,9 +12,11 @@ const withNbsp = (text: string) => text.replace(/ /g, "&nbsp;");
 
 export default function Footer() {
   return (
+    <div className="w-full bg-white">
+
     <footer className="bg-white text-[#0A2540] max-w-[1536px] mx-auto">
       {/* Top Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16 2xl:gap-24 px-6 md:px-10 lg:px-16 xl:px-20 mt-12 mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16 2xl:gap-24 px-6 md:px-10 lg:px-16 xl:px-20 pt-12 mb-24 bg-white">
         {/* Left: Logo + Description + Social */}
         <div className="flex flex-col md:max-w-[28rem] justify-between">
           <Image
@@ -141,5 +143,7 @@ export default function Footer() {
         </Link>
       </div>
     </footer>
+    </div>
+
   );
 }
