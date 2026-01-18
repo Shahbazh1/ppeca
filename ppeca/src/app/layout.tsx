@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Head from "next/head";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 
@@ -30,10 +29,10 @@ export const metadata: Metadata = {
   publisher: "Devbay Technologies",
 
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
+  icon: "/favicon.ico",
+  shortcut: "/favicon.ico",
+},
+
 
   openGraph: {
     title: "PPEPCA – Pakistan Petroleum Exploration & Production Companies Association",
