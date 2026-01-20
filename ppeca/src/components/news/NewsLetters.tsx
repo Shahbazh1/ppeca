@@ -7,7 +7,7 @@ export type NewsletterItem = {
   image: string;
   pdfUrl: string;
 };
-const API_BASE_URL = "https://api.ppepca.com";
+const API_BASE_URL = "https://api.ppepca.com.pk";
 
 const newsletters: NewsletterItem[] = [
   {
