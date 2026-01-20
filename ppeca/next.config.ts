@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["api.ppepca.com"],
+    domains: ["api.ppepca.com.pk"],
   },
   async redirects() {
     return [

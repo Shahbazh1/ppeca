@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const API_BASE_URL = "https://api.ppepca.com.pk";
         const res = await fetch(
           `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`
         );
@@ -40,13 +40,13 @@ export default function Home() {
         const data = await res.json();
 
         const newsWithFullImages = data.data.map((item: any) => {
-          const imageUrl = item.NewsImage?.url
-            ? item.NewsImage.url.startsWith("http")
-              ? item.NewsImage.url
-              : `https://api.ppepca.com${item.NewsImage.url}`
-            : "/images/news1.png"; // default image
-          return { ...item, NewsImage: { url: imageUrl } };
-        });
+  const imageUrl = item.NewsImage?.url
+    ? item.NewsImage.url.startsWith("http")
+      ? item.NewsImage.url
+      : `${API_BASE_URL}${item.NewsImage.url}` // fix: use .com.pk
+    : "/images/news1.png"; // default image
+  return { ...item, NewsImage: { url: imageUrl } };
+});
 
         setNews(newsWithFullImages);
         setTotalPages(data.meta?.pagination?.pageCount || 1);
