@@ -1,5 +1,5 @@
-// app/page.tsx  (or wherever your page is in the App Router)
-import React from "react";
+"use client"; // Add this to make the component a Client Component
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NewsCard from "../../../components/latestNews/NewsCard";
 
@@ -20,40 +20,45 @@ interface NewsItem {
 // Define the number of news per page
 const newsPerPage = 8;
 
-async function fetchNews(page: number) {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-  const res = await fetch(
-    `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${page}&pagination[pageSize]=${newsPerPage}`,
-    {
-      next: { revalidate: 60 }, // ISR: regenerate this page every 60 seconds
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch news");
-  }
-
-  const data = await res.json();
-
-  const newsWithFullImages = data.data.map((item: any) => {
-    const imageUrl = item.NewsImage?.url
-      ? item.NewsImage.url.startsWith("http")
-        ? item.NewsImage.url
-        : `https://api.ppepca.com${item.NewsImage.url}`
-      : "/images/news1.png"; // default image
-    return { ...item, NewsImage: { url: imageUrl } };
-  });
-
-  return {
-    news: newsWithFullImages,
-    totalPages: data.meta?.pagination?.pageCount || 1,
-  };
-}
-
-export default async function Home() {
+export default function Home() {
   const currentPage = 1; // initial page
-  const { news, totalPages } = await fetchNews(currentPage);
+
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const res = await fetch(
+          `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`
+        );
+
+        if (!res.ok) throw new Error("Failed to fetch news");
+
+        const data = await res.json();
+
+        const newsWithFullImages = data.data.map((item: any) => {
+          const imageUrl = item.NewsImage?.url
+            ? item.NewsImage.url.startsWith("http")
+              ? item.NewsImage.url
+              : `https://api.ppepca.com${item.NewsImage.url}`
+            : "/images/news1.png"; // default image
+          return { ...item, NewsImage: { url: imageUrl } };
+        });
+
+        setNews(newsWithFullImages);
+        setTotalPages(data.meta?.pagination?.pageCount || 1);
+      } catch (err) {
+        console.error("News fetch failed:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, [currentPage]);
 
   return (
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -81,8 +86,10 @@ export default async function Home() {
 
       {/* News List */}
       <div className="bg-[#f8fafc] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6">
-        {news.length > 0 ? (
-          news.map((item:any, index:any) => (
+        {loading ? (
+          <p className="text-center text-[#0A2540] font-['Open_Sans']">Loading news...</p>
+        ) : news.length > 0 ? (
+          news.map((item: any, index: any) => (
             <NewsCard
               key={index}
               image={item.NewsImage?.url || "/images/news1.png"}
