@@ -16,18 +16,15 @@ interface NewsItem {
   } | null;
 }
 
-const newsPerPage = 8;
-
 export default async function Home() {
-  const currentPage = 1; // initial page
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   let news: NewsItem[] = [];
-  let totalPages = 1;
 
   try {
+    // Fetch all news at once by setting a large pageSize
     const res = await fetch(
-      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`,
+      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=1&pagination[pageSize]=1000`,
       { next: { revalidate: 60 } } // ISR: revalidate every 60s
     );
 
@@ -43,8 +40,6 @@ export default async function Home() {
         : "/images/news1.png";
       return { ...item, NewsImage: { url: imageUrl } };
     });
-
-    totalPages = data.meta?.pagination?.pageCount || 1;
   } catch (err) {
     console.error("News fetch failed:", err);
     news = [];
@@ -103,36 +98,7 @@ export default async function Home() {
           </div>
         )}
 
-        {/* Pagination */}
-        {news.length > 0 && (
-          <div className="flex justify-center items-center mt-8 space-x-4">
-            <button
-              disabled={currentPage === 1}
-              className={`px-4 py-2 cursor-pointer rounded-md font-['Open_Sans'] text-sm ${
-                currentPage === 1
-                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
-              }`}
-            >
-              Previous
-            </button>
-
-            <span className="font-['Open_Sans'] text-sm text-[#0A2540]">
-              Page {currentPage} of {totalPages}
-            </span>
-
-            <button
-              disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-md cursor-pointer font-['Open_Sans'] text-sm ${
-                currentPage === totalPages
-                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-[#16A831] text-white hover:bg-[#0d7a25] transition-colors"
-              }`}
-            >
-              Next
-            </button>
-          </div>
-        )}
+        {/* Pagination removed */}
       </div>
     </div>
   );
