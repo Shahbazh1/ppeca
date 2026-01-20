@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://www.ppepca.com/</loc>
+      <loc>https://www.ppepca.com.pk/</loc>
       <priority>1.0</priority>
    </url>
 
    <url>
-      <loc>https://www.ppepca.com/members</loc>
+      <loc>https://www.ppepca.com.pk/members</loc>
       <priority>0.8</priority>
    </url>
 
@@ -17,17 +17,17 @@
    </url>
 
    <url>
-      <loc>https://www.ppepca.com/about</loc>
+      <loc>https://www.ppepca.com.pk/about</loc>
       <priority>0.7</priority>
    </url>
 
    <url>
-      <loc>https://www.ppepca.com/facts</loc>
+      <loc>https://www.ppepca.com.pk/facts</loc>
       <priority>0.7</priority>
    </url>
 
    <url>
-      <loc>https://www.ppepca.com/contact</loc>
+      <loc>https://www.ppepca.com.pk/contact</loc>
       <priority>0.6</priority>
    </url>
 
