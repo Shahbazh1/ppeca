@@ -20,7 +20,7 @@ const newsPerPage = 8;
 
 export default async function Home() {
   const currentPage = 1; // initial page
-  const API_BASE_URL = "https://api.ppepca.com.pk";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   let news: NewsItem[] = [];
   let totalPages = 1;

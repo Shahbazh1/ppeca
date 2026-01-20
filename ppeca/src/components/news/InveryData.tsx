@@ -8,7 +8,7 @@ type InventoryItem = {
   fileUrl: string;
 };
 
-    const API_BASE_URL = "https://api.ppepca.com.pk";
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const inventoryData: InventoryItem[] = [
   {
