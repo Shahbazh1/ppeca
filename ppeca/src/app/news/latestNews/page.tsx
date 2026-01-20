@@ -1,5 +1,4 @@
-"use client"; // Add this to make the component a Client Component
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import NewsCard from "../../../components/latestNews/NewsCard";
 
@@ -17,48 +16,39 @@ interface NewsItem {
   } | null;
 }
 
-// Define the number of news per page
 const newsPerPage = 8;
 
-export default function Home() {
+export default async function Home() {
   const currentPage = 1; // initial page
+  const API_BASE_URL = "https://api.ppepca.com.pk";
 
-  const [news, setNews] = useState<NewsItem[]>([]);
-  const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(true);
+  let news: NewsItem[] = [];
+  let totalPages = 1;
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const API_BASE_URL = "https://api.ppepca.com.pk";
-        const res = await fetch(
-          `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`
-        );
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${newsPerPage}`,
+      { next: { revalidate: 60 } } // ISR: revalidate every 60s
+    );
 
-        if (!res.ok) throw new Error("Failed to fetch news");
+    if (!res.ok) throw new Error("Failed to fetch news");
 
-        const data = await res.json();
+    const data = await res.json();
 
-        const newsWithFullImages = data.data.map((item: any) => {
-  const imageUrl = item.NewsImage?.url
-    ? item.NewsImage.url.startsWith("http")
-      ? item.NewsImage.url
-      : `${API_BASE_URL}${item.NewsImage.url}` // fix: use .com.pk
-    : "/images/news1.png"; // default image
-  return { ...item, NewsImage: { url: imageUrl } };
-});
+    news = data.data.map((item: any) => {
+      const imageUrl = item.NewsImage?.url
+        ? item.NewsImage.url.startsWith("http")
+          ? item.NewsImage.url
+          : `${API_BASE_URL}${item.NewsImage.url}`
+        : "/images/news1.png";
+      return { ...item, NewsImage: { url: imageUrl } };
+    });
 
-        setNews(newsWithFullImages);
-        setTotalPages(data.meta?.pagination?.pageCount || 1);
-      } catch (err) {
-        console.error("News fetch failed:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, [currentPage]);
+    totalPages = data.meta?.pagination?.pageCount || 1;
+  } catch (err) {
+    console.error("News fetch failed:", err);
+    news = [];
+  }
 
   return (
     <div className="bg-[#f8fafc] pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -86,9 +76,7 @@ export default function Home() {
 
       {/* News List */}
       <div className="bg-[#f8fafc] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 flex flex-col gap-6">
-        {loading ? (
-          <p className="text-center text-[#0A2540] font-['Open_Sans']">Loading news...</p>
-        ) : news.length > 0 ? (
+        {news.length > 0 ? (
           news.map((item: any, index: any) => (
             <NewsCard
               key={index}
