@@ -8,38 +8,38 @@ type InventoryItem = {
   fileUrl: string;
 };
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL;
+    const API_BASE_URL = "https://api.ppepca.com.pk";
 
 const inventoryData: InventoryItem[] = [
   {
     name: "KUFPEC",
     logo: "/images/companies_logo/KUFPEC_LOGO.png",
-    fileUrl: `${API_BASE_URL}/List_of_Surplus_Branch_Inventory_KUFPEC_19db8ed312.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/List_of_Surplus_Branch_Inventory_8837373727.pdf`,
   },
   {
     name: "Orient Petroleum Inc.",
     logo: "/images/companies_logo/OP_LOGO.jpg",
-    fileUrl: `${API_BASE_URL}/Orient_Petroleum_Surplus_Inventory_OPI_a010a86dc8.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/Orient_Petroleum_Surplus_Inventory_ac010249db.pdf`,
   },
   {
     name: "Polish Oil and Gas Company",
     logo: "/images/POLISH_OIL_logo.jpg",
-    fileUrl: `${API_BASE_URL}/Surplus_Items_Propane_Condenser_POGC_bf15e4747f.xlsx`,
+    fileUrl: `${API_BASE_URL}/uploads/POL_RIG_SCR_d2bc9fdc55.docx`,
   },
   {
     name: "Pakistan Petroleum Ltd",
     logo: "/images/PPL_logo.jpg",
-    fileUrl: `${API_BASE_URL}/Drilling_and_Completion_materials_PPL_599f3696bc.xlsx`,
+    fileUrl: `${API_BASE_URL}/uploads/Drilling_and_Completion_materials_2a59a2e007.xlsx`,
   },
   {
     name: "Eni Pakistan",
     logo: "/images/POL_logo.png",
-    fileUrl: `${API_BASE_URL}/POL_SCR_RIG_1_Wells_drilled_xlsx_POL_04c5c64cc6.xlsx`,
+    fileUrl: `${API_BASE_URL}/uploads/Eni_Pakistan_Surplus_Inventory_List_c6fda86254.xlsx`,
   },
   {
     name: "Propane Condenser POGC",
     logo: "/images/companies_logo/PRIME_LOGO.png",
-    fileUrl: `${API_BASE_URL}/Eni_Pakistan_Surplus_Inventory_List_PIOGCL_43562acb80.xlsx`,
+    fileUrl: `${API_BASE_URL}/uploads/Surplus_Items_Propane_Condenser_37c8b7d3de.xlsx`,
   },
 ];
 
