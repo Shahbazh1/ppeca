@@ -26,7 +26,7 @@ export default function ContactUs() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -74,7 +74,7 @@ export default function ContactUs() {
     } catch (error: any) {
       if (error.name === "AbortError") {
         toast.error(
-          "Request timed out. Please check your connection and try again."
+          "Request timed out. Please check your connection and try again.",
         );
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -220,8 +220,9 @@ export default function ContactUs() {
                 {/* Name */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
-                    <label className="text-sm text-slate-600">First Name</label>
+                    <label className="text-sm text-slate-600">First Name *</label>
                     <input
+                    required
                       type="text"
                       name="firstName"
                       value={formData.firstName}
@@ -231,8 +232,9 @@ export default function ContactUs() {
                   </div>
 
                   <div className="flex-1">
-                    <label className="text-sm text-slate-600">Last Name</label>
+                    <label className="text-sm text-slate-600">Last Name *</label>
                     <input
+                      required
                       type="text"
                       name="lastName"
                       value={formData.lastName}
@@ -289,15 +291,16 @@ export default function ContactUs() {
                           />
                           <span>{item}</span>
                         </label>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="text-sm text-slate-600">Message</label>
+                  <label className="text-sm text-slate-600">Message *</label>
                   <textarea
+                    required
                     name="msg"
                     value={formData.msg}
                     onChange={handleChange}
