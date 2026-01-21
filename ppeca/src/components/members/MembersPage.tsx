@@ -392,8 +392,8 @@ if (!company) return <div>Company not found!</div>;
           {/* Button */}
           <div className="mt-4">
             <a
-              target="_blank"
-              href={company.website}
+              // target="_blank"
+              href="#"
               className="inline-block bg-[#16A831] hover:bg-[#128a28] text-[#F8FAFC] font-semibold px-6 py-2 rounded  transition"
             >
               Visit Website

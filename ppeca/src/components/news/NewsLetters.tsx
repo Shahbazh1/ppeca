@@ -142,7 +142,6 @@ export default function NewsletterSection() {
                   <a
                     href={item.pdfUrl}
                     aria-label={`View ${item.title} PDF`}
-                    download
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200"
