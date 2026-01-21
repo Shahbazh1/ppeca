@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 import Link from "next/link";
 const CompanyForm = () => {
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,7 @@ const CompanyForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -47,14 +47,14 @@ const CompanyForm = () => {
       toast.error("Emails do not match");
       return;
     }
-    setLoading(true)
+    setLoading(true);
 
     const controller = new AbortController();
-  const timeoutId = setTimeout(() => {
-    controller.abort(); // cancel the request after 5 seconds
-  }, 5000);
-  
-    try { 
+    const timeoutId = setTimeout(() => {
+      controller.abort(); // cancel the request after 5 seconds
+    }, 5000);
+
+    try {
       console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
       const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
@@ -90,17 +90,17 @@ const CompanyForm = () => {
         other_key_contack: "",
         joint_venture_partner: "",
       });
-    } catch (err:any) {
+    } catch (err: any) {
       if (err.name === "AbortError") {
-      toast.error("Request timed out. Please try again.");
-    } else {
-      toast.error("Something went wrong. Please try again.");
-      console.error(err);
-    }
+        toast.error("Request timed out. Please try again.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+        console.error(err);
+      }
     } finally {
       clearTimeout(timeoutId);
-    setLoading(false); 
-  }
+      setLoading(false);
+    }
   };
 
   return (
@@ -433,16 +433,16 @@ const CompanyForm = () => {
             </div>
           </div>
           {/* buttons */}
-          <div className="col-span-1  md:col-span-2 space-y-4">
+          <div className="col-span-1 md:col-span-2 flex justify-center gap-6 mt-6">
             <button
               type="submit"
               disabled={loading}
-              className={`cursor-pointer w-full h-10 sm:h-12 rounded font-semibold flex items-center justify-center
-    ${
-      loading
-        ? "bg-gray-400 cursor-not-allowed"
-        : "bg-[#16a831] hover:bg-[#128a28] text-white"
-    }`}
+              className={`cursor-pointer w-40  h-10 sm:h-12 rounded font-semibold flex items-center justify-center
+  ${
+    loading
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-[#16a831] hover:bg-[#128a28] text-white"
+  }`}
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
@@ -470,7 +470,7 @@ const CompanyForm = () => {
                 })
               }
               type="reset"
-              className="w-full h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-[2px] text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
+              className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-[2px] text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
             >
               Reset
             </button>
