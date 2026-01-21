@@ -137,8 +137,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="kumbh-sans py-8 px-6 md:px-10 xl:px-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto text-sm text-[#0A2540]">
-        <p>© PPEPCA 2025 | All Rights Reserved</p>
-        <Link href="/membership" className="mt-2 md:mt-0">
+        <p>© PPEPCA 2026 | All Rights Reserved</p>
+        <Link href="/members/membershipform" className="mt-2 md:mt-0">
           Join as a member
         </Link>
       </div>
