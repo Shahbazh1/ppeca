@@ -38,7 +38,15 @@ export default async function Home() {
           ? item.NewsImage.url
           : `${API_BASE_URL}${item.NewsImage.url}`
         : "/images/news1.png";
-      return { ...item, NewsImage: { url: imageUrl } };
+        const publishedTime = new Date(item.publishedAt).toLocaleString("en-US", {
+    year: "numeric",
+    month: "short", // "Jan"
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true, // AM/PM
+  });
+      return { ...item, NewsImage: { url: imageUrl }, publishedAt: publishedTime };
     });
   } catch (err) {
     console.error("News fetch failed:", err);

@@ -80,8 +80,8 @@ const leaders = [
   {
     role: " Secretary General PPEPCA",
     name: "Mr. Ibrar Khan",
-    title: "Vice President",
-    company: "Jazz",
+    title: "Secretary General",
+    company: "PPEPCA",
     image: Secretary_General_PPEPCA,
   },
 ];
