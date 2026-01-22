@@ -12,12 +12,14 @@ import { useMemo } from "react";
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Link from "next/link";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CompanyForm = () => {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const [loading, setLoading] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     Member_Name: "",
     Name_of_company: "",
@@ -73,6 +75,14 @@ const CompanyForm = () => {
     setPhoneError("Please enter a valid phone number");
     return;
   }
+
+  if (!recaptchaToken) {
+  toast.error("Please complete the reCAPTCHA");
+  return;
+}else{
+  console.log("reCAPTCHA token:", recaptchaToken);
+}
+
   
     setLoading(true);
 
@@ -82,11 +92,12 @@ const CompanyForm = () => {
     }, 5000);
 
     try {
+      console.log("Recaptcha Token:", recaptchaToken); // Debug log
       console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
       const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData }),
+body: JSON.stringify({ data: formData, recaptchaToken }),
         signal: controller.signal, // attach the abort controller signal
       });
 
@@ -490,6 +501,16 @@ const CompanyForm = () => {
           </div>
           {/* buttons */}
           <div className="col-span-1 md:col-span-2 flex justify-center gap-6 mt-6">
+            <div className="mt-4">
+  <ReCAPTCHA
+    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+    onChange={(token:any) => setRecaptchaToken(token)}
+  />
+  {!recaptchaToken && (
+    <p className="text-red-500 text-sm mt-1">Please complete the reCAPTCHA</p>
+  )}
+</div>
+
             <button
               type="submit"
               disabled={loading}
