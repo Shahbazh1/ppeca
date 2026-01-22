@@ -357,7 +357,7 @@ const CompanyForm = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block font-semibold mb-1 md:mt-11 text-sm sm:text-base"
+                className="block font-semibold mb-1 md:mt-[45px] text-sm sm:text-base"
               >
                 Phone *
               </label>
