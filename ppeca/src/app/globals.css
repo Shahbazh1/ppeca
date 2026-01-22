@@ -61,3 +61,80 @@ h5 {
 .kumbh-sans {
   font-family: var(--font-kumbh), sans-serif;
 }
+
+/* ===== React Select Tailwind Match ===== */
+
+.react-select__control {
+  background-color: #f8fafc !important;
+  border-color: #94a3b8 !important;
+  border-radius: 0.275rem !important; /* same as rounded */
+  min-height: 42px !important; /* matches py-2 input */
+  box-shadow: none !important;
+}
+
+/* Focus ring same as Tailwind */
+.react-select__control--is-focused {
+  border-color: #94a3b8 !important;
+  box-shadow: 0 0 0 2px #3b82f6 !important;
+}
+
+/* Value text */
+.react-select__single-value {
+  color: #0a2540 !important;
+  font-size: 0.875rem;
+}
+
+/* Placeholder */
+.react-select__placeholder {
+  color: #94a3b8 !important;
+  font-size: 0.875rem;
+}
+
+/* Input typing text */
+.react-select__input-container {
+  color: #0a2540 !important;
+  font-size: 0.875rem;
+}
+
+/* Dropdown */
+.react-select__menu {
+  border-radius: 0.275rem;
+}
+
+/* Options */
+.react-select__option {
+  font-size: 0.875rem;
+}
+
+.react-select__option--is-focused {
+  background-color: #e6f4ea !important;
+}
+
+.react-select__option--is-selected {
+  background-color: #16a831 !important;
+  color: #ffffff !important;
+}
+
+/* Match sm:text-base */
+@media (min-width: 640px) {
+  .react-select__single-value,
+  .react-select__placeholder,
+  .react-select__option {
+    font-size: 1rem;
+  }
+}
+
+.react-select__control {
+  cursor: pointer !important;
+}
+
+.react-select__option {
+  cursor: pointer !important;
+}
+.react-select__input {
+  cursor: text !important;
+}
+
+.react-select__input {
+  cursor: text !important;
+}

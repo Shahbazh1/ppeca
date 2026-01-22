@@ -3,6 +3,12 @@ import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import toast, { Toaster } from "react-hot-toast";
+import dynamic from "next/dynamic";
+const Select = dynamic(() => import("react-select"), {
+  ssr: false,
+});
+import countryList from "react-select-country-list";
+import { useMemo } from "react";
 
 import Link from "next/link";
 const CompanyForm = () => {
@@ -39,9 +45,21 @@ const CompanyForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+  type CountryOption = {
+  label: string;
+  value: string;
+};
+
+
+  const countryOptions:CountryOption[] = useMemo(() => countryList().getData(), []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!formData.country) {
+      toast.error("Please select a country");
+      return;
+    }
 
     if (formData.email !== formData.confirm_email) {
       toast.error("Emails do not match");
@@ -231,13 +249,24 @@ const CompanyForm = () => {
               >
                 Country *
               </label>
-              <input
-                required
-                type="text"
-                name="country"
-                value={formData.country}
-                onChange={handleChange}
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+              <Select
+                options={countryOptions}
+                isSearchable
+                placeholder="Select or type country"
+                value={
+                  formData.country
+                    ? { label: formData.country, value: formData.country }
+                    : null
+                }
+                onChange={(selected:any) =>
+                  setFormData({
+                    ...formData,
+                    country: selected ? selected.label : "",
+                  })
+                }
+                className="react-select-container"
+                classNamePrefix="react-select"
               />
             </div>
 
