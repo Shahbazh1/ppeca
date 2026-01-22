@@ -9,8 +9,8 @@ const Select = dynamic(() => import("react-select"), {
 });
 import countryList from "react-select-country-list";
 import { useMemo } from "react";
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -50,12 +50,14 @@ const CompanyForm = () => {
     });
   };
   type CountryOption = {
-  label: string;
-  value: string;
-};
+    label: string;
+    value: string;
+  };
 
-
-  const countryOptions:CountryOption[] = useMemo(() => countryList().getData(), []);
+  const countryOptions: CountryOption[] = useMemo(
+    () => countryList().getData(),
+    [],
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -71,19 +73,18 @@ const CompanyForm = () => {
     }
 
     if (!formData.phone || !isValidPhoneNumber(formData.phone)) {
-    toast.error("Please enter a valid phone number");
-    setPhoneError("Please enter a valid phone number");
-    return;
-  }
+      toast.error("Please enter a valid phone number");
+      setPhoneError("Please enter a valid phone number");
+      return;
+    }
 
-  if (!recaptchaToken) {
-  toast.error("Please complete the reCAPTCHA");
-  return;
-}else{
-  console.log("reCAPTCHA token:", recaptchaToken);
-}
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA");
+      return;
+    } else {
+      console.log("reCAPTCHA token:", recaptchaToken);
+    }
 
-  
     setLoading(true);
 
     const controller = new AbortController();
@@ -97,7 +98,7 @@ const CompanyForm = () => {
       const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-body: JSON.stringify({ data: formData, recaptchaToken }),
+        body: JSON.stringify({ data: formData, recaptchaToken }),
         signal: controller.signal, // attach the abort controller signal
       });
 
@@ -279,7 +280,7 @@ body: JSON.stringify({ data: formData, recaptchaToken }),
                     ? { label: formData.country, value: formData.country }
                     : null
                 }
-                onChange={(selected:any) =>
+                onChange={(selected: any) =>
                   setFormData({
                     ...formData,
                     country: selected ? selected.label : "",
@@ -375,41 +376,41 @@ body: JSON.stringify({ data: formData, recaptchaToken }),
             </div>
 
             <div>
-  <label
-    htmlFor="phone"
-    className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
-  >
-    Phone *
-  </label>
-  
-  <PhoneInput
-    international
-    defaultCountry="PK"
-    value={formData.phone}
-    onChange={(value) => {
-      setFormData({
-        ...formData,
-        phone: value || "",
-      });
-      
-      // Validate phone number in real-time
-      if (value && !isValidPhoneNumber(value)) {
-        setPhoneError("Please enter a valid phone number");
-      } else {
-        setPhoneError("");
-      }
-    }}
-    className={`w-full border ${phoneError ? 'border-red-500' : 'border-[#94a3b8]'} rounded px-3 py-2 focus:outline-none focus:ring-2 ${phoneError ? 'focus:ring-red-500' : 'focus:ring-blue-500'}`}
-    numberInputProps={{
-      className: 'w-full outline-none',
-      required: true,
-    }}
-  />
-  
-  {phoneError && (
-    <p className="text-red-500 text-sm mt-1">{phoneError}</p>
-  )}
-</div>
+              <label
+                htmlFor="phone"
+                className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
+              >
+                Phone *
+              </label>
+
+              <PhoneInput
+                international
+                defaultCountry="PK"
+                value={formData.phone}
+                onChange={(value) => {
+                  setFormData({
+                    ...formData,
+                    phone: value || "",
+                  });
+
+                  // Validate phone number in real-time
+                  if (value && !isValidPhoneNumber(value)) {
+                    setPhoneError("Please enter a valid phone number");
+                  } else {
+                    setPhoneError("");
+                  }
+                }}
+                className={`w-full border ${phoneError ? "border-red-500" : "border-[#94a3b8]"} rounded px-3 py-2 focus:outline-none focus:ring-2 ${phoneError ? "focus:ring-red-500" : "focus:ring-blue-500"}`}
+                numberInputProps={{
+                  className: "w-full outline-none",
+                  required: true,
+                }}
+              />
+
+              {phoneError && (
+                <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+              )}
+            </div>
 
             <div>
               <label
@@ -501,16 +502,6 @@ body: JSON.stringify({ data: formData, recaptchaToken }),
           </div>
           {/* buttons */}
           <div className="col-span-1 md:col-span-2 flex justify-center gap-6 mt-6">
-            <div className="mt-4">
-  <ReCAPTCHA
-    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
-    onChange={(token:any) => setRecaptchaToken(token)}
-  />
-  {!recaptchaToken && (
-    <p className="text-red-500 text-sm mt-1">Please complete the reCAPTCHA</p>
-  )}
-</div>
-
             <button
               type="submit"
               disabled={loading}
@@ -525,33 +516,44 @@ body: JSON.stringify({ data: formData, recaptchaToken }),
             </button>
 
             <button
-  onClick={() => {
-    setFormData({
-      Member_Name: "",
-      Name_of_company: "",
-      Name_of_chief_executive: "",
-      Head_of_address: "",
-      city: "",
-      country: "",
-      phone: "",
-      email: "",
-      website: "",
-      brief_profile_of_comapny: "",
-      concession_in_pakistan: "",
-      status_type: "",
-      address_in_pakistan: "",
-      confirm_email: "",
-      name_and_designation_of_ce_in_pakistan: "",
-      other_key_contack: "",
-      joint_venture_partner: "",
-    });
-    setPhoneError(""); // Add this line
-  }}
-  type="reset"
-  className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-2 text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
->
-  Reset
-</button>
+              onClick={() => {
+                setFormData({
+                  Member_Name: "",
+                  Name_of_company: "",
+                  Name_of_chief_executive: "",
+                  Head_of_address: "",
+                  city: "",
+                  country: "",
+                  phone: "",
+                  email: "",
+                  website: "",
+                  brief_profile_of_comapny: "",
+                  concession_in_pakistan: "",
+                  status_type: "",
+                  address_in_pakistan: "",
+                  confirm_email: "",
+                  name_and_designation_of_ce_in_pakistan: "",
+                  other_key_contack: "",
+                  joint_venture_partner: "",
+                });
+                setPhoneError(""); // Add this line
+              }}
+              type="reset"
+              className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-2 text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
+            >
+              Reset
+            </button>
+          </div>
+          <div className="mt-4">
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
+              onChange={(token: any) => setRecaptchaToken(token)}
+            />
+            {!recaptchaToken && (
+              <p className="text-red-500 text-sm mt-1">
+                Please complete the reCAPTCHA
+              </p>
+            )}
           </div>
         </form>
         {/* Submit & Reset Buttons */}
