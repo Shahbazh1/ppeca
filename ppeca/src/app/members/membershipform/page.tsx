@@ -357,7 +357,7 @@ const CompanyForm = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block font-semibold mb-1 md:mt-[45px] text-sm sm:text-base"
+                className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
               >
                 Phone *
               </label>
@@ -431,7 +431,7 @@ const CompanyForm = () => {
                 Status *
               </label>
 
-              <div className="flex items-center gap-6 py-[6px]">
+              <div className="flex items-center gap-6 py-1.5">
                 {/* Operator */}
                 <label className="flex items-center gap-2 cursor-pointer text-sm sm:text-base text-black">
                   <input
@@ -499,7 +499,7 @@ const CompanyForm = () => {
                 })
               }
               type="reset"
-              className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-[2px] text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
+              className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-2 text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
             >
               Reset
             </button>
