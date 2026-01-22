@@ -81,9 +81,9 @@ export default function TestimonialSection() {
       </div>
 
       {/* Members label */}
-      <h3 className="absolute top-5 left-5 sm:left-10 md:left-15 bg-white text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10 font-['Open_Sans']">
+      {/* <h3 className="absolute top-5 left-5 sm:left-10 md:left-15 bg-white text-[#16a831] px-3 py-1 rounded text-xs sm:text-sm z-10 font-['Open_Sans']">
         Members
-      </h3>
+      </h3> */}
 
       {/* Testimonial */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
