@@ -544,17 +544,30 @@ const CompanyForm = () => {
               Reset
             </button>
           </div>
-          <div className="mt-4">
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} // your site key
-              onChange={(token: any) => setRecaptchaToken(token)}
-            />
-            {!recaptchaToken && (
-              <p className="text-red-500 text-sm mt-1">
-                Please complete the reCAPTCHA
-              </p>
-            )}
-          </div>
+          <div className="mt-4 w-full overflow-hidden">
+  <div className="flex justify-center sm:justify-start">
+    <div
+      className="
+        transform 
+        scale-[0.78] 
+        sm:scale-100 
+        origin-top-left
+      "
+    >
+      <ReCAPTCHA
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+        onChange={(token: string | null) => setRecaptchaToken(token)}
+      />
+    </div>
+  </div>
+
+  {!recaptchaToken && (
+    <p className="text-red-500 text-xs sm:text-sm mt-2 text-center sm:text-left">
+      Please complete the reCAPTCHA
+    </p>
+  )}
+</div>
+
         </form>
         {/* Submit & Reset Buttons */}
       </div>
