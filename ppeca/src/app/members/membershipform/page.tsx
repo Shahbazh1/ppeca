@@ -9,13 +9,15 @@ const Select = dynamic(() => import("react-select"), {
 });
 import countryList from "react-select-country-list";
 import { useMemo } from "react";
-
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import Link from "next/link";
+
 const CompanyForm = () => {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const [loading, setLoading] = useState(false);
-
+  const [phoneError, setPhoneError] = useState("");
   const [formData, setFormData] = useState({
     Member_Name: "",
     Name_of_company: "",
@@ -57,7 +59,7 @@ const CompanyForm = () => {
     e.preventDefault();
 
     if (!formData.country) {
-      toast.error("Please select a country");
+      toast.error("Please select a valid country");
       return;
     }
 
@@ -65,6 +67,13 @@ const CompanyForm = () => {
       toast.error("Emails do not match");
       return;
     }
+
+    if (!formData.phone || !isValidPhoneNumber(formData.phone)) {
+    toast.error("Please enter a valid phone number");
+    setPhoneError("Please enter a valid phone number");
+    return;
+  }
+  
     setLoading(true);
 
     const controller = new AbortController();
@@ -355,23 +364,41 @@ const CompanyForm = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="phone"
-                className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
-              >
-                Phone *
-              </label>
-
-              <input
-                required
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+92 300 1234567"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+  <label
+    htmlFor="phone"
+    className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
+  >
+    Phone *
+  </label>
+  
+  <PhoneInput
+    international
+    defaultCountry="PK"
+    value={formData.phone}
+    onChange={(value) => {
+      setFormData({
+        ...formData,
+        phone: value || "",
+      });
+      
+      // Validate phone number in real-time
+      if (value && !isValidPhoneNumber(value)) {
+        setPhoneError("Please enter a valid phone number");
+      } else {
+        setPhoneError("");
+      }
+    }}
+    className={`w-full border ${phoneError ? 'border-red-500' : 'border-[#94a3b8]'} rounded px-3 py-2 focus:outline-none focus:ring-2 ${phoneError ? 'focus:ring-red-500' : 'focus:ring-blue-500'}`}
+    numberInputProps={{
+      className: 'w-full outline-none',
+      required: true,
+    }}
+  />
+  
+  {phoneError && (
+    <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+  )}
+</div>
 
             <div>
               <label
@@ -477,32 +504,33 @@ const CompanyForm = () => {
             </button>
 
             <button
-              onClick={() =>
-                setFormData({
-                  Member_Name: "",
-                  Name_of_company: "",
-                  Name_of_chief_executive: "",
-                  Head_of_address: "",
-                  city: "",
-                  country: "",
-                  phone: "",
-                  email: "",
-                  website: "",
-                  brief_profile_of_comapny: "",
-                  concession_in_pakistan: "",
-                  status_type: "",
-                  address_in_pakistan: "",
-                  confirm_email: "",
-                  name_and_designation_of_ce_in_pakistan: "",
-                  other_key_contack: "",
-                  joint_venture_partner: "",
-                })
-              }
-              type="reset"
-              className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-2 text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
-            >
-              Reset
-            </button>
+  onClick={() => {
+    setFormData({
+      Member_Name: "",
+      Name_of_company: "",
+      Name_of_chief_executive: "",
+      Head_of_address: "",
+      city: "",
+      country: "",
+      phone: "",
+      email: "",
+      website: "",
+      brief_profile_of_comapny: "",
+      concession_in_pakistan: "",
+      status_type: "",
+      address_in_pakistan: "",
+      confirm_email: "",
+      name_and_designation_of_ce_in_pakistan: "",
+      other_key_contack: "",
+      joint_venture_partner: "",
+    });
+    setPhoneError(""); // Add this line
+  }}
+  type="reset"
+  className="w-40 h-10 sm:h-12 cursor-pointer rounded border-[#94a3b8] border-2 text-gray-800 font-semibold flex items-center justify-center hover:bg-gray-200"
+>
+  Reset
+</button>
           </div>
         </form>
         {/* Submit & Reset Buttons */}
