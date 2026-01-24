@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import ic_sharp from "../../../public/images/svg_images/ic_sharp.svg";
 import carbon_location from "../../../public/images/svg_images/carbon_location.svg";
@@ -13,7 +14,7 @@ import Head from "next/head";
 export default function ContactUs() {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [loading, setLoading] = useState(false);
-
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -37,21 +38,29 @@ export default function ContactUs() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Check reCAPTCHA first
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA");
+      return;
+    }
+
     if (loading) return; // prevent double submit
     setLoading(true);
     const controller = new AbortController();
 
     const timeoutId = setTimeout(() => {
-      controller.abort(); // actually cancel the fetch
-      // optional: reject promise, but fetch will throw AbortError
+      controller.abort();
     }, 5000);
 
     try {
+      console.log("Recaptcha Token:", recaptchaToken); // Debug log
+      console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
+
       const response = await fetch(`${API_BASE_URL}/api/contact-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData }),
-        signal: controller.signal, // attach the signal
+        body: JSON.stringify({ data: formData, recaptchaToken }), // ← Added recaptchaToken
+        signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
@@ -71,6 +80,7 @@ export default function ContactUs() {
         subject: "general",
         msg: "",
       });
+      setRecaptchaToken(null); // ← Reset reCAPTCHA token
     } catch (error: any) {
       if (error.name === "AbortError") {
         toast.error(
@@ -220,9 +230,11 @@ export default function ContactUs() {
                 {/* Name */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
-                    <label className="text-sm text-slate-600">First Name *</label>
+                    <label className="text-sm text-slate-600">
+                      First Name *
+                    </label>
                     <input
-                    required
+                      required
                       type="text"
                       name="firstName"
                       value={formData.firstName}
@@ -232,7 +244,9 @@ export default function ContactUs() {
                   </div>
 
                   <div className="flex-1">
-                    <label className="text-sm text-slate-600">Last Name *</label>
+                    <label className="text-sm text-slate-600">
+                      Last Name *
+                    </label>
                     <input
                       required
                       type="text"
@@ -308,6 +322,19 @@ export default function ContactUs() {
                     placeholder="Write your message.."
                     className="w-full border-b text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
                   />
+                </div>
+                <div className="mt-4">
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                    onChange={(token: string | null) =>
+                      setRecaptchaToken(token)
+                    }
+                  />
+                  {!recaptchaToken && (
+                    <p className="text-red-500 text-xs sm:text-sm mt-2">
+                      Please complete the reCAPTCHA
+                    </p>
+                  )}
                 </div>
                 {/* Button */}
                 <div className="flex justify-end">
