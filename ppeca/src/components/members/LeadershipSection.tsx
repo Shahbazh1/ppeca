@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import uep_president from "../../../public/images/uep_president.png";
 import sel_ceo from "../../../public/images/sel_ceo.png";
 import ppl_ceo from "../../../public/images/ppl_ceo.png";
-import pogc_md from "../../../public/images/pogc_md.png";
+import pogc_md from "../../../public/images/pogc_md.jpeg";
 import orient_petroleum_ceo from "../../../public/images/orient_petroleum_ceo.png";
 import mol_ceo from "../../../public/images/mol_ceo.png";
 import mari_ceo from "../../../public/images/mari_ceo.png";
