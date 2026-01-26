@@ -226,7 +226,10 @@ export default function ContactUs() {
 
             {/* RIGHT FORM PANEL */}
             <div className="w-full lg:flex-[55%] font-['Open_Sans'] p-6 sm:p-8 lg:p-10 bg-white">
-              <form onSubmit={handleSubmit} className="space-y-6 text-slate-800 sm:space-y-8">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6 text-slate-800 sm:space-y-8"
+              >
                 {/* Name */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
@@ -290,22 +293,26 @@ export default function ContactUs() {
                   </p>
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 text-sm text-slate-600 w-full">
                     {["General Inquiry", "Membership Information"].map(
-                      (item, index) => (
-                        <label
-                          key={index}
-                          className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
-                        >
-                          <input
-                            type="radio"
-                            name="subject"
-                            value="general"
-                            checked={formData.subject === "general"}
-                            onChange={handleChange}
-                            className="w-4 h-4 accent-slate-800 cursor-pointer"
-                          />
-                          <span>{item}</span>
-                        </label>
-                      ),
+                      (item, index) => {
+                        const value =
+                          item === "General Inquiry" ? "general" : "membership";
+                        return (
+                          <label
+                            key={index}
+                            className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                          >
+                            <input
+                              type="radio"
+                              name="subject"
+                              value={value}
+                              checked={formData.subject === value}
+                              onChange={handleChange}
+                              className="w-4 h-4 accent-slate-800 cursor-pointer"
+                            />
+                            <span>{item}</span>
+                          </label>
+                        );
+                      },
                     )}
                   </div>
                 </div>
