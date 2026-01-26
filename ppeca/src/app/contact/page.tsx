@@ -50,7 +50,7 @@ export default function ContactUs() {
 
     const timeoutId = setTimeout(() => {
       controller.abort();
-    }, 5000);
+    }, 10000);
 
     try {
       console.log("Recaptcha Token:", recaptchaToken); // Debug log

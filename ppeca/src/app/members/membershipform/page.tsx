@@ -89,8 +89,8 @@ const CompanyForm = () => {
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => {
-      controller.abort(); // cancel the request after 5 seconds
-    }, 5000);
+      controller.abort(); // cancel the request after 10 seconds
+    }, 10000);
 
     try {
       console.log("Recaptcha Token:", recaptchaToken); // Debug log
