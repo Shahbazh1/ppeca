@@ -320,7 +320,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                     rows={1}
                     placeholder="Write your message.."
-                    className="w-full border-b text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
+                    className="w-full border-b placeholder:text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
                   />
                 </div>
                 <div className="mt-4">
