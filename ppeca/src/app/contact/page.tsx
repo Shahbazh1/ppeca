@@ -226,7 +226,7 @@ export default function ContactUs() {
 
             {/* RIGHT FORM PANEL */}
             <div className="w-full lg:flex-[55%] font-['Open_Sans'] p-6 sm:p-8 lg:p-10 bg-white">
-              <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-6 text-slate-800 sm:space-y-8">
                 {/* Name */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
@@ -320,7 +320,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                     rows={1}
                     placeholder="Write your message.."
-                    className="w-full border-b placeholder:text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
+                    className="w-full border- placeholder:text-[#8a8a8a] border-gray-300 focus:border-[#16A831] outline-none py-3 resize-none"
                   />
                 </div>
                 <div className="mt-4">
