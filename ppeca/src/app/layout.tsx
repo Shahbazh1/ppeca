@@ -60,6 +60,10 @@ export const metadata: Metadata = {
       "Promoting sustainable and responsible energy development in Pakistan's oil and gas sector.",
     images: ["/logo.png"],
   },
+  // Add Google site verification
+  verification: {
+    google: "uFOobaZnHw-R3Ca9trQV5BBOJIt1AgWiPoVuO_BixTI",
+  },
 };
 
 
