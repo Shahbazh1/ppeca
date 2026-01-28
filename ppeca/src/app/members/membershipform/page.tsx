@@ -160,10 +160,9 @@ const CompanyForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-[#0a2540] py-8 lg:pt-12 xl:pt-20"
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-x-6 text-[#0a2540] py-8 lg:pt-12 xl:pt-20"
         >
-          {/* Left Column */}
-          <div className="space-y-4">
+          
             <div>
               <label
                 htmlFor="Member_Name"
@@ -177,6 +176,23 @@ const CompanyForm = () => {
                 name="Member_Name"
                 value={formData.Member_Name}
                 onChange={handleChange}
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="Name_of_chief_executive"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Name of Chief Executive *
+              </label>
+              <input
+                required
+                name="Name_of_chief_executive"
+                value={formData.Name_of_chief_executive}
+                onChange={handleChange}
+                type="text"
                 className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -200,151 +216,6 @@ const CompanyForm = () => {
 
             <div>
               <label
-                htmlFor="brief_profile_of_comapny"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Brief Profile of the Company
-              </label>
-              <textarea
-                name="brief_profile_of_comapny"
-                value={formData.brief_profile_of_comapny}
-                onChange={handleChange}
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="website"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Website
-              </label>
-              <input
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                type="text"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="Head_of_address"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Head Office Address *
-              </label>
-              <input
-                required
-                name="Head_of_address"
-                value={formData.Head_of_address}
-                onChange={handleChange}
-                type="text"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="city"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                City *
-              </label>
-              <input
-                required
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="country"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Country *
-              </label>
-
-              <Select
-                options={countryOptions}
-                isSearchable
-                placeholder="Select or type country"
-                value={
-                  formData.country
-                    ? { label: formData.country, value: formData.country }
-                    : null
-                }
-                onChange={(selected: any) =>
-                  setFormData({
-                    ...formData,
-                    country: selected ? selected.label : "",
-                  })
-                }
-                className="react-select-container"
-                classNamePrefix="react-select"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="concession_in_pakistan"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Concession in Pakistan
-              </label>
-              <input
-                name="concession_in_pakistan"
-                value={formData.concession_in_pakistan}
-                onChange={handleChange}
-                type="text"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="joint_venture_partner"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Joint Venture Partner
-              </label>
-              <input
-                name="joint_venture_partner"
-                value={formData.joint_venture_partner}
-                onChange={handleChange}
-                type="text"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-4">
-            <div>
-              <label
-                htmlFor="Name_of_chief_executive"
-                className="block font-semibold mb-1 text-sm sm:text-base"
-              >
-                Name of Chief Executive *
-              </label>
-              <input
-                required
-                name="Name_of_chief_executive"
-                value={formData.Name_of_chief_executive}
-                onChange={handleChange}
-                type="text"
-                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label
                 htmlFor="name_and_designation_of_ce_in_pakistan"
                 className="block font-semibold mb-1 text-sm sm:text-base"
               >
@@ -355,6 +226,21 @@ const CompanyForm = () => {
                 value={formData.name_and_designation_of_ce_in_pakistan}
                 onChange={handleChange}
                 type="text"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="brief_profile_of_comapny"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Brief Profile of the Company
+              </label>
+              <textarea
+                name="brief_profile_of_comapny"
+                value={formData.brief_profile_of_comapny}
+                onChange={handleChange}
                 className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -377,8 +263,24 @@ const CompanyForm = () => {
 
             <div>
               <label
+                htmlFor="website"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Website
+              </label>
+              <input
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                type="text"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="phone"
-                className="block font-semibold mb-1 md:mt-11.25 text-sm sm:text-base"
+                className="block font-semibold mb-1 text-sm sm:text-base"
               >
                 Phone *
               </label>
@@ -414,6 +316,23 @@ const CompanyForm = () => {
 
             <div>
               <label
+                htmlFor="Head_of_address"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Head Office Address *
+              </label>
+              <input
+                required
+                name="Head_of_address"
+                value={formData.Head_of_address}
+                onChange={handleChange}
+                type="text"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="other_key_contact"
                 className="block font-semibold mb-1 text-sm sm:text-base"
               >
@@ -424,6 +343,23 @@ const CompanyForm = () => {
                 value={formData.other_key_contack}
                 onChange={handleChange}
                 type="text"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="city"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                City *
+              </label>
+              <input
+                required
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
                 className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -447,6 +383,34 @@ const CompanyForm = () => {
 
             <div>
               <label
+                htmlFor="country"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Country *
+              </label>
+
+              <Select
+                options={countryOptions}
+                isSearchable
+                placeholder="Select or type country"
+                value={
+                  formData.country
+                    ? { label: formData.country, value: formData.country }
+                    : null
+                }
+                onChange={(selected: any) =>
+                  setFormData({
+                    ...formData,
+                    country: selected ? selected.label : "",
+                  })
+                }
+                className="react-select-container"
+                classNamePrefix="react-select"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="confirm_email"
                 className="block font-semibold mb-1 text-sm sm:text-base"
               >
@@ -458,6 +422,22 @@ const CompanyForm = () => {
                 value={formData.confirm_email}
                 onChange={handleChange}
                 type="email"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="concession_in_pakistan"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Concession in Pakistan
+              </label>
+              <input
+                name="concession_in_pakistan"
+                value={formData.concession_in_pakistan}
+                onChange={handleChange}
+                type="text"
                 className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -499,7 +479,23 @@ const CompanyForm = () => {
                 </label>
               </div>
             </div>
-          </div>
+
+            <div>
+              <label
+                htmlFor="joint_venture_partner"
+                className="block font-semibold mb-1 text-sm sm:text-base"
+              >
+                Joint Venture Partner
+              </label>
+              <input
+                name="joint_venture_partner"
+                value={formData.joint_venture_partner}
+                onChange={handleChange}
+                type="text"
+                className="w-full border border-[#94a3b8] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
           {/* buttons */}
           <div className="col-span-1 md:col-span-2 flex justify-center gap-6 mt-6">
             <button
