@@ -28,7 +28,6 @@ export default async function LatestNewsHero() {
   let error = null;
 
   try {
-    // This fetch call will be cached and revalidated every 60 seconds (ISR)
     const res = await fetch(API_URL, { next: { revalidate: 60 } });
     
     if (!res.ok) {
@@ -37,16 +36,20 @@ export default async function LatestNewsHero() {
     
     const data = await res.json();
     
+    // If data exists, use it; otherwise, keep newsItems as an empty array
     if (data?.data?.length > 0) {
       newsItems = data.data;
     } else {
-      newsItems = [];
+      newsItems = []; // This ensures the "No News Available" UI triggers
     }
     loading = false;
   } catch (err) {
     console.error("News fetch error:", err);
     error = err;
-    newsItems = fallbackNews;
+    
+    // CHANGE THIS: Instead of newsItems = fallbackNews, 
+    // keep it as an empty array to show your "No News Available" UI
+    newsItems = []; 
     loading = false;
   }
 
@@ -160,11 +163,7 @@ export default async function LatestNewsHero() {
                     </p>
                   </div>
 
-                  <a
-                    href={item.NewsUrl || item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+<Link href={`/news/${item.slug}`}>
                     <Image
                       src={NewsArrow}
                       alt="arrow"
@@ -173,7 +172,7 @@ export default async function LatestNewsHero() {
                       className="self-center cursor-pointer flex-shrink-0"
                       loading="lazy"
                     />
-                  </a>
+                  </Link>
                 </div>
               ))}
           </div>

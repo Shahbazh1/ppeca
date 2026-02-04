@@ -24,7 +24,7 @@ export default async function Home() {
   try {
     // Fetch all news at once by setting a large pageSize
     const res = await fetch(
-      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=1&pagination[pageSize]=1000`,
+      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=1&pagination[pageSize]=1000&sort=publishedAt:desc`,
       { next: { revalidate: 60 } } // ISR: revalidate every 60s
     );
 
@@ -88,6 +88,7 @@ export default async function Home() {
               description={item.NewsDescription}
               publishedTime={item.publishedAt}
               url={item.NewsUrl}
+              slug={item.slug}
             />
           ))
         ) : (
