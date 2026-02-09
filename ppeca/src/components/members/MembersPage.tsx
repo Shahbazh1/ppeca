@@ -112,7 +112,7 @@ const companyData = [
   {
     id: 3,
     logo: MARI_LOGO, // Replace MARI_logo with the actual imported logo variable if available
-    name: "Mari Energies Limited",
+    name: "MariEnergies Limited – Corporate Profile (FY 2025)",
     address:
       "Plot No. 21, Mauve Area, 3rd Road, G-10/4, P.O. Box O. No. 1614, Islamabad",
     ceo: "Mr. Faheem Haider",
