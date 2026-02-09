@@ -118,8 +118,26 @@ const companyData = [
     ceo: "Mr. Faheem Haider",
     designation: "Managing Director/CEO",
     description: [
-      "Mari Energies Limited is a leading energy company in Pakistan, engaged in exploration, development, and production of oil and gas resources. The company focuses on sustainable energy practices and aims to contribute significantly to the country's energy sector.",
-    ],
+    "MariEnergies Limited is Pakistan’s one of the largest indigenous Exploration & Production (E&P) company, playing a pivotal role in the country’s energy security and economic development. The name MARI originates from the Mari Gas Field—the largest gas field in Pakistan—discovered in 1957, forming the foundation of the company’s legacy.",
+
+    "Core Strengths & Operations (as of FY 2025): MariEnergies operates a diversified upstream portfolio spanning exploration, development, and production of hydrocarbons. As of FY 2025, the company manages 72 licenses and 15 Development & Production Leases covering approximately 155,703 square kilometers, including one offshore block in Abu Dhabi.",
+
+    "Production capacity stands at approximately 127,000 barrels of oil equivalent per day (BOE/day). Total reserves and resources (2P + 2C) are estimated at around 952 million BOE as of 30 June 2025. Between FY 2020 and FY 2025, the company invested over USD 1.1 billion in exploration and development activities.",
+
+    "Market Position & Ownership (FY 2025): MariEnergies is listed on the Pakistan Stock Exchange (PSX) with a market capitalization of approximately USD 3.2 billion as of 9 January 2026. The company is part of the Fauji Foundation Group, Pakistan’s largest social hybrid enterprise.",
+
+    "Shareholding structure comprises Fauji Foundation holding 40% with management rights, Government of Pakistan 20%, OGDCL 20%, and General Public 20%.",
+
+    "Strategic Outlook – Vision 2030: MariEnergies aims to strengthen its core business by targeting production of 150–175 thousand BOE per day by 2030 while maintaining a 100% reserve replacement ratio and increasing oil contribution to around 30% of total production.",
+
+    "The company plans to diversify beyond hydrocarbons by expanding into critical minerals such as copper and gold, technology, data centers, renewables, and green hydrogen, allocating 20–30% of future investments to diversified sectors.",
+
+    "ESG & Sustainability initiatives focus on carbon footprint reduction through carbon capture and CO₂ utilization projects, enhanced governance frameworks, operational efficiency, and continued community development and CSR programs.",
+
+    "Mari Services Division, established in 2014, serves as the company’s in-house integrated E&P services arm, providing seismic acquisition, drilling, processing, and reservoir characterization services, particularly in technically complex and security-sensitive areas.",
+  
+    "Value Creation & National Contribution (FY 2020–FY 2025): Over the five-year period ending FY 2025, MariEnergies contributed approximately USD 1.7 billion to the national exchequer, delivered a total shareholder return of ~410%, achieved market capitalization growth of ~689%, and invested over PKR 13 billion in CSR initiatives.",
+  ],
     telephone: "92 (51) 2297683-4, 051-111-410-410",
     fax: "92 (51) 2297686",
     website: "#", // Add actual website if available
