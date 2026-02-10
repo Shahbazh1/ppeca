@@ -28,7 +28,7 @@ export default async function LatestNewsHero() {
   let error = null;
 
   try {
-    const res = await fetch(API_URL, { next: { revalidate: 60 } });
+    const res = await fetch(API_URL, { next: { revalidate: 300 } });
     
     if (!res.ok) {
       throw new Error('Failed to fetch news');
