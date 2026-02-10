@@ -30,8 +30,41 @@ export default async function Page({ params }: PageProps) {
   const news = response?.data?.[0];
 
   if (!news) {
-    notFound();
-  }
+  return (
+    <article className="min-h-screen bg-white pb-20">
+      {/* Breadcrumb */}
+      <div className="border-b border-gray-200 py-4 mb-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <nav className="flex gap-2 items-center text-sm text-gray-500">
+            <Link href="/" className="hover:text-[#004a26]">Home</Link>
+            <span>/</span>
+            <Link href="/news" className="hover:text-[#004a26]">News & Events</Link>
+            <span>/</span>
+            <span className="text-gray-800 font-medium">Not Available</span>
+          </nav>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
+        <h1 className="text-3xl font-bold text-[#0a2540] mb-4">
+          News Not Available
+        </h1>
+        <p className="text-gray-600 max-w-xl mx-auto mb-8">
+          This news article may have been removed or is no longer available.
+          Please explore other latest news and updates.
+        </p>
+
+        <Link
+          href="/news"
+          className="inline-flex px-6 py-3 bg-[#004a26] text-white font-semibold hover:bg-[#00361d] transition"
+        >
+          View All News
+        </Link>
+      </div>
+    </article>
+  );
+}
+
 
   const imageUrl = news.NewsImage?.url
     ? `${API_BASE_URL}${news.NewsImage.url}`
