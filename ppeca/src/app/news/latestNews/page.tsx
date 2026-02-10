@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: PageProps) {
   try {
     const res = await fetch(
       `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`,
-      { next: { revalidate: 60 } },
+      { next: { revalidate: 300 } },
     );
 
     if (!res.ok) throw new Error("Failed to fetch news");
