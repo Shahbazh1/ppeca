@@ -7,7 +7,8 @@ const PolicyHeader: React.FC = () => {
     const API_BASE_URL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL;
 
 
-  let pdfUrl=`https://api.ppepca.com.pk/uploads/Petroleum_Policy_2012_Gazzette_02807fa200.pdf`
+  let pdfUrl=`https://media.ppepca.com.pk/uploads/Petroleum_Policy_2012_Gazzette_f3558c7554.pdf`
+  
 
   const downloadPdf = async () => {
   if (!pdfUrl) return;
@@ -42,7 +43,7 @@ const PolicyHeader: React.FC = () => {
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
           <a
           aria-label="Visit Petroleum Policy 2012 document"
-            href={`https://api.ppepca.com.pk/uploads/Petroleum_Policy_2012_Gazzette_02807fa200.pdf`}
+            href={`https://media.ppepca.com.pk/uploads/Petroleum_Policy_2012_Gazzette_f3558c7554.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#16A831] hover:bg-[#128a28] font-['Open_Sans'] cursor-pointer px-6 sm:px-8 md:px-10 py-2 text-xs sm:text-sm font-medium text-white rounded-xs hover:opacity-90 transition"
