@@ -13,31 +13,31 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const trainingData: TrainingItem[] = [
   {
     title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
-    fileUrl: `${API_BASE_URL}/uploads/MOL_1_2_eb5d12cd37.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Applications_in_MOL_s_Perspective_by_MOL_Group_c08af8cc5c.pdf`,
   },
   {
     title: "EOR related R&D – by MOL Group",
-    fileUrl: `${API_BASE_URL}/uploads/MOL_2_e8123b2c87.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/EOR_related_R_and_D_by_MOL_Group_8e2a075cf3.pdf`,
   },
   {
     title: "Fast Track EOR: Re-designing through Integration",
-    fileUrl: `${API_BASE_URL}/uploads/Schlumberger_1_b54e2cb987.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/Fast_Track_EOR_Re_designing_through_Integration_09cd7c5883.pdf`,
   },
   {
     title: "EOR Techniques Smart Screening for Candidate Reservoir",
-    fileUrl: `${API_BASE_URL}/uploads/Schlumberger_2_137144acfd.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/EOR_Techniques_Smart_Screening_for_Candidate_Reservoir_49761c17c8.pdf`,
   },
   {
     title: "IOR/EOR Monitoring & Control System – by Weatherford",
-    fileUrl: `${API_BASE_URL}/uploads/Weatherford_1_b121e3a3cc.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Monitoring_and_Control_System_by_Weatherford_e66f279a6b.pdf`,
   },
   {
     title: "EOR Alliance – by Black Gold",
-    fileUrl: `${API_BASE_URL}/uploads/Black_Gold_Beicip_Franlab_b24a3a1c06.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/EOR_Alliance_by_Black_Gold_4941955889.pdf`,
   },
   {
     title: "IOR/EOR Applications in MOL’s Perspective",
-    fileUrl: `${API_BASE_URL}/uploads/Weatherford_2_7ebbbe7a77.pdf`,
+    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Applications_in_MOL_s_Perspective_8031d3218c.pdf`,
   },
 ];
 
