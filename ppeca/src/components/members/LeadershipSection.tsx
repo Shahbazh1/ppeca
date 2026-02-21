@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 import uep_president from "../../../public/images/uep_president.png";
+import uep_president_update_image from '../../../public/images/uep_president_update_image.jpg'
 import sel_ceo from "../../../public/images/sel_ceo.png";
 import ppl_ceo from "../../../public/images/ppl_ceo.png";
 import pogc_md from "../../../public/images/pogc_md.jpeg";
@@ -75,7 +76,7 @@ const leaders = [
     name: "Mr. Muhammad Zaheer",
     title: "President",
     company: "United Energy Pakistan",
-    image: uep_president,
+    image: uep_president_update_image,
   },
   {
     role: " Secretary General PPEPCA",
