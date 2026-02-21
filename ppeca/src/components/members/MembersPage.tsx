@@ -13,6 +13,7 @@ import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
+import UEP_NEW_LOGO from '../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg';
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
 import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
 import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
@@ -218,14 +219,6 @@ const companyData = [
       "Beyond its core exploration and production operations, POGC is deeply committed to Corporate Social Responsibility in District Dadu, Sindh, where it maintains a long-standing presence, delivering meaningful and transformative impact through inclusive, sustainable programs focused on underserved communities including providing clean water, enhancing healthcare access via medical camps and awareness campaigns, installing solar power solutions to ensure reliable electricity for schools, and promoting youth development through sports, fitness events, and community engagement initiatives.",
 
 
-  // "PGNiG began its operations in Pakistan in May 1997 and has been conducting petroleum exploration and production activities as an Operator since then. Before acquiring the current Kirthar Concession (Block No. 2667-7), PGNiG operated and carried out exploration activities in four other concessions namely Khanpur West, Sabzal, Mekhtar and Sabzal South. PGNiG also held a 40% working interest in an exploration block in Nawabshah, Sindh as a Non-Operating Partner.",
-  // "PGNiG acquired the Kirthar Block, located in District Dadu (Sindh), as Operator in 2005 and Pakistan Petroleum Limited (PPL) farmed-in the Block as a Joint Venture Partner in 2006.",
-  // "PGNiG made discovery of Rehman-1 well in 2009 and started extended well test production from it in 2013, becoming the first 'Tight Gas' producer in Pakistan. The appraisal phase for Rehman gas field was successfully concluded in August 2015 whereby commerciality of the field was declared. Government of Pakistan awarded a Development and Production Lease over Rehman field in 2017 for a period of 25 years.",
-  // "In 2015, PGNiG made a second discovery by drilling Rizq-1 well in the Kirthar Block. This year also marked the commissioning of the Rehman Production Facility (RPF), constructed to process gas from Rehman and Rizq fields, which was inaugurated on November 17, 2015 by the then Honourable Minister for Petroleum & Natural Resources.",
-  // "PGNiG more than doubled its production from the Kirthar Block when gas from Rizq field was added to the national grid in November 2016. In 2017, processing capacity of RPF was enhanced from 15 to 40 MMScfd to incorporate anticipated production from Rizq field. The appraisal program of Rizq field was completed in 2018 followed by declaration of commerciality and grant of Development and Production Lease for a period of 25 years.",
-  // "PGNiG has drilled 11 wells in Kirthar Block comprising 3 exploratory, 3 appraisal and 5 development wells. PGNiG has invested approximately US$233 million in Pakistan in exploration and production activities, out of which approximately US$216 million were invested in Kirthar Block mainly on exploration, drilling, construction and augmentation of Rehman Production Facility, and around 50 km of sales gas transport pipeline.",
-  // "Current production from the producing wells in the Kirthar Block stands at approximately 35 MMScfd and is planned to be increased to approximately 80 MMScfd with continued development of existing fields and other exploratory prospects. The Rehman Production Facility was augmented in September 2019 to cater for increased processing and dehydration requirements.",
-  // "PGNiG is actively pursuing the development plan of Rehman and Rizq fields in the Kirthar Block and aims to increase its footprint in the Pakistani upstream sector. PGNiG trusts the investment climate in Pakistan and remains committed to contributing to the country’s energy security."
 ]
 ,
     telephone: "(+92 51) 111 765 474",
@@ -309,39 +302,32 @@ const companyData = [
 ,
     telephone: "92 (51) 5913012-13",
     fax: "92 (51) 5912852",
-    website: "www.saifenergy.com",
+    website: "#",
   },
   {
     id: 5,
-    logo: UEP_LOGO, // Replace UEPL_logo with the actual imported logo variable if available
-    name: "United Energy Pakistan Limited (UEPL)",
+    logo: UEP_NEW_LOGO, // Replace UEPL_logo with the actual imported logo variable if available
+    name: "United Energy Pakistan Limited",
     address:
-      "3rd Floor, Bahria Complex, 24, Moulvi Tamizuddin Khan Road, Karachi-2",
+      "17th Floor, The Sky Tower – East Wing. Dolmen City, HC 3, Block 4, Scheme 5, Clifton, Karachi, Pakistan.",
     ceo: "Mr. Zaheer Alam",
     designation: "President",
     description: [
-  "United Energy Pakistan Limited (UEPL) assumed control of oil and gas exploration and production assets previously managed by BP Pakistan in September 2011 and focuses on the complete E&P process from initial site assessment to first oil and gas production.",
-  "All UEPL operations are based in Sindh province, with concession areas beginning approximately 100 km east of Karachi and spanning eight districts: Badin, Tando Mohammad Khan, Tando Allahyar, Thatta, Hyderabad (rural), Matiari, Sanghar, and Mirpurkhas.",
-  "The company’s asset portfolio includes nine onshore producing and exploration blocks in Sindh and four offshore exploration blocks in the Arabian Sea. UEPL has also recently secured two additional exploration blocks, Digri and Sanghar South, adjacent to its Mirpur Khas–Khipro concession areas.",
-  "UEPL’s onshore operational footprint exceeds 10,000 square kilometres, along with the largest offshore acreage awarded to a single E&P company in Pakistan to date, located approximately 250 km south of Karachi in ultra-deep waters.",
-  "UEPL maintains offices in Karachi and Islamabad, with an additional field office located in the Badin district.",
-  "United Energy Pakistan Limited is a subsidiary of United Energy Group (UEG), a Hong Kong–listed company primarily engaged in upstream oil and gas exploration, development, and production, as well as the provision of patented oilfield support technologies.",
-  "UEG has active operations and joint ventures in China and Indonesia, including a partnership with China National Petroleum Company (CNPC), and is evaluating energy projects in North America, South America, and Central Asia.",
-  "The acquisition of assets in Pakistan represents UEG’s first venture in the country, with plans to further expand its Pakistan business, supported by strong Pak–China diplomatic relations.",
-  "UEPL employs a 100% Pakistani workforce, including all senior leadership roles, with team members collectively bringing over 30 years of experience in oil and gas exploration and production.",
-  "The company prioritizes local hiring and operates an Operator Training Programme, through which nearly 300 individuals from concession districts have been trained, many of whom have progressed to senior field positions or roles in reputed national and international companies.",
-  "UEPL’s exploration and production partners in Pakistan include Government Holdings Private Limited, Oil and Gas Development Company Limited (OGDCL), Pakistan Petroleum Limited (PPL), Zaver Petroleum Corporation Limited, and Bow Energy Resources (Pakistan).",
-  "As a responsible corporate citizen, UEPL invests in community development initiatives focused on health, education, and infrastructure within its operational areas.",
-  "Health-related initiatives include funding medical equipment for hospitals, constructing basic health centres, providing anti-snake venom, and training Traditional Birth Attendants within local communities.",
-  "UEPL has made significant investments in education, particularly promoting female literacy, including the construction of the Degree College for Women in Matli, from which over 4,000 girls have graduated.",
-  "The company has also built the only two higher secondary girls’ schools in Badin district, constructed primary schools in remote villages, and is developing additional primary schools in partnership with The Citizens’ Foundation.",
-  "UEPL collaborates with the United Nations Development Programme (UNDP) and local NGOs on sustainable community development projects, including energy-efficient technologies, livestock farming, and income-generating agriculture on saline land.",
-  "In times of emergency, including floods in Badin and the 2005 earthquake in northern Pakistan, UEPL has provided humanitarian assistance to support affected communities."
+"United Energy Pakistan (UEP) is a subsidiary of the Hong Kong-listed international energy company, United Energy Group (UEG), which has E&P operations in Pakistan, Iraq, Egypt and Uzbekistan. As the leading foreign oil and gas exploration and production company in Pakistan, UEP’s footprint spans over 26,000 square kilometers in Sindh, Baluchistan and Punjab.   ",
+"Our history stretches over four decades, with the business experiencing a change in ownership several times from UTP to ARCO and subsequently to BP. In 2011, UEG acquired control of this asset from BP, marking a new era of growth for the company. ",
+"Backed by UEG’s technical and financial support, UEP has invested over $5 billion since 2011. These funds have been used for aggressive exploration and development activities, such as conducting 7,800 square kilometers of 3D seismic acquisition, drilling more than 400 wells and making around 100 discoveries. UEP has also embarked on exciting new exploration ventures, such as conducting 1,100-line kilometers of 2D seismic with more planned.  ",
+"Along with strengthening production and profitability, UEP is committed to building a business that contributes to the well-being of its workforce and stakeholders. The company is acutely aware of its operating environment and places significant emphasis on preserving the safety and welfare of everyone engaged in or impacted by its operations. ",
+"Over the years, UEP has invested in a rich social investment portfolio that is aligned with the UN’s Sustainable Development Goals (SDGs) and focuses on eight out of seventeen SDGs, including helping provide primary and secondary education, access to clean drinking water, partnership for goals, decent work and economic growth, affordable and clean energy, innovation, gender equality, and quality health services for the local communities. Our CSR projects are implemented in partnership with district administrations and leading NGOs, including The Citizens Foundation (TCF) and Aga Khan University (AKU). ",
+"We maintain meaningful educational partnerships with leading institutions such as NUST, Mehran University, Sukkur Institute of Allied Sciences, & other leading Educational Institutes in Pakistan, offering scholarships to deserving students. Through these initiatives, we invest in potential, nurture talent, and help shape the leaders of tomorrow, ensuring a brighter future for our communities and our industry. ",
+"Recognizing the need for basic necessities, like clean water, we have also established over 58 Solar powered Reverse Osmosis plants, and through these plants, more than 100,000 people in interior Sindh now have access to clean drinking water. ",
+"In terms of health services, UEP has helped over 12 million people by establishing more than 27 facilities in 7 districts and donating numerous medical supplies. These include surgical equipment, ultrasound machines, X-ray machines, ambulances, eye equipment, dental equipment, laboratory equipment, and more. ",
+"We also contribute to local development and welfare in the areas in which we operate through job creation. Our Operator Training Program is one of a kind in the industry. It provides a unique opportunity for the local youth in our concession areas to build a career in the oil and gas sector. Additionally, we build capacity by working with local businesses and have actively developed the expertise of several local contractors. Our contract companies have grown in scale and skills. Several local contractors are now managing major civil construction projects in our operating areas and providing employment opportunities for surrounding communities.  ",
+"The core strength of UEP is its expertise and spirit of exploration, but what energizes us is the spirit of the people we work with. UEP remains resolute in its unwavering dedication to using innovation to drive success and to empower the local community. ",
 ]
 ,
-    telephone: "021-35610205-8, 021-35611194-6, 021-35610638-46",
-    fax: "021-35610634, 021-35610966",
-    website: "#", // Add actual website if available
+    telephone: "+92-21-3561-1194, +92-21-3561-1198",
+    fax: "+92-21-3561-0634",
+    website: "https://uep.com.pk/", // Add actual website if available
   },
 ];
 
@@ -419,7 +405,7 @@ if (!company) return <div>Company not found!</div>;
           <div className="mt-4">
             <a
               // target="_blank"
-              href="#"
+              href={company.website}
               className="inline-block bg-[#16A831] hover:bg-[#128a28] text-[#F8FAFC] font-semibold px-6 py-2 rounded  transition"
             >
               Visit Website

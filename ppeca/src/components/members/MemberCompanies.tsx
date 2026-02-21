@@ -19,6 +19,7 @@ import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
+import UEP_NEW_LOGO from '../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg'
 
 interface Company {
   id: number;
@@ -31,7 +32,7 @@ const companies: Company[] = [
   { id: 2, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
   { id: 3, name: "Mari Energies Limited", logo: MARI_LOGO },
   { id: 4, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
-  { id: 5, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_LOGO },
+  { id: 5, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_NEW_LOGO },
   { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
   { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
   { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
