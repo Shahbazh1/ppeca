@@ -3,7 +3,7 @@ import Secretariat_img from '../../../public/images/Secretariat_img.png';
 
 const SecretariatSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-4 sm:px-6 md:px-8 pt-10 sm:pt-14 md:pt-16 lg:pt-20">
+    <section className="w-full bg-[#f8fafc] px-4 sm:px-6 md:px-8 pt-10 lg:pt-14">
       <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start justify-between gap-8 sm:gap-10 lg:gap-12">
         {/* LEFT CONTENT */}
         <div className="flex-1 w-full">

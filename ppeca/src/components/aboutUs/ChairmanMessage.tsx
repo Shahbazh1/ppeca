@@ -3,7 +3,7 @@ import kufpec_manager from "../../../public/images/chairman2.png";
 
 const ChairmanMessage = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-[22px] pt-10 sm:pt-14 md:pt-16 lg:pt-20">
+    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-[22px] pt-10 lg:pt-14">
       <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-stretch justify-between gap-2 sm:gap-4 lg:gap-12">
         {/* LEFT CONTENT */}
         <div className="flex-1 lg:w-[60%]">

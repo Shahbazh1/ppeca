@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CorporateSocialResponsibility() {
   return (
-    <section className="bg-[#f8fafc] px-4 sm:px-6 pt-10 sm:pt-14 md:pt-16 lg:pt-20">
+    <section className="bg-[#f8fafc] px-4 sm:px-6 pt-10 lg:pt-14">
       <div className="mx-auto max-w-7xl">
         <div className="rounded-lg border border-gray-300 bg-white px-5 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-7 md:py-8">
           {/* Heading */}
