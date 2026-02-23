@@ -9,6 +9,7 @@ import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
 import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
 import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
+import KUFPEC_NEW_LOGO from '../../../public/images/companies_logo/KUFPEC_NEW_LOGO.png'
 import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
@@ -39,7 +40,7 @@ const companies: Company[] = [
   { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
   { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
   { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
-  { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+  { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_NEW_LOGO },
   { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
   {
     id: 14,

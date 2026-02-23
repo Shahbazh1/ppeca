@@ -4,22 +4,22 @@ export const dynamic = "force-dynamic";
 
 import React from "react";
 import { useSearchParams } from "next/navigation";
-import AEPL_LOGO from "../../../public/images/POL_logo.png";
-import POL_logo from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
-import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
-import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
+import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO-removebg-preview.png";
+import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO-removebg-preview.png";
+import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO-removebg-preview.png";
 import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
-import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
-import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
+import KUFPEC_NEW_LOGO from '../../../public/images/companies_logo/KUFPEC_NEW_LOGO.png'
+import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO-removebg-preview.png";
+import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO-removebg-preview.png";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
 import UEP_NEW_LOGO from '../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg';
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
-import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
-import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
-import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
-import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
-import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
+import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO-removebg-preview.png";
+import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO-removebg-preview.png";
+import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO-removebg-preview.png";
+import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO-removebg-preview.png";
+import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO-removebg-preview.png";
 
 
 
@@ -30,7 +30,7 @@ import { Suspense } from "react";
 const companyData = [
   {
     id: 11,
-    logo: POL_logo,
+    logo: AEPL_LOGO,
     name: "Al-Haj Enterprises (Private) Limited",
     address:
       "Street No. 29, Plot No. 145, Etihad Plaza, I & T Centre, Sector G-9/1, Islamabad",
@@ -71,7 +71,7 @@ const companyData = [
   },
   {
     id: 12,
-    logo: KUFPEC_LOGO, // Replace KUFPEC_logo with the actual imported logo variable if available
+    logo: KUFPEC_NEW_LOGO, // Replace KUFPEC_logo with the actual imported logo variable if available
     // name: "Kirthar Pakistan Holdings B.V. (Formerly known as Premier – KUFPEC Pakistan B.V)",
     name:"KUFPEC Pakistan",
     address:
@@ -349,7 +349,7 @@ if (!company) return <div>Company not found!</div>;
         <Image
           src={company.logo}
           alt="Company Logo"
-          className="xl:w-[144px] xl:h-[144px] lg:w-[129.6px] lg:h-[129.6px] md:w-[116.64px] md:h-[116.64px] sm:w-[105px] sm:h-[105px] h-[94.5px] w-[94.5px] rounded-lg bg-white object-contain"
+          className="xl:w-[144px] xl:h-[144px] lg:w-[129.6px] lg:h-[129.6px] md:w-[116.64px] md:h-[116.64px] sm:w-[105px] sm:h-[105px] h-[94.5px] w-[94.5px] rounded-lg object-contain"
           loading="lazy"
         />
         <h1 className="lg:text-[20px] md:text-[18px] sm:text-[16px] text-14px font-semibold mt-4 text-[#334155] font-['Open_Sans']">
