@@ -16,12 +16,12 @@ export default function Footer() {
 
     <footer className="bg-white text-[#0A2540] max-w-[1536px] mx-auto">
       {/* Top Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16 2xl:gap-24 px-6 md:px-10 lg:px-16 xl:px-20 pt-12 mb-24 bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:gap-16 2xl:gap-24 px-6 md:px-10 lg:px-16 xl:px-20 pt-12 mb-10 xl:mb-24 bg-white">
         {/* Left: Logo + Description + Social */}
-        <div className="flex flex-col md:max-w-[28rem] justify-between">
+        <div className="flex flex-col md:max-w-[28rem]">
           <Image
             src={logo}
-            alt="PPEPCA"
+            alt="PPEPCA logo"
             width={77}
             height={41}
             className="rounded-[52px] mb-5"
@@ -36,7 +36,7 @@ export default function Footer() {
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-3 mt-6 text-black text-[18px] md:text-[20px]">
+          <div className="hidden flex gap-3 mt-6 text-black text-[18px] md:text-[20px]">
             <Link aria-label="Follow us on Facebook" href="#">
               {/* <FaFacebookF /> */}
             </Link>

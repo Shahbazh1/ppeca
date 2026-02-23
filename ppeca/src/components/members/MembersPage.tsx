@@ -310,8 +310,8 @@ const companyData = [
     name: "United Energy Pakistan Limited",
     address:
       "17th Floor, The Sky Tower – East Wing. Dolmen City, HC 3, Block 4, Scheme 5, Clifton, Karachi, Pakistan.",
-    ceo: "Mr. Zaheer Alam",
-    designation: "President",
+    ceo: "Mr. M. Zaheer Alam - President",
+    designation: "",
     description: [
 "United Energy Pakistan (UEP) is a subsidiary of the Hong Kong-listed international energy company, United Energy Group (UEG), which has E&P operations in Pakistan, Iraq, Egypt and Uzbekistan. As the leading foreign oil and gas exploration and production company in Pakistan, UEP’s footprint spans over 26,000 square kilometers in Sindh, Baluchistan and Punjab.   ",
 "Our history stretches over four decades, with the business experiencing a change in ownership several times from UTP to ARCO and subsequently to BP. In 2011, UEG acquired control of this asset from BP, marking a new era of growth for the company. ",
@@ -349,7 +349,7 @@ if (!company) return <div>Company not found!</div>;
         <Image
           src={company.logo}
           alt="Company Logo"
-          className="xl:w-[144px] xl:h-[144px] lg:w-[129.6px] lg:h-[129.6px] md:w-[116.64px] md:h-[116.64px] sm:w-[105px] sm:h-[105px] h-[94.5px] w-[94.5px] rounded-full bg-white object-contain"
+          className="xl:w-[144px] xl:h-[144px] lg:w-[129.6px] lg:h-[129.6px] md:w-[116.64px] md:h-[116.64px] sm:w-[105px] sm:h-[105px] h-[94.5px] w-[94.5px] rounded-lg bg-white object-contain"
           loading="lazy"
         />
         <h1 className="lg:text-[20px] md:text-[18px] sm:text-[16px] text-14px font-semibold mt-4 text-[#334155] font-['Open_Sans']">
