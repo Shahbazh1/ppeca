@@ -151,7 +151,7 @@ export default function ContactUs() {
           {/* Card */}
           <div className="bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
             {/* LEFT INFO PANEL */}
-            <div className="relative w-full font-['Poppins'] lg:flex-[45%] bg-white border border-[#94a3b8]/70 rounded-xl m-3 p-6 sm:p-8 overflow-hidden flex flex-col">
+            <div className="relative w-auto font-['Poppins'] lg:flex-[45%] bg-white border border-[#94a3b8]/70 rounded-xl m-3 p-6 sm:p-8 overflow-hidden flex flex-col">
               {/* Title & Description (TOP) */}
               <div>
                 <h2 className="text-xl sm:text-2xl font-semibold text-[#0a2540]">
@@ -163,7 +163,7 @@ export default function ContactUs() {
               </div>
 
               {/* Contact Details (CENTER) */}
-              <div className="flex-1 flex items-center py-4 sm:py-6">
+              <div className="flex-1 z-10 flex items-center py-4 sm:py-6">
                 <div className="space-y-4 sm:space-y-6 text-[#334155] w-full">
                   <div className="flex items-center gap-4">
                     <img
@@ -193,7 +193,7 @@ export default function ContactUs() {
                       alt="location"
                       className="w-5 h-5 mt-1 flex-shrink-0"
                     />
-                    <span className="text-sm sm:text-base">
+                    <span className="text-sm sm:text-base ">
                       LG04, Block 02, Savoy Residences,
                       <br />
                       F-11/1, Islamabad
@@ -218,9 +218,9 @@ export default function ContactUs() {
               </div>
 
               {/* Decorative circles (unchanged & clipped) */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute bottom-12 -right-5 w-40 h-40 sm:w-64 sm:h-64 bg-[#e3f5e6] rounded-full opacity-60 translate-x-1/3 translate-y-1/3"></div>
-                <div className="absolute bottom-24 right-18 w-24 h-24 sm:w-40 sm:h-40 bg-[#e3f5e6] rounded-full opacity-60"></div>
+              <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute bottom-6 md:bottom-12 -right-5 lg:-right-5 w-40 h-40 sm:w-64 sm:h-64 bg-[#e3f5e6] rounded-full opacity-60 translate-x-1/3 translate-y-1/3"></div>
+                <div className="absolute bottom-16 md:bottom-24 right-10 lg:right-18 w-24 h-24 sm:w-40 sm:h-40 bg-[#e3f5e6] rounded-full opacity-60"></div>
               </div>
             </div>
 

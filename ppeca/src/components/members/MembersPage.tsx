@@ -72,19 +72,19 @@ const companyData = [
   {
     id: 12,
     logo: KUFPEC_LOGO, // Replace KUFPEC_logo with the actual imported logo variable if available
-    name: "Kirthar Pakistan Holdings B.V. (Formerly known as Premier – KUFPEC Pakistan B.V)",
+    // name: "Kirthar Pakistan Holdings B.V. (Formerly known as Premier – KUFPEC Pakistan B.V)",
+    name:"KUFPEC Pakistan",
     address:
       "3rd Floor, ONE Expressway, Gulberg Greens Entrance, Islamabad Expressway, Postal Code 44000, Islamabad, Pakistan",
     ceo: "Mr. Ali Taha Al Temimi",
     designation: "Country Manager",
     description: [
-      "Kuwait Foreign Petroleum Exploration Company (KUFPEC) was established by its parent company Kuwait Petroleum Corporation (KPC) in 1981. KUFPEC is an international oil company engaged in exploration, development and production of crude oil and gas both onshore and offshore, outside Kuwait. To this end, KUFPEC is active in Africa, Middle East, Far East and Australia and South East Asia. Over years, KUFPEC has successfully expanded its operations in these four (4) regions and acquired exploration and production licenses in 13 countries.",
-      "Pakistan operations come under Middle East Region, which currently manages 16 projects in four (4) countries. Those projects, representing a good balance between exploration, development and producing properties, make the Middle East Region one of KUFPEC’s most important sources of revenue, to which Pakistan makes a substantial contribution.",
-      "KUFPEC has been active in Pakistan since the mid-1980’s, with its first acquisition in the second half of that decade and first production in the mid-1990’s. As one of the country’s most significant foreign investors, the Company has, currently, four (4) producing interests, two (2) developing gas fields, and two (2) exploration blocks. These assets are held and managed through Pakistan based subsidiary company KUFPEC Pakistan Holdings B.V.",
-      "KUFPEC’s first and oldest producing investment in Pakistan is the Kadanwari Gas Field, located in Sindh Province, where it holds 15.789% working interest. Other producing fields include Qadirpur (13.25%), Zamzama (9.375%) and Bhit (6%), all located in Sindh. All these are gas producing fields and cater for domestic, commercial and industrial sector needs.",
-      "Two exploration interests that KUFPEC has in Pakistan include: a) onshore Dadhar (22.81%) in Baluchistan and b) Indus Offshore (12.50%), Block E 2365-1. Two assets in development stage include Badhra (6%) in Sindh adjoining Bhit field and Zarghun South (3.75%) in Baluchistan. Both will be brought on-stream in 2008. Further exploitation is being carried out in Kadanwari, Qadirpur, and Zamzama assets.",
-      "KUFPEC remains committed to this vital area and is actively seeking further suitable opportunities.",
-      "For more detail information please visit KUFPEC web-site - www.KUFPEC.com."
+      "Kuwait Foreign Petroleum Exploration Company K.S.C.C. (KUFPEC) was established in 1981 as a wholly owned subsidiary of Kuwait Petroleum Corporation (KPC), owned by the State of Kuwait. The principal activities of KUFPEC are the exploration, development and production of oil and gas in both on-shore and off-shore, outside the State of Kuwait. KUFPEC is currently active in 10 countries, in 3 core regions spanning over 5 continents. KUFPEC is active in Asia and Euro-Africa Region (Pakistan, Yemen, Malaysia Indonesia, United Kingdom, Mauritania and Egypt) and Canada & Australia Region; (Australia and Canada) and engaged in exploration, development and production of oil and gas.",
+      "KUFPEC has been operating in Pakistan through its subsidiaries i.e., Kirthar Pakistan B.V., PKP Kirthar B.V., KUFPEC Pakistan B.V., PKP Exploration 2 Limited, and PKP Kadanwari Limited (the “KUFPEC Subsidiaries”).  ",
+      "KUFPEC Subsidiaries have working interests in Qadirpur (13.25%), Bhit / Badhra (34%), Kadanwari (15.79%), and Zamzama (9.375%) gas fields, where gas fields are operated by Oil & Gas Development Company Limited (OGDCL), Prime Pakistan Limited (formerly known as Eni Pakistan Limited) and Orient Petroleum (OPL). All these gas producing fields cater for domestic, commercial, and industrial sector needs.  Sui Northern Gas Pipelines Limited (SNGPL) and Sui Southern Gas Company Limited (SSGCL) are major customers of KUFPEC Subsidiaries.",
+      "KUFPEC Pakistan through its subsidiary- Kirthar Pakistan B.V. assumed the role of Operator E&P Company in Pakistan with the award of “Jati” Exploration Block on Government- to- Government basis in October 2012 in Sindh Province; 2nd Exploration Block “Paharpur” was awarded in March 2015 in KP Province and 3rd Exploration Block “Makhad” was signed on 22nd May 2019 with the Government of Pakistan.  ",
+      "KUFPEC Pakistan is a key member of Pakistan Petroleum Exploration and Production Companies Association (PPEPCA) where its presence, while having Chairmanship of PPEPCA and foreign producer of gas is recognized as amongst the main partners to the Government of Pakistan in meeting country’s energy challenges successfully for over past two decades.",
+      "KUFPEC Pakistan assets are being managed through its Area Office Pakistan, Islamabad."
     ],
     telephone: "92 (51) 8494400",
     fax: "92 (51) 8484400",
