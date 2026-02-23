@@ -62,7 +62,7 @@ export default function SurplusInventorySection() {
 
 
   return (
-    <section className="w-full bg-[#f8fafc]  py-12">
+    <section className="w-full bg-[#f8fafc]  pt-10">
 
       {/* Title */}
       <h2 className="text-3xl lg:text-[34px] font-['Montserrat'] font-semibold text-[#0b3a66] mb-10">

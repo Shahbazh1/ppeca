@@ -75,7 +75,7 @@ export default function NewsletterSection() {
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
   return (
-    <section className="w-full bg-[#f8fafc] py-10  ">
+    <section className="w-full bg-[#f8fafc] pt-10  ">
 
       {/* Heading */}
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">

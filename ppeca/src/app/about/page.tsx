@@ -58,7 +58,7 @@ export default function page() {
 
 
       <AboutUsHero />
-      <main className="px-2 pt-12 md:px-10 bg-[#f8fafc]">
+      <main className="px-2 pt-0 md:px-10 bg-[#f8fafc]">
         <HistorySection />
         <ChairmanMessage />
         <SecretariatSection />

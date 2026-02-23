@@ -100,7 +100,7 @@ const ObjectivesSection = () => {
   };
 
   return (
-    <section className="relative bg-[#f8fafc] px-4 sm:px-6 py-10 lg:py-14 text-white">
+    <section className="relative bg-[#f8fafc] px-4 sm:px-6 pt-10 sm:pt-14 md:pt-16 lg:pt-20 text-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <h2 className="text-2xl sm:text-3xl font-bold tracking-wide font-['Montserrat'] text-[#0a2540]">OBJECTIVES</h2>

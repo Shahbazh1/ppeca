@@ -1,6 +1,6 @@
 const HistorySection: React.FC = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-5 box-border">
+    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-5 pt-10 sm:pt-14 md:pt-16 lg:pt-20 box-border">
       {/* Heading */}
       <h2 className="mb-3 sm:mb-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#0a2540] font-sans">
         HISTORY

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const MembershipSection: React.FC = () => {
   const router = useRouter();
   return (
-    <section className="px-4 sm:px-6 py-8 sm:py-10 md:py-12 text-[#0b3a63]">
+    <section className="px-4 sm:px-6 py-10 sm:py-14 md:py-16 lg:py-20 text-[#0b3a63]">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <h2 className="mb-4 sm:mb-6 font-['Montserrat'] text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-[#0a2540]">

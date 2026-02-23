@@ -5,7 +5,7 @@ import roleSec_side_img from "../../../public/images/roleSec_side_img.png";
 
 export default function OurRoleSection() {
   return (
-    <section className="bg-[#f8fafc] px-4 sm:px-6 py-14 sm:py-16 lg:py-20">
+    <section className="bg-[#f8fafc] px-4 sm:px-6  pt-10 sm:pt-14 md:pt-16 lg:pt-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl sm:text-3xl font-['Montserrat'] lg:text-3xl xl:text-4xl font-bold text-[#0a2540]">
           Our Role
