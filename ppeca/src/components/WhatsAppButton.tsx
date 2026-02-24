@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className="
-        fixed bottom-5 right-5 z-[9999]
+        fixed bottom-3 right-3 lg:bottom-5 lg:right-5 z-[9999]
         bg-[#14a637] hover:bg-green-600
         p-3 rounded-full
         shadow-md
