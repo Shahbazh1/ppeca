@@ -47,11 +47,13 @@ export default async function Home({ searchParams }: PageProps) {
     totalPages = data.meta.pagination.pageCount;
 
     news = data.data.map((item: any) => {
+      // Determine image URL; if there is no image we leave it undefined
+      // so the NewsCard component can render its "No Image" placeholder.
       const imageUrl = item.NewsImage?.url
         ? item.NewsImage.url.startsWith("http")
           ? item.NewsImage.url
           : `${API_BASE_URL}${item.NewsImage.url}`
-        : "/images/news1.png";
+        : undefined;
 
       const publishedTime = new Date(item.publishedAt).toLocaleString("en-US", {
         year: "numeric",
