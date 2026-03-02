@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 interface NewsCardProps {
-  image: string;
+  image?: string;
   title: string;
   description: string;
   publishedTime: string;
@@ -41,12 +41,18 @@ const NewsCard: React.FC<NewsCardProps> = ({
         
         {/* IMAGE */}
         <div className="flex justify-center items-center relative w-full sm:w-[130px] h-[180px] sm:h-[110px] flex-shrink-0">
-          <Image
-            src={image}
-            alt={title ? title : "News image"}
-            fill
-            className="object-cover object-center"
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={title ? title : "News image"}
+              fill
+              className="object-cover object-center"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500 text-sm">No Image</span>
+            </div>
+          )}
         </div>
 
         {/* TEXT */}

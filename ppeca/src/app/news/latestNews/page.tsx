@@ -88,7 +88,7 @@ export default async function Home({ searchParams }: PageProps) {
           news.map((item, index) => (
             <NewsCard
               key={item.id || index}
-              image={item.NewsImage?.url || "/images/news1.png"}
+              image={item.NewsImage?.url}
               title={item.NewsTitle}
               description={item.NewsDescription}
               publishedTime={item.publishedAt}
