@@ -9,7 +9,7 @@ interface PageProps {
 }
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-export const revalidate = 3600;
+export const revalidate = 300;
 
 async function getNewsBySlug(slug: string) {
   const res = await fetch(
