@@ -40,6 +40,12 @@ const newsletters: NewsletterItem[] = [
     pdfUrl:
       `${API_BASE_URL}/uploads/PPEPCA_20th_issue_b198c91381.pdf`,
   },
+  {
+    title: "PPEPCA 21st issue",
+    image: "/images/ppepca_21_issue.png",
+    pdfUrl:
+      `${API_BASE_URL}/uploads/PPEPCA_Newsletter_21st_Issue_c391d79725.pdf`,
+  },
 ];
 
 export default function NewsletterSection() {
