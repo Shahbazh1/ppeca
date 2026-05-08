@@ -11,16 +11,18 @@ import mari_ceo from "../../../public/images/mari_ceo.png";
 import kufpec_manager from "../../../public/images/chairman1.png";
 import kpogc_ceo from "../../../public/images/kpogc_ceo.png";
 import  Secretary_General_PPEPCA  from "../../../public/images/Secretary_General_PPEPCA.png";
+import  chairman_ppepca  from "../../../public/images/chairman_ppepca.png";
+
 /* =======================
    DATA (single source)
 ======================= */
 const leaders = [
   {
     role: "Chairman PPEPCA",
-    name: "Mr. Ali Taha Al Temimi",
-    title: "Country Manager",
-    company: "Kufpec Pakistan B.V",
-    image: kufpec_manager,
+    name: "Mr. Masood Nabi",
+    title: "Managing Director/CEO",
+    company: "Government Holdings (Private) Limited",
+    image: chairman_ppepca,
   },
   {
     role: "Senior Vice Chairman PPEPCA",
@@ -30,7 +32,7 @@ const leaders = [
     image: ppl_ceo,
   },
   {
-    role: "Vice Chairman PPEPCA",
+    role: "Sr. Vice Chairman PPEPCA",
     name: "Mr. Andrzej Kaczorowski",
     title: "Managing Director",
     company: "Polish Oil & Gas Company",

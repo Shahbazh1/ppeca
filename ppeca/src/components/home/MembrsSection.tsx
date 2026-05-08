@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { IoMdArrowForward } from "react-icons/io";
 
 import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
-import chairman1 from "../../../public/images/chairman1.png";
+import chairman1 from "../../../public/images/chairman_ppepca.png";
 
 // Logos
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
@@ -56,7 +56,7 @@ export default function TestimonialSection() {
 
   const testimonial = {
     text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that I purchase from oil-industry!",
-    name: "Mr. Ali Taha Al Temimi",
+    name: "Mr. Masood Nabi",
     role: "Chairman, PPEPCA",
   };
 
