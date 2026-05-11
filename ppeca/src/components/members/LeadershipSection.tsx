@@ -67,7 +67,7 @@ const leaders = [
     image: sel_ceo,
   },
   {
-    role: "Senior Vice Chairman PPEPCA",
+    role: "Member Executive Committee",
     name: "Mr. Kamran Ajmal Mian",
     title: "Chief Executive Officer",
     company: "Prime Global Energies Ltd.",
