@@ -26,13 +26,6 @@ const leaders = [
   },
   {
     role: "Senior Vice Chairman PPEPCA",
-    name: "Mr. Kamran Ajmal Mian",
-    title: "Chief Executive Officer",
-    company: "Prime Global Energies Ltd.",
-    image: ppl_ceo,
-  },
-  {
-    role: "Sr. Vice Chairman PPEPCA",
     name: "Mr. Andrzej Kaczorowski",
     title: "Managing Director",
     company: "Polish Oil & Gas Company",
@@ -68,24 +61,31 @@ const leaders = [
   },
   {
     role: "Member Executive Committee",
-    name: "Mr. Jehangir Saifullah",
+    name: "Mr. Jehangir Saifullah Khan",
     title: "Chief Executive Officer",
     company: "Saif Energy Limited",
     image: sel_ceo,
   },
   {
+    role: "Senior Vice Chairman PPEPCA",
+    name: "Mr. Kamran Ajmal Mian",
+    title: "Chief Executive Officer",
+    company: "Prime Global Energies Ltd.",
+    image: ppl_ceo,
+  },
+  {
     role: "Member Executive Committee",
-    name: "Mr. Muhammad Zaheer",
+    name: "Mr. Muhammad Zaheer Alam",
     title: "President",
     company: "United Energy Pakistan",
     image: uep_president_update_image,
   },
-  {
-    role: " Secretary General PPEPCA",
-    name: "Mr. Ibrar Khan",
+  // {
+  //   role: " Secretary General PPEPCA",
+  //   name: "Mr. Ibrar Khan",
 
-    image: Secretary_General_PPEPCA,
-  },
+  //   image: Secretary_General_PPEPCA,
+  // },
 ];
 
 
