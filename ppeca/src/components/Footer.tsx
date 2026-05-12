@@ -115,12 +115,12 @@ export default function Footer() {
               <IoGlobeOutline size={20} />
               <a
               aria-label="Visit PPEPCA website"
-                href="https://www.ppepca.com"
+                href="https://www.ppepca.com.pk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]"
               >
-                www.ppepca.com
+                www.ppepca.com.pk
               </a>
             </div>
           </div>

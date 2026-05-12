@@ -55,7 +55,7 @@ export default function TestimonialSection() {
   }, []);
 
   const testimonial = {
-    text: "If you want to take your business to the next level, use oil-industry and don't look any further. I love anything that I purchase from oil-industry!",
+    text: "",
     name: "Mr. Masood Nabi",
     role: "Chairman, PPEPCA",
   };
