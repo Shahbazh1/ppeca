@@ -80,12 +80,12 @@ const leaders = [
     company: "United Energy Pakistan",
     image: uep_president_update_image,
   },
-  // {
-  //   role: " Secretary General PPEPCA",
-  //   name: "Mr. Ibrar Khan",
+  {
+    role: " Secretary General PPEPCA",
+    name: "Mr. Ibrar Khan",
 
-  //   image: Secretary_General_PPEPCA,
-  // },
+    image: Secretary_General_PPEPCA,
+  },
 ];
 
 
