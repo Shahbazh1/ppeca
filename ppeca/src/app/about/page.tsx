@@ -60,7 +60,7 @@ export default function page() {
       <AboutUsHero />
       <main className="px-2 pt-0 md:px-10 bg-[#f8fafc]">
         <HistorySection />
-        <ChairmanMessage />
+        {/* <ChairmanMessage /> */}
         <SecretariatSection />
         <ObjectivesSection />
         <OurRoleSection />
