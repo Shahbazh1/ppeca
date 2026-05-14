@@ -72,8 +72,8 @@ const companyData = [
     name:"KUFPEC Pakistan",
     address:
       "3rd Floor, ONE Expressway, Gulberg Greens Entrance, Islamabad Expressway, Postal Code 44000, Islamabad, Pakistan",
-    ceo: "Mr. Ali Taha Al Temimi",
-    designation: "Country Manager",
+    ceo: "Mrs. Shorooq Al-Saqabi",
+    designation: "Acting Country Manager",
     description: [
       "Kuwait Foreign Petroleum Exploration Company K.S.C.C. (KUFPEC) was established in 1981 as a wholly owned subsidiary of Kuwait Petroleum Corporation (KPC), owned by the State of Kuwait. The principal activities of KUFPEC are the exploration, development and production of oil and gas in both on-shore and off-shore, outside the State of Kuwait. KUFPEC is currently active in 10 countries, in 3 core regions spanning over 5 continents. KUFPEC is active in Asia and Euro-Africa Region (Pakistan, Yemen, Malaysia Indonesia, United Kingdom, Mauritania and Egypt) and Canada & Australia Region; (Australia and Canada) and engaged in exploration, development and production of oil and gas.",
       "KUFPEC has been operating in Pakistan through its subsidiaries i.e., Kirthar Pakistan B.V., PKP Kirthar B.V., KUFPEC Pakistan B.V., PKP Exploration 2 Limited, and PKP Kadanwari Limited (the “KUFPEC Subsidiaries”).  ",
