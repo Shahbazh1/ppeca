@@ -1,13 +1,15 @@
 // components/NewsCard.tsx
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 interface NewsCardProps {
-  image: string;
+  image?: string;
   title: string;
   description: string;
   publishedTime: string;
   url: string;
+  slug: string;
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({
@@ -15,13 +17,14 @@ const NewsCard: React.FC<NewsCardProps> = ({
   title,
   description,
   publishedTime,
-  url
+  url,
+  slug
 }) => {
   return (
     <div className="w-full  bg-[#f8fafc] px-4 py-5 border-[#818f9e] border-b-[0.35px] rounded-b-[5.53px]">
       
       {/* TITLE */}
-      <a target="_blank" href={url}
+      <Link href={`/news/${slug}`}
         className="mb-2 cursor-pointer text-[#000000] leading-[1.3] font-['Montserrat'] font-bold underline hover:no-underline
         xl:text-[26px]
         lg:text-[24px]
@@ -31,19 +34,25 @@ const NewsCard: React.FC<NewsCardProps> = ({
         line-clamp-2"
       >
         {title}
-      </a>
+      </Link>
 
       {/* CONTENT */}
       <div className="flex gap-4 items-start sm:flex-row flex-col">
         
         {/* IMAGE */}
         <div className="flex justify-center items-center relative w-full sm:w-[130px] h-[180px] sm:h-[110px] flex-shrink-0">
-          <Image
-            src={image}
-            alt={title ? title : "News image"}
-            fill
-            className="object-cover object-center"
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={title ? title : "News image"}
+              fill
+              className="object-cover object-center"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500 text-sm">No Image</span>
+            </div>
+          )}
         </div>
 
         {/* TEXT */}

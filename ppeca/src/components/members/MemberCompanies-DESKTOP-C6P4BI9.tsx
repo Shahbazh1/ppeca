@@ -9,6 +9,7 @@ import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
 import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
 import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
+import KUFPEC_NEW_LOGO from '../../../public/images/companies_logo/KUFPEC_NEW_LOGO.png'
 import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
@@ -19,6 +20,7 @@ import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
+import UEP_NEW_LOGO from '../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg'
 
 interface Company {
   id: number;
@@ -31,14 +33,14 @@ const companies: Company[] = [
   { id: 2, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
   { id: 3, name: "Mari Energies Limited", logo: MARI_LOGO },
   { id: 4, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
-  { id: 5, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_LOGO },
+  { id: 5, name: "United Energy Pakistan Limited (UEPL)", logo: UEP_NEW_LOGO },
   { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
   { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
   { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
   { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
   { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
   { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
-  { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+  { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_NEW_LOGO },
   { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
   {
     id: 14,

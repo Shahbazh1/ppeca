@@ -1,9 +1,9 @@
 import Image from "next/image";
-import kufpec_manager from "../../../public/images/chairman2.png";
+import kufpec_manager from "../../../public/images/chairman_ppepca1.png";
 
 const ChairmanMessage = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-[22px] py-12 sm:py-14 md:py-16 lg:py-20">
+    <section className="w-full bg-[#f8fafc] px-4 sm:px-5 md:px-6 lg:px-[22px] pt-10 lg:pt-14">
       <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-stretch justify-between gap-2 sm:gap-4 lg:gap-12">
         {/* LEFT CONTENT */}
         <div className="flex-1 lg:w-[60%]">
@@ -13,7 +13,7 @@ const ChairmanMessage = () => {
           </h2>
 
           <h3 className="text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] font-['Montserrat']  font-normal text-[#0a2540] m-0 leading-[1.1]">
-            Mr. Ali Taha Al-Temimi
+            Mr. Masood Nabi
           </h3>
 
           {/* Message Text */}
@@ -84,7 +84,7 @@ const ChairmanMessage = () => {
         <p className="font-bold">Best regards,</p>
 
         <p className="mt-4 font-bold">
-          Ali Taha Al-Temimi
+          Mr. Masood Nabi
           <br />
           Chairman PPEPCA
         </p>

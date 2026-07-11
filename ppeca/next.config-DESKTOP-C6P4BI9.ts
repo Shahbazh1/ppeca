@@ -2,10 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["api.ppepca.com.pk"],
-    remotePatterns: [
-      { protocol: "https", hostname: "res.cloudinary.com" },
-    ],
+    domains: ["media.ppepca.com.pk"],
   },
   async redirects() {
     return [
