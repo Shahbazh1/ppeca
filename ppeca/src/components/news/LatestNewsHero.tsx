@@ -21,7 +21,7 @@ const fallbackNews = [
 
 export default async function LatestNewsHero() {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
+  const API_URL = `${API_BASE_URL}/api/news?limit=3`;
 
   let newsItems = [];
   let loading = true;
@@ -29,13 +29,13 @@ export default async function LatestNewsHero() {
 
   try {
     const res = await fetch(API_URL, { next: { revalidate: 300 } });
-    
+
     if (!res.ok) {
-      throw new Error('Failed to fetch news');
+      throw new Error("Failed to fetch news");
     }
-    
+
     const data = await res.json();
-    
+
     // If data exists, use it; otherwise, keep newsItems as an empty array
     if (data?.data?.length > 0) {
       newsItems = data.data;
@@ -46,10 +46,10 @@ export default async function LatestNewsHero() {
   } catch (err) {
     console.error("News fetch error:", err);
     error = err;
-    
-    // CHANGE THIS: Instead of newsItems = fallbackNews, 
+
+    // CHANGE THIS: Instead of newsItems = fallbackNews,
     // keep it as an empty array to show your "No News Available" UI
-    newsItems = []; 
+    newsItems = [];
     loading = false;
   }
 
@@ -135,7 +135,7 @@ export default async function LatestNewsHero() {
 
             {!loading &&
               newsItems.length > 0 &&
-              newsItems.map((item:any, index:any) => (
+              newsItems.map((item: any, index: any) => (
                 <div
                   key={index}
                   className="bg-white rounded-md p-4 sm:p-6 shadow flex flex-row items-center justify-between  hover:shadow-lg transition-shadow duration-300"
@@ -143,27 +143,27 @@ export default async function LatestNewsHero() {
                   <div className="flex-1 pr-4">
                     <div className="flex items-center gap-3 text-xs mb-2">
                       <span className="text-[#16A831] font-['Open_Sans'] font-semibold uppercase">
-                        {item.Category || item.category}
+                        {item.category ?? "General"}
                       </span>
                       <span className="w-2 h-2  rounded-full bg-gray-300" />
                       <span className="text-gray-500 font-['Open_Sans']">
-                        {item.publishedAt
-                          ? new Date(item.publishedAt).toLocaleDateString(
+                        {item.createdAt
+                          ? new Date(item.createdAt).toLocaleDateString(
                               "en-US",
                               {
                                 month: "long",
                                 day: "2-digit",
-                              }
+                              },
                             )
                           : item.date}
                       </span>
                     </div>
                     <p className="text-sm line-clamp-3 font-['Montserrat'] font-bold text-gray-900 leading-snug">
-                      {item.NewsDescription || item.text}
+                      {item.newsDescription || "No description available."}
                     </p>
                   </div>
 
-<Link href={`/news/${item.slug}`}>
+                  <Link href={item.slug ? `/news/${item.slug}` : "/news/latestNews"}>
                     <Image
                       src={NewsArrow}
                       alt="arrow"

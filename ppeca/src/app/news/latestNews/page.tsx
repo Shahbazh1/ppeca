@@ -13,7 +13,7 @@ interface NewsItem {
   publishedAt: string;
   slug: string;
   NewsImage: {
-    url: string;
+    image: string | null;
   } | null;
 }
 
@@ -37,37 +37,33 @@ export default async function Home({ searchParams }: PageProps) {
 
   try {
     const res = await fetch(
-      `${API_BASE_URL}/api/newses?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`,
+      `${API_BASE_URL}/api/news?page=${currentPage}&pageSize=${pageSize}`,
       { next: { revalidate: 300 } },
     );
 
     if (!res.ok) throw new Error("Failed to fetch news");
 
     const data = await res.json();
-    totalPages = data.meta.pagination.pageCount;
+    totalPages = data?.meta?.totalPages ?? 1;
 
     news = data.data.map((item: any) => {
-      // Determine image URL; if there is no image we leave it undefined
-      // so the NewsCard component can render its "No Image" placeholder.
-      const imageUrl = item.NewsImage?.url
-        ? item.NewsImage.url.startsWith("http")
-          ? item.NewsImage.url
-          : `${API_BASE_URL}${item.NewsImage.url}`
-        : undefined;
+  const publishedTime = new Date(item.createdAt).toLocaleString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour12: true,
+  });
 
-      const publishedTime = new Date(item.publishedAt).toLocaleString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour12: true,
-      });
-
-      return {
-        ...item,
-        NewsImage: { url: imageUrl },
-        publishedAt: publishedTime,
-      };
-    });
+  return {
+    id: item.id,
+    NewsTitle: item.newsTitle,
+    NewsDescription: item.newsDescription,
+    NewsUrl: item.newsUrl,
+    slug: item.slug,
+    publishedAt: publishedTime,
+    NewsImage: item.imageUrl ? { url: item.imageUrl } : null,
+  };
+});
   } catch (err) {
     console.error("News fetch failed:", err);
     news = [];
