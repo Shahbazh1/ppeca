@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 interface NewsCardProps {
-  image: string;
+  image: string | null;
   title: string;
   description: string;
   publishedTime: string;

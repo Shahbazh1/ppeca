@@ -12,9 +12,7 @@ interface NewsItem {
   updatedAt: string;
   publishedAt: string;
   slug: string;
-  NewsImage: {
-    image: string | null;
-  } | null;
+  NewsImage: string | null;
 }
 
 // In Next.js 15+, searchParams is a Promise.
@@ -64,7 +62,7 @@ export default async function Home({ searchParams }: PageProps) {
     NewsImage: item.imageUrl ? { url: item.imageUrl } : null,
   };
 });
-  } catch (err) {
+  } catch (err) {  
     console.error("News fetch failed:", err);
     news = [];
   }
@@ -84,7 +82,7 @@ export default async function Home({ searchParams }: PageProps) {
           news.map((item, index) => (
             <NewsCard
               key={item.id || index}
-              image={item.NewsImage?.url}
+              image={item.NewsImage}
               title={item.NewsTitle}
               description={item.NewsDescription}
               publishedTime={item.publishedAt}

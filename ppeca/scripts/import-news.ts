@@ -20,7 +20,6 @@ async function main() {
         newsUrl: item.NewsUrl,
         category: item.Category,
         slug: item.slug,
-        pdfUrl: null,
         createdAt: new Date(item.createdAt),
         updatedAt: new Date(item.updatedAt),
       },
