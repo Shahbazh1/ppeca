@@ -14,37 +14,37 @@ const newsletters: NewsletterItem[] = [
     title: "PPEPCA 16th issue",
     image: "/images/ppepca_16_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_16th_issue_d0f204f841.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783710147/PPEPCA_16th_issue_rh9l3e.pdf",
   },
   {
     title: "PPEPCA 17th issue",
     image: "/images/ppepca_17_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_17th_issue_36f6a20cb4.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783710274/PPEPCA_17th_issue_dw5xa8.pdf",
   },
   {
     title: "PPEPCA 18th issue",
     image: "/images/ppepca_18_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_18th_issue_11ac0586c6.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783710375/PPEPCA_18th_issue_o6qd6z.pdf",
   },
   {
     title: "PPEPCA 19th issue",
     image: "/images/ppepca_19_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_19th_issue_35a9a7a2df.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783710706/PPEPCA_19th_issue_dwiznb.pdf",
   },
   {
     title: "PPEPCA 20th issue",
     image: "/images/ppepca_20_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_20th_issue_b198c91381.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783710832/PPEPCA_20th_issue_bmjj2k.pdf",
   },
   {
     title: "PPEPCA 21st issue",
     image: "/images/ppepca_21_issue.png",
     pdfUrl:
-      `${API_BASE_URL}/uploads/PPEPCA_Newsletter_21st_Issue_c391d79725.pdf`,
+      "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783711271/PPEPCA_21st_issue_gzagz3.pdf",
   },
 ];
 

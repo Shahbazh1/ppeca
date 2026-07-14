@@ -13,31 +13,31 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const trainingData: TrainingItem[] = [
   {
     title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
-    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Applications_in_MOL_s_Perspective_by_MOL_Group_c08af8cc5c.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783714593/IOR_EOR_Applications_in_MOL_s_Perspective_by_MOL_Group_lgafhy.pdf",
   },
   {
     title: "EOR related R&D – by MOL Group",
-    fileUrl: `${API_BASE_URL}/uploads/EOR_related_R_and_D_by_MOL_Group_8e2a075cf3.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713258/EOR_related_R_D_by_MOL_Group_z24p4q.pdf",
   },
   {
     title: "Fast Track EOR: Re-designing through Integration",
-    fileUrl: `${API_BASE_URL}/uploads/Fast_Track_EOR_Re_designing_through_Integration_09cd7c5883.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713303/Fast_Track_EOR__Re-designing_through_Integration_pamu3z.pdf",
   },
   {
     title: "EOR Techniques Smart Screening for Candidate Reservoir",
-    fileUrl: `${API_BASE_URL}/uploads/EOR_Techniques_Smart_Screening_for_Candidate_Reservoir_49761c17c8.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713221/EOR_Techniques_Smart_Screening_for_Candidate_Reservoir_pjwnhk.pdf",
   },
   {
     title: "IOR/EOR Monitoring & Control System – by Weatherford",
-    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Monitoring_and_Control_System_by_Weatherford_e66f279a6b.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713151/IOR_EOR_Monitoring_Control_System_by_Weatherford_dik4wt.pdf",
   },
   {
     title: "EOR Alliance – by Black Gold",
-    fileUrl: `${API_BASE_URL}/uploads/EOR_Alliance_by_Black_Gold_4941955889.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713070/EOR_Alliance_by_Black_Gold_upyvor.pdf",
   },
   {
     title: "IOR/EOR Applications in MOL’s Perspective",
-    fileUrl: `${API_BASE_URL}/uploads/IOR_EOR_Applications_in_MOL_s_Perspective_8031d3218c.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783713045/IOR_EOR_Applications_in_MOL_s_Perspective_dj24nh.pdf",
   },
 ];
 

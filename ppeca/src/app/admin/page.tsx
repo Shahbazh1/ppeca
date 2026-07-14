@@ -44,56 +44,101 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div style={{ maxWidth: 560, margin: "60px auto", padding: "0 16px" }}>
-      <h1 style={{ marginBottom: 24 }}>Add news</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="News title"
-          value={newsTitle}
-          onChange={(e) => setNewsTitle(e.target.value)}
-          required
-          style={{ width: "100%", padding: 8, marginBottom: 12, boxSizing: "border-box" }}
-        />
-        <textarea
-          placeholder="News description"
-          value={newsDescription}
-          onChange={(e) => setNewsDescription(e.target.value)}
-          required
-          rows={8}
-          style={{ width: "100%", padding: 8, marginBottom: 12, boxSizing: "border-box" }}
-        />
-        <input
-          placeholder="Category (optional)"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          style={{ width: "100%", padding: 8, marginBottom: 12, boxSizing: "border-box" }}
-        />
-        <input
-          placeholder="Source URL (optional)"
-          value={newsUrl}
-          onChange={(e) => setNewsUrl(e.target.value)}
-          style={{ width: "100%", padding: 8, marginBottom: 12, boxSizing: "border-box" }}
-        />
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-2xl rounded-2xl bg-white shadow-xl p-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          Add News
+        </h1>
+        <p className="text-gray-500 mb-8">
+          Publish a new news article to your website.
+        </p>
 
-        <label style={{ display: "block", marginBottom: 8 }}>
-          News image (optional)
-        </label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-          style={{ marginBottom: 16 }}
-        />
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              News Title
+            </label>
+            <input
+              placeholder="Enter news title"
+              value={newsTitle}
+              onChange={(e) => setNewsTitle(e.target.value)}
+              required
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            />
+          </div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          style={{ width: "100%", padding: 10, cursor: "pointer" }}
-        >
-          {loading ? "Publishing..." : "Publish news"}
-        </button>
-        {message && <p style={{ marginTop: 12 }}>{message}</p>}
-      </form>
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              News Description
+            </label>
+            <textarea
+              placeholder="Write the news description..."
+              value={newsDescription}
+              onChange={(e) => setNewsDescription(e.target.value)}
+              required
+              rows={8}
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition resize-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Category
+            </label>
+            <input
+              placeholder="Technology, Business, Sports..."
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Source URL
+            </label>
+            <input
+              placeholder="https://example.com/news"
+              value={newsUrl}
+              onChange={(e) => setNewsUrl(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            />
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              News Image (optional)
+            </label>
+
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-700 file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-white file:cursor-pointer hover:file:bg-blue-700"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-lg bg-blue-600 py-3 text-white font-semibold transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-400"
+          >
+            {loading ? "Publishing..." : "Publish News"}
+          </button>
+
+          {message && (
+            <div
+              className={`rounded-lg p-4 text-sm font-medium ${
+                message.includes("success")
+                  ? "bg-green-100 text-green-700 border border-green-300"
+                  : "bg-red-100 text-red-700 border border-red-300"
+              }`}
+            >
+              {message}
+            </div>
+          )}
+        </form>
+      </div>
     </div>
   )
 }

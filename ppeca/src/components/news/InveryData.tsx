@@ -14,32 +14,32 @@ const inventoryData: InventoryItem[] = [
   {
     name: "KUFPEC",
     logo: "/images/companies_logo/KUFPEC_LOGO.png",
-    fileUrl: `${API_BASE_URL}/uploads/List_of_Surplus_Branch_Inventory_8837373727_588fffb5f6.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783712259/kufpec_wtpve8.pdf",
   },
   {
     name: "Orient Petroleum Inc.",
     logo: "/images/companies_logo/OP_LOGO.jpg",
-    fileUrl: `${API_BASE_URL}/uploads/Orient_Petroleum_Surplus_Inventory_ac010249db_7979bcfe50.pdf`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/image/upload/v1783712254/orient_petroleum_inc_zgrfbl.pdf",
   },
   {
     name: "Polish Oil and Gas Company",
     logo: "/images/POLISH_OIL_logo.jpg",
-    fileUrl: `${API_BASE_URL}/uploads/POL_RIG_SCR_d2bc9fdc55_379d323fe7.docx`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/raw/upload/v1783712233/polish_oil_and_gas_company_g0pxdm.docx",
   },
   {
     name: "Pakistan Petroleum Ltd",
     logo: "/images/PPL_logo.jpg",
-    fileUrl: `${API_BASE_URL}/uploads/Drilling_and_Completion_materials_2a59a2e007_f7ca0c084a.xlsx`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/raw/upload/v1783712176/pakistan_petroleum_limited_ibkgwz.xlsx",
   },
   {
     name: "Eni Pakistan",
     logo: "/images/POL_logo.png",
-    fileUrl: `${API_BASE_URL}/uploads/Eni_Pakistan_Surplus_Inventory_List_c6fda86254_20f7f583cb.xlsx`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/raw/upload/v1783712166/Eni_Pakistan_nmlmjb.xlsx",
   },
   {
     name: "Propane Condenser POGC",
     logo: "/images/companies_logo/PRIME_LOGO.png",
-    fileUrl: `${API_BASE_URL}/uploads/Surplus_Items_Propane_Condenser_37c8b7d3de_1790edbdfc.xlsx`,
+    fileUrl: "https://res.cloudinary.com/dhmc66lbq/raw/upload/v1783712100/Propane_Condenser_POGC_nxpucl.xlsx",
   },
 ];
 
