@@ -122,7 +122,7 @@ export default async function Page({ params }: PageProps) {
         )}
 
         {/* Content Body */}
-        <div className="font-['Open_Sans'] text-[#0A2540] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] space-y-4">
+        <div className="font-['Open_Sans'] text-[#0A2540] text-[13px] sm:text-[14px] md:text-[14.5px] lg:text-[14px] xl:text-[15px] leading-[1.5] sm:leading-[1.6] md:leading-[1.7] space-y-4 whitespace-pre-wrap">
           {news.NewsDescription}
         </div>
 
