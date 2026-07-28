@@ -76,7 +76,7 @@ export default function DirectoryOfTrainingProviders() {
         <button
           aria-label={`Download ${item.title} file`}
           onClick={() => downloadFile(item.fileUrl, item.title)}
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-[#16A831] px-4 py-2 font-['Open_Sans'] text-sm font-semibold text-white transition-all duration-150 hover:bg-[#128a28] active:scale-[0.98]"
+          className=" cursor-pointer mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-[#16A831] px-4 py-2 font-['Open_Sans'] text-sm font-semibold text-white transition-all duration-150 hover:bg-[#128a28] active:scale-[0.98]"
         >
           {/* <svg
             className="h-4 w-4 fill-current transition-transform duration-150 group-hover:translate-y-0.5"
