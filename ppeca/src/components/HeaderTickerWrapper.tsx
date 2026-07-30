@@ -26,7 +26,10 @@ export default function HeaderTickerWrapper() {
       try {
         const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
         const res = await fetch(
-          `${API_BASE_URL}/api/newses?pagination[pageSize]=3&sort=publishedAt:desc`
+          `${API_BASE_URL}/api/newses?pagination[pageSize]=3&sort=publishedAt:desc`,
+          {
+          next: { revalidate: 300 }, // Revalidates cache every 300s (5 mins)
+        }
         );
         if (!res.ok) throw new Error("Failed to fetch news");
         const data = await res.json();
