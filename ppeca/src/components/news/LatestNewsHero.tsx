@@ -3,6 +3,7 @@ import news_hero_BG from "../../../public/images/news_hero_BG.png";
 import Image from "next/image";
 import Link from "next/link";
 import NewsArrow from "../../../public/images/svg_images/news_arrow.svg";
+import { getLatestNews } from "@/src/lib/news";
 
 const fallbackNews = [
   {
@@ -20,38 +21,40 @@ const fallbackNews = [
 ];
 
 export default async function LatestNewsHero() {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-  const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
+  // const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  // const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
 
-  let newsItems = [];
-  let loading = true;
-  let error = null;
+  // let newsItems = [];
+  // let loading = true;
+  // let error = null;
 
-  try {
-    const res = await fetch(API_URL, { next: { revalidate: 300 } });
+  // try {
+  //   const res = await fetch(API_URL, { next: { revalidate: 300 } });
     
-    if (!res.ok) {
-      throw new Error('Failed to fetch news');
-    }
+  //   if (!res.ok) {
+  //     throw new Error('Failed to fetch news');
+  //   }
     
-    const data = await res.json();
+  //   const data = await res.json();
     
-    // If data exists, use it; otherwise, keep newsItems as an empty array
-    if (data?.data?.length > 0) {
-      newsItems = data.data;
-    } else {
-      newsItems = []; // This ensures the "No News Available" UI triggers
-    }
-    loading = false;
-  } catch (err) {
-    console.error("News fetch error:", err);
-    error = err;
+  //   // If data exists, use it; otherwise, keep newsItems as an empty array
+  //   if (data?.data?.length > 0) {
+  //     newsItems = data.data;
+  //   } else {
+  //     newsItems = []; // This ensures the "No News Available" UI triggers
+  //   }
+  //   loading = false;
+  // } catch (err) {
+  //   console.error("News fetch error:", err);
+  //   error = err;
     
-    // CHANGE THIS: Instead of newsItems = fallbackNews, 
-    // keep it as an empty array to show your "No News Available" UI
-    newsItems = []; 
-    loading = false;
-  }
+  //   // CHANGE THIS: Instead of newsItems = fallbackNews, 
+  //   // keep it as an empty array to show your "No News Available" UI
+  //   newsItems = []; 
+  //   loading = false;
+  // }
+
+  const newsItems = await getLatestNews(3);
 
   return (
     <section
@@ -87,7 +90,7 @@ export default async function LatestNewsHero() {
 
           {/* Right Cards */}
           <div className="flex flex-col gap-4 sm:gap-6">
-            {loading && (
+            {/* {loading && (
               <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl">
                 <div className="mb-6">
                   <div className="flex items-center justify-center space-x-2">
@@ -119,9 +122,9 @@ export default async function LatestNewsHero() {
                   ></div>
                 </div>
               </div>
-            )}
+            )} */}
 
-            {!loading && newsItems.length === 0 && (
+            { newsItems.length === 0 && (
               <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl text-center">
                 <h3 className="text-xl font-bold text-white mb-2">
                   No News Available
@@ -133,7 +136,7 @@ export default async function LatestNewsHero() {
               </div>
             )}
 
-            {!loading &&
+            {
               newsItems.length > 0 &&
               newsItems.map((item:any, index:any) => (
                 <div
