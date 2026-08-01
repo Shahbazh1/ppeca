@@ -39,7 +39,7 @@ export async function getAllNews(
   const data = await res.json();
 
   return {
-    news: data.data,
+    news: data.data.map(formatNews),
     totalPages: data.meta.pagination.pageCount,
   };
 }
@@ -59,21 +59,19 @@ export async function getNewsBySlug(slug: string) {
   return data.data?.[0] ?? null;
 }
 
-function formatNews(news: any) {
+export function formatNews(news: any) {
   return {
     ...news,
-    image:
-      news.NewsImage?.url
+    NewsImage: {
+      url: news.NewsImage?.url
         ? `${API_BASE_URL}${news.NewsImage.url}`
-        : null,
-
-    publishedDate: new Date(news.publishedAt).toLocaleDateString(
-      "en-US",
-      {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      }
-    ),
+        : undefined,
+    },
+    publishedAt: new Date(news.publishedAt).toLocaleString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour12: true,
+    }),
   };
 }
