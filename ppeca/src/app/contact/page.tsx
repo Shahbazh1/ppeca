@@ -194,9 +194,10 @@ export default function ContactUs() {
                       className="w-5 h-5 mt-1 flex-shrink-0"
                     />
                     <span className="text-sm sm:text-base ">
-                      LG04, Block 02, Savoy Residences,
-                      <br />
-                      F-11/1, Islamabad
+                      3rd Floor, SNC Center, Plot No. 12-D (East),
+                      <br /> Fazal-e-Haq Road,
+                    <br />
+                     Blue Area, Islamabad, Pakistan.
                     </span>
                   </div>
                 </div>

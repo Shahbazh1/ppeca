@@ -38,9 +38,9 @@ export default function ContactUs() {
               <div className="flex items-start gap-4">
                 <span className="text-lg">📍</span>
                 <span>
-                  LG04, Block 02, Savoy Residences,
+                  3rd Floor, SNC Center, Plot No. 12-D (East), Fazal-e-Haq Road,
                   <br />
-                  F-11/1, Islamabad
+                  Blue Area, Islamabad, Pakistan.
                 </span>
               </div>
             </div>

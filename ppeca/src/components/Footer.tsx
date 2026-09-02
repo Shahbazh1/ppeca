@@ -91,8 +91,9 @@ export default function Footer() {
             <div className="flex gap-3">
               <FaLocationDot size={18} className="mt-1" />
               <span className="  text-[0.875rem] md:text-[0.95rem] lg:text-[1rem]">
-                LG04, Block 02, Savoy Residences, <br />
-                F-11/1, Islamabad
+                3rd Floor, SNC Center, Plot No. 12-D (East), Fazal-e-Haq Road,
+                  <br />
+                  Blue Area, Islamabad, Pakistan.
               </span>
             </div>
 
