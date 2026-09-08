@@ -8,7 +8,7 @@ import members_sec_BG from "../../../public/images/members_sec_BG.jpg";
 import chairman1 from "../../../public/images/chairman_ppepca.png";
 
 // Logos
-import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
+import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.png";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
 import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";

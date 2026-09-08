@@ -16,7 +16,7 @@ import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
 import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
 import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
-import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.jpg";
+import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.png";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
 import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";

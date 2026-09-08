@@ -28,7 +28,7 @@ const inventoryData: InventoryItem[] = [
   },
   {
     name: "Pakistan Petroleum Ltd",
-    logo: "/images/PPL_logo.jpg",
+    logo: "/images/PPL_logo.png",
     fileUrl: `${API_BASE_URL}/uploads/Drilling_and_Completion_materials_2a59a2e007_f7ca0c084a.xlsx`,
   },
   {
