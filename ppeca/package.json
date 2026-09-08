@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "import:news": "tsx scripts/import-news.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
@@ -33,5 +34,8 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.0",
     "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "prisma/schema"
   }
 }

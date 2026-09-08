@@ -1,37 +1,57 @@
-import { PrismaClient } from "@prisma/client"
-import fs from "fs"
-import path from "path"
+import { PrismaClient } from "@prisma/client";
+import fs from "fs";
+import path from "path";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
-const filePath = path.join(process.cwd(), "data", "strapi-export.json")
-const raw = fs.readFileSync(filePath, "utf-8")
-const parsed = JSON.parse(raw)
+const filePath = path.join(process.cwd(), "data", "news.json");
+
+const raw = fs.readFileSync(filePath, "utf-8");
+
+const parsed = JSON.parse(raw);
 
 async function main() {
-  let count = 0
+  let count = 0;
+
   for (const item of parsed.data) {
     await prisma.news.upsert({
-      where: { slug: item.slug },
-      update: {},
+      where: {
+        slug: item.slug,
+      },
+
+      update: {
+        newsTitle: item.NewsTitle,
+        newsDescription: item.NewsDescription,
+        newsUrl: item.NewsUrl || null,
+        category: item.Category || null,
+        updatedAt: new Date(item.updatedAt),
+      },
+
       create: {
         newsTitle: item.NewsTitle,
         newsDescription: item.NewsDescription,
-        newsUrl: item.NewsUrl,
-        category: item.Category,
+        newsUrl: item.NewsUrl || null,
+        category: item.Category || null,
         slug: item.slug,
+        imageUrl: null,
         createdAt: new Date(item.createdAt),
         updatedAt: new Date(item.updatedAt),
       },
-    })
-    count++
+    });
+
+    count++;
+
+    console.log(`Imported: ${item.NewsTitle}`);
   }
-  console.log(`Imported ${count} news items`)
+
+  console.log(`\nSuccessfully imported ${count} news items.`);
 }
 
 main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
+  .catch((error) => {
+    console.error("Import failed:", error);
+    process.exit(1);
   })
-  .finally(() => prisma.$disconnect())
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
