@@ -10,7 +10,6 @@ const heroContent = {
     alt: "PPEPCA Members Directory",
   },
   heading: "PPEPCA Members",
-  // subtitle: "A united network driving Pakistan's", // Reserved if needed
   cta: {
     label: "Become a member",
     href: "/members/membershipform",
@@ -25,7 +24,6 @@ export default function PPEPCAHero() {
   const router = useRouter();
   return (
     <section className="relative w-full  overflow-hidden">
-      {/* Background Image */}
       <Image
         src={heroContent.bgImage.src}
         alt={heroContent.bgImage.alt}
@@ -34,10 +32,8 @@ export default function PPEPCAHero() {
         priority
       />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/80" />
 
-      {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4 sm:px-6">
         <h1 className="text-white text-[2rem] sm:text-[2.5rem] md:text-[2.625rem] lg:text-[3rem] xl:text-[3.375rem] font-extrabold mt-[2rem] sm:mt-[3rem] md:mt-[4.86rem] lg:mt-[5.4rem] xl:mt-[6rem] tracking-tight">
           {heroContent.heading}
