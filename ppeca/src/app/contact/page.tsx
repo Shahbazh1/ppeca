@@ -11,6 +11,40 @@ import vactor2 from "../../../public/images/svg_images/Group 1000001750.svg";
 import vactor3 from "../../../public/images/svg_images/Group 1000001751.svg";
 import Head from "next/head";
 
+const contactDetails = [
+  {
+    icon: "/images/svg_images/bxs_phone-call.svg",
+    alt: "phone",
+    text: "92 51 2102135 / 92 51 2102136",
+  },
+  {
+    icon: "/images/svg_images/ic_sharp-email.svg",
+    alt: "email",
+    text: "mail@ppepca.com",
+  },
+  {
+    icon: "/images/svg_images/carbon_location-filled.svg",
+    alt: "location",
+    text: "3rd Floor, SNC Center, Plot No. 12-D (East),\nFazal-e-Haq Road,\nBlue Area, Islamabad, Pakistan.",
+  },
+];
+
+const socialIcons = [vactor1, vactor2, vactor3];
+
+const subjectOptions = [
+  { label: "General Inquiry", value: "general" },
+  { label: "Membership Information", value: "membership" },
+];
+
+const initialFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNo: "",
+  subject: "general",
+  msg: "",
+};
+
 export default function ContactUs() {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const [loading, setLoading] = useState(false);
@@ -38,13 +72,12 @@ export default function ContactUs() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Check reCAPTCHA first
     if (!recaptchaToken) {
       toast.error("Please complete the reCAPTCHA");
       return;
     }
 
-    if (loading) return; // prevent double submit
+    if (loading) return;
     setLoading(true);
     const controller = new AbortController();
 
@@ -53,13 +86,13 @@ export default function ContactUs() {
     }, 10000);
 
     try {
-      console.log("Recaptcha Token:", recaptchaToken); // Debug log
-      console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
+      console.log("Recaptcha Token:", recaptchaToken);
+      console.log("Submitting form data:", JSON.stringify(formData, null, 2));
 
       const response = await fetch(`${API_BASE_URL}/api/contact-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData, recaptchaToken }), // ← Added recaptchaToken
+        body: JSON.stringify({ data: formData, recaptchaToken }),
         signal: controller.signal,
       });
 
@@ -80,7 +113,7 @@ export default function ContactUs() {
         subject: "general",
         msg: "",
       });
-      setRecaptchaToken(null); // ← Reset reCAPTCHA token
+      setRecaptchaToken(null);
     } catch (error: any) {
       if (error.name === "AbortError") {
         toast.error(
@@ -138,7 +171,6 @@ export default function ContactUs() {
       <Toaster position="top-center" reverseOrder={false} />
       <section className="min-h-screen bg-[#f8fafc] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="w-full max-w-6xl">
-          {/* Header */}
           <div className="text-center mb-8 sm:mb-12">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-800">
               Contact Us
@@ -148,11 +180,8 @@ export default function ContactUs() {
             </p>
           </div>
 
-          {/* Card */}
           <div className="bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
-            {/* LEFT INFO PANEL */}
             <div className="relative w-auto font-['Poppins'] lg:flex-[45%] bg-white border border-[#94a3b8]/70 rounded-xl m-3 p-6 sm:p-8 overflow-hidden flex flex-col">
-              {/* Title & Description (TOP) */}
               <div>
                 <h2 className="text-xl sm:text-2xl font-semibold text-[#0a2540]">
                   Contact Information
@@ -162,76 +191,49 @@ export default function ContactUs() {
                 </p>
               </div>
 
-              {/* Contact Details (CENTER) */}
               <div className="flex-1 z-10 flex items-center py-4 sm:py-6">
                 <div className="space-y-4 sm:space-y-6 text-[#334155] w-full">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src="/images/svg_images/bxs_phone-call.svg"
-                      alt="phone"
-                      className="w-5 h-5 flex-shrink-0"
-                    />
-                    <span className="text-sm sm:text-base">
-                      92 51 2102135 / 92 51 2102136
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <img
-                      src="/images/svg_images/ic_sharp-email.svg"
-                      alt="email"
-                      className="w-5 h-5 flex-shrink-0"
-                    />
-                    <span className="text-sm sm:text-base">
-                      mail@ppepca.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <img
-                      src="/images/svg_images/carbon_location-filled.svg"
-                      alt="location"
-                      className="w-5 h-5 mt-1 flex-shrink-0"
-                    />
-                    <span className="text-sm sm:text-base ">
-                      3rd Floor, SNC Center, Plot No. 12-D (East),
-                      <br /> Fazal-e-Haq Road,
-                    <br />
-                     Blue Area, Islamabad, Pakistan.
-                    </span>
-                  </div>
+                  {contactDetails.map((detail, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <img
+                        src={detail.icon}
+                        alt={detail.alt}
+                        className="w-5 h-5 mt-1 flex-shrink-0"
+                      />
+                      <span className="text-sm sm:text-base whitespace-pre-line">
+                        {detail.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Social Icons (BOTTOM) */}
-              <div className="flex gap-4 relative z-10">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  {/* <img src={vactor1.src} alt="social" className="w-10 h-10" /> */}
-                </div>
+              {/* <div className="flex gap-4 relative z-10">
+                {socialIcons.map((icon, index) => (
+                  <div
+                    key={index}
+                    className="w-10 h-10 rounded-full flex items-center justify-center"
+                  >
+                    <img
+                      src={icon.src}
+                      alt={`social-${index + 1}`}
+                      className="w-10 h-10"
+                    />
+                  </div>
+                ))}
+              </div> */}
 
-                <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  {/* <img src={vactor2.src} alt="social" className="w-10 h-10" /> */}
-                </div>
-
-                <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                  {/* <img src={vactor3.src} alt="social" className="w-10 h-10" /> */}
-                </div>
-              </div>
-
-              {/* Decorative circles (unchanged & clipped) */}
               <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute bottom-6 md:bottom-12 -right-5 lg:-right-5 w-40 h-40 sm:w-64 sm:h-64 bg-[#e3f5e6] rounded-full opacity-60 translate-x-1/3 translate-y-1/3"></div>
                 <div className="absolute bottom-16 md:bottom-24 right-10 lg:right-18 w-24 h-24 sm:w-40 sm:h-40 bg-[#e3f5e6] rounded-full opacity-60"></div>
               </div>
             </div>
 
-            {/* RIGHT FORM PANEL */}
             <div className="w-full lg:flex-[55%] font-['Open_Sans'] p-6 sm:p-8 lg:p-10 bg-white">
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6 text-slate-800 sm:space-y-8"
               >
-                {/* Name */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
                     <label className="text-sm text-slate-600">
@@ -261,7 +263,6 @@ export default function ContactUs() {
                     />
                   </div>
                 </div>
-                {/* email & Phone */}
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                   <div className="flex-1">
                     <label className="text-sm text-slate-600">Email *</label>
@@ -293,32 +294,25 @@ export default function ContactUs() {
                     Select Subject?
                   </p>
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 text-sm text-slate-600 w-full">
-                    {["General Inquiry", "Membership Information"].map(
-                      (item, index) => {
-                        const value =
-                          item === "General Inquiry" ? "general" : "membership";
-                        return (
-                          <label
-                            key={index}
-                            className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
-                          >
-                            <input
-                              type="radio"
-                              name="subject"
-                              value={value}
-                              checked={formData.subject === value}
-                              onChange={handleChange}
-                              className="w-4 h-4 accent-slate-800 cursor-pointer"
-                            />
-                            <span>{item}</span>
-                          </label>
-                        );
-                      },
-                    )}
+                    {subjectOptions.map((opt) => (
+                      <label
+                        key={opt.value}
+                        className="flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                      >
+                        <input
+                          type="radio"
+                          name="subject"
+                          value={opt.value}
+                          checked={formData.subject === opt.value}
+                          onChange={handleChange}
+                          className="w-4 h-4 accent-slate-800 cursor-pointer"
+                        />
+                        <span>{opt.label}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
-                {/* Message */}
                 <div>
                   <label className="text-sm text-slate-600">Message *</label>
                   <textarea
@@ -344,7 +338,6 @@ export default function ContactUs() {
                     </p>
                   )}
                 </div>
-                {/* Button */}
                 <div className="flex justify-end">
                   <button
                     type="submit"
