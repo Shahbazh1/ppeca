@@ -85,7 +85,7 @@ export default function NewsletterSection() {
 
       {/* Heading */}
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">
-        Newsletter
+        Newsleter
       </h2>
 
       {/* Search */}
