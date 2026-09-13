@@ -16,7 +16,6 @@ export default function page() {
 
         <meta name="robots" content="index, follow" />
 
-        {/* Open Graph */}
         <meta
           property="og:title"
           content="PPEPCA Members – Pakistan Petroleum Exploration Companies"
@@ -29,7 +28,6 @@ export default function page() {
         <meta property="og:url" content="https://www.ppepca.com/members" />
         <meta property="og:image" content="https://www.ppepca.com/logo.png" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -41,7 +39,6 @@ export default function page() {
         />
         <meta name="twitter:image" content="https://www.ppepca.com/logo.png" />
 
-        {/* Canonical */}
         <link rel="canonical" href="https://www.ppepca.com/members" />
       </Head>
 

@@ -19,7 +19,6 @@ export default function Page() {
 
         <meta name="robots" content="index, follow" />
 
-        {/* Open Graph */}
         <meta
           property="og:title"
           content="PPEPCA News & Events – Petroleum Exploration Updates Pakistan"
@@ -32,7 +31,6 @@ export default function Page() {
         <meta property="og:url" content="https://www.ppepca.com/news" />
         <meta property="og:image" content="https://www.ppepca.com/logo.png" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -44,7 +42,6 @@ export default function Page() {
         />
         <meta name="twitter:image" content="https://www.ppepca.com/logo.png" />
 
-        {/* Canonical */}
         <link rel="canonical" href="https://www.ppepca.com/news" />
       </Head>
 
