@@ -58,11 +58,9 @@ const newsletterContent = {
 };
 
 export default function NewsletterSection() {
-
   const getPdfUrl = (fileKey: string) => `${API_BASE_URL}/uploads/${fileKey}`;
 
   const downloadPdf = async (fileKey: string, filename: string) => {
-
     const url = getPdfUrl(fileKey);
 
     try {
@@ -76,7 +74,6 @@ export default function NewsletterSection() {
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(blobUrl);
-
     } catch (error) {
       console.error("Download failed:", error);
       window.open(url, "_blank");
@@ -86,12 +83,11 @@ export default function NewsletterSection() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredNewsletters = newsletterContent.items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
-  
+
   return (
     <section className="w-full bg-[#f8fafc] pt-10  ">
-
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">
         {newsletterContent.heading}
       </h2>
@@ -126,53 +122,54 @@ export default function NewsletterSection() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mx-auto">
         {filteredNewsletters.length > 0 ? (
-          filteredNewsletters.map((item, index) =>{
+          filteredNewsletters.map((item, index) => {
             const pdfUrl = getPdfUrl(item.fileKey);
-            return(
-            <div
-              key={index}
-              className="bg-[#ffffff] rounded-md border border-[#84929f] overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="h-[170px] w-full bg-gray-200 relative">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                  priority={index === 0}
-                />
-              </div>
+            return (
+              <div
+                key={index}
+                className="bg-[#ffffff] rounded-md border border-[#84929f] overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="h-[170px] w-full bg-gray-200 relative">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    priority={index === 0}
+                  />
+                </div>
 
-              <div className="flex flex-col items-center justify-center px-4 py-5 gap-3">
-                <p className="text-sm font-medium text-[#1e3a8a] text-center">
-                  {item.title}
-                </p>
+                <div className="flex flex-col items-center justify-center px-4 py-5 gap-3">
+                  <p className="text-sm font-medium text-[#1e3a8a] text-center">
+                    {item.title}
+                  </p>
 
-                <div className="flex flex-col text-center gap-2 w-full max-w-[180px]">
-                  <a
-                    href={pdfUrl}
-                    aria-label={`View ${item.title} PDF`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200"
-                  >
-                    {newsletterContent.viewButtonLabel}
-                  </a>
+                  <div className="flex flex-col text-center gap-2 w-full max-w-[180px]">
+                    <a
+                      href={pdfUrl}
+                      aria-label={`View ${item.title} PDF`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200"
+                    >
+                      {newsletterContent.viewButtonLabel}
+                    </a>
 
-                  <button
-                    aria-label={`Download ${item.title} PDF`}
-                    onClick={() =>
-                      downloadPdf(item.fileKey, `${item.title}.pdf`)
-                    }
-                    className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
-                  >
-                    {newsletterContent.downloadButtonLabel}
-                  </button>
+                    <button
+                      aria-label={`Download ${item.title} PDF`}
+                      onClick={() =>
+                        downloadPdf(item.fileKey, `${item.title}.pdf`)
+                      }
+                      className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
+                    >
+                      {newsletterContent.downloadButtonLabel}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )})
+            );
+          })
         ) : (
           <p className="col-span-full text-center text-gray-500 mt-4">
             {newsletterContent.emptyStateText}
