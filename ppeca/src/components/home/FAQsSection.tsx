@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { IoMdArrowForward } from "react-icons/io";
 
 interface FAQ {
@@ -8,25 +8,33 @@ interface FAQ {
   answer: string;
 }
 
-const faqs: FAQ[] = [
-  {
-    question: "What is PPEPCA and what does it do?",
-    answer:
-      "PPEPCA (Pakistan Petroleum Exploration Companies Association) is an industry body representing petroleum exploration companies in Pakistan. It works to promote responsible exploration, development, and best practices in the petroleum sector.",
+const faqContent = {
+  subtitle: "FAQs",
+  heading: "Find Answers to Your Common Queries",
+  description:
+    "We’ve gathered the questions our users ask the most to help you quickly find the answers you need. If you don’t see your question here, feel free to contact us directly.",
+  cta: {
+    label: "Read More",
+    href: "/faqs", // Update destination route as needed
   },
-  {
-    question: "How can I become a member of PPEPCA?",
-    answer:
-      "Membership is open to companies involved in petroleum exploration in Pakistan. Interested companies can apply through our official website or contact our membership team for guidance on requirements and procedures.",
-  },
-  {
-    question: "Where can I find PPEPCA's policies and reports?",
-    answer:
-      "All our policies, annual reports, and publications are available on the 'Facts & Links' section of our website. These documents provide insight into our initiatives, compliance guidelines, and industry data.",
-  },
-
-];
-
+  items: [
+    {
+      question: "What is PPEPCA and what does it do?",
+      answer:
+        "PPEPCA (Pakistan Petroleum Exploration Companies Association) is an industry body representing petroleum exploration companies in Pakistan. It works to promote responsible exploration, development, and best practices in the petroleum sector.",
+    },
+    {
+      question: "How can I become a member of PPEPCA?",
+      answer:
+        "Membership is open to companies involved in petroleum exploration in Pakistan. Interested companies can apply through our official website or contact our membership team for guidance on requirements and procedures.",
+    },
+    {
+      question: "Where can I find PPEPCA's policies and reports?",
+      answer:
+        "All our policies, annual reports, and publications are available on the 'Facts & Links' section of our website. These documents provide insight into our initiatives, compliance guidelines, and industry data.",
+    },
+  ] as FAQ[],
+};
 
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -37,23 +45,23 @@ export default function FAQSection() {
 
   return (
     <section className="bg-[#001103] px-4 sm:px-6 md:px-8 xl:px-[3.75rem] pt-10 md:pt-[4.1rem] xl:pt-[5.125rem] pb-12 md:pb-[6rem] xl:pb-[7.5rem] flex flex-col md:flex-row items-start gap-8 md:gap-10">
-      {/* Left Content */}
       <div className="w-full  md:w-1/2 flex flex-col gap-4">
-        <p className="text-[#16A831] text-sm font-['Open_Sans'] sm:text-[0.95rem] md:text-[1rem] font-semibold">FAQs</p>
+        <p className="text-[#16A831] text-sm font-['Open_Sans'] sm:text-[0.95rem] md:text-[1rem] font-semibold">
+          {faqContent.subtitle}
+        </p>
         <h2 className="text-[#F8FAFC] leading-tight sm:leading-snug md:leading-none font-['Plus_Jakarta_Sans'] text-[1.875rem] sm:text-[2.25rem] md:text-[2.4275rem] lg:text-[3rem] font-extrabold">
-          Find Answers to Your Common Queries
+          {faqContent.heading}
         </h2>
         <p className="text-[#94A3B8] font-['Plus_Jakarta_Sans'] text-[0.875rem] sm:text-[0.9rem] md:text-[1rem] max-w-full md:max-w-[75%] lg:p-[0.625rem] sm:p-[0.5625rem]">
-    We’ve gathered the questions our users ask the most to help you quickly find the answers you need. If you don’t see your question here, feel free to contact us directly.
+          {faqContent.description}{" "}
         </p>
         <button className="flex items-center gap-2 cursor-pointer font-['Plus_Jakarta_Sans'] bg-[#16a831] hover:bg-[#128a28] text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-[4px] w-max">
-          Read More <IoMdArrowForward/>
+          {faqContent.cta.label} <IoMdArrowForward />
         </button>
       </div>
 
-      {/* Right Content - FAQ Accordion */}
       <div className="w-full font-['Open_Sans'] md:w-1/2 flex flex-col gap-3 md:gap-4 mt-6 md:mt-0">
-        {faqs.map((faq, index) => (
+        {faqContent.items.map((faq, index) => (
           <div
             key={index}
             className={` border rounded-sm font-['Open_Sans'] overflow-hidden transition-all duration-300 bg-white`}
@@ -61,11 +69,15 @@ export default function FAQSection() {
             <button
               onClick={() => toggleFAQ(index)}
               className={`cursor-pointer w-full text-left px-4 sm:px-6 md:px-6 py-3 sm:py-4 flex justify-between items-center font-semibold text-sm sm:text-[0.95rem] md:text-[1rem] ${
-                activeIndex === index ? 'text-[#eba000]' : 'text-gray-700'
+                activeIndex === index ? "text-[#eba000]" : "text-gray-700"
               }`}
             >
-              <span>{index + 1}. {faq.question}</span>
-              <span className="text-xl sm:text-[1.25rem]">{activeIndex === index ? '-' : '+'}</span>
+              <span>
+                {index + 1}. {faq.question}
+              </span>
+              <span className="text-xl sm:text-[1.25rem]">
+                {activeIndex === index ? "-" : "+"}
+              </span>
             </button>
             {activeIndex === index && (
               <p className="px-4 sm:px-6 md:px-6 pb-3 sm:pb-4 md:pb-4 text-[0.875rem] sm:text-[0.95rem] md:text-[1rem] text-gray-700">
