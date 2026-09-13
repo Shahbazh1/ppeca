@@ -45,7 +45,7 @@ const PolicyHeader: React.FC = () => {
           {policy.title}
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          {policy.title}
+          {policy.subtitle}
         </h1>
 
         <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
