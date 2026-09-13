@@ -23,22 +23,38 @@ import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
 import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
 
-const logos = [
-  OGX_LOGO,
-  PPL_LOGO,
-  MARI_LOGO,
-  GHPL_LOGO,
-  UEP_LOGO,
-  POL_LOGO,
-  PGNIG_LOGO,
-  PRIME_LOGO,
-  MOL_LOGO,
-  OP_LOGO,
-  AEPL_LOGO,
-  KUFPEC_LOGO,
-  SAIF_LOGO,
-  KPOGCL_LOGO,
-];
+const testimonialContent = {
+  backgroundImage: {
+    src: members_sec_BG,
+    alt: "Oil Industry Background",
+  },
+  leader: {
+    avatar: chairman1,
+    name: "Mr. Masood Nabi",
+    role: "Chairman, PPEPCA",
+    quote: "", // Place quote text here if applicable
+  },
+  cta: {
+    label: "Learn More",
+    href: "/members",
+  },
+  memberLogos: [
+    { src: OGX_LOGO, alt: "OGX Logo" },
+    { src: PPL_LOGO, alt: "PPL Logo" },
+    { src: MARI_LOGO, alt: "MARI Petroleum Logo" },
+    { src: GHPL_LOGO, alt: "GHPL Logo" },
+    { src: UEP_LOGO, alt: "UEP Logo" },
+    { src: POL_LOGO, alt: "POL Logo" },
+    { src: PGNIG_LOGO, alt: "PGNiG Logo" },
+    { src: PRIME_LOGO, alt: "Prime Logo" },
+    { src: MOL_LOGO, alt: "MOL Logo" },
+    { src: OP_LOGO, alt: "OP Logo" },
+    { src: AEPL_LOGO, alt: "AEPL Logo" },
+    { src: KUFPEC_LOGO, alt: "KUFPEC Logo" },
+    { src: SAIF_LOGO, alt: "Saif Energy Logo" },
+    { src: KPOGCL_LOGO, alt: "KPOGCL Logo" },
+  ],
+};
 
 export default function TestimonialSection() {
   const [current, setCurrent] = useState(0);
@@ -54,24 +70,25 @@ export default function TestimonialSection() {
     return () => window.removeEventListener("resize", updateLogosToShow);
   }, []);
 
-  const testimonial = {
-    text: "",
-    name: "Mr. Masood Nabi",
-    role: "Chairman, PPEPCA",
-  };
+  const totalLogos = testimonialContent.memberLogos.length;
 
-  const handlePrev = () => setCurrent((prev) => (prev === 0 ? logos.length - 1 : prev - 1));
-  const handleNext = () => setCurrent((prev) => (prev === logos.length - 1 ? 0 : prev + 1));
+  const handlePrev = () =>
+    setCurrent((prev) => (prev === 0 ? totalLogos - 1 : prev - 1));
+  const handleNext = () =>
+    setCurrent((prev) => (prev === totalLogos - 1 ? 0 : prev + 1));
 
-  const logoIndices = Array.from({ length: logosToShow }, (_, i) => (current + i) % logos.length);
+  const logoIndices = Array.from(
+    { length: logosToShow },
+    (_, i) => (current + i) % totalLogos,
+  );
 
   return (
     <section className="relative w-full pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 flex flex-col items-center text-white bg-[#121C22]">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={members_sec_BG}
-          alt="Oil Industry Background"
+          src={testimonialContent.backgroundImage.src}
+          alt={testimonialContent.backgroundImage.alt}
           layout="fill"
           objectFit="cover"
           className="opacity-50"
@@ -89,8 +106,8 @@ export default function TestimonialSection() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
           <Image
-            src={chairman1}
-            alt={testimonial.name}
+            src={testimonialContent.leader.avatar}
+            alt={testimonialContent.leader.name}
             fill
             className="object-cover bg-white"
             loading="lazy"
@@ -98,13 +115,13 @@ export default function TestimonialSection() {
         </div>
 
         <p className="max-w-md text-white font-['Open_Sans'] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[1.25rem] mb-4">
-          {testimonial.text}
+          {testimonialContent.leader.quote}
         </p>
         <h4 className="text-yellow-500 font-extrabold text-sm sm:text-base md:text-base lg:text-lg xl:text-[1rem] font-['Plus_Jakarta_Sans']">
-          {testimonial.name}
+          {testimonialContent.leader.name}
         </h4>
         <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">
-          {testimonial.role}
+          {testimonialContent.leader.role}
         </span>
       </div>
 
@@ -121,23 +138,26 @@ export default function TestimonialSection() {
 
         {/* Logos */}
         <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-12 lg:gap-16">
-          {logoIndices.map((logoIndex, index) => (
-            <div
-              key={index}
-              className="w-14 h-14 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110"
-            >
-              <div className="p-1 sm:p-2 w-full h-full rounded-full overflow-hidden">
-                <Image
-                  src={logos[logoIndex]}
-                  alt={`Logo ${logoIndex + 1}`}
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                  width={96}
-                  height={96}
-                />
+          {logoIndices.map((logoIndex, index) => {
+            const logo = testimonialContent.memberLogos[logoIndex];
+            return (
+              <div
+                key={index}
+                className="w-14 h-14 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full bg-white flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110"
+              >
+                <div className="p-1 sm:p-2 w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    width={96}
+                    height={96}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Right Button */}
@@ -155,7 +175,7 @@ export default function TestimonialSection() {
         onClick={() => router.push("/members")}
         className="flex cursor-pointer items-center gap-2 mt-8 sm:mt-10 md:mt-12 px-4 py-2 sm:px-6 sm:py-3 border border-white rounded text-white hover:bg-white hover:text-black shadow-md transition z-10 relative text-sm sm:text-base"
       >
-        Learn More <IoMdArrowForward />
+        {testimonialContent.cta.label} <IoMdArrowForward />
       </button>
     </section>
   );
