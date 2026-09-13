@@ -4,14 +4,31 @@ import hero_BG from '../../../public/images/member_heroSec_BG.png'
 import ArrowRight from "../../../public/images/svg_images/Arrow right.svg";
 import { useRouter } from "next/navigation";
 
+const heroContent = {
+  bgImage: {
+    src: hero_BG,
+    alt: "PPEPCA Members Directory",
+  },
+  heading: "PPEPCA Members",
+  // subtitle: "A united network driving Pakistan's", // Reserved if needed
+  cta: {
+    label: "Become a member",
+    href: "/members/membershipform",
+    icon: {
+      src: ArrowRight,
+      alt: "arrow",
+    },
+  },
+};
+
 export default function PPEPCAHero() {
   const router = useRouter();
   return (
     <section className="relative w-full  overflow-hidden">
       {/* Background Image */}
       <Image
-        src={hero_BG}
-        alt="PPEPCA Members Directory"
+        src={heroContent.bgImage.src}
+        alt={heroContent.bgImage.alt}
         fill
         className="object-cover"
         priority
@@ -23,7 +40,7 @@ export default function PPEPCAHero() {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4 sm:px-6">
         <h1 className="text-white text-[2rem] sm:text-[2.5rem] md:text-[2.625rem] lg:text-[3rem] xl:text-[3.375rem] font-extrabold mt-[2rem] sm:mt-[3rem] md:mt-[4.86rem] lg:mt-[5.4rem] xl:mt-[6rem] tracking-tight">
-          PPEPCA Members
+          {heroContent.heading}
         </h1>
 
         {/* <h2 className="font-normal font-['Montserrat'] text-[#C5C5C5] text-[1.125rem] sm:text-[1.25rem] md:text-[1.4375rem] xl:text-[1.5rem] mt-4">
@@ -34,10 +51,10 @@ export default function PPEPCAHero() {
           onClick={() => router.push('/members/membershipform')}
           className="cursor-pointer mt-[0.8rem] sm:mt-[1.3rem] md:mt-[1.42rem] lg:mt-[2.0rem] xl:mt-[2.5rem] mb-[2rem] sm:mb-[3rem] md:mb-[3.6rem] lg:mb-[4.0rem] xl:mb-[4.50rem] inline-flex items-center gap-2 rounded-sm bg-[#16A831] hover:bg-[#128a28] px-3 sm:px-4 py-2.5 sm:py-3 text-[#F8FAFC] text-xs sm:text-sm font-semibold transition"
         >
-          Become a member
+          {heroContent.cta.label}
           <Image
-            src={ArrowRight}
-            alt="arrow"
+            src={heroContent.cta.icon.src}
+            alt={heroContent.cta.icon.alt}
             width={16}
             height={16}
           />
