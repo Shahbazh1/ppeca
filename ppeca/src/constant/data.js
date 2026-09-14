@@ -1,5 +1,5 @@
-import aboutUsHero_BG from "../../public/images/aboutUsHero_BG.jpg"
-import Secretariat_img from "../../public/images/Secretariat_img.png";
+import aboutUsHero_BG from "../../public/images/aboutUsHero_BG.webp"
+import Secretariat_img from "../../public/images/Secretariat_img.webp";
 
 import industry_views from "../../public/images/svg_images/industry_views.svg";
 import petroleum_form from "../../public/images/svg_images/petroleum_form.svg";
@@ -10,7 +10,7 @@ import training from "../../public/images/svg_images/training.svg";
 import info_and_dataSharing from "../../public/images/svg_images/info_and_dataSharing.svg";
 import tech_development from "../../public/images/svg_images/tech_development.svg";
 
-import roleSec_side_img from "../../public/images/roleSec_side_img.png";
+import roleSec_side_img from "../../public/images/roleSec_side_img.webp";
 
 import Img1 from "../../public/images/about_sec_img1.jpg";
 import Img2 from "../../public/images/about_sec_img2.jpg";
