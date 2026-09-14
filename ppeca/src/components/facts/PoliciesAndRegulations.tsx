@@ -1,46 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import policyAndRegulatio from '../../../public/images/policyAndRegulatio.jpg';
-
-const POLICIES_SECTION_DATA = {
-  heading: "Policies & Regulations, Including",
-  policiesList: [
-    {
-      id: 1,
-      label: "Petroleum Policies",
-      href: "http://www.mpnr.gov.pk/",
-      isLink: true,
-      ariaLabel: "Visit Petroleum Policies page",
-    },
-    { id: 2, label: "Environment Policy / Guide", isLink: false },
-    { id: 3, label: "Mines Act 1948", isLink: false },
-    { id: 4, label: "Petroleum Exploration & Production Rules 2001", isLink: false },
-    { id: 5, label: "Natural Gas Rules", isLink: false },
-    { id: 6, label: "Model PCA", isLink: false },
-    { id: 7, label: "Model PSA", isLink: false },
-  ],
-  externalLinksHeading: "Visit:",
-  externalLinks: [
-    {
-      id: 1,
-      label: "Ministry of Petroleum & Natural Resources",
-      href: "http://www.mpnr.gov.pk/",
-    },
-    {
-      id: 2,
-      label: "Directorate General of Petroleum Concessions",
-      href: "http://www.mpnr.gov.pk/",
-    },
-  ],
-  imageData: {
-    src: policyAndRegulatio,
-    alt: "Policies",
-  },
-};
+import { FACTS_POLICIES_SECTION_DATA } from "@/src/constant/data";
 
 export default function PoliciesAndRegulations() {
-  const { heading, policiesList, externalLinksHeading, externalLinks, imageData } = POLICIES_SECTION_DATA;
+  const { heading, policiesList, externalLinksHeading, externalLinks, imageData } = FACTS_POLICIES_SECTION_DATA;
   return (
     <section className="w-full rounded-lg border border-[#94a3b8] bg-white px-5 pt-10">
       <h2 className="mb-2 font-['Montserrat'] text-[#0a2540] text-[18px] font-semibold lg:text-3xl xl:text-4xl">

@@ -3,8 +3,6 @@ import { IoMdArrowForward } from "react-icons/io";
 import Link from "next/link";
 import { HOME_HERO_DATA } from "@/src/constant/data";
 
-
-
 export default function HeroSection() {
   const {badge, title, description, image, imageAlt, buttons} = HOME_HERO_DATA;
   return (

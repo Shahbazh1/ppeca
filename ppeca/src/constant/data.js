@@ -34,6 +34,18 @@ import chairman1 from "../../public/images/chairman_ppepca.png";
 
 import heroBg from "../../public/images/heroBg.png";
 
+import policyAndRegulatio from '../../public/images/policyAndRegulatio.jpg';
+
+import ministry_of_petroleum from '../../public/images/svg_images/ministry_of_petroleum.svg';
+import central_board_of_revenue from '../../public/images/svg_images/central_board_of_revenue.svg';
+import board_of_investment from '../../public/images/svg_images/board_of_investment.svg';
+import engineering_Development_board from '../../public/images/svg_images/engineering_Development_board.svg';
+import lmk_resources from '../../public/images/svg_images/lmk_resources.svg';
+import pakistan_ministry_of_interior from '../../public/images/svg_images/pakistan_ministry_of_interior.svg';
+import environmental_protection_agency from '../../public/images/svg_images/environmental_protection_agency.svg';
+import export_promotion_bureau from '../../public/images/svg_images/export_promotion_bureau.svg';
+import pakistan_petroleum_information_service from '../../public/images/svg_images/pakistan_petroleum_information_service.svg';
+
 // ABOUT PAGE DATA
 export const ABOUT_HERO_DATA = {
   title: "About PPEPCA",
@@ -293,3 +305,104 @@ export const HOME_HERO_DATA = {
   },
 };
 
+// FACTS PAGE DATA
+export const FACTS_POLICIES_DATA = {
+    id: 1,
+    title: "Gazetted Petroleum Exploration & Production",
+    subtitle: "Policy 2012",
+    pdfPath: "uploads/Petroleum_Policy_2012_Gazzette_f3558c7554.pdf",
+    fileName: "Petroleum_Policy_2012_Gazzette.pdf",
+    visitButtonText: "Visit",
+    downloadButtonText: "Download",
+};
+
+export const FACTS_POLICIES_SECTION_DATA = {
+  heading: "Policies & Regulations, Including",
+  policiesList: [
+    {
+      id: 1,
+      label: "Petroleum Policies",
+      href: "http://www.mpnr.gov.pk/",
+      isLink: true,
+      ariaLabel: "Visit Petroleum Policies page",
+    },
+    { id: 2, label: "Environment Policy / Guide", isLink: false },
+    { id: 3, label: "Mines Act 1948", isLink: false },
+    { id: 4, label: "Petroleum Exploration & Production Rules 2001", isLink: false },
+    { id: 5, label: "Natural Gas Rules", isLink: false },
+    { id: 6, label: "Model PCA", isLink: false },
+    { id: 7, label: "Model PSA", isLink: false },
+  ],
+  externalLinksHeading: "Visit:",
+  externalLinks: [
+    {
+      id: 1,
+      label: "Ministry of Petroleum & Natural Resources",
+      href: "http://www.mpnr.gov.pk/",
+    },
+    {
+      id: 2,
+      label: "Directorate General of Petroleum Concessions",
+      href: "http://www.mpnr.gov.pk/",
+    },
+  ],
+  imageData: {
+    src: policyAndRegulatio,
+    alt: "Policies",
+  },
+};
+
+export const FACTS_PAKISTAN_PETROLEUM_CARDS_DATA = {
+  heading: {
+    line1: "Pakistan Petroleum Information",
+    line2: "Service, Including:",
+  },
+  buttonText: "Visit",
+  cards: [
+  { 
+    name: "Ministry of Petroleum & NR", 
+    img: ministry_of_petroleum, 
+    url: "https://www.mpnr.gov.pk" 
+  },
+  { 
+    name: "Central Board of Revenue", 
+    img: central_board_of_revenue, 
+    url: "https://www.cbr.gov.pk" 
+  },
+  { 
+    name: "Board of Investment", 
+    img: board_of_investment, 
+    url: "https://www.pak.boi.gov.pk" 
+  },
+  { 
+    name: "Engineering Development Board", 
+    img: engineering_Development_board, 
+    url: "https://www.engineeringindustry.info" 
+  },
+  { 
+    name: "LMK Resources", 
+    img: lmk_resources, 
+    url: "https://www.lmkr.com" 
+  },
+  { 
+    name: "Pakistan Ministry of Interior", 
+    img: pakistan_ministry_of_interior, 
+    url: "https://www.interior.gov.pk" 
+  },
+  { 
+    name: "Environmental Protection Agency", 
+    img: environmental_protection_agency, 
+    url: "https://www.environment.gov.pk" 
+  },
+  { 
+    name: "Export Promotion Bureau", 
+    img: export_promotion_bureau, 
+    url: "https://www.epb.gov.pk" 
+  },
+  { 
+    name: "Pakistan Petroleum Information Service", 
+    img: pakistan_petroleum_information_service, 
+    url: "http://www.ppisonline.com" 
+  },
+],
+};
