@@ -1,21 +1,10 @@
 "use client";
 import Link from "next/link";
-
-const CSR_SECTION_DATA = {
-  heading: "CORPORATE SOCIAL RESPONSIBILITY",
-  subHeading: "Member Community Work",
-  description:
-    "Whichever company works to add 2-3 paragraphs on the work done by each in their area.",
-  cta: {
-    label: "Newsletter",
-    href: "/news",
-    ariaLabel: "Read Corporate Social Responsibility Newsletter",
-  },
-};
+import {ABOUT_CSR_SECTION_DATA} from "../../constant/data"
 
 export default function CorporateSocialResponsibility() {
 
-  const { heading, subHeading, description, cta } = CSR_SECTION_DATA;
+  const { heading, subHeading, description, cta } = ABOUT_CSR_SECTION_DATA;
 
   return (
     <section className="bg-[#f8fafc] px-4 sm:px-6 pt-10 lg:pt-14">

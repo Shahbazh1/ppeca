@@ -3,57 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import Image from "next/image";
-import industry_views from "../../../public/images/svg_images/industry_views.svg";
-import petroleum_form from "../../../public/images/svg_images/petroleum_form.svg";
-import recommendations from "../../../public/images/svg_images/recommendations.svg";
-import represent_petroleum_industry from "../../../public/images/svg_images/training.svg";
-import research_and_innovation from "../../../public/images/svg_images/research_and_innovation.svg";
-import training from "../../../public/images/svg_images/training.svg";
-import info_and_dataSharing from "../../../public/images/svg_images/info_and_dataSharing.svg";
-import tech_development from "../../../public/images/svg_images/tech_development.svg";
+import { ABOUT_cardData } from "@/src/constant/data";
 
-const cardData = [
-  {
-    img: petroleum_form,
-    title: "Petroleum forum",
-    desc: "To provide a forum for petroleum companies to discuss common issues and develop joint strategies.",
-  },
-  {
-    img: industry_views,
-    title: "Industry views",
-    desc: "To convey members' collective views on petroleum industry issues like legislation, taxation, transport, trade, safety, and labor.",
-  },
-  {
-    img: represent_petroleum_industry,
-    title: "Represent petroleum industry",
-    desc: "To represent the E&P sector at all government levels on upstream-related issues.",
-  },
-  {
-    img: recommendations,
-    title: "Recommendations",
-    desc: "To review upstream operations and propose measures that promote national self-sufficiency and optimal resource use.",
-  },
-  {
-    img: research_and_innovation,
-    title: "Research & Innovation",
-    desc: "To perform or sponsor research and development initiatives relevant to the petroleum exploration and production industry.",
-  },
-  {
-    img: training,
-    title: "Training",
-    desc: "To arrange training programs, courses, and seminars to enhance technical skills and professional expertise within the industry.",
-  },
-  {
-    img: info_and_dataSharing,
-    title: "Information & Data Sharing",
-    desc: "To compile, collect, and circulate accurate, reliable, and up-to-date information on petroleum exploration, development, and production in Pakistan.",
-  },
-  {
-    img: tech_development,
-    title: "Technology Development",
-    desc: "To develop plans for transferring and advancing suitable upstream technology in consultation with PPEPCA members.",
-  },
-];
 
 const ObjectivesSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -122,7 +73,7 @@ const ObjectivesSection = () => {
             ref={scrollContainerRef}
             className="flex gap-4 sm:gap-5 overflow-x-auto scroll-smooth scrollbar-hide py-2 px-2 sm:px-0"
           >
-            {cardData.map((card, index) => (
+            {ABOUT_cardData.map((card, index) => (
               <article
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center w-[300px] sm:w-[280px] h-[280px] px-6 py-8 bg-white rounded-lg border border-[#94a3b8]/60 text-center shadow"

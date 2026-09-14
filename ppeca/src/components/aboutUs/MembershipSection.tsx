@@ -2,41 +2,11 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-
-const MEMBERSHIP_SECTION_DATA = {
-  heading: "Membership",
-  paragraphs: [
-    {
-      id: 1,
-      label: "",
-      text: "PPEPCA Membership shall be open to all the Petroleum Exploration and Production Companies operating in Pakistan.",
-    },
-    {
-      id: 2,
-      label: "Qualifications:",
-      text: "Membership shall be limited to Petroleum Exploration and Production Companies, and their subsidiaries, engaged in exploration and production of petroleum in Pakistan either as operator and/or working interest owner under a Petroleum Concession Agreement signed with the President of Pakistan. It shall be a requirement for membership that the intending Member must have a registered place of business, or at least a liaison office, within Pakistan.",
-    },
-    {
-      id: 3,
-      label: "Admission:",
-      text: "PPEPCA by majority vote of the Committee may admit any Exploration and Production Company not already a member, to become a Member, if it is in the interest of PPEPCA and provided such company meets the qualifications mentioned in these Articles. New members must be formally proposed and seconded by an existing member and elected by a majority vote of the Committee. The membership fee shall be prescribed by the Committee from time to time.",
-    },
-    {
-      id: 4,
-      label: "Contributions:",
-      text: "Every Member shall pay the annual contribution for each year in advance. The annual contribution calls shall be based on approved budget expenditure. Members shall make the contributions at the beginning of each year based on assessments made by the Committee any approved by the General Body.",
-    },
-  ],
-  cta: {
-    label: "Become a Member",
-    path: "/members/membershipform",
-    ariaLabel: "Navigate to membership form",
-  },
-};
+import {ABOUT_MEMBERSHIP_SECTION_DATA} from "../../constant/data"
 
 const MembershipSection: React.FC = () => {
   const router = useRouter();
-  const { heading, paragraphs, cta } = MEMBERSHIP_SECTION_DATA;
+  const { heading, paragraphs, cta } = ABOUT_MEMBERSHIP_SECTION_DATA;
   return (
     <section className="px-4 sm:px-6 py-10 lg:py-14 text-[#0b3a63]">
       <div className="mx-auto max-w-6xl">

@@ -1,33 +1,8 @@
 import Image from "next/image";
-import Secretariat_img from "../../../public/images/Secretariat_img.png";
-
-const SECRETARIAT_SECTION_DATA = {
-  heading: "SECRETARIAT",
-  paragraphs: [
-    "The Secretariat is located in Islamabad and has dedicated staff to look after the day-to-day running of the affairs of PPEPCA.",
-    "In accordance with the Trade Organization Rules, the Secretariat is headed by a Secretary General who has overall responsibility of PPEPCA and has specific responsibilities, which include:",
-  ],
-  responsibilities: [
-    {
-      id: 1,
-      text: "Defining, setting out, and meeting assigned yearly targets of PPEPCA.",
-    },
-    {
-      id: 2,
-      text: "Interacting with senior Govt. functionaries on behalf of the Chairman PPEPCA Excom.",
-    },
-  ],
-  closingParagraph:
-    "The PPEPCA budget for the year is approved by the Excom and funded through yearly membership fee invoiced to companies based on their production numbers with a cap.",
-  imageData: {
-    src: Secretariat_img,
-    alt: "Secretariat staff meeting at PPEPCA office in Islamabad",
-  },
-};
+import { ABOUT_SECRETARIAT_SECTION_DATA } from "@/src/constant/data";
 
 const SecretariatSection = () => {
-  const { heading, paragraphs, responsibilities, closingParagraph, imageData } =
-    SECRETARIAT_SECTION_DATA;
+  const { heading, paragraphs, responsibilities, closingParagraph, imageData } = ABOUT_SECRETARIAT_SECTION_DATA;
   return (
     <section className="w-full bg-[#f8fafc] px-4 sm:px-6 md:px-8 pt-10 lg:pt-14">
       <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start justify-between gap-8 sm:gap-10 lg:gap-12">
