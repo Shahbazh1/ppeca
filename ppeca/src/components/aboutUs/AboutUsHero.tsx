@@ -1,21 +1,8 @@
 import Image from "next/image";
-import aboutUsHero_BG from "../../../public/images/aboutUsHero_BG.jpg";
 import { IoMdArrowForward } from "react-icons/io";
 import Link from "next/link";
 
-const ABOUT_HERO_DATA = {
-  title: "About PPEPCA",
-  description:
-    "Serving Pakistan's upstream petroleum sector through collaboration, policy advocacy and community development.",
-  cta: {
-    label: "Let's Connect",
-    href: "/contact",
-  },
-  backgroundImage: {
-    src: aboutUsHero_BG,
-    alt: "Industrial refinery background",
-  },
-};
+import {ABOUT_HERO_DATA} from "../../constant/data"
 
 export default function AboutPPEPCAHero() {
   const { title, description, cta, backgroundImage } = ABOUT_HERO_DATA;
