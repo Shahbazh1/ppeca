@@ -578,3 +578,184 @@ export const MEMBERS_leadershipContent = {
     },
   ]
 };
+
+// NEWS PAGE DATA
+export const NEWS_newsHeroContent = {
+  titleLine1: "Latest",
+  titleLine2: "News",
+  descriptionPrimary:
+    "Stay updated with the latest developments, announcements, and industry insights from PPEPCA and the petroleum sector.",
+  descriptionSecondary:
+    "Get timely news, events, and important updates all in one place.",
+  viewAllButton: {
+    label: "View All",
+    href: "news/latestNews",
+  },
+  emptyState: {
+    title: "No News Available",
+    description:
+      "Currently there are no news updates. Please check back later for the latest announcements.",
+  },
+};
+
+export const NEWS_electionsContent = {
+  title: "PPEPCA Elections 2026",
+  downloadButtonLabel: "Download",
+  trainingData: [
+    {
+      title: "Notice of Election for Members Excom 2026-28",
+      fileKey: "Notice_of_Election_for_Members_Excom_2026_28_04ebc00ed0.pdf",
+    },
+    {
+      title: "Election Schedule Annex 'A' 2026-28",
+      fileKey: "Election_Schedule_Annex_A_2026_28_7287806627.pdf",
+    },
+    {
+      title: "Voter List Annex 'B' 2026-28 Final",
+      fileKey: "Voter_List_Annex_B_2026_28_Final_8fdf0ec5ff.pdf",
+    },
+    {
+      title: "Nomination Form Annex 'C' 2026-28",
+      fileKey: "Nomination_Form_Annex_C_2026_28_1641a701c1.xlsx",
+    },
+    {
+      title: "Authority letter Annex 'D' 2026-28",
+      fileKey: "Authority_letter_Annex_D_2026_28_19f1307ade.docx",
+    },
+  ]
+};
+
+export const NEWS_newsletterContent = {
+  heading: "Newsletter",
+  searchPlaceholder: "Search",
+  viewButtonLabel: "View",
+  downloadButtonLabel: "Download",
+  emptyStateText: "No newsletters found.",
+  items: [
+    {
+      id: "issue-16",
+      title: "PPEPCA 16th issue",
+      image: "/images/ppepca_16_issue.png",
+      fileKey: "PPEPCA_16th_issue_d0f204f841.pdf",
+    },
+    {
+      id: "issue-17",
+      title: "PPEPCA 17th issue",
+      image: "/images/ppepca_17_issue.png",
+      fileKey: "PPEPCA_17th_issue_36f6a20cb4.pdf",
+    },
+    {
+      id: "issue-18",
+      title: "PPEPCA 18th issue",
+      image: "/images/ppepca_18_issue.png",
+      fileKey: "PPEPCA_18th_issue_11ac0586c6.pdf",
+    },
+    {
+      id: "issue-19",
+      title: "PPEPCA 19th issue",
+      image: "/images/ppepca_19_issue.png",
+      fileKey: "PPEPCA_19th_issue_35a9a7a2df.pdf",
+    },
+    {
+      id: "issue-20",
+      title: "PPEPCA 20th issue",
+      image: "/images/ppepca_20_issue.png",
+      fileKey: "PPEPCA_20th_issue_b198c91381.pdf",
+    },
+    {
+      id: "issue-21",
+      title: "PPEPCA 21st issue",
+      image: "/images/ppepca_21_issue.png",
+      fileKey: "PPEPCA_Newsletter_21st_Issue_c391d79725.pdf",
+    },
+  ]
+};
+
+export const NEWS_surplusInventoryContent = {
+  heading: "Surplus Inventory Data",
+  downloadButtonLabel: "Download",
+  items: [
+    {
+      id: "kufpec",
+      name: "KUFPEC",
+      logo: "/images/companies_logo/KUFPEC_LOGO.png",
+      fileKey: "List_of_Surplus_Branch_Inventory_8837373727_588fffb5f6.pdf",
+    },
+    {
+      id: "orient-petroleum",
+      name: "Orient Petroleum Inc.",
+      logo: "/images/companies_logo/OP_LOGO.jpg",
+      fileKey: "Orient_Petroleum_Surplus_Inventory_ac010249db_7979bcfe50.pdf",
+    },
+    {
+      id: "polish-oil",
+      name: "Polish Oil and Gas Company",
+      logo: "/images/POLISH_OIL_logo.jpg",
+      fileKey: "POL_RIG_SCR_d2bc9fdc55_379d323fe7.docx",
+    },
+    {
+      id: "ppl",
+      name: "Pakistan Petroleum Ltd",
+      logo: "/images/PPL_logo.png",
+      fileKey: "Drilling_and_Completion_materials_2a59a2e007_f7ca0c084a.xlsx",
+    },
+    {
+      id: "eni",
+      name: "Eni Pakistan",
+      logo: "/images/POL_logo.png",
+      fileKey: "Eni_Pakistan_Surplus_Inventory_List_c6fda86254_20f7f583cb.xlsx",
+    },
+    {
+      id: "prime-pogc",
+      name: "Propane Condenser POGC",
+      logo: "/images/companies_logo/PRIME_LOGO.png",
+      fileKey: "Surplus_Items_Propane_Condenser_37c8b7d3de_1790edbdfc.xlsx",
+    },
+  ] 
+};
+
+export const NEWS_trainingDirectoryContent = {
+  heading: "Directory of Training Providers",
+  downloadButtonLabel: "Download",
+  items: [
+    {
+      id: "ior-eor-mol-perspective",
+      title: "IOR/EOR Applications in MOL’s Perspective – by MOL Group",
+      fileKey:
+        "IOR_EOR_Applications_in_MOL_s_Perspective_by_MOL_Group_c08af8cc5c.pdf",
+    },
+    {
+      id: "eor-rd-mol-group",
+      title: "EOR related R&D – by MOL Group",
+      fileKey: "EOR_related_R_and_D_by_MOL_Group_8e2a075cf3.pdf",
+    },
+    {
+      id: "fast-track-eor",
+      title: "Fast Track EOR: Re-designing through Integration",
+      fileKey:
+        "Fast_Track_EOR_Re_designing_through_Integration_09cd7c5883.pdf",
+    },
+    {
+      id: "eor-smart-screening",
+      title: "EOR Techniques Smart Screening for Candidate Reservoir",
+      fileKey:
+        "EOR_Techniques_Smart_Screening_for_Candidate_Reservoir_49761c17c8.pdf",
+    },
+    {
+      id: "ior-eor-weatherford",
+      title: "IOR/EOR Monitoring & Control System – by Weatherford",
+      fileKey:
+        "IOR_EOR_Monitoring_and_Control_System_by_Weatherford_e66f279a6b.pdf",
+    },
+    {
+      id: "eor-alliance-black-gold",
+      title: "EOR Alliance – by Black Gold",
+      fileKey: "EOR_Alliance_by_Black_Gold_4941955889.pdf",
+    },
+    {
+      id: "ior-eor-mol-applications",
+      title: "IOR/EOR Applications in MOL’s Perspective",
+      fileKey: "IOR_EOR_Applications_in_MOL_s_Perspective_8031d3218c.pdf",
+    },
+  ]
+};

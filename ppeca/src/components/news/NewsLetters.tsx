@@ -1,63 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-
-export type NewsletterItem = {
-  id: string;
-  title: string;
-  image: string;
-  fileKey: string;
-};
+import { NEWS_newsletterContent } from "@/src/constant/data";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-const newsletterContent = {
-  heading: "Newsletter",
-  searchPlaceholder: "Search",
-  viewButtonLabel: "View",
-  downloadButtonLabel: "Download",
-  emptyStateText: "No newsletters found.",
-  items: [
-    {
-      id: "issue-16",
-      title: "PPEPCA 16th issue",
-      image: "/images/ppepca_16_issue.png",
-      fileKey: "PPEPCA_16th_issue_d0f204f841.pdf",
-    },
-    {
-      id: "issue-17",
-      title: "PPEPCA 17th issue",
-      image: "/images/ppepca_17_issue.png",
-      fileKey: "PPEPCA_17th_issue_36f6a20cb4.pdf",
-    },
-    {
-      id: "issue-18",
-      title: "PPEPCA 18th issue",
-      image: "/images/ppepca_18_issue.png",
-      fileKey: "PPEPCA_18th_issue_11ac0586c6.pdf",
-    },
-    {
-      id: "issue-19",
-      title: "PPEPCA 19th issue",
-      image: "/images/ppepca_19_issue.png",
-      fileKey: "PPEPCA_19th_issue_35a9a7a2df.pdf",
-    },
-    {
-      id: "issue-20",
-      title: "PPEPCA 20th issue",
-      image: "/images/ppepca_20_issue.png",
-      fileKey: "PPEPCA_20th_issue_b198c91381.pdf",
-    },
-    {
-      id: "issue-21",
-      title: "PPEPCA 21st issue",
-      image: "/images/ppepca_21_issue.png",
-      fileKey: "PPEPCA_Newsletter_21st_Issue_c391d79725.pdf",
-    },
-  ] as NewsletterItem[],
-};
-
 export default function NewsletterSection() {
+  const {heading, searchPlaceholder, viewButtonLabel, downloadButtonLabel, emptyStateText, items} = NEWS_newsletterContent;
   const getPdfUrl = (fileKey: string) => `${API_BASE_URL}/uploads/${fileKey}`;
 
   const downloadPdf = async (fileKey: string, filename: string) => {
@@ -82,14 +31,14 @@ export default function NewsletterSection() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredNewsletters = newsletterContent.items.filter((item) =>
+  const filteredNewsletters = items.filter((item) =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
     <section className="w-full bg-[#f8fafc] pt-10  ">
       <h2 className="xl:text-[2.25rem] font-['Montserrat'] lg:text-[2rem] md:text-[1.75rem] font-bold text-[#0a2540] md:mb-4 mb-6">
-        {newsletterContent.heading}
+        {heading}
       </h2>
 
       <div className="mb-10">
@@ -112,7 +61,7 @@ export default function NewsletterSection() {
           </svg>
           <input
             type="text"
-            placeholder={newsletterContent.searchPlaceholder}
+            placeholder={searchPlaceholder}
             className="bg-transparent outline-none w-full text-sm placeholder-[#94a3b8]"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -153,7 +102,7 @@ export default function NewsletterSection() {
                       rel="noopener noreferrer"
                       className="w-full cursor-pointer bg-[#16a831] text-white text-sm font-medium py-2 rounded-sm hover:bg-[#128a28] transition-colors duration-200"
                     >
-                      {newsletterContent.viewButtonLabel}
+                      {viewButtonLabel}
                     </a>
 
                     <button
@@ -163,7 +112,7 @@ export default function NewsletterSection() {
                       }
                       className="w-full border cursor-pointer border-[#16A831] text-[#0a2540] text-sm font-medium py-2 rounded-sm hover:bg-[#16a831] hover:text-white transition-colors duration-200"
                     >
-                      {newsletterContent.downloadButtonLabel}
+                      {downloadButtonLabel}
                     </button>
                   </div>
                 </div>
@@ -172,7 +121,7 @@ export default function NewsletterSection() {
           })
         ) : (
           <p className="col-span-full text-center text-gray-500 mt-4">
-            {newsletterContent.emptyStateText}
+            {emptyStateText}
           </p>
         )}
       </div>

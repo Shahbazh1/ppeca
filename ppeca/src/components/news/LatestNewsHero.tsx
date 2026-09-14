@@ -4,26 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsArrow from "../../../public/images/svg_images/news_arrow.svg";
 import { getLatestNews } from "@/src/lib/news";
-
-const newsHeroContent = {
-  titleLine1: "Latest",
-  titleLine2: "News",
-  descriptionPrimary:
-    "Stay updated with the latest developments, announcements, and industry insights from PPEPCA and the petroleum sector.",
-  descriptionSecondary:
-    "Get timely news, events, and important updates all in one place.",
-  viewAllButton: {
-    label: "View All",
-    href: "news/latestNews",
-  },
-  emptyState: {
-    title: "No News Available",
-    description:
-      "Currently there are no news updates. Please check back later for the latest announcements.",
-  },
-};
+import { NEWS_newsHeroContent } from "@/src/constant/data";
 
 export default async function LatestNewsHero() {
+  const {titleLine1,titleLine2,descriptionPrimary,descriptionSecondary,viewAllButton,emptyState } = NEWS_newsHeroContent
   // const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   // const API_URL = `${API_BASE_URL}/api/newses?pagination[limit]=3&sort=publishedAt:desc`;
 
@@ -70,21 +54,21 @@ export default async function LatestNewsHero() {
         <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-8 lg:gap-12">
           <div className="text-white flex flex-col justify-center pr-16 lg:justify-start">
             <div className="text-4xl font-['Montserrat'] sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
-              {newsHeroContent.titleLine1}
+              {titleLine1}
               <br />
-              {newsHeroContent.titleLine2}
+              {titleLine2}
             </div>
             <p className=" font-['Open_Sans'] text-sm sm:text-base text-[#C9C9C9] max-w-sm mb-4 sm:mb-6">
-              {newsHeroContent.descriptionPrimary}
+              {descriptionPrimary}
             </p>
             <p className="text-sm font-['Open_Sans'] sm:text-base text-[#C9C9C9] font-bold max-w-md mb-6 sm:mb-8">
-              {newsHeroContent.descriptionSecondary}
+              {descriptionSecondary}
             </p>
             <Link
-              href={newsHeroContent.viewAllButton.href}
+              href={viewAllButton.href}
               className="bg-white cursor-pointer text-black text-sm font-medium px-10 py-3 rounded-md w-fit shadow hover:shadow-lg transition-shadow duration-300"
             >
-              {newsHeroContent.viewAllButton.label}
+              {viewAllButton.label}
             </Link>
           </div>
 
@@ -92,10 +76,10 @@ export default async function LatestNewsHero() {
             {newsItems.length === 0 && (
               <div className="flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl text-center">
                 <h3 className="text-xl font-bold text-white mb-2">
-                  {newsHeroContent.emptyState.title}
+                  {emptyState.title}
                 </h3>
                 <p className="text-[#C9C9C9] text-sm max-w-xs">
-                  {newsHeroContent.emptyState.description}
+                  {emptyState.description}
                 </p>
               </div>
             )}
