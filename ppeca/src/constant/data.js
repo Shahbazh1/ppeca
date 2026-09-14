@@ -12,6 +12,28 @@ import tech_development from "../../public/images/svg_images/tech_development.sv
 
 import roleSec_side_img from "../../public/images/roleSec_side_img.png";
 
+import Img1 from "../../public/images/about_sec_img1.jpg";
+import Img2 from "../../public/images/about_sec_img2.jpg";
+
+import PPL_LOGO from "../../public/images/companies_logo/PPL_LOGO.png";
+import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
+import PGNIG_LOGO from "../../public/images/companies_logo/PGNIG_LOGO.jpg";
+import POL_LOGO from "../../public/images/companies_logo/POL_LOGO.png";
+import SAIF_LOGO from "../../public/images/companies_logo/SAIF_LOGO.jpg";
+import UEP_LOGO from "../../public/images/companies_logo/UEP_LOGO.jpg";
+import AEPL_LOGO from "../../public/images/companies_logo/AEPL_LOGO.jpg";
+import GHPL_LOGO from "../../public/images/companies_logo/GHPL_LOGO.png";
+import KPOGCL_LOGO from "../../public/images/companies_logo/KPOGCL_LOGO.png";
+import MARI_LOGO from "../../public/images/companies_logo/MARI_LOGO.png";
+import MOL_LOGO from "../../public/images/companies_logo/MOL_LOGO.jpg";
+import OGX_LOGO from "../../public/images/companies_logo/OGX_LOGO.png";
+import OP_LOGO from "../../public/images/companies_logo/OP_LOGO.jpg";
+import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_LOGO.png";
+import members_sec_BG from "../../public/images/members_sec_BG.jpg";
+import chairman1 from "../../public/images/chairman_ppepca.png";
+
+import heroBg from "../../public/images/heroBg.png";
+
 // ABOUT PAGE DATA
 export const ABOUT_HERO_DATA = {
   title: "About PPEPCA",
@@ -155,3 +177,119 @@ export const ABOUT_MEMBERSHIP_SECTION_DATA = {
     ariaLabel: "Navigate to membership form",
   },
 };
+
+// HOME PAGE DATA
+export const HOME_aboutContent = {
+  subtitle: "About us",
+  title: {
+    main: "Leadership in Pakistan's",
+    highlight: "Petroleum Industry",
+  },
+  description:
+    "In the eighties, with the rising curve of activities and the unprecedented surge in the petroleum exploration and production (E&P) activities, necessitated frequent coordination among those engaged in this sector and the need to exchange ideas on a variety of subjects of common interest.",
+  cta: {
+    label: "Read More",
+    href: "/about",
+  },
+  badge: {
+    label: "Started in",
+    year: "1988",
+  },
+  images: {
+    background: {
+      src: Img1,
+      alt: "Petroleum Industry",
+    },
+    foreground: {
+      src: Img2,
+      alt: "Worker",
+    },
+  },
+};
+
+export const HOME_testimonialContent = {
+  backgroundImage: {
+    src: members_sec_BG,
+    alt: "Oil Industry Background",
+  },
+  leader: {
+    avatar: chairman1,
+    name: "Mr. Masood Nabi",
+    role: "Chairman, PPEPCA",
+    quote: "", // Place quote text here if applicable
+  },
+  cta: {
+    label: "Learn More",
+    href: "/members",
+  },
+  memberLogos: [
+    { src: OGX_LOGO, alt: "OGX Logo" },
+    { src: PPL_LOGO, alt: "PPL Logo" },
+    { src: MARI_LOGO, alt: "MARI Petroleum Logo" },
+    { src: GHPL_LOGO, alt: "GHPL Logo" },
+    { src: UEP_LOGO, alt: "UEP Logo" },
+    { src: POL_LOGO, alt: "POL Logo" },
+    { src: PGNIG_LOGO, alt: "PGNiG Logo" },
+    { src: PRIME_LOGO, alt: "Prime Logo" },
+    { src: MOL_LOGO, alt: "MOL Logo" },
+    { src: OP_LOGO, alt: "OP Logo" },
+    { src: AEPL_LOGO, alt: "AEPL Logo" },
+    { src: KUFPEC_LOGO, alt: "KUFPEC Logo" },
+    { src: SAIF_LOGO, alt: "Saif Energy Logo" },
+    { src: KPOGCL_LOGO, alt: "KPOGCL Logo" },
+  ],
+};
+
+export const HOME_faqContent = {
+  subtitle: "FAQs",
+  heading: "Find Answers to Your Common Queries",
+  description:
+    "We’ve gathered the questions our users ask the most to help you quickly find the answers you need. If you don’t see your question here, feel free to contact us directly.",
+  cta: {
+    label: "Read More",
+    href: "/faqs", 
+  },
+  items: [
+    {
+      question: "What is PPEPCA and what does it do?",
+      answer:
+        "PPEPCA (Pakistan Petroleum Exploration Companies Association) is an industry body representing petroleum exploration companies in Pakistan. It works to promote responsible exploration, development, and best practices in the petroleum sector.",
+    },
+    {
+      question: "How can I become a member of PPEPCA?",
+      answer:
+        "Membership is open to companies involved in petroleum exploration in Pakistan. Interested companies can apply through our official website or contact our membership team for guidance on requirements and procedures.",
+    },
+    {
+      question: "Where can I find PPEPCA's policies and reports?",
+      answer:
+        "All our policies, annual reports, and publications are available on the 'Facts & Links' section of our website. These documents provide insight into our initiatives, compliance guidelines, and industry data.",
+    },
+  ] 
+};
+
+export const HOME_HERO_DATA = {
+  badge: {
+    full: "PPEPCA — Pakistan Petroleum Exploration and Production Companies Association",
+    short: "PPEPCA — Pakistan Petroleum",
+  },
+  title:{
+    line1: "Powering Pakistan's",
+    line2: "Petroleum Future"
+  },
+  description:
+    "Uniting industry leaders to drive collaboration, innovation, and sustainable growth across Pakistan’s upstream oil, gas & minerals future.",
+  image: heroBg,
+  imageAlt: "Petroleum Industry",
+  buttons: {
+    primary: {
+      text: "Let's Connect",
+      href: "/contact",
+    },
+    secondary: {
+      text: "Learn More",
+      href: "/about",
+    },
+  },
+};
+
