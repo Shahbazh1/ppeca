@@ -12,8 +12,8 @@ import tech_development from "../../public/images/svg_images/tech_development.sv
 
 import roleSec_side_img from "../../public/images/roleSec_side_img.webp";
 
-import Img1 from "../../public/images/about_sec_img1.jpg";
-import Img2 from "../../public/images/about_sec_img2.jpg";
+import Img1 from "../../public/images/about_sec_img1.webp";
+import Img2 from "../../public/images/about_sec_img2.webp";
 
 import PPL_LOGO from "../../public/images/companies_logo/PPL_LOGO.png";
 import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
@@ -49,22 +49,6 @@ import pakistan_petroleum_information_service from '../../public/images/svg_imag
 import hero_BG from '../../public/images/member_heroSec_BG.png'
 import ArrowRight from "../../public/images/svg_images/Arrow right.svg";
 
-// import AEPL_LOGO from "../../public/images/companies_logo/AEPL_LOGO.jpg";
-// import GHPL_LOGO from "../../public/images/companies_logo/GHPL_LOGO.png";
-// import KPOGCL_LOGO from "../../public/images/companies_logo/KPOGCL_LOGO.png";
-// import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_LOGO.png";
-// import KUFPEC_NEW_LOGO from "../../public/images/companies_logo/KUFPEC_NEW_LOGO.png";
-// import MARI_LOGO from "../../public/images/companies_logo/MARI_LOGO.png";
-// import MOL_LOGO from "../../public/images/companies_logo/MOL_LOGO.jpg";
-// import OGX_LOGO from "../../public/images/companies_logo/OGX_LOGO.png";
-// import OP_LOGO from "../../public/images/companies_logo/OP_LOGO.jpg";
-// import PGNIG_LOGO from "../../public/images/companies_logo/PGNIG_LOGO.jpg";
-// import POL_LOGO from "../../public/images/companies_logo/POL_LOGO.png";
-// import PPL_LOGO from "../../public/images/companies_logo/PPL_LOGO.png";
-// import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
-// import SAIF_LOGO from "../../public/images/companies_logo/SAIF_LOGO.jpg";
-// import UEP_LOGO from "../../public/images/companies_logo/UEP_LOGO.jpg";
-// import UEP_NEW_LOGO from "../../public/images/companies_logo/UEP_NEW_LOGO.jpeg";
 
 import uep_president from "../../public/images/uep_president.png";
 import uep_president_update_image from "../../public/images/uep_president_update_image.jpg";
