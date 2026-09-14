@@ -4,72 +4,13 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
-import AEPL_LOGO from "../../../public/images/companies_logo/AEPL_LOGO.jpg";
-import GHPL_LOGO from "../../../public/images/companies_logo/GHPL_LOGO.png";
-import KPOGCL_LOGO from "../../../public/images/companies_logo/KPOGCL_LOGO.png";
-import KUFPEC_LOGO from "../../../public/images/companies_logo/KUFPEC_LOGO.png";
-import KUFPEC_NEW_LOGO from "../../../public/images/companies_logo/KUFPEC_NEW_LOGO.png";
-import MARI_LOGO from "../../../public/images/companies_logo/MARI_LOGO.png";
-import MOL_LOGO from "../../../public/images/companies_logo/MOL_LOGO.jpg";
-import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
-import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
-import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO.jpg";
-import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO.png";
-import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO.png";
-import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO.png";
-import SAIF_LOGO from "../../../public/images/companies_logo/SAIF_LOGO.jpg";
-import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
-import UEP_NEW_LOGO from "../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg";
-
-interface Company {
-  id: number;
-  name: string;
-  logo: StaticImageData;
-}
-
-const memberCompaniesContent = {
-  heading: "Our Member Companies",
-  subheading: "Representing member companies and guiding PPEPCA's mission.",
-  searchPlaceholder: "Search",
-  filters: [
-    "All",
-    "Local",
-    "International",
-    "Operator",
-    "Associate",
-    "Observer",
-  ],
-  companies: [
-    { id: 1, name: "Oil and Gas Development Company Limited", logo: OGX_LOGO },
-    { id: 2, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
-    { id: 3, name: "Mari Energies Limited", logo: MARI_LOGO },
-    { id: 4, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
-    {
-      id: 5,
-      name: "United Energy Pakistan Limited (UEPL)",
-      logo: UEP_NEW_LOGO,
-    },
-    { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
-    { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
-    { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
-    { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
-    { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
-    { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
-    { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_NEW_LOGO },
-    { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
-    {
-      id: 14,
-      name: "Khyber Pakhtunkhwa Oil and Gas Company Limited",
-      logo: KPOGCL_LOGO,
-    },
-  ] as Company[],
-};
+import { MEMBERS_memberCompaniesContent } from "@/src/constant/data";
 
 export default function MemberCompanies() {
+  const {heading, subheading, searchPlaceholder, filters, companies } = MEMBERS_memberCompaniesContent
   const [search, setSearch] = useState("");
 
-  const filteredCompanies = memberCompaniesContent.companies.filter((company) =>
+  const filteredCompanies = companies.filter((company) =>
     company.name.toLowerCase().includes(search.toLowerCase()),
   );
 
@@ -78,10 +19,10 @@ export default function MemberCompanies() {
       <div className="">
         <div className="text-center mb-[1.5rem] sm:mb-[2rem] md:mb-[2.025rem] lg:mb-[2.25rem] xl:mb-[2.5rem]">
           <h1 className="xl:text-[2.25rem] sm:text-[1.35rem] lg:text-[2.025rem] md:text-[1.8225rem] text-[1.35rem] font-bold text-[#0A2540]">
-            {memberCompaniesContent.heading}
+            {heading}
           </h1>
           <p className="text-[0.875rem] font-['Open_Sans'] sm:text-[1rem] md:text-[0.91125rem] lg:text-[1.0125rem] xl:text-[1.125rem] font-normal text-[#334155]">
-            {memberCompaniesContent.subheading}
+            {subheading}
           </p>
         </div>
 
@@ -92,7 +33,7 @@ export default function MemberCompanies() {
                 <FiSearch size={20} className="mr-3 shrink-0 text-[#334155]" />
                 <input
                   type="text"
-                  placeholder={memberCompaniesContent.searchPlaceholder}
+                  placeholder={searchPlaceholder}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="bg-transparent outline-none flex-1 w-full text-sm sm:text-[0.81125rem] md:text-[0.81125rem] lg:text-[1.0125rem] xl:text-[1.125rem] text-[#0b2b4c] placeholder-[#94A3B8]"
@@ -100,7 +41,7 @@ export default function MemberCompanies() {
               </div>
 
               {/* <div className="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-2">
-                {memberCompaniesContent.filters.map((item, index) => (
+                {filters.map((item, index) => (
                   <button
                     key={item}
                     className={`h-8 cursor-pointer px-3 sm:px-2 md:px-2 lg:px-4 text-xs font-normal rounded border whitespace-nowrap transition-colors ${

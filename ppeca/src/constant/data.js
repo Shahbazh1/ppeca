@@ -20,7 +20,7 @@ import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
 import PGNIG_LOGO from "../../public/images/companies_logo/PGNIG_LOGO.jpg";
 import POL_LOGO from "../../public/images/companies_logo/POL_LOGO.png";
 import SAIF_LOGO from "../../public/images/companies_logo/SAIF_LOGO.jpg";
-import UEP_LOGO from "../../public/images/companies_logo/UEP_LOGO.jpg";
+import UEP_LOGO from "../../public/images/companies_logo/UEP_NEW_LOGO.jpeg";
 import AEPL_LOGO from "../../public/images/companies_logo/AEPL_LOGO.jpg";
 import GHPL_LOGO from "../../public/images/companies_logo/GHPL_LOGO.png";
 import KPOGCL_LOGO from "../../public/images/companies_logo/KPOGCL_LOGO.png";
@@ -28,7 +28,7 @@ import MARI_LOGO from "../../public/images/companies_logo/MARI_LOGO.png";
 import MOL_LOGO from "../../public/images/companies_logo/MOL_LOGO.jpg";
 import OGX_LOGO from "../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../public/images/companies_logo/OP_LOGO.jpg";
-import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_LOGO.png";
+import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_NEW_LOGO.png";
 import members_sec_BG from "../../public/images/members_sec_BG.jpg";
 import chairman1 from "../../public/images/chairman_ppepca.png";
 
@@ -45,6 +45,40 @@ import pakistan_ministry_of_interior from '../../public/images/svg_images/pakist
 import environmental_protection_agency from '../../public/images/svg_images/environmental_protection_agency.svg';
 import export_promotion_bureau from '../../public/images/svg_images/export_promotion_bureau.svg';
 import pakistan_petroleum_information_service from '../../public/images/svg_images/pakistan_petroleum_information_service.svg';
+
+import hero_BG from '../../public/images/member_heroSec_BG.png'
+import ArrowRight from "../../public/images/svg_images/Arrow right.svg";
+
+// import AEPL_LOGO from "../../public/images/companies_logo/AEPL_LOGO.jpg";
+// import GHPL_LOGO from "../../public/images/companies_logo/GHPL_LOGO.png";
+// import KPOGCL_LOGO from "../../public/images/companies_logo/KPOGCL_LOGO.png";
+// import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_LOGO.png";
+// import KUFPEC_NEW_LOGO from "../../public/images/companies_logo/KUFPEC_NEW_LOGO.png";
+// import MARI_LOGO from "../../public/images/companies_logo/MARI_LOGO.png";
+// import MOL_LOGO from "../../public/images/companies_logo/MOL_LOGO.jpg";
+// import OGX_LOGO from "../../public/images/companies_logo/OGX_LOGO.png";
+// import OP_LOGO from "../../public/images/companies_logo/OP_LOGO.jpg";
+// import PGNIG_LOGO from "../../public/images/companies_logo/PGNIG_LOGO.jpg";
+// import POL_LOGO from "../../public/images/companies_logo/POL_LOGO.png";
+// import PPL_LOGO from "../../public/images/companies_logo/PPL_LOGO.png";
+// import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
+// import SAIF_LOGO from "../../public/images/companies_logo/SAIF_LOGO.jpg";
+// import UEP_LOGO from "../../public/images/companies_logo/UEP_LOGO.jpg";
+// import UEP_NEW_LOGO from "../../public/images/companies_logo/UEP_NEW_LOGO.jpeg";
+
+import uep_president from "../../public/images/uep_president.png";
+import uep_president_update_image from "../../public/images/uep_president_update_image.jpg";
+import sel_ceo from "../../public/images/sel_ceo.png";
+import ppl_ceo from "../../public/images/ppl_ceo.png";
+import pogc_md from "../../public/images/pogc_md.jpeg";
+import orient_petroleum_ceo from "../../public/images/orient_petroleum_ceo.png";
+import mol_ceo from "../../public/images/mol_ceo.png";
+import mari_ceo from "../../public/images/mari_ceo.png";
+import kufpec_manager from "../../public/images/chairman1.png";
+import kpogc_ceo from "../../public/images/kpogc_ceo.png";
+import Secretary_General_PPEPCA from "../../public/images/Secretary_General_PPEPCA.png";
+import chairman_ppepca from "../../public/images/chairman_ppepca.png";
+
 
 // ABOUT PAGE DATA
 export const ABOUT_HERO_DATA = {
@@ -405,4 +439,142 @@ export const FACTS_PAKISTAN_PETROLEUM_CARDS_DATA = {
     url: "http://www.ppisonline.com" 
   },
 ],
+};
+
+// MEMBERS PAGE DATA
+export const MEMBERS_heroContent = {
+  bgImage: {
+    src: hero_BG,
+    alt: "PPEPCA Members Directory",
+  },
+  heading: "PPEPCA Members",
+  cta: {
+    label: "Become a member",
+    href: "/members/membershipform",
+    icon: {
+      src: ArrowRight,
+      alt: "arrow",
+    },
+  },
+};
+
+export const MEMBERS_memberCompaniesContent = {
+  heading: "Our Member Companies",
+  subheading: "Representing member companies and guiding PPEPCA's mission.",
+  searchPlaceholder: "Search",
+  filters: [
+    "All",
+    "Local",
+    "International",
+    "Operator",
+    "Associate",
+    "Observer",
+  ],
+  companies: [
+    { id: 1, name: "Oil and Gas Development Company Limited", logo: OGX_LOGO },
+    { id: 2, name: "Pakistan Petroleum Ltd", logo: PPL_LOGO },
+    { id: 3, name: "Mari Energies Limited", logo: MARI_LOGO },
+    { id: 4, name: "Government Holdings (Private) Limited", logo: GHPL_LOGO },
+    {
+      id: 5,
+      name: "United Energy Pakistan Limited (UEPL)",
+      logo: UEP_LOGO,
+    },
+    { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
+    { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
+    { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
+    { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
+    { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
+    { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
+    { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+    { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
+    {
+      id: 14,
+      name: "Khyber Pakhtunkhwa Oil and Gas Company Limited",
+      logo: KPOGCL_LOGO,
+    },
+  ] 
+};
+
+export const MEMBERS_leadershipContent = {
+  heading: "Leadership & Executive Committee",
+  subheading: "Representing member companies and guiding PPEPCA’s mission.",
+  expertCommitteesTitle: "Expert Committees",
+  expertCommittees: [
+    "Policy & Rules Committee",
+    "Fiscal Affairs Committee",
+    "Corporate Affairs Committee",
+    "HSE & Security Affairs",
+  ],
+  leaders: [
+    {
+      role: "Chairman PPEPCA",
+      name: "Mr. Masood Nabi",
+      title: "Managing Director/CEO",
+      company: "Government Holdings (Private) Limited",
+      image: chairman_ppepca,
+    },
+    {
+      role: "Senior Vice Chairman PPEPCA",
+      name: "Mr. Andrzej Kaczorowski",
+      title: "Managing Director",
+      company: "Polish Oil & Gas Company",
+      image: pogc_md,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Nasir Khan",
+      title: "Chief Executive Officer",
+      company: "Khyber Pakhtunkhwa Oil & Gas Company Ltd.",
+      image: kpogc_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Faheem Haider",
+      title: "Managing Director / CEO",
+      company: "Mari Energies Ltd.",
+      image: mari_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Laszlo Zsolt Adam",
+      title: "Managing Director / CEO",
+      company: "MOL Pakistan Oil & Gas Company B.V.",
+      image: mol_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Kamran Ahmed",
+      title: "Chief Executive Officer",
+      company: "Orient Petroleum Inc.",
+      image: orient_petroleum_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Jehangir Saifullah Khan",
+      title: "Chief Executive Officer",
+      company: "Saif Energy Limited",
+      image: sel_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Kamran Ajmal Mian",
+      title: "Chief Executive Officer",
+      company: "Prime Global Energies Ltd.",
+      image: ppl_ceo,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Muhammad Zaheer Alam",
+      title: "President",
+      company: "United Energy Pakistan",
+      image: uep_president_update_image,
+    },
+    {
+      role: " Secretary General PPEPCA",
+      name: "Mr. Ibrar Khan",
+
+      image: Secretary_General_PPEPCA,
+    },
+  ]
 };

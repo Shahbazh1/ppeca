@@ -1,32 +1,16 @@
 'use client'
 import Image from "next/image";
-import hero_BG from '../../../public/images/member_heroSec_BG.png'
-import ArrowRight from "../../../public/images/svg_images/Arrow right.svg";
 import { useRouter } from "next/navigation";
-
-const heroContent = {
-  bgImage: {
-    src: hero_BG,
-    alt: "PPEPCA Members Directory",
-  },
-  heading: "PPEPCA Members",
-  cta: {
-    label: "Become a member",
-    href: "/members/membershipform",
-    icon: {
-      src: ArrowRight,
-      alt: "arrow",
-    },
-  },
-};
+import { MEMBERS_heroContent } from "@/src/constant/data";
 
 export default function PPEPCAHero() {
+  const {bgImage, heading, cta} = MEMBERS_heroContent
   const router = useRouter();
   return (
     <section className="relative w-full  overflow-hidden">
       <Image
-        src={heroContent.bgImage.src}
-        alt={heroContent.bgImage.alt}
+        src={bgImage.src}
+        alt={bgImage.alt}
         fill
         className="object-cover"
         priority
@@ -36,7 +20,7 @@ export default function PPEPCAHero() {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4 sm:px-6">
         <h1 className="text-white text-[2rem] sm:text-[2.5rem] md:text-[2.625rem] lg:text-[3rem] xl:text-[3.375rem] font-extrabold mt-[2rem] sm:mt-[3rem] md:mt-[4.86rem] lg:mt-[5.4rem] xl:mt-[6rem] tracking-tight">
-          {heroContent.heading}
+          {heading}
         </h1>
 
         {/* <h2 className="font-normal font-['Montserrat'] text-[#C5C5C5] text-[1.125rem] sm:text-[1.25rem] md:text-[1.4375rem] xl:text-[1.5rem] mt-4">
@@ -47,10 +31,10 @@ export default function PPEPCAHero() {
           onClick={() => router.push('/members/membershipform')}
           className="cursor-pointer mt-[0.8rem] sm:mt-[1.3rem] md:mt-[1.42rem] lg:mt-[2.0rem] xl:mt-[2.5rem] mb-[2rem] sm:mb-[3rem] md:mb-[3.6rem] lg:mb-[4.0rem] xl:mb-[4.50rem] inline-flex items-center gap-2 rounded-sm bg-[#16A831] hover:bg-[#128a28] px-3 sm:px-4 py-2.5 sm:py-3 text-[#F8FAFC] text-xs sm:text-sm font-semibold transition"
         >
-          {heroContent.cta.label}
+          {cta.label}
           <Image
-            src={heroContent.cta.icon.src}
-            alt={heroContent.cta.icon.alt}
+            src={cta.icon.src}
+            alt={cta.icon.alt}
             width={16}
             height={16}
           />
