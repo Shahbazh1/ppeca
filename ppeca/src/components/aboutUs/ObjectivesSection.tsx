@@ -80,17 +80,16 @@ const ObjectivesSection = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollContainerRef.current) return;
-    // Calculate card width based on screen size
     const isSmallScreen = window.innerWidth < 640;
     const isMediumScreen = window.innerWidth >= 640 && window.innerWidth < 1024;
     let cardWidth;
     
     if (isSmallScreen) {
-      cardWidth = 280 + 16; // width + gap for small screens
+      cardWidth = 280 + 16;
     } else if (isMediumScreen) {
-      cardWidth = 240 + 24; // width + gap for medium screens
+      cardWidth = 240 + 24;
     } else {
-      cardWidth = 260 + 32; // width + gap for large screens (original)
+      cardWidth = 260 + 32;
     }
     
     scrollContainerRef.current.scrollBy({
@@ -102,15 +101,12 @@ const ObjectivesSection = () => {
   return (
     <section className="relative bg-[#f8fafc] px-4 sm:px-6 pt-10 lg:pt-14 text-white">
       <div className="mx-auto max-w-7xl">
-        {/* Header */}
         <h2 className="text-2xl sm:text-3xl font-bold tracking-wide font-['Montserrat'] text-[#0a2540]">OBJECTIVES</h2>
         <p className="mt-3 max-w-4xl text-sm text-[#0a2540] font-['Open_Sans']">
           The main objective of the Association is to coordinate efforts of those engaged in the upstream petroleum industry activities.
         </p>
 
-        {/* Cards Container */}
         <div className="relative mt-8 sm:mt-10 lg:mt-14 flex items-center justify-center">
-          {/* Left Arrow */}
           <button
           aria-label="Scroll objectives left"
             onClick={() => scroll("left")}
@@ -122,7 +118,6 @@ const ObjectivesSection = () => {
             <HiChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
           </button>
 
-          {/* Scrollable Cards */}
           <div
             ref={scrollContainerRef}
             className="flex gap-4 sm:gap-5 overflow-x-auto scroll-smooth scrollbar-hide py-2 px-2 sm:px-0"
@@ -139,7 +134,6 @@ const ObjectivesSection = () => {
             ))}
           </div>
 
-          {/* Right Arrow */}
           <button
           aria-label="Scroll objectives right"
             onClick={() => scroll("right")}

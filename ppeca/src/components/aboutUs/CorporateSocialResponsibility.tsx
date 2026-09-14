@@ -21,12 +21,10 @@ export default function CorporateSocialResponsibility() {
     <section className="bg-[#f8fafc] px-4 sm:px-6 pt-10 lg:pt-14">
       <div className="mx-auto max-w-7xl">
         <div className="rounded-lg border border-gray-300 bg-white px-5 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-7 md:py-8">
-          {/* Heading */}
           <h2 className="text-xl font-['Montserrat'] sm:text-2xl md:text-3xl font-bold tracking-wide text-[#0a2540]">
             {heading}
           </h2>
 
-          {/* Content */}
           <div className="mt-4 font-['Open_Sans'] sm:mt-5 md:mt-6 max-w-3xl text-[#0a2540]">
             <h3 className="text-sm sm:text-base font-semibold">{subHeading}</h3>
             <p className="mt-1 text-sm sm:text-[14px] lg:text-[14px] xl:text-[15px] ">
@@ -34,7 +32,6 @@ export default function CorporateSocialResponsibility() {
             </p>
           </div>
 
-          {/* Button */}
           <div className="mt-4 sm:mt-5 md:mt-6">
             <Link  aria-label={cta.ariaLabel} href={cta.href} className="cursor-pointer rounded-sm font-['Open_Sans'] bg-[#16a831] px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-[#f8fafc] hover:bg-[#128a28] transition">
               {cta.label}
