@@ -48,8 +48,6 @@ import pakistan_petroleum_information_service from '../../public/images/svg_imag
 
 import hero_BG from '../../public/images/member_heroSec_BG.png'
 import ArrowRight from "../../public/images/svg_images/Arrow right.svg";
-
-
 import uep_president from "../../public/images/uep_president.png";
 import uep_president_update_image from "../../public/images/uep_president_update_image.jpg";
 import sel_ceo from "../../public/images/sel_ceo.png";
@@ -583,7 +581,7 @@ export const NEWS_newsHeroContent = {
 };
 
 export const NEWS_electionsContent = {
-  title: "PPEPCA Elections 2026",
+  title: "PPEPCA Elections 2026-2028",
   downloadButtonLabel: "Download",
   trainingData: [
     {
