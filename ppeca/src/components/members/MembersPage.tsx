@@ -15,7 +15,7 @@ import OGX_LOGO from "../../../public/images/companies_logo/OGX_LOGO.png";
 import UEP_LOGO from "../../../public/images/companies_logo/UEP_LOGO.jpg";
 import UEP_NEW_LOGO from '../../../public/images/companies_logo/UEP_NEW_LOGO.jpeg';
 import OP_LOGO from "../../../public/images/companies_logo/OP_LOGO.jpg";
-import PGNIG_LOGO from "../../../public/images/companies_logo/PGNIG_LOGO-removebg-preview.png";
+import ORLEN_LOGO from "../../../public/images/companies_logo/ORLEN__POGC__logo-removebg-preview.png";
 import POL_LOGO from "../../../public/images/companies_logo/POL_LOGO-removebg-preview.png";
 import PPL_LOGO from "../../../public/images/companies_logo/PPL_LOGO-removebg-preview.png";
 import PRIME_LOGO from "../../../public/images/companies_logo/PRIME_LOGO-removebg-preview.png";
@@ -201,8 +201,8 @@ const companyData = [
   },
   {
     id: 7,
-    logo: PGNIG_LOGO, // Replace PGNiG_logo with the actual imported logo variable if available
-    name: "Polish Oil and Gas Company - Pakistan Branch (ORLEN S.A)",
+    logo: ORLEN_LOGO, // Replace ORLEN_LOGO with the actual imported logo variable if available
+    name: "ORLEN S.A. (POGC).",
     address: "6th Floor, Ufone Tower, Jinnah Avenue, Blue Area, Islamabad 44000, Pakistan",
     ceo: "Mr. Andrzej Kaczorowski",
     designation: "Managing Director",

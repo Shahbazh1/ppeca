@@ -6,7 +6,7 @@ import { IoMdArrowForward } from "react-icons/io";
 import { HOME_testimonialContent } from "@/src/constant/data";
 
 export default function TestimonialSection() {
-  const {backgroundImage, leader, cta, memberLogos} = HOME_testimonialContent
+  const { backgroundImage, leader, cta, memberLogos } = HOME_testimonialContent;
   const [current, setCurrent] = useState(0);
   const [logosToShow, setLogosToShow] = useState(5);
   const router = useRouter();
@@ -51,7 +51,7 @@ export default function TestimonialSection() {
       </h3> */}
 
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 sm:px-6">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-4 relative">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-2 relative">
           <Image
             src={leader.avatar}
             alt={leader.name}
@@ -70,6 +70,9 @@ export default function TestimonialSection() {
         <span className="text-white text-xs sm:text-sm md:text-sm lg:text-sm xl:text-[0.8rem] font-['Plus_Jakarta_Sans']">
           {leader.role}
         </span>
+        <p className="text-white/80 text-xs sm:text-sm md:text-sm mt-1 px-2 max-w-xl font-['Plus_Jakarta_Sans']">
+          {leader.Professional_position}
+        </p>
       </div>
 
       <div className="relative z-10 flex items-center justify-center mt-8 sm:mt-12 md:mt-16 px-4 max-w-4xl">

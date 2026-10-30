@@ -17,7 +17,7 @@ import Img2 from "../../public/images/about_sec_img2.webp";
 
 import PPL_LOGO from "../../public/images/companies_logo/PPL_LOGO.png";
 import PRIME_LOGO from "../../public/images/companies_logo/PRIME_LOGO.png";
-import PGNIG_LOGO from "../../public/images/companies_logo/PGNIG_LOGO.jpg";
+import ORLEN_logo from "../../public/images/companies_logo/ORLEN_logo.jpeg";
 import POL_LOGO from "../../public/images/companies_logo/POL_LOGO.png";
 import SAIF_LOGO from "../../public/images/companies_logo/SAIF_LOGO.jpg";
 import UEP_LOGO from "../../public/images/companies_logo/UEP_NEW_LOGO.jpeg";
@@ -30,7 +30,7 @@ import OGX_LOGO from "../../public/images/companies_logo/OGX_LOGO.png";
 import OP_LOGO from "../../public/images/companies_logo/OP_LOGO.jpg";
 import KUFPEC_LOGO from "../../public/images/companies_logo/KUFPEC_NEW_LOGO.png";
 import members_sec_BG from "../../public/images/members_sec_BG.jpg";
-import chairman1 from "../../public/images/chairman_ppepca.png";
+import chairman1 from "../../public/images/ceo_government_holdings_limited.jpeg";
 
 import heroBg from "../../public/images/heroBg.png";
 
@@ -59,7 +59,11 @@ import mari_ceo from "../../public/images/mari_ceo.png";
 import kufpec_manager from "../../public/images/chairman1.png";
 import kpogc_ceo from "../../public/images/kpogc_ceo.png";
 import Secretary_General_PPEPCA from "../../public/images/Secretary_General_PPEPCA.png";
-import chairman_ppepca from "../../public/images/chairman_ppepca.png";
+import ceo_government_holding_private_ltd from "../../public/images/chairman_ppepca.png";
+import ogdcl_ceo from "../../public/images/ogdcl_ceo.jpeg";
+import mol_regional_vice_president from "../../public/images/mol_regional_vice_president.jpeg";
+import pakistan_oilfields_limited_ceo from "../../public/images/pakistan_oilfields_limited_ceo.jpeg";
+
 
 
 // ABOUT PAGE DATA
@@ -242,8 +246,9 @@ export const HOME_testimonialContent = {
   },
   leader: {
     avatar: chairman1,
-    name: "Mr. Masood Nabi",
+    name: "Mr. Ahmed Hayat Lak",
     role: "Chairman, PPEPCA",
+    Professional_position: "Managing Director and CEO, Oil & Gas Development Company Limited (OGDCL)",
     quote: "", // Place quote text here if applicable
   },
   cta: {
@@ -257,12 +262,12 @@ export const HOME_testimonialContent = {
     { src: GHPL_LOGO, alt: "GHPL Logo" },
     { src: UEP_LOGO, alt: "UEP Logo" },
     { src: POL_LOGO, alt: "POL Logo" },
-    { src: PGNIG_LOGO, alt: "PGNiG Logo" },
+    { src: ORLEN_logo, alt: "ORLEN_logo" },
     { src: PRIME_LOGO, alt: "Prime Logo" },
     { src: MOL_LOGO, alt: "MOL Logo" },
     { src: OP_LOGO, alt: "OP Logo" },
     { src: AEPL_LOGO, alt: "AEPL Logo" },
-    { src: KUFPEC_LOGO, alt: "KUFPEC Logo" },
+    // { src: KUFPEC_LOGO, alt: "KUFPEC Logo" },
     { src: SAIF_LOGO, alt: "Saif Energy Logo" },
     { src: KPOGCL_LOGO, alt: "KPOGCL Logo" },
   ],
@@ -463,12 +468,12 @@ export const MEMBERS_memberCompaniesContent = {
       logo: UEP_LOGO,
     },
     { id: 6, name: "Pakistan Oilfields Ltd", logo: POL_LOGO },
-    { id: 7, name: "Polish Oil and Gas Company", logo: PGNIG_LOGO },
+    { id: 7, name: "ORLEN S.A. (POGC).", logo: ORLEN_logo },
     { id: 8, name: "Prime Global Energies Limited", logo: PRIME_LOGO },
     { id: 9, name: "MOL Pakistan Oil and Gas Co. B.V.", logo: MOL_LOGO },
     { id: 10, name: "Orient Petroleum Inc", logo: OP_LOGO },
     { id: 11, name: "Al-Haj Enterprises (Private) Limited", logo: AEPL_LOGO },
-    { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
+    // { id: 12, name: "Kirthar Pakistan Holdings B.V", logo: KUFPEC_LOGO },
     { id: 13, name: "Saif Energy Limited", logo: SAIF_LOGO },
     {
       id: 14,
@@ -491,17 +496,31 @@ export const MEMBERS_leadershipContent = {
   leaders: [
     {
       role: "Chairman PPEPCA",
+      name: "Mr. Ahmed Hayat Lak",
+      title: "Managing Director and CEO",
+      company: "Oil & Gas Development Company Limited (OGDCL)",
+      image: ogdcl_ceo,
+    },
+    {
+      role: "Senior Vice Chairman, PPEPCA",
+      name: "Mr. Andrzej Kaczorowski",
+      title: "Managing Director",
+      company: "ORLEN S.A. (POGC)",
+      image: pogc_md,
+    },
+    {
+      role: "Vice Chairman, PPEPCA",
+      name: "Mr. Ali Murtaza Abbas",
+      title: "Regional Vice President",
+      company: "MOL Pakistan B.V.",
+      image: mol_regional_vice_president,
+    },
+    {
+      role: "Member, Executive Committee, PPEPCA",
       name: "Mr. Masood Nabi",
       title: "Managing Director/CEO",
       company: "Government Holdings (Private) Limited",
-      image: chairman_ppepca,
-    },
-    {
-      role: "Senior Vice Chairman PPEPCA",
-      name: "Mr. Andrzej Kaczorowski",
-      title: "Managing Director",
-      company: "Polish Oil & Gas Company",
-      image: pogc_md,
+      image: ceo_government_holding_private_ltd,
     },
     {
       role: "Member Executive Committee",
@@ -533,10 +552,10 @@ export const MEMBERS_leadershipContent = {
     },
     {
       role: "Member Executive Committee",
-      name: "Mr. Jehangir Saifullah Khan",
-      title: "Chief Executive Officer",
-      company: "Saif Energy Limited",
-      image: sel_ceo,
+      name: "Mr. Bilal Ahmad khan",
+      title: "General Manager/CFO",
+      company: "Pakistan Oilfields Limited",
+      image: pakistan_oilfields_limited_ceo,
     },
     {
       role: "Member Executive Committee",
@@ -551,6 +570,13 @@ export const MEMBERS_leadershipContent = {
       title: "President",
       company: "United Energy Pakistan",
       image: uep_president_update_image,
+    },
+    {
+      role: "Member Executive Committee",
+      name: "Mr. Jehangir Saifullah Khan",
+      title: "Chief Executive Officer",
+      company: "Saif Energy Limited",
+      image: sel_ceo,
     },
     {
       role: " Secretary General PPEPCA",
@@ -587,6 +613,10 @@ export const NEWS_electionsContent = {
     {
       title: "Notice of Election for Members Excom 2026-28",
       fileKey: "Notice_of_Election_for_Members_Excom_2026_28_04ebc00ed0.pdf",
+    },
+    {
+      title: "Election Results for Members Excom 2026-28",
+      fileKey: "Election_News_66e1698168.docx",
     },
     {
       title: "Election Schedule Annex 'A' 2026-28",
