@@ -614,10 +614,10 @@ export const NEWS_electionsContent = {
       title: "Notice of Election for Members Excom 2026-28",
       fileKey: "Notice_of_Election_for_Members_Excom_2026_28_04ebc00ed0.pdf",
     },
-    {
-      title: "Election Results for Members Excom 2026-28",
-      fileKey: "Election_News_66e1698168.docx",
-    },
+    // {
+    //   title: "Election Results for Members Excom 2026-28",
+    //   fileKey: "Election_News_66e1698168.docx",
+    // },
     {
       title: "Election Schedule Annex 'A' 2026-28",
       fileKey: "Election_Schedule_Annex_A_2026_28_7287806627.pdf",
@@ -701,8 +701,8 @@ export const NEWS_surplusInventoryContent = {
     },
     {
       id: "polish-oil",
-      name: "Polish Oil and Gas Company",
-      logo: "/images/POLISH_OIL_logo.jpg",
+      name: "ORLEN S.A. (POGC)",
+      logo: "/images/ORLEN__POGC__logo.png",
       fileKey: "POL_RIG_SCR_d2bc9fdc55_379d323fe7.docx",
     },
     {
