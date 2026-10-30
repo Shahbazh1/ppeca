@@ -15,8 +15,8 @@ async function getNewsBySlug(slug: string) {
   const res = await fetch(
     `${API_BASE_URL}/api/newses?filters[slug][$eq]=${slug}&populate=*`,
     {
-    cache: "no-store",
-  }
+      next: { revalidate: 3600 },
+    }
   );
   if (!res.ok) {
     throw new Error("Failed to fetch news");
