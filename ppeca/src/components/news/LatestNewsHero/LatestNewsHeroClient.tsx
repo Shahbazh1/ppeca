@@ -96,7 +96,6 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
             <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
 
               {/* Replace this with your actual API image field */}
-              {selectedNews.NewsImage?.url ? (
                 <Image
                   src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
                   alt={selectedNews.NewsTitle || "News"}
@@ -105,11 +104,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                   unoptimized
                   className="object-cover"
                 />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-white">
-                  News Image
-                </div>
-              )}
+
 
             </div>
           </div>
