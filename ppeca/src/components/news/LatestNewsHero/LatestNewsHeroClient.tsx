@@ -18,9 +18,6 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
 
   const selectedNews = newsItems[selectedIndex];
 
-    console.log("image is:",`${API_BASE_URL}${selectedNews.NewsImage.url}`)
-
-
   useEffect(() => {
     if (!newsItems.length) return;
 
