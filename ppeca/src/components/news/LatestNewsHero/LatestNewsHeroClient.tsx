@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -17,13 +16,17 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
   const [selectionVersion, setSelectionVersion] = useState(0);
 
   const selectedNews = newsItems[selectedIndex];
+  console.log("selectedNews:",selectedNews);
 
   useEffect(() => {
     if (!newsItems.length) return;
 
-    const timer = setTimeout(() => {
-      setSelectedIndex(0);
-    }, 2 * 60 * 1000);
+    const timer = setTimeout(
+      () => {
+        setSelectedIndex(0);
+      },
+      2 * 60 * 1000,
+    );
 
     return () => clearTimeout(timer);
   }, [selectedIndex, selectionVersion, newsItems.length]);
@@ -43,18 +46,12 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
       <div className="absolute inset-0 bg-[#00330A]/96" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 py-10 lg:py-14">
-
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr_0.9fr] gap-6 lg:gap-9">
-
           {/* LEFT: NEWS LIST */}
           <div className="flex flex-col text-white lg:border-r lg:border-white/40 lg:pr-8">
-
-            <span className="text-sm text-white/80 mb-5">
-              Latest News
-            </span>
+            <span className="text-sm text-white/80 mb-5">Latest News</span>
 
             <div className="flex flex-col gap-2 flex-1">
-
               {newsItems.map((item, index) => (
                 <button
                   key={item.id ?? index}
@@ -68,18 +65,15 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                 >
                   <p className="text-sm leading-relaxed line-clamp-3">
                     {item.publishedAt
-                      ? new Date(item.publishedAt).toLocaleDateString(
-                          "en-US",
-                          { month: "short", day: "2-digit" }
-                        ) + ": "
+                      ? new Date(item.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "2-digit",
+                        }) + ": "
                       : ""}
-                    {item.NewsSummary ||
-                  item.NewsDescription ||
-                  item.text}
+                    {item.NewsSummary || item.NewsDescription || item.text}
                   </p>
                 </button>
               ))}
-
             </div>
 
             <Link
@@ -91,43 +85,42 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
           </div>
 
           {/* CENTER: SELECTED NEWS IMAGE */}
-<div className="flex items-center lg:border-r lg:border-white/40 lg:pr-8">
-  <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
+          <div className="flex items-center lg:border-r lg:border-white/40 lg:pr-8">
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
+              {selectedNews?.NewsImage?.url && (
+                <Image
+                  src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
+                  alt={
+                    selectedNews.NewsImage.alternativeText ||
+                    selectedNews.NewsTitle ||
+                    "News"
+                  }
+                  fill
+                  priority
+                  unoptimized
+                  className="object-cover"
+                  onError={(e) => console.log("Image loading failed:", e)}
+                />
+              )}
 
-    {selectedNews?.NewsImage?.url && (
-      <Image
-        src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
-        alt={selectedNews.NewsImage.alternativeText || selectedNews.NewsTitle || "News"}
-        fill
-        priority
-        unoptimized
-        className="object-cover"
-        onError={(e) => console.log("Image loading failed:", e)}
-      />
-    )}
-
-    {!selectedNews?.NewsImage?.url && (
-      <div className="w-full h-full flex items-center justify-center text-white">
-        News Image Not Available
-      </div>
-    )}
-
-  </div>
-</div>
+              {!selectedNews?.NewsImage?.url && (
+                <div className="w-full h-full flex items-center justify-center text-white">
+                  News Image Not Available
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* RIGHT: NEWS SUMMARY */}
           <div className="flex flex-col text-white justify-between py-2">
-
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-5">
-                Summary
-              </h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-5">Summary</h2>
 
               <span className="inline-block bg-white text-gray-900 text-xs rounded-md px-3 py-2 mb-4">
                 {selectedNews.publishedAt
                   ? new Date(selectedNews.publishedAt).toLocaleDateString(
                       "en-US",
-                      { month: "long", day: "2-digit" }
+                      { month: "long", day: "2-digit" },
                     )
                   : selectedNews.date}
               </span>
@@ -149,9 +142,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
             >
               Read Details →
             </Link>
-
           </div>
-
         </div>
       </div>
     </section>
