@@ -64,7 +64,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                         : "border-l-4 border-transparent hover:bg-white/5"
                     }`}
                 >
-                  <p className="text-sm leading-relaxed line-clamp-3">
+                  <p className="text-xs leading-relaxed line-clamp-3">
                     {item.publishedAt
                       ? new Date(item.publishedAt).toLocaleDateString(
                           "en-US",
@@ -133,7 +133,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                 {selectedNews.NewsTitle || selectedNews.title}
               </h3> */}
 
-              <p className="text-sm leading-relaxed text-white/90 line-clamp-7">
+              <p className="text-xs leading-relaxed text-white/90 line-clamp-7">
                 {selectedNews.NewsSummary ||
                   selectedNews.NewsDescription ||
                   selectedNews.text}
