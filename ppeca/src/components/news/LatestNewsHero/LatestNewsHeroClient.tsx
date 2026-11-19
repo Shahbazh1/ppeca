@@ -75,7 +75,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
             </div>
 
             {/* View All Button */}
-            <button type="button" onClick={() => handleNavigation("viewAll", "/news/latestNews")} disabled={loadingButton !== null} className="flex items-center justify-center gap-2 w-full min-h-[40px] bg-white text-[#111] rounded-lg py-2.5 xl:py-2 mt-6 text-sm font-semibold hover:bg-gray-200 transition-colors duration-300 disabled:cursor-wait">
+            <button type="button" onClick={() => handleNavigation("viewAll", "/news/latestNews")} disabled={loadingButton !== null} className="flex items-center justify-center gap-2 w-full min-h-[40px] bg-white text-[#111] rounded-lg py-2.5 xl:py-2 mt-6 text-sm font-semibold hover:bg-gray-200 transition-colors duration-300 disabled:cursor-wait cursor-pointer">
               {loadingButton === "viewAll" ? (
                 <>
                   <span className="h-4 w-4 rounded-full border-2 border-gray-400 border-t-transparent animate-spin" />
@@ -132,7 +132,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
             </div>
 
             {/* Read Details Button */}
-            <button type="button" onClick={() => handleNavigation("readDetails", `/news/${selectedNews.slug}`)} disabled={loadingButton !== null} className="inline-flex items-center justify-center gap-2 border border-white/80 rounded-lg px-5 py-2.5 mt-7 xl:mt-5 w-fit min-w-[130px] min-h-[42px] text-sm font-medium hover:bg-white hover:text-[#00330A] transition-colors duration-300 disabled:cursor-wait">
+            <button type="button" onClick={() => handleNavigation("readDetails", `/news/${selectedNews.slug}`)} disabled={loadingButton !== null} className="inline-flex items-center justify-center gap-2 border border-white/80 rounded-lg px-5 py-2.5 mt-7 xl:mt-5 w-fit min-w-[130px] min-h-[42px] text-sm font-medium hover:bg-white hover:text-[#00330A] transition-colors duration-300 disabled:cursor-wait cursor-pointer">
               {loadingButton === "readDetails" ? (
                 <>
                   <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
