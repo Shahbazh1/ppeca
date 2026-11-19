@@ -39,30 +39,75 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${news_hero_BG.src})` }}
     >
-      <div className="absolute inset-0 bg-[#00330A]/96" />
+      {/* Dark Green Overlay */}
+      <div className="absolute inset-0 bg-[#00330A]/95" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-14 py-10 lg:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.35fr_0.9fr] gap-6 lg:gap-9">
-          {/* LEFT: NEWS LIST */}
-          <div className="flex flex-col text-white lg:border-r lg:border-white/40 lg:pr-8">
-            <span className="text-sm text-white/80 mb-5">Latest News</span>
+      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 xl:px-14 py-12 xl:py-[54px]">
+        <div
+          className="
+          grid grid-cols-1
+          lg:grid-cols-[1fr_1.3fr_0.9fr]
+          xl:grid-cols-[0.95fr_1.4fr_0.85fr]
+          gap-8 lg:gap-7 xl:gap-9
+          xl:min-h-[325px]
+        "
+        >
+          {/* LEFT: LATEST NEWS */}
+          <div
+            className="
+            flex flex-col text-white
+            lg:border-r lg:border-white/40
+            lg:pr-7 xl:pr-9
+          "
+          >
+            {/* Latest News Label */}
+            <div className="mb-5 xl:mb-4">
+              <span
+                className="
+                inline-flex items-center
+                rounded-full
+                border border-[#65B878]/80
+                px-3 py-1
+                text-xs xl:text-[13px]
+                font-medium
+                text-[#A4D8AE]
+              "
+              >
+                Latest News
+              </span>
+            </div>
 
-            <div className="flex flex-col gap-2 flex-1">
+            {/* News List */}
+            <div className="flex flex-col flex-1 gap-1">
               {newsItems.map((item, index) => (
                 <button
                   key={item.id ?? index}
                   onClick={() => handleNewsClick(index)}
-                  className={`text-left p-3 rounded-md transition-all duration-300 cursor-pointer
+                  className={`
+                    w-full text-left
+                    rounded-md
+                    px-3 py-2.5 xl:px-3 xl:py-2.5
+                    border-l-[3px]
+                    transition-all duration-300
+                    cursor-pointer
                     ${
                       selectedIndex === index
-                        ? "bg-white/10 border-l-4 border-white"
-                        : "border-l-4 border-transparent "
-                    }`}
+                        ? "bg-white/10 border-white"
+                        : "border-transparent hover:bg-white/5"
+                    }
+                  `}
                 >
-                  <p className="text-sm leading-relaxed line-clamp-3">
+                  <p
+                    className="
+                    text-[13px] xl:text-sm
+                    leading-[1.55]
+                    text-white/95
+                    line-clamp-3
+                  "
+                  >
                     {item.publishedAt
                       ? new Date(item.publishedAt).toLocaleDateString("en-US", {
                           month: "short",
@@ -75,17 +120,46 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
               ))}
             </div>
 
+            {/* View All Button */}
             <Link
               href="news/latestNews"
-              className="bg-white text-black text-center rounded-md py-3 mt-6 font-medium"
+              className="
+                flex items-center justify-center
+                w-full
+                bg-white text-[#111]
+                rounded-lg
+                py-2.5 xl:py-2
+                mt-6
+                text-sm xl:text-sm
+                font-semibold
+                hover:bg-gray-200
+                transition-colors duration-300
+              "
             >
               View All
             </Link>
           </div>
 
           {/* CENTER: SELECTED NEWS IMAGE */}
-          <div className="flex items-center lg:border-r lg:border-white/40 lg:pr-8">
-            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
+          <div
+            className="
+            flex items-center justify-center
+            lg:border-r lg:border-white/40
+            lg:pr-7 xl:pr-9
+          "
+          >
+            <div
+              className="
+              relative w-full
+              aspect-[16/10]
+              xl:aspect-[16/10]
+              overflow-hidden
+              rounded-lg
+              bg-white/10
+              shadow-lg
+              group
+            "
+            >
               {selectedNews?.NewsImage?.url && (
                 <Image
                   src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
@@ -97,49 +171,136 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                   fill
                   priority
                   unoptimized
-                  className="object-cover"
+                  className="
+                    object-cover
+                    transition-transform duration-700
+                    group-hover:scale-[1.02]
+                  "
                   onError={(e) => console.log("Image loading failed:", e)}
                 />
               )}
 
               {!selectedNews?.NewsImage?.url && (
-                <div className="w-full h-full flex items-center justify-center text-white">
+                <div
+                  className="
+                  w-full h-full
+                  flex items-center justify-center
+                  text-white text-sm
+                "
+                >
                   News Image Not Available
+                </div>
+              )}
+
+              {/* Image Indicators */}
+              {newsItems.length > 1 && (
+                <div
+                  className="
+                  absolute bottom-3
+                  left-1/2 -translate-x-1/2
+                  flex items-center gap-2
+                  z-10
+                "
+                >
+                  {newsItems.map((item, index) => (
+                    <span
+                      key={item.id ?? index}
+                      className={`
+                        h-1.5 rounded-full
+                        transition-all duration-300
+                        ${
+                          selectedIndex === index
+                            ? "w-6 bg-white"
+                            : "w-1.5 bg-white/50"
+                        }
+                      `}
+                    />
+                  ))}
                 </div>
               )}
             </div>
           </div>
 
           {/* RIGHT: NEWS SUMMARY */}
-          <div className="flex flex-col text-white justify-between py-2">
+          <div
+            className="
+            flex flex-col justify-between
+            text-white
+            py-1 xl:py-0
+          "
+          >
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-5">Summary</h2>
+              {/* Summary Heading */}
+              <h2
+                className="
+                text-3xl sm:text-4xl
+                xl:text-[34px]
+                font-bold
+                tracking-tight
+                mb-5 xl:mb-4
+              "
+              >
+                Summary
+              </h2>
 
-              <span className="inline-block bg-white text-gray-900 text-xs rounded-md px-3 py-2 mb-4">
+              {/* Date Badge */}
+              <span
+                className="
+                inline-flex items-center
+                bg-white text-[#222]
+                rounded-md
+                px-3 py-1.5
+                text-xs
+                font-medium
+                mb-4
+              "
+              >
                 {selectedNews.publishedAt
                   ? new Date(selectedNews.publishedAt).toLocaleDateString(
                       "en-US",
-                      { month: "long", day: "2-digit" },
+                      {
+                        month: "long",
+                        day: "2-digit",
+                      },
                     )
                   : selectedNews.date}
               </span>
 
-              {/* <h3 className="font-semibold text-base mb-3">
-                {selectedNews.NewsTitle || selectedNews.title}
-              </h3> */}
-
-              <p className="text-sm leading-relaxed text-white/90 line-clamp-7">
+              {/* Summary Text */}
+              <p
+                className="
+                text-sm
+                leading-[1.6]
+                text-white/90
+                line-clamp-7
+              "
+              >
                 {selectedNews.NewsSummary ||
                   selectedNews.NewsDescription ||
                   selectedNews.text}
               </p>
             </div>
 
+            {/* Read Details Button */}
             <Link
               href={`/news/${selectedNews.slug}`}
-              className="border border-white rounded-md px-5 py-3 mt-8 w-fit hover:bg-white hover:text-black transition-all"
+              className="
+                inline-flex items-center justify-center
+                gap-2
+                border border-white/80
+                rounded-lg
+                px-5 py-2.5
+                mt-7 xl:mt-5
+                w-fit
+                text-sm
+                font-medium
+                hover:bg-white
+                hover:text-[#00330A]
+                transition-all duration-300
+              "
             >
-              Read Details →
+              Read Details
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
