@@ -73,9 +73,9 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                           { month: "short", day: "2-digit" }
                         ) + ": "
                       : ""}
-                    {selectedNews.NewsSummary ||
-                  selectedNews.NewsDescription ||
-                  selectedNews.text}
+                    {item.NewsSummary ||
+                  item.NewsDescription ||
+                  item.text}
                   </p>
                 </button>
               ))}
