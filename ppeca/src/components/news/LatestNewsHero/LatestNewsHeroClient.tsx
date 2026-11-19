@@ -59,11 +59,11 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                 <button
                   key={item.id ?? index}
                   onClick={() => handleNewsClick(index)}
-                  className={`text-left p-3 rounded-md transition-all duration-300
+                  className={`text-left p-3 rounded-md transition-all duration-300 cursor-pointer
                     ${
                       selectedIndex === index
                         ? "bg-white/10 border-l-4 border-white"
-                        : "border-l-4 border-transparent hover:bg-white/5"
+                        : "border-l-4 border-transparent "
                     }`}
                 >
                   <p className="text-sm leading-relaxed line-clamp-3">
