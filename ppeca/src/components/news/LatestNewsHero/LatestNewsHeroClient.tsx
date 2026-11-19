@@ -10,6 +10,8 @@ interface Props {
   newsItems: any[];
 }
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export default function LatestNewsHeroClient({ newsItems }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectionVersion, setSelectionVersion] = useState(0);
@@ -96,7 +98,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
               {/* Replace this with your actual API image field */}
               {selectedNews.NewsImage?.url ? (
                 <Image
-                  src={selectedNews.NewsImage.url}
+                  src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
                   alt={selectedNews.NewsTitle || "News"}
                   fill
                   priority
