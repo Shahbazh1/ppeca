@@ -91,28 +91,29 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
           </div>
 
           {/* CENTER: SELECTED NEWS IMAGE */}
-          <div className="flex items-center lg:border-r lg:border-white/40 lg:pr-8">
+<div className="flex items-center lg:border-r lg:border-white/40 lg:pr-8">
+  <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
 
-            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg bg-white/10">
+    {selectedNews?.NewsImage?.url && (
+      <Image
+        src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
+        alt={selectedNews.NewsImage.alternativeText || selectedNews.NewsTitle || "News"}
+        fill
+        priority
+        unoptimized
+        className="object-cover"
+        onError={(e) => console.log("Image loading failed:", e)}
+      />
+    )}
 
-              {/* Replace this with your actual API image field */}
-              {selectedNews?.NewsImage?.url ? (
-                <Image
-                  src={`${API_BASE_URL}${selectedNews.NewsImage.url}`}
-                  alt={selectedNews.NewsTitle || "News"}
-                  fill
-                  priority
-                  unoptimized
-                  className="object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-white">
-                  News Image
-                </div>
-              )}
+    {!selectedNews?.NewsImage?.url && (
+      <div className="w-full h-full flex items-center justify-center text-white">
+        News Image Not Available
+      </div>
+    )}
 
-            </div>
-          </div>
+  </div>
+</div>
 
           {/* RIGHT: NEWS SUMMARY */}
           <div className="flex flex-col text-white justify-between py-2">
