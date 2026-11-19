@@ -4,7 +4,7 @@ const BASE_URL = `${API_BASE_URL}/api/newses`;
 
 export async function getLatestNews(limit = 3) {
   const res = await fetch(
-    `${BASE_URL}?pagination[limit]=${limit}&sort=publishedAt:desc`,
+    `${BASE_URL}?pagination[limit]=${limit}&sort=publishedAt:desc&populate=*`,
     {
       next: { revalidate: 300 },
     }
