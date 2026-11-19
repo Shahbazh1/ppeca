@@ -1,4 +1,4 @@
-import LatestNewsHero from "../../components/news/LatestNewsHero";
+import LatestNewsHero from "../../components/news/LatestNewsHero/LatestNewsHero";
 import NewsLetters from "../../components/news/NewsLetters";
 import InveryData from "../../components/news/InveryData";
 import DirectoryOfTrainingProviders from "../../components/news/DirectoryOfTrainingProviders";
