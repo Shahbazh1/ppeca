@@ -53,8 +53,6 @@ export default function ContactUs() {
     }, 10000);
 
     try {
-      console.log("Recaptcha Token:", recaptchaToken); // Debug log
-      console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
 
       const response = await fetch(`${API_BASE_URL}/api/contact-forms`, {
         method: "POST",

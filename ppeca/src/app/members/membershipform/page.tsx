@@ -82,7 +82,6 @@ const CompanyForm = () => {
       toast.error("Please complete the reCAPTCHA");
       return;
     } else {
-      console.log("reCAPTCHA token:", recaptchaToken);
     }
 
     setLoading(true);
@@ -93,8 +92,6 @@ const CompanyForm = () => {
     }, 10000);
 
     try {
-      console.log("Recaptcha Token:", recaptchaToken); // Debug log
-      console.log("Submitting form data:", JSON.stringify(formData, null, 2)); // Debug log
       const res = await fetch(`${API_BASE_URL}/api/memership-forms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

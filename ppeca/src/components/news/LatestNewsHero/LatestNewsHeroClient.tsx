@@ -16,7 +16,6 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
   const [selectionVersion, setSelectionVersion] = useState(0);
 
   const selectedNews = newsItems[selectedIndex];
-  console.log("selectedNews:",selectedNews);
 
   useEffect(() => {
     if (!newsItems.length) return;
