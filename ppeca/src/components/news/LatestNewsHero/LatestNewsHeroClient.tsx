@@ -127,11 +127,11 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
                   : selectedNews.date}
               </span>
 
-              <h3 className="font-semibold text-base mb-3">
+              {/* <h3 className="font-semibold text-base mb-3">
                 {selectedNews.NewsTitle || selectedNews.title}
-              </h3>
+              </h3> */}
 
-              <p className="text-sm leading-relaxed text-white/90">
+              <p className="text-sm leading-relaxed text-white/90 line-clamp-7">
                 {selectedNews.NewsSummary ||
                   selectedNews.NewsDescription ||
                   selectedNews.text}
