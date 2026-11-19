@@ -70,8 +70,6 @@ export default async function Page({ params }: PageProps) {
     ? `${API_BASE_URL}${news.NewsImage.url}`
     : null;
 
-    console.log("imageUrl:",imageUrl)
-
   return (
     <article className="min-h-screen bg-white pb-20">
       {/* Breadcrumb */}
