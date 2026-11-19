@@ -81,7 +81,7 @@ export default function LatestNewsHeroClient({ newsItems }: Props) {
             </div>
 
             <Link
-              href="/news"
+              href="news/latestNews"
               className="bg-white text-black text-center rounded-md py-3 mt-6 font-medium"
             >
               View All
