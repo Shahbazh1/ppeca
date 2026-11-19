@@ -536,13 +536,13 @@ export const MEMBERS_leadershipContent = {
       company: "Mari Energies Ltd.",
       image: mari_ceo,
     },
-    {
-      role: "Member Executive Committee",
-      name: "Mr. Laszlo Zsolt Adam",
-      title: "Managing Director / CEO",
-      company: "MOL Pakistan Oil & Gas Company B.V.",
-      image: mol_ceo,
-    },
+    // {
+    //   role: "Member Executive Committee",
+    //   name: "Mr. Laszlo Zsolt Adam",
+    //   title: "Managing Director / CEO",
+    //   company: "MOL Pakistan Oil & Gas Company B.V.",
+    //   image: mol_ceo,
+    // },
     {
       role: "Member Executive Committee",
       name: "Mr. Kamran Ahmed",
