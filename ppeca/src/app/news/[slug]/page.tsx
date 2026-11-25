@@ -110,7 +110,7 @@ export default async function Page({ params }: PageProps) {
 
         {/* Featured Image */}
         {imageUrl && (
-          <div className="relative w-full aspect-video md:aspect-[21/9] mb-10 overflow-hidden rounded-sm">
+          <div className="relative w-full aspect-video mb-10 overflow-hidden rounded-sm">
             <Image
               src={imageUrl}
               alt={news.NewsImage.alternativeText || news.NewsTitle}
